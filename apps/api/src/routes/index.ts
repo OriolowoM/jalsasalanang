@@ -1,0 +1,34 @@
+import { Router } from 'express';
+import { authRouter } from './auth';
+import { articlesRouter } from './articles';
+import { categoriesRouter } from './categories';
+import { editionsRouter } from './editions';
+import { speechesRouter } from './speeches';
+import { galleriesRouter } from './galleries';
+import { mediaRouter } from './media';
+import { authorsRouter } from './authors';
+import { newsletterRouter } from './newsletter';
+import { analyticsRouter } from './analytics';
+import { settingsRouter } from './settings';
+import { searchRouter } from './search';
+import { usersRouter } from './users';
+import { pagesRouter } from './pages';
+import { menusRouter } from './menus';
+
+export const apiRouter = Router();
+
+apiRouter.use('/auth', authRouter);
+apiRouter.use('/articles', articlesRouter);
+apiRouter.use('/categories', categoriesRouter);
+apiRouter.use('/editions', editionsRouter);
+apiRouter.use('/speeches', speechesRouter);
+apiRouter.use('/galleries', galleriesRouter);
+apiRouter.use('/media', mediaRouter);
+apiRouter.use('/authors', authorsRouter);
+apiRouter.use('/newsletter', newsletterRouter);
+apiRouter.use('/analytics', analyticsRouter);
+apiRouter.use('/settings', settingsRouter);
+apiRouter.use('/search', searchRouter);
+apiRouter.use('/users', usersRouter);
+apiRouter.use('/pages', pagesRouter);
+apiRouter.use('/menus', menusRouter);

@@ -1,0 +1,11 @@
+node_modules/
+.next/
+dist/
+build/
+*.log
+.env
+.env.local
+.env.*.local
+cookies.txt
+apps/api/uploads/*
+!apps/api/uploads/.gitkeep

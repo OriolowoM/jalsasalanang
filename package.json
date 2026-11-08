@@ -1,0 +1,27 @@
+{
+  "name": "jalsa-salana-platform",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Jalsa Salana Nigeria — Digital Editorial & Publishing Platform",
+  "workspaces": [
+    "apps/*",
+    "packages/*"
+  ],
+  "scripts": {
+    "dev": "concurrently \"npm run dev:api\" \"npm run dev:web\"",
+    "dev:api": "npm --workspace=apps/api run dev",
+    "dev:web": "npm --workspace=apps/web run dev",
+    "build:api": "npm --workspace=apps/api run build",
+    "build:web": "npm --workspace=apps/web run build",
+    "db:generate": "npx prisma generate",
+    "db:push": "npx prisma db push",
+    "db:seed": "node prisma/seed/seed.js"
+  },
+  "devDependencies": {
+    "concurrently": "^9.1.0",
+    "prisma": "^5.22.0"
+  },
+  "dependencies": {
+    "@prisma/client": "^5.22.0"
+  }
+}
