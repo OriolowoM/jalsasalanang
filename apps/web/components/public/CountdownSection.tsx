@@ -40,17 +40,32 @@ export default function CountdownSection() {
   return (
     <section className="py-12 bg-gradient-to-br from-primary-950 via-primary to-primary-900 text-white relative overflow-hidden">
       {/* Background Decorative Crest Watermark */}
-      <div className="absolute -right-20 -bottom-20 w-96 h-96 opacity-10 pointer-events-none">
-        <Image src="/images/jalsa-crest.png" alt="" fill className="object-contain" />
+      <div className="absolute -right-16 -bottom-16 w-96 h-96 opacity-15 pointer-events-none">
+        <Image src="/images/jalsa-emblem.png" alt="" fill className="object-contain" />
       </div>
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
           {/* Left Side: Edition Details & Arabic Calligraphy (7 cols) */}
           <div className="lg:col-span-7 space-y-4">
-            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-gold/20 text-gold-light border border-gold/40 text-xs font-extrabold uppercase tracking-widest">
-              <ShieldCheck className="w-4 h-4" />
-              Special Milestone Ahead
+            <div className="flex flex-wrap items-center gap-3">
+              <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-gold/20 text-gold-light border border-gold/40 text-xs font-extrabold uppercase tracking-widest">
+                <ShieldCheck className="w-4 h-4" />
+                Special Milestone Ahead
+              </div>
+
+              {/* Official 72nd Logo Badge */}
+              <div className="bg-white px-3 py-1.5 rounded-lg shadow inline-flex items-center">
+                <div className="relative h-9 w-40 sm:w-48">
+                  <Image
+                    src="/images/jalsa72-logo.jpg"
+                    alt="Official 72nd Jalsa Salana Nigeria 2026 Logo"
+                    fill
+                    className="object-contain"
+                    priority
+                  />
+                </div>
+              </div>
             </div>
 
             <h2 className="font-serif font-black text-3xl sm:text-4xl lg:text-5xl tracking-tight text-white leading-tight">

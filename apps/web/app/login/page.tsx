@@ -51,8 +51,8 @@ export default function LoginPage() {
         <div className="bg-primary p-6 text-center text-white relative">
           <div className="relative w-16 h-16 mx-auto mb-3">
             <Image
-              src="/images/jalsa-crest.png"
-              alt="Jalsa Salana Nigeria"
+              src="/images/jalsa-emblem.png"
+              alt="Jalsa Salana Official Logo"
               fill
               className="object-contain"
               priority

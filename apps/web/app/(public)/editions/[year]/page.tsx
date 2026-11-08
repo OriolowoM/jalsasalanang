@@ -46,8 +46,24 @@ export default async function EditionDetailPage({ params }: { params: { year: st
         {/* Hero Banner for Edition */}
         <div className="p-8 sm:p-12 rounded-2xl bg-gradient-to-br from-primary-950 via-primary to-primary-900 text-white mb-12 shadow-xl relative overflow-hidden">
           <div className="relative z-10 max-w-4xl space-y-4">
-            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-gold/20 text-gold-light border border-gold/30 text-xs font-extrabold uppercase tracking-widest">
-              {edition.editionNumber}
+            <div className="flex flex-wrap items-center gap-3">
+              <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-gold/20 text-gold-light border border-gold/30 text-xs font-extrabold uppercase tracking-widest">
+                {edition.editionNumber}
+              </div>
+
+              {edition.year === 2026 && (
+                <div className="bg-white px-3 py-1.5 rounded-lg shadow inline-flex items-center">
+                  <div className="relative h-9 w-44">
+                    <Image
+                      src="/images/jalsa72-logo.jpg"
+                      alt="72nd Jalsa Salana Nigeria 2026 Official Logo"
+                      fill
+                      className="object-contain"
+                      priority
+                    />
+                  </div>
+                </div>
+              )}
             </div>
 
             <h1 className="font-serif font-black text-3xl sm:text-5xl text-white leading-tight">

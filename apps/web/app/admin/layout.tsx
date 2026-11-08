@@ -98,8 +98,8 @@ export default function AdminLayout({ children }: { children: React.ReactNode })
           {/* Brand header */}
           <div className="p-5 border-b border-primary-800 flex items-center justify-between">
             <Link href="/admin" className="flex items-center gap-3">
-              <div className="relative w-8 h-8 flex-shrink-0">
-                <Image src="/images/jalsa-crest.png" alt="" fill className="object-contain" />
+              <div className="relative w-9 h-9 flex-shrink-0">
+                <Image src="/images/jalsa-emblem.png" alt="Jalsa Salana Official Logo" fill className="object-contain" />
               </div>
               <div>
                 <span className="font-serif font-bold text-sm tracking-wide text-white block">

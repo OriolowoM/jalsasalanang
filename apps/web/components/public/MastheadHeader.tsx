@@ -17,10 +17,10 @@ export default function MastheadHeader() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-3 sm:py-4 flex items-center justify-between gap-4">
           {/* Left: Brand / Logo */}
           <Link href="/" className="flex items-center gap-3 group">
-            <div className="relative w-10 h-10 sm:w-12 sm:h-12 flex-shrink-0">
+            <div className="relative w-11 h-11 sm:w-14 sm:h-14 flex-shrink-0">
               <Image
-                src="/images/jalsa-crest.png"
-                alt="Jalsa Salana Nigeria Official Crest"
+                src="/images/jalsa-emblem.png"
+                alt="Jalsa Salana Official Logo"
                 fill
                 className="object-contain"
                 priority

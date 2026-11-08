@@ -11,14 +11,26 @@ export default function AboutPage() {
   return (
     <div className="py-8 sm:py-12 bg-surface-bg min-h-screen">
       <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-        {/* Header */}
-        <div className="pb-6 mb-8 border-b-2 border-primary">
-          <span className="text-xs font-extrabold uppercase tracking-widest text-gold-dark block mb-1">
-            Institutional Profile
-          </span>
-          <h1 className="font-serif font-black text-3xl sm:text-5xl text-charcoal-heading">
-            About Jalsa Salana Nigeria
-          </h1>
+        {/* Header with Official Logos */}
+        <div className="pb-6 mb-8 border-b-2 border-primary flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4">
+          <div>
+            <span className="text-xs font-extrabold uppercase tracking-widest text-gold-dark block mb-1">
+              Institutional Profile
+            </span>
+            <h1 className="font-serif font-black text-3xl sm:text-5xl text-charcoal-heading">
+              About Jalsa Salana Nigeria
+            </h1>
+          </div>
+          <div className="flex items-center gap-3 flex-shrink-0">
+            <div className="relative w-14 h-14">
+              <Image src="/images/jalsa-emblem.png" alt="Jalsa Salana Official Logo" fill className="object-contain" />
+            </div>
+            <div className="bg-white px-2 py-1.5 rounded-lg border border-gray-200 shadow-sm">
+              <div className="relative h-8 w-32">
+                <Image src="/images/jalsa72-logo.jpg" alt="72nd Jalsa Salana Edition" fill className="object-contain" />
+              </div>
+            </div>
+          </div>
         </div>
 
         {/* Hero image */}

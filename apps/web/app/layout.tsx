@@ -10,15 +10,15 @@ export const metadata: Metadata = {
   keywords: ['Jalsa Salana Nigeria', 'Ahmadiyya Nigeria', 'Islamic Convention', 'Review of Religions', 'Peace', 'Justice', 'Khilafat'],
   authors: [{ name: 'Ahmadiyya Muslim Jama\'at Nigeria' }],
   icons: {
-    icon: '/images/jalsa-crest.png',
-    apple: '/images/jalsa-crest.png',
+    icon: '/images/jalsa-emblem.png',
+    apple: '/images/jalsa-emblem.png',
   },
   openGraph: {
     type: 'website',
     locale: 'en_NG',
     url: 'https://jalsasalana.ng',
     siteName: 'Jalsa Salana Nigeria',
-    images: [{ url: '/images/jalsa-logo.png', width: 962, height: 724 }],
+    images: [{ url: '/images/jalsa-emblem.png', width: 512, height: 512 }, { url: '/images/jalsa72-logo.jpg', width: 700, height: 320 }],
   },
 };
 

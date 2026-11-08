@@ -13,10 +13,10 @@ export default function EditorialFooter() {
           {/* Col 1: Brand & Jama'at Summary (4 cols) */}
           <div className="lg:col-span-4 space-y-4">
             <Link href="/" className="flex items-center gap-3">
-              <div className="relative w-10 h-10 flex-shrink-0">
+              <div className="relative w-12 h-12 flex-shrink-0">
                 <Image
-                  src="/images/jalsa-crest.png"
-                  alt="Jalsa Salana Nigeria"
+                  src="/images/jalsa-emblem.png"
+                  alt="Jalsa Salana Official Logo"
                   fill
                   className="object-contain"
                 />
@@ -34,6 +34,23 @@ export default function EditorialFooter() {
             <p className="text-xs text-gray-300 leading-relaxed">
               Jalsa Salana Nigeria is the premier annual spiritual, educational, and intellectual gathering of the Ahmadiyya Muslim Jama&apos;at Nigeria, dedicated to peace, moral reformation, and divine guidance under the blessed institution of Khilafat-e-Ahmadiyya.
             </p>
+
+            {/* Official 72nd Edition Logo Badge */}
+            <div className="pt-1">
+              <span className="text-[10px] uppercase font-bold tracking-wider text-gray-400 block mb-1.5">
+                Upcoming Convention
+              </span>
+              <div className="inline-block bg-white px-3 py-1.5 rounded-lg shadow-sm">
+                <div className="relative h-8 w-36 sm:w-40">
+                  <Image
+                    src="/images/jalsa72-logo.jpg"
+                    alt="72nd Jalsa Salana Nigeria 2026 Official Logo"
+                    fill
+                    className="object-contain"
+                  />
+                </div>
+              </div>
+            </div>
 
             <div className="text-[11px] text-gray-400 border-l-2 border-gold pl-3 italic">
               &ldquo;Love for All, Hatred for None&rdquo; — Universal motto of the Ahmadiyya Muslim Community.

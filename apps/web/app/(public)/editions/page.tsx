@@ -42,8 +42,8 @@ export default async function EditionsArchivePage() {
             >
               <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 items-center">
                 {/* Year & Badge */}
-                <div className="lg:col-span-3">
-                  <div className="flex items-center gap-3 mb-2">
+                <div className="lg:col-span-3 space-y-2">
+                  <div className="flex items-center gap-3">
                     <span className={`font-serif font-black text-4xl sm:text-5xl ${edition.isCurrent ? 'text-gold' : 'text-primary'}`}>
                       {edition.year}
                     </span>
@@ -56,6 +56,19 @@ export default async function EditionsArchivePage() {
                   <div className={`text-xs font-bold uppercase tracking-wider ${edition.isCurrent ? 'text-gray-300' : 'text-gray-500'}`}>
                     {edition.editionNumber}
                   </div>
+
+                  {edition.year === 2026 && (
+                    <div className="bg-white p-2 rounded-lg shadow inline-block mt-2">
+                      <div className="relative h-9 w-40">
+                        <Image
+                          src="/images/jalsa72-logo.jpg"
+                          alt="72nd Jalsa Salana Nigeria 2026 Official Logo"
+                          fill
+                          className="object-contain"
+                        />
+                      </div>
+                    </div>
+                  )}
                 </div>
 
                 {/* Theme & Details (6 cols) */}
