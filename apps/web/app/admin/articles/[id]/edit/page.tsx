@@ -3,7 +3,7 @@
 import React, { useState, useEffect } from 'react';
 import { useRouter } from 'next/navigation';
 import Link from 'next/link';
-import { ArrowLeft, Save, Send, AlertCircle, Loader2, ExternalLink, History } from 'lucide-react';
+import { ArrowLeft, Save, Send, AlertCircle, Loader2, ExternalLink, History, Sparkles } from 'lucide-react';
 import TipTapEditor from '@/components/admin/TipTapEditor';
 
 export default function EditArticlePage({ params }: { params: { id: string } }) {
@@ -12,6 +12,7 @@ export default function EditArticlePage({ params }: { params: { id: string } }) 
   const [fetching, setFetching] = useState(true);
   const [error, setError] = useState('');
   const [success, setSuccess] = useState('');
+  const [aiLoading, setAiLoading] = useState(false);
 
   const [authors, setAuthors] = useState<any[]>([]);
   const [editions, setEditions] = useState<any[]>([]);
@@ -138,6 +139,33 @@ export default function EditArticlePage({ params }: { params: { id: string } }) 
     }
   };
 
+  const handleAIGenerateSEO = async () => {
+    if (!title && !content) {
+      alert('Please enter an article headline and content first.');
+      return;
+    }
+
+    try {
+      setAiLoading(true);
+      const res = await fetch('/api/v1/ai/generate-metadata', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        credentials: 'include',
+        body: JSON.stringify({ title, content: content || title }),
+      });
+      const data = await res.json();
+      if (data.success && data.data) {
+        setMetaTitle(data.data.metaTitle);
+        setMetaDescription(data.data.metaDescription);
+        if (!excerpt) setExcerpt(data.data.excerpt);
+      }
+    } catch (err) {
+      console.error(err);
+    } finally {
+      setAiLoading(false);
+    }
+  };
+
   if (fetching) {
     return (
       <div className="py-20 text-center text-gray-500 text-sm">
@@ -259,6 +287,50 @@ export default function EditArticlePage({ params }: { params: { id: string } }) 
               Main Article Content *
             </label>
             <TipTapEditor content={content} onChange={setContent} />
+          </div>
+
+          {/* SEO Metadata Box */}
+          <div className="bg-white p-6 rounded-xl border border-gray-200 shadow-sm space-y-4">
+            <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-2 pb-2 border-b border-gray-100">
+              <h3 className="font-serif font-bold text-sm text-charcoal">
+                Search Engine &amp; Social Discoverability (SEO)
+              </h3>
+              <button
+                type="button"
+                disabled={aiLoading}
+                onClick={handleAIGenerateSEO}
+                className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-primary hover:bg-primary-dark text-white text-xs font-bold transition-all shadow-sm disabled:opacity-50"
+              >
+                <Sparkles className="w-3.5 h-3.5 text-gold" />
+                <span>{aiLoading ? 'Analyzing...' : 'Auto-Generate SEO & Excerpt'}</span>
+              </button>
+            </div>
+
+            <div>
+              <label className="block text-xs font-bold uppercase tracking-wider text-charcoal mb-1">
+                Meta Title Tag
+              </label>
+              <input
+                type="text"
+                value={metaTitle}
+                onChange={(e) => setMetaTitle(e.target.value)}
+                placeholder="Custom title tag (defaults to headline if blank)..."
+                className="w-full px-4 py-2 rounded-lg border border-gray-200 text-xs outline-none focus:border-primary text-charcoal"
+              />
+            </div>
+
+            <div>
+              <label className="block text-xs font-bold uppercase tracking-wider text-charcoal mb-1">
+                Meta Description
+              </label>
+              <textarea
+                rows={2}
+                value={metaDescription}
+                onChange={(e) => setMetaDescription(e.target.value)}
+                placeholder="Meta description for Google snippets (150-160 characters recommended)..."
+                className="w-full px-4 py-2 rounded-lg border border-gray-200 text-xs outline-none focus:border-primary text-charcoal"
+              />
+            </div>
           </div>
 
           {/* Revision History */}

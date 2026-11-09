@@ -6,6 +6,7 @@ import { Clock, Calendar, User, ArrowLeft, ArrowRight, Share2, Tag, ChevronRight
 import { getArticleBySlug } from '@/lib/api';
 import TableOfContents from '@/components/public/TableOfContents';
 import SocialShareButtons from '@/components/public/SocialShareButtons';
+import ArticleAudioPlayer from '@/components/public/ArticleAudioPlayer';
 
 export async function generateMetadata({ params }: { params: { slug: string } }) {
   try {
@@ -175,6 +176,9 @@ export default async function ArticleDetailPage({ params }: { params: { slug: st
             )}
           </div>
         )}
+
+        {/* AI Voice Speech Audio Player */}
+        <ArticleAudioPlayer title={article.title} content={article.content} />
 
         {/* Layout: Sticky Table of Contents & Article Body */}
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">

@@ -2,6 +2,7 @@
 
 import React, { useState } from 'react';
 import { Mail, Phone, MapPin, Send, CheckCircle, AlertCircle } from 'lucide-react';
+import VenueMapSection from '@/components/public/VenueMapSection';
 
 export default function ContactPage() {
   const [form, setForm] = useState({ name: '', email: '', subject: '', message: '' });
@@ -169,6 +170,11 @@ export default function ContactPage() {
               </form>
             )}
           </div>
+        </div>
+
+        {/* Interactive Venue Map & GPS Guidance */}
+        <div className="mt-12">
+          <VenueMapSection />
         </div>
       </div>
     </div>

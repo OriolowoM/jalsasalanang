@@ -3,13 +3,15 @@
 import React, { useState, useEffect } from 'react';
 import { useRouter } from 'next/navigation';
 import Link from 'next/link';
-import { ArrowLeft, Save, Send, AlertCircle, Loader2 } from 'lucide-react';
+import { ArrowLeft, Save, Send, AlertCircle, Loader2, Sparkles, Check, Info } from 'lucide-react';
 import TipTapEditor from '@/components/admin/TipTapEditor';
 
 export default function NewArticlePage() {
   const router = useRouter();
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState('');
+  const [aiLoading, setAiLoading] = useState(false);
+  const [aiReport, setAiReport] = useState<{ score: number; suggestions: string[] } | null>(null);
 
   const [authors, setAuthors] = useState<any[]>([]);
   const [editions, setEditions] = useState<any[]>([]);
@@ -117,6 +119,58 @@ export default function NewArticlePage() {
     }
   };
 
+  const handleAIGenerateSEO = async () => {
+    if (!title && !content) {
+      alert('Please enter an article headline and content first.');
+      return;
+    }
+
+    try {
+      setAiLoading(true);
+      const res = await fetch('/api/v1/ai/generate-metadata', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        credentials: 'include',
+        body: JSON.stringify({ title, content: content || title }),
+      });
+      const data = await res.json();
+      if (data.success && data.data) {
+        setMetaTitle(data.data.metaTitle);
+        setMetaDescription(data.data.metaDescription);
+        if (!excerpt) setExcerpt(data.data.excerpt);
+      }
+    } catch (err) {
+      console.error(err);
+    } finally {
+      setAiLoading(false);
+    }
+  };
+
+  const handleAIPolish = async () => {
+    if (!content) {
+      alert('Please enter article content first.');
+      return;
+    }
+
+    try {
+      setAiLoading(true);
+      const res = await fetch('/api/v1/ai/polish', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        credentials: 'include',
+        body: JSON.stringify({ content }),
+      });
+      const data = await res.json();
+      if (data.success && data.data) {
+        setAiReport(data.data);
+      }
+    } catch (err) {
+      console.error(err);
+    } finally {
+      setAiLoading(false);
+    }
+  };
+
   return (
     <div className="space-y-6 max-w-6xl mx-auto">
       {/* Top Header */}
@@ -137,6 +191,16 @@ export default function NewArticlePage() {
         </div>
 
         <div className="flex items-center gap-2">
+          <button
+            type="button"
+            disabled={aiLoading}
+            onClick={handleAIPolish}
+            className="px-3 py-2 rounded-lg bg-emerald-50 hover:bg-emerald-100 text-emerald-800 border border-emerald-200 text-xs font-bold flex items-center gap-1.5 transition-colors"
+            title="Analyze content with AI for editorial polish"
+          >
+            <Sparkles className="w-3.5 h-3.5 text-emerald-600" />
+            <span>AI Polish</span>
+          </button>
           <button
             type="button"
             disabled={loading}
@@ -219,11 +283,52 @@ export default function NewArticlePage() {
             <TipTapEditor content={content} onChange={setContent} />
           </div>
 
+          {/* AI Editorial Report Card */}
+          {aiReport && (
+            <div className="bg-emerald-50 border border-emerald-200 rounded-xl p-4 space-y-2">
+              <div className="flex items-center justify-between">
+                <span className="text-xs font-bold uppercase tracking-wider text-emerald-900 flex items-center gap-1.5">
+                  <Sparkles className="w-4 h-4 text-emerald-600" />
+                  Editorial Polish Score: {aiReport.score}/100
+                </span>
+                <button
+                  type="button"
+                  onClick={() => setAiReport(null)}
+                  className="text-xs text-emerald-700 hover:text-emerald-900 font-bold"
+                >
+                  Dismiss
+                </button>
+              </div>
+              {aiReport.suggestions.length === 0 ? (
+                <p className="text-xs text-emerald-800">
+                  Excellent! The article content adheres to editorial standards and honorific guidelines.
+                </p>
+              ) : (
+                <ul className="text-xs text-emerald-800 space-y-1 list-disc list-inside">
+                  {aiReport.suggestions.map((s, idx) => (
+                    <li key={idx}>{s}</li>
+                  ))}
+                </ul>
+              )}
+            </div>
+          )}
+
           {/* SEO Metadata Box */}
           <div className="bg-white p-6 rounded-xl border border-gray-200 shadow-sm space-y-4">
-            <h3 className="font-serif font-bold text-sm text-charcoal pb-2 border-b border-gray-100">
-              Search Engine &amp; Social Discoverability (SEO)
-            </h3>
+            <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-2 pb-2 border-b border-gray-100">
+              <h3 className="font-serif font-bold text-sm text-charcoal">
+                Search Engine &amp; Social Discoverability (SEO)
+              </h3>
+              <button
+                type="button"
+                disabled={aiLoading}
+                onClick={handleAIGenerateSEO}
+                className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-primary hover:bg-primary-dark text-white text-xs font-bold transition-all shadow-sm disabled:opacity-50"
+              >
+                <Sparkles className="w-3.5 h-3.5 text-gold" />
+                <span>{aiLoading ? 'Analyzing...' : 'Auto-Generate SEO & Excerpt'}</span>
+              </button>
+            </div>
             <div>
               <label className="block text-xs font-bold uppercase tracking-wider text-charcoal mb-1">
                 Meta Title Tag

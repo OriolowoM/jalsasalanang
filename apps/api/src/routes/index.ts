@@ -14,6 +14,8 @@ import { searchRouter } from './search';
 import { usersRouter } from './users';
 import { pagesRouter } from './pages';
 import { menusRouter } from './menus';
+import { aiRouter } from './ai';
+import { externalRouter } from './external';
 
 export const apiRouter = Router();
 
@@ -32,3 +34,5 @@ apiRouter.use('/search', searchRouter);
 apiRouter.use('/users', usersRouter);
 apiRouter.use('/pages', pagesRouter);
 apiRouter.use('/menus', menusRouter);
+apiRouter.use('/ai', aiRouter);
+apiRouter.use('/external', externalRouter);

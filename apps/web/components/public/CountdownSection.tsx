@@ -4,6 +4,7 @@ import React, { useState, useEffect } from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
 import { Calendar, MapPin, Users, ArrowRight, ShieldCheck } from 'lucide-react';
+import AddToCalendarButton from './AddToCalendarButton';
 
 export default function CountdownSection() {
   const [timeLeft, setTimeLeft] = useState({
@@ -99,7 +100,7 @@ export default function CountdownSection() {
               </span>
             </div>
 
-            <div className="pt-2 flex flex-wrap gap-3">
+            <div className="pt-2 flex flex-wrap items-center gap-3">
               <Link
                 href="/editions/2026"
                 className="inline-flex items-center gap-2 px-5 py-2.5 rounded-lg bg-gold hover:bg-gold-hover text-primary-950 font-bold text-xs uppercase tracking-wider transition-colors shadow-lg"
@@ -107,6 +108,7 @@ export default function CountdownSection() {
                 <span>Explore 2026 Hub</span>
                 <ArrowRight className="w-4 h-4" />
               </Link>
+              <AddToCalendarButton />
               <Link
                 href="/about"
                 className="inline-flex items-center gap-2 px-5 py-2.5 rounded-lg bg-white/10 hover:bg-white/20 text-white font-semibold text-xs uppercase tracking-wider transition-colors border border-white/20"

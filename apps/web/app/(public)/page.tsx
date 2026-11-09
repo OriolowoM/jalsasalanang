@@ -7,6 +7,8 @@ import SpeechesSection from '@/components/public/SpeechesSection';
 import MediaHighlightsSection from '@/components/public/MediaHighlightsSection';
 import ArchivesTimeline from '@/components/public/ArchivesTimeline';
 import NewsletterForm from '@/components/public/NewsletterForm';
+import WhatsAppBroadcastBanner from '@/components/public/WhatsAppBroadcastBanner';
+import QuranCitationCard from '@/components/public/QuranCitationCard';
 
 export const revalidate = 60; // ISR cache revalidation every minute
 
@@ -54,11 +56,19 @@ export default async function HomePage() {
       {/* 4. Speeches & Addresses */}
       <SpeechesSection speeches={speeches} />
 
+      {/* Quranic Foundation Anchor linked to AlIslam.org */}
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <QuranCitationCard />
+      </div>
+
       {/* 5. Photography & Visual Highlights */}
       <MediaHighlightsSection galleries={galleries} />
 
       {/* 6. Historical Jalsa Archives (2026, 2025, 2024 Platinum Jubilee, etc.) */}
       <ArchivesTimeline editions={editions} />
+
+      {/* Official WhatsApp Delegate Broadcast Banner */}
+      <WhatsAppBroadcastBanner />
 
       {/* 7. Newsletter Subscription Component */}
       <NewsletterForm />

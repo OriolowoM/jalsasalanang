@@ -4,6 +4,9 @@ import Image from 'next/image';
 import { notFound } from 'next/navigation';
 import { getEditionByYear } from '@/lib/api';
 import { Calendar, MapPin, Users, Mic, Camera, FileText, ChevronRight, Video } from 'lucide-react';
+import AddToCalendarButton from '@/components/public/AddToCalendarButton';
+import VenueMapSection from '@/components/public/VenueMapSection';
+import QuranCitationCard from '@/components/public/QuranCitationCard';
 
 export async function generateMetadata({ params }: { params: { year: string } }) {
   try {
@@ -101,8 +104,22 @@ export default async function EditionDetailPage({ params }: { params: { year: st
                 </>
               )}
             </div>
+
+            {/* Calendar Integration Button */}
+            {edition.year === 2026 && (
+              <div className="pt-2">
+                <AddToCalendarButton />
+              </div>
+            )}
           </div>
         </div>
+
+        {/* 2026 Quranic Theme Citation & AlIslam Resource */}
+        {edition.year === 2026 && (
+          <div className="mb-12">
+            <QuranCitationCard />
+          </div>
+        )}
 
         {/* Section 1: Speeches & Addresses Delivered at this Convention */}
         {edition.speeches?.length > 0 && (
@@ -178,6 +195,9 @@ export default async function EditionDetailPage({ params }: { params: { year: st
             </div>
           </section>
         )}
+
+        {/* Venue GPS Navigation and Travel Guidelines for 2026 */}
+        {edition.year === 2026 && <VenueMapSection />}
       </div>
     </div>
   );
