@@ -33,6 +33,9 @@ import {
   FileCheck,
   Headphones,
   Info,
+  Maximize2,
+  X,
+  Download,
 } from 'lucide-react';
 import AddToCalendarButton from '@/components/public/AddToCalendarButton';
 
@@ -219,6 +222,8 @@ export default function RegistrationPage() {
   const portalUrl = 'https://jalsa.ahmadiyyanigeria.net/';
   const [featureCategory, setFeatureCategory] = useState<'all' | 'delegate' | 'travel' | 'volunteer' | 'safety'>('all');
   const [openFaq, setOpenFaq] = useState<number | null>(0);
+  const [selectedFlyer, setSelectedFlyer] = useState<any | null>(null);
+  const [modalFormat, setModalFormat] = useState<'feed' | 'status'>('feed');
 
   const filteredFeatures = PORTAL_FEATURES.filter((f) =>
     featureCategory === 'all' ? true : f.category === featureCategory
@@ -227,10 +232,11 @@ export default function RegistrationPage() {
   return (
     <div className="bg-surface-bg min-h-screen">
       {/* 1. HERO SECTION */}
-      <section className="relative py-14 sm:py-20 bg-gradient-to-br from-primary-950 via-primary to-primary-900 text-white overflow-hidden border-b-4 border-gold">
-        {/* Background Watermark & Glow */}
-        <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-gold/10 rounded-full blur-3xl pointer-events-none" />
-        <div className="absolute bottom-0 left-0 w-96 h-96 bg-emerald-600/10 rounded-full blur-2xl pointer-events-none" />
+      <section className="relative py-14 sm:py-20 bg-gradient-to-br from-primary-night via-primary-dark to-primary-900 text-white overflow-hidden border-b-4 border-gold">
+        {/* Background Islamic Stars Pattern & Glow */}
+        <div className="absolute inset-0 bg-islamic-stars opacity-40 pointer-events-none" />
+        <div className="absolute top-0 right-0 w-[550px] h-[550px] bg-gold/15 rounded-full blur-3xl pointer-events-none" />
+        <div className="absolute bottom-0 left-0 w-96 h-96 bg-emerald-600/15 rounded-full blur-2xl pointer-events-none" />
         <div className="absolute -right-20 -bottom-20 w-96 h-96 opacity-10 pointer-events-none">
           <Image src="/images/jalsa-emblem.png" alt="" fill className="object-contain" />
         </div>
@@ -239,17 +245,17 @@ export default function RegistrationPage() {
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 items-center">
             {/* Left Content (7 Cols) */}
             <div className="lg:col-span-7 space-y-5 text-center lg:text-left">
-              <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-gold/20 text-gold-light border border-gold/40 text-xs font-black uppercase tracking-widest">
+              <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-gold/20 text-gold-metallic border border-gold/40 text-xs font-cinzel font-black uppercase tracking-widest">
                 <Sparkles className="w-4 h-4 text-gold" />
-                <span>Official Registration Guide &amp; Portal Hub</span>
+                <span>OFFICIAL REGISTRATION GUIDE &amp; PORTAL HUB</span>
               </div>
 
-              <h1 className="font-serif font-black text-3xl sm:text-5xl lg:text-6xl text-white leading-tight">
+              <h1 className="font-display font-black text-3xl sm:text-5xl lg:text-6xl text-white leading-[1.12] tracking-tight">
                 Register for Jalsa Salana Nigeria 2026
               </h1>
 
               {/* Official 72nd Logo Badge */}
-              <div className="inline-block bg-white p-2 sm:p-2.5 rounded-xl shadow-lg">
+              <div className="inline-block bg-white/95 p-2 sm:p-2.5 rounded-xl shadow-xl border border-gold/40 backdrop-blur-sm">
                 <div className="relative h-10 sm:h-12 w-48 sm:w-56">
                   <Image
                     src="/images/jalsa72-logo.jpg"
@@ -261,23 +267,23 @@ export default function RegistrationPage() {
                 </div>
               </div>
 
-              <p className="text-base sm:text-lg text-gray-200 leading-relaxed font-sans max-w-2xl mx-auto lg:mx-0">
+              <p className="text-base sm:text-lg text-gray-200 leading-relaxed font-serif max-w-2xl mx-auto lg:mx-0">
                 Welcome to the official registration information gateway for the <strong>72nd Annual Convention</strong> of the Ahmadiyya Muslim Jama&apos;at Nigeria. Secure your digital delegate tag, household registration, and lodging allocations today.
               </p>
 
               {/* Event Metadata Bar */}
               <div className="flex flex-wrap items-center justify-center lg:justify-start gap-4 text-xs sm:text-sm text-gray-300 pt-2">
-                <span className="flex items-center gap-1.5 bg-black/30 px-3 py-1.5 rounded-lg border border-white/10">
+                <span className="flex items-center gap-1.5 bg-black/40 px-3.5 py-2 rounded-xl border border-gold/30">
                   <Calendar className="w-4 h-4 text-gold" />
-                  <strong>December 18–20, 2026</strong>
+                  <strong className="text-white">December 18–20, 2026</strong>
                 </span>
-                <span className="flex items-center gap-1.5 bg-black/30 px-3 py-1.5 rounded-lg border border-white/10">
+                <span className="flex items-center gap-1.5 bg-black/40 px-3.5 py-2 rounded-xl border border-gold/30">
                   <MapPin className="w-4 h-4 text-gold" />
-                  <strong>Jamia Ahmadiyya Ilaro, Ogun State</strong>
+                  <strong className="text-white">Jamia Ahmadiyya Ilaro, Ogun State</strong>
                 </span>
-                <span className="flex items-center gap-1.5 bg-black/30 px-3 py-1.5 rounded-lg border border-white/10">
+                <span className="flex items-center gap-1.5 bg-black/40 px-3.5 py-2 rounded-xl border border-gold/30">
                   <Users className="w-4 h-4 text-gold" />
-                  <strong>45,000+ Expected Delegates</strong>
+                  <strong className="text-white">45,000+ Expected Delegates</strong>
                 </span>
               </div>
 
@@ -287,9 +293,9 @@ export default function RegistrationPage() {
                   href={portalUrl}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-flex items-center gap-2.5 px-8 py-4 rounded-xl bg-gold hover:bg-gold-hover text-primary-950 font-black text-sm uppercase tracking-wider transition-all shadow-2xl hover:scale-105"
+                  className="inline-flex items-center gap-2.5 px-8 py-4 rounded-xl bg-gradient-to-r from-gold to-gold-metallic hover:from-gold-hover hover:to-gold text-primary-950 font-black text-sm uppercase tracking-wider transition-all shadow-gold-glow hover:scale-105 active:scale-95"
                 >
-                  <span>REGISTER NOW (jalsa.ahmadiyyanigeria.net)</span>
+                  <span>REGISTER ON PORTAL NOW</span>
                   <ExternalLink className="w-4 h-4" />
                 </a>
 
@@ -305,26 +311,41 @@ export default function RegistrationPage() {
               </div>
             </div>
 
-            {/* Right Flyer Spotlight (5 Cols) */}
+            {/* Right Flyer Spotlight (5 Cols) with Click to Enlarge */}
             <div className="lg:col-span-5 flex justify-center">
-              <div className="relative w-full max-w-sm sm:max-w-md aspect-[4/5] rounded-2xl overflow-hidden shadow-2xl border-2 border-gold/40 group">
+              <div
+                onClick={() => {
+                  setSelectedFlyer({
+                    id: 'F00',
+                    name: '72nd Jalsa Salana Nigeria — The Arch Announcement',
+                    flyer: '/images/registration/jalsa2026-flyer-01-the-arch_feed.webp',
+                    desc: 'Official 72nd Convention Theme: Justice and Equality: Indispensable Prerequisites for Global Peace and National Harmony.',
+                  });
+                  setModalFormat('feed');
+                }}
+                className="relative w-full max-w-sm sm:max-w-md aspect-[4/5] rounded-3xl overflow-hidden shadow-2xl border-2 border-gold/60 group cursor-pointer ring-4 ring-black/30"
+              >
                 <Image
                   src="/images/registration/jalsa2026-flyer-01-the-arch_feed.webp"
                   alt="72nd Jalsa Salana Nigeria Official Registration Flyer - The Arch"
                   fill
-                  className="object-cover group-hover:scale-105 transition-transform duration-500"
+                  className="object-cover group-hover:scale-108 transition-transform duration-700 ease-out"
                   priority
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent flex flex-col justify-end p-6">
-                  <span className="text-[10px] uppercase font-black text-gold tracking-widest block mb-1">
-                    Official Publicity Design 01
+                <div className="absolute inset-0 bg-gradient-to-t from-primary-950/90 via-primary-950/30 to-transparent flex flex-col justify-end p-6">
+                  <span className="text-[10px] uppercase font-cinzel font-black text-gold-metallic tracking-widest block mb-1">
+                    ✦ OFFICIAL PUBLICITY DESIGN 01 ✦
                   </span>
-                  <p className="text-sm font-serif font-bold text-white">
+                  <p className="text-base font-display font-bold text-white leading-snug">
                     72nd Jalsa Salana Nigeria — The Arch Announcement
                   </p>
-                  <p className="text-xs text-gray-300 mt-1">
+                  <p className="text-xs text-gray-300 mt-1 font-serif">
                     Theme: Justice and Equality: Indispensable Prerequisites for Global Peace and National Harmony
                   </p>
+                  <div className="mt-3 flex items-center gap-1.5 text-xs font-bold text-gold">
+                    <Maximize2 className="w-3.5 h-3.5" />
+                    <span>Click to inspect high-resolution artwork</span>
+                  </div>
                 </div>
               </div>
             </div>
@@ -658,37 +679,61 @@ export default function RegistrationPage() {
             </div>
           </div>
 
-          {/* Features Grid with Flyer Graphics */}
+          {/* Features Grid with Flyer Graphics & Lightbox Preview */}
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
             {filteredFeatures.map((feat) => (
               <div
                 key={feat.id}
-                className="bg-surface-bg rounded-2xl border border-gray-200 p-4 hover:border-primary/50 transition-all hover:shadow-md flex flex-col justify-between group"
+                className="bg-surface-bg rounded-2xl border border-gray-200 p-4 hover:border-gold/80 transition-all hover:shadow-xl flex flex-col justify-between group shadow-sm"
               >
                 <div>
-                  <div className="relative aspect-[4/5] rounded-xl overflow-hidden mb-3 bg-gray-100 shadow-sm">
+                  <div
+                    onClick={() => {
+                      setSelectedFlyer(feat);
+                      setModalFormat('feed');
+                    }}
+                    className="relative aspect-[4/5] rounded-xl overflow-hidden mb-3 bg-gray-900 shadow-sm cursor-pointer ring-1 ring-black/5 group-hover:ring-gold/50"
+                  >
                     <Image
                       src={feat.flyer}
                       alt={feat.name}
                       fill
-                      className="object-cover group-hover:scale-105 transition-transform duration-300"
+                      className="object-cover group-hover:scale-106 transition-transform duration-500"
                     />
-                    <span className="absolute top-2 left-2 bg-primary text-white text-[10px] font-black px-2 py-0.5 rounded shadow">
+                    <span className="absolute top-2 left-2 bg-primary text-white text-[10px] font-mono font-black px-2 py-0.5 rounded shadow border border-gold/30">
                       {feat.id}
                     </span>
+
+                    {/* Hover Prompt */}
+                    <div className="absolute inset-0 bg-primary-950/60 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center gap-1.5 text-xs font-bold text-white backdrop-blur-[2px]">
+                      <Maximize2 className="w-4 h-4 text-gold" />
+                      <span>Inspect Flyer</span>
+                    </div>
                   </div>
 
-                  <h3 className="font-serif font-bold text-sm text-charcoal group-hover:text-primary transition-colors leading-snug mb-1">
+                  <h3 className="font-display font-bold text-sm text-charcoal group-hover:text-primary transition-colors leading-snug mb-1">
                     {feat.name}
                   </h3>
-                  <p className="text-xs text-gray-600 leading-relaxed line-clamp-3">
+                  <p className="text-xs text-gray-600 leading-relaxed line-clamp-3 font-serif">
                     {feat.desc}
                   </p>
                 </div>
 
                 <div className="pt-3 mt-3 border-t border-gray-200 flex items-center justify-between text-[11px] text-primary font-bold">
-                  <span>Portal Innovation</span>
-                  <CheckCircle2 className="w-3.5 h-3.5 text-emerald-600" />
+                  <span className="flex items-center gap-1 text-gold-dark font-medium">
+                    <CheckCircle2 className="w-3.5 h-3.5 text-gold" />
+                    <span>Portal Feature</span>
+                  </span>
+                  <button
+                    type="button"
+                    onClick={() => {
+                      setSelectedFlyer(feat);
+                      setModalFormat('feed');
+                    }}
+                    className="text-xs text-gray-500 hover:text-primary underline font-medium"
+                  >
+                    Preview
+                  </button>
                 </div>
               </div>
             ))}
@@ -883,6 +928,99 @@ export default function RegistrationPage() {
           </p>
         </div>
       </section>
+
+      {/* High-Resolution Flyer Lightbox Modal */}
+      {selectedFlyer && (
+        <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/85 backdrop-blur-md animate-in fade-in duration-200">
+          <div className="relative max-w-lg w-full bg-primary-night border border-gold/40 rounded-3xl p-6 shadow-2xl text-white">
+            <div className="flex items-center justify-between pb-3 border-b border-white/10 mb-4">
+              <div>
+                <span className="text-[10px] font-mono font-bold text-gold uppercase tracking-wider">
+                  {selectedFlyer.id} · OFFICIAL FLYER
+                </span>
+                <h3 className="font-display font-bold text-lg text-white">
+                  {selectedFlyer.name}
+                </h3>
+              </div>
+              <button
+                type="button"
+                onClick={() => setSelectedFlyer(null)}
+                className="w-8 h-8 rounded-full bg-white/10 hover:bg-white/20 flex items-center justify-center text-gray-300 hover:text-white transition-colors"
+              >
+                <X className="w-5 h-5" />
+              </button>
+            </div>
+
+            {/* Format Selector Toggle */}
+            <div className="flex items-center justify-center gap-2 mb-4 bg-black/40 p-1 rounded-xl border border-white/10">
+              <button
+                type="button"
+                onClick={() => setModalFormat('feed')}
+                className={`px-3 py-1 rounded-lg text-xs font-bold transition-all ${
+                  modalFormat === 'feed' ? 'bg-gold text-primary-950 shadow' : 'text-gray-400 hover:text-white'
+                }`}
+              >
+                Square / Feed (4:5)
+              </button>
+              <button
+                type="button"
+                onClick={() => setModalFormat('status')}
+                className={`px-3 py-1 rounded-lg text-xs font-bold transition-all ${
+                  modalFormat === 'status' ? 'bg-gold text-primary-950 shadow' : 'text-gray-400 hover:text-white'
+                }`}
+              >
+                Story / WhatsApp Status (9:16)
+              </button>
+            </div>
+
+            {/* Flyer Image Container */}
+            <div
+              className={`relative mx-auto rounded-xl overflow-hidden bg-black shadow-2xl ring-1 ring-gold/30 ${
+                modalFormat === 'feed' ? 'aspect-[4/5] max-h-[380px]' : 'aspect-[9/16] max-h-[440px]'
+              }`}
+            >
+              <Image
+                src={
+                  modalFormat === 'feed'
+                    ? selectedFlyer.flyer.replace('_status.webp', '_feed.webp')
+                    : selectedFlyer.flyer.replace('_feed.webp', '_status.webp')
+                }
+                alt={selectedFlyer.name}
+                fill
+                className="object-contain"
+              />
+            </div>
+
+            <p className="text-xs text-gray-300 mt-4 leading-relaxed text-center font-serif">
+              {selectedFlyer.desc}
+            </p>
+
+            <div className="mt-5 pt-3 border-t border-white/10 flex items-center justify-between gap-3">
+              <a
+                href={
+                  modalFormat === 'feed'
+                    ? selectedFlyer.flyer.replace('_status.webp', '_feed.webp')
+                    : selectedFlyer.flyer.replace('_feed.webp', '_status.webp')
+                }
+                download
+                className="inline-flex items-center gap-1.5 px-3.5 py-2 rounded-xl bg-white/10 hover:bg-white/20 text-xs font-semibold text-white transition-colors"
+              >
+                <Download className="w-3.5 h-3.5 text-gold" />
+                <span>Save Artwork</span>
+              </a>
+              <a
+                href={portalUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-1.5 px-5 py-2 rounded-xl bg-gradient-to-r from-gold to-gold-metallic text-primary-950 font-black text-xs uppercase tracking-wider hover:from-gold-hover hover:to-gold transition-all shadow-gold-glow"
+              >
+                <span>Register on Portal</span>
+                <ExternalLink className="w-3.5 h-3.5" />
+              </a>
+            </div>
+          </div>
+        </div>
+      )}
     </div>
   );
 }

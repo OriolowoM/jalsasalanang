@@ -24,46 +24,47 @@ export default function MediaHighlightsSection({ galleries = [] }: Props) {
   const photos = galleries[0]?.photos?.length > 0 ? galleries[0].photos : defaultPhotos;
 
   return (
-    <section className="py-12 bg-surface-muted border-b border-surface-border">
+    <section className="py-14 sm:py-16 bg-surface-muted border-b border-surface-border">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between pb-3 mb-8 border-b-2 border-primary gap-2">
+        <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between pb-3.5 mb-8 border-b-2 border-primary gap-3">
           <div>
-            <div className="flex items-center gap-2">
-              <Camera className="w-5 h-5 text-primary" />
-              <h2 className="font-serif font-black text-2xl sm:text-3xl text-charcoal-heading">
+            <div className="flex items-center gap-2.5">
+              <Camera className="w-5 h-5 text-gold-metallic" />
+              <h2 className="font-display font-black text-2xl sm:text-3xl text-charcoal-heading tracking-tight">
                 Photography &amp; Visual Archives
               </h2>
             </div>
-            <p className="text-xs sm:text-sm text-gray-500 mt-1">
+            <p className="text-xs sm:text-sm text-gray-500 mt-1 font-serif">
               Documenting the spiritual ambiance, volunteer spirit, and historic moments across Jalsa Salana Nigeria conventions.
             </p>
           </div>
           <Link
             href="/galleries"
-            className="text-xs font-bold uppercase tracking-wider text-gold-dark hover:text-primary flex items-center gap-1 flex-shrink-0"
+            className="text-xs font-cinzel font-black uppercase tracking-[0.2em] text-gold-dark hover:text-primary flex items-center gap-1 flex-shrink-0 transition-colors"
           >
-            All Photo Albums <ArrowRight className="w-4 h-4" />
+            <span>All Photo Albums</span>
+            <ArrowRight className="w-4 h-4" />
           </Link>
         </div>
 
-        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-3 sm:gap-4">
+        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-3.5 sm:gap-5">
           {photos.slice(0, 6).map((photo: any, index: number) => (
             <div
               key={photo.id || index}
               onClick={() => setSelectedPhoto(photo)}
-              className="relative aspect-square rounded-xl overflow-hidden bg-gray-200 cursor-pointer group shadow-sm hover:shadow-md transition-all"
+              className="relative aspect-square rounded-2xl overflow-hidden bg-gray-200 cursor-pointer group shadow-sm hover:shadow-prestige ring-1 ring-black/5 hover:scale-[1.03] transition-all duration-500"
             >
               <Image
                 src={photo.url}
                 alt={photo.title || 'Jalsa photo'}
                 fill
-                className="object-cover group-hover:scale-105 transition-transform duration-300"
+                className="object-cover group-hover:scale-108 transition-transform duration-700 ease-out"
               />
-              <div className="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center text-white">
-                <Maximize2 className="w-5 h-5 drop-shadow" />
+              <div className="absolute inset-0 bg-primary-950/50 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center text-white backdrop-blur-[2px]">
+                <Maximize2 className="w-5 h-5 text-gold drop-shadow" />
               </div>
-              <div className="absolute bottom-0 inset-x-0 bg-gradient-to-t from-black/80 via-black/30 to-transparent p-2 text-white opacity-0 group-hover:opacity-100 transition-opacity">
-                <div className="text-[10px] font-bold line-clamp-1">{photo.title}</div>
+              <div className="absolute bottom-0 inset-x-0 bg-gradient-to-t from-primary-950/90 via-primary-950/40 to-transparent p-2.5 text-white opacity-0 group-hover:opacity-100 transition-opacity">
+                <div className="text-[11px] font-display font-bold line-clamp-1">{photo.title}</div>
               </div>
             </div>
           ))}

@@ -6,14 +6,17 @@ export default function EditorialFooter() {
   const currentYear = new Date().getFullYear();
 
   return (
-    <footer className="bg-primary-950 text-white border-t border-primary-900 mt-auto">
+    <footer className="bg-gradient-to-b from-primary-night via-primary-dark to-black text-white border-t-2 border-gold/40 mt-auto relative overflow-hidden">
+      {/* Subtle Islamic Stars Background Overlay */}
+      <div className="absolute inset-0 bg-islamic-stars opacity-25 pointer-events-none" />
+
       {/* Top Footer Grid */}
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 lg:py-16">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-14 lg:py-16 relative z-10">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-8 lg:gap-12">
           {/* Col 1: Brand & Jama'at Summary (4 cols) */}
           <div className="lg:col-span-4 space-y-4">
-            <Link href="/" className="flex items-center gap-3">
-              <div className="relative w-12 h-12 flex-shrink-0">
+            <Link href="/" className="flex items-center gap-3.5 group">
+              <div className="relative w-12 h-12 flex-shrink-0 group-hover:scale-105 transition-transform">
                 <Image
                   src="/images/jalsa-emblem.png"
                   alt="Jalsa Salana Official Logo"
@@ -22,26 +25,26 @@ export default function EditorialFooter() {
                 />
               </div>
               <div>
-                <span className="font-serif font-black text-lg tracking-wider text-white block">
+                <span className="font-display font-black text-xl tracking-[0.14em] text-white block group-hover:text-gold transition-colors">
                   JALSA SALANA
                 </span>
-                <span className="text-[10px] uppercase font-bold tracking-[0.2em] text-gold block">
+                <span className="text-[10px] uppercase font-bold tracking-[0.28em] text-gold-metallic block">
                   Nigeria — Digital Publication
                 </span>
               </div>
             </Link>
 
-            <p className="text-xs text-gray-300 leading-relaxed">
+            <p className="text-xs text-gray-300 leading-relaxed font-serif">
               Jalsa Salana Nigeria is the premier annual spiritual, educational, and intellectual gathering of the Ahmadiyya Muslim Jama&apos;at Nigeria, dedicated to peace, moral reformation, and divine guidance under the blessed institution of Khilafat-e-Ahmadiyya.
             </p>
 
             {/* Official 72nd Edition Logo Badge */}
             <div className="pt-1">
-              <span className="text-[10px] uppercase font-bold tracking-wider text-gray-400 block mb-1.5">
+              <span className="text-[10px] uppercase font-cinzel font-bold tracking-[0.2em] text-gold block mb-2">
                 Upcoming Convention
               </span>
-              <div className="inline-block bg-white px-3 py-1.5 rounded-lg shadow-sm">
-                <div className="relative h-8 w-36 sm:w-40">
+              <div className="inline-block bg-white/95 px-3.5 py-1.5 rounded-xl shadow-md border border-gold/30">
+                <div className="relative h-8 w-36 sm:w-44">
                   <Image
                     src="/images/jalsa72-logo.jpg"
                     alt="72nd Jalsa Salana Nigeria 2026 Official Logo"
@@ -52,17 +55,17 @@ export default function EditorialFooter() {
               </div>
             </div>
 
-            <div className="text-[11px] text-gray-400 border-l-2 border-gold pl-3 italic">
+            <div className="text-[11px] text-gray-400 border-l-2 border-gold pl-3 italic font-serif">
               &ldquo;Love for All, Hatred for None&rdquo; — Universal motto of the Ahmadiyya Muslim Community.
             </div>
           </div>
 
           {/* Col 2: Publication Sections (3 cols) */}
           <div className="lg:col-span-3 space-y-3">
-            <h4 className="font-bold text-xs uppercase tracking-widest text-gold">
+            <h4 className="font-cinzel font-black text-xs uppercase tracking-[0.2em] text-gold-metallic">
               Editorial Sections
             </h4>
-            <ul className="space-y-2 text-xs text-gray-300">
+            <ul className="space-y-2 text-xs text-gray-300 font-medium">
               <li>
                 <Link href="/registration" className="text-gold font-bold hover:underline flex items-center gap-1.5">
                   <span className="w-1.5 h-1.5 rounded-full bg-gold animate-ping"></span>

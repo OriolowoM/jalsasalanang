@@ -112,7 +112,7 @@ export default async function ArticleDetailPage({ params }: { params: { slug: st
             )}
           </div>
 
-          <h1 className="font-serif font-black text-3xl sm:text-4xl lg:text-5xl text-charcoal-heading leading-[1.18] mb-4">
+          <h1 className="font-display font-black text-3xl sm:text-4xl lg:text-5xl text-charcoal-heading leading-[1.14] mb-4 tracking-tight">
             {article.title}
           </h1>
 
@@ -125,7 +125,7 @@ export default async function ArticleDetailPage({ params }: { params: { slug: st
           {/* Author Byline & Date Bar */}
           <div className="flex flex-wrap items-center justify-between gap-4 py-4 border-y border-gray-200">
             <div className="flex items-center gap-3">
-              <div className="relative w-11 h-11 rounded-full overflow-hidden bg-primary/10 flex-shrink-0">
+              <div className="relative w-11 h-11 rounded-full overflow-hidden bg-primary/10 flex-shrink-0 ring-2 ring-gold/40 shadow-sm">
                 <Image
                   src={article.author?.avatar || '/images/jalsa-crest.png'}
                   alt={article.author?.name || 'Author'}
@@ -144,12 +144,12 @@ export default async function ArticleDetailPage({ params }: { params: { slug: st
             </div>
 
             <div className="flex items-center gap-4 text-xs text-gray-400 font-medium">
-              <span className="flex items-center gap-1 text-gray-600">
+              <span className="flex items-center gap-1.5 text-gray-600">
                 <Calendar className="w-3.5 h-3.5 text-primary" />
                 {article.publishedAt ? new Date(article.publishedAt).toLocaleDateString('en-GB', { day: 'numeric', month: 'long', year: 'numeric' }) : 'October 2026'}
               </span>
               <span>•</span>
-              <span className="flex items-center gap-1 text-gray-600">
+              <span className="flex items-center gap-1.5 text-gray-600">
                 <Clock className="w-3.5 h-3.5 text-gold-dark" />
                 {article.readingTime || 5} min read
               </span>
@@ -160,7 +160,7 @@ export default async function ArticleDetailPage({ params }: { params: { slug: st
         {/* Featured Image */}
         {article.featuredImage && (
           <div className="mb-10">
-            <div className="relative aspect-[16/9] rounded-xl overflow-hidden bg-gray-100 shadow-sm">
+            <div className="relative aspect-[16/9] rounded-2xl overflow-hidden bg-gray-100 shadow-prestige ring-1 ring-black/5">
               <Image
                 src={article.featuredImage}
                 alt={article.title}
@@ -170,8 +170,8 @@ export default async function ArticleDetailPage({ params }: { params: { slug: st
               />
             </div>
             {article.imageCredit && (
-              <div className="text-xs text-gray-500 mt-2 text-right italic">
-                {article.imageCredit}
+              <div className="text-xs text-gray-500 mt-2 text-right italic font-serif">
+                Photo Credit: {article.imageCredit}
               </div>
             )}
           </div>
@@ -187,9 +187,9 @@ export default async function ArticleDetailPage({ params }: { params: { slug: st
             {/* Dynamic Table of Contents */}
             <TableOfContents content={article.content} />
 
-            {/* Rich Text Body */}
+            {/* Rich Text Body with Prestige Editorial Drop Cap */}
             <div
-              className="prose prose-lg max-w-none text-charcoal font-serif text-[17px] sm:text-[18px] leading-[1.85]"
+              className="prose prose-lg max-w-none text-charcoal font-serif text-[17px] sm:text-[18px] leading-[1.88] editorial-drop-cap"
               dangerouslySetInnerHTML={{ __html: article.content }}
             />
 

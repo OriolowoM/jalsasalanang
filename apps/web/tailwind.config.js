@@ -10,6 +10,8 @@ module.exports = {
         primary: {
           DEFAULT: '#064e3b',
           dark: '#022c22',
+          deep: '#011c15',
+          night: '#031911',
           light: '#0d9488',
           subtle: '#f0fdf4',
           50: '#f0fdf4',
@@ -30,12 +32,16 @@ module.exports = {
           subtle: '#fef9ee',
           light: '#dfc792',
           dark: '#937435',
+          metallic: '#d4af37',
+          foil: '#f3e5ab',
+          sheen: '#b8923a',
         },
         surface: {
           bg: '#fbfaf8',
           card: '#ffffff',
           muted: '#f4f1eb',
           border: '#e5e2da',
+          parchment: '#f7f4ec',
         },
         charcoal: {
           DEFAULT: '#18181b',
@@ -45,7 +51,9 @@ module.exports = {
         },
       },
       fontFamily: {
-        serif: ['var(--font-serif)', 'Merriweather', 'Georgia', 'serif'],
+        serif: ['var(--font-serif)', '"Playfair Display"', 'Merriweather', 'Georgia', 'serif'],
+        display: ['"Playfair Display"', 'var(--font-serif)', 'Georgia', 'serif'],
+        cinzel: ['var(--font-cinzel)', '"Cinzel"', 'serif'],
         sans: ['var(--font-sans)', 'Plus Jakarta Sans', 'system-ui', 'sans-serif'],
         arabic: ['Amiri', 'Traditional Arabic', 'serif'],
       },

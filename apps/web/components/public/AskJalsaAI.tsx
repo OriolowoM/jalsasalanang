@@ -150,50 +150,50 @@ export default function AskJalsaAI() {
 
   return (
     <>
-      {/* Floating Trigger Button */}
+      {/* Floating Trigger Button with Prestige Gold & Emerald Sheen */}
       <div className="fixed bottom-6 right-6 z-40">
         <button
           onClick={() => setIsOpen(!isOpen)}
-          className="group relative flex items-center gap-2.5 px-4 py-3 bg-gradient-to-r from-primary to-primary-dark hover:from-primary-dark hover:to-primary text-white rounded-full shadow-2xl transition-all duration-300 hover:scale-105 border border-gold/40"
+          className="group relative flex items-center gap-2.5 px-4.5 py-3 bg-gradient-to-r from-primary-night via-primary-dark to-primary hover:from-primary hover:to-primary-night text-white rounded-full shadow-emerald-glow transition-all duration-300 hover:scale-105 border-2 border-gold/50 active:scale-95"
           title="Ask Jalsa AI Assistant"
         >
           <div className="relative">
-            <Sparkles className="w-5 h-5 text-gold animate-spin-slow" />
+            <Sparkles className="w-5 h-5 text-gold-metallic" />
             <span className="absolute -top-1 -right-1 w-2.5 h-2.5 bg-gold rounded-full animate-ping" />
           </div>
-          <span className="font-serif font-bold text-xs tracking-wide">
+          <span className="font-display font-bold text-xs tracking-wide">
             Ask Jalsa AI
           </span>
-          <span className="hidden sm:inline-block text-[10px] uppercase font-extrabold px-1.5 py-0.5 rounded bg-gold/20 text-gold-light border border-gold/30">
-            Intelligent Guide
+          <span className="hidden sm:inline-block text-[10px] font-cinzel font-black uppercase px-2 py-0.5 rounded-full bg-gold/20 text-gold-metallic border border-gold/40">
+            Guide
           </span>
         </button>
       </div>
 
       {/* Slide-in Conversational Drawer */}
       {isOpen && (
-        <div className="fixed inset-y-0 right-0 z-50 w-full sm:w-[440px] bg-white shadow-2xl flex flex-col border-l border-gray-200 animate-slide-left">
-          {/* Drawer Header */}
-          <div className="p-4 bg-gradient-to-r from-primary-950 via-primary to-primary-900 text-white flex items-center justify-between border-b border-primary-800">
+        <div className="fixed inset-y-0 right-0 z-50 w-full sm:w-[450px] bg-white shadow-2xl flex flex-col border-l border-gold/30 animate-in slide-in-from-right duration-250">
+          {/* Drawer Header with Royal Islamic Emerald Styling */}
+          <div className="p-4 sm:p-5 bg-gradient-to-r from-primary-night via-primary-dark to-primary text-white flex items-center justify-between border-b border-gold/30">
             <div className="flex items-center gap-3">
-              <div className="w-9 h-9 rounded-full bg-gold/20 border border-gold/40 flex items-center justify-center text-gold">
-                <Bot className="w-5 h-5" />
+              <div className="w-10 h-10 rounded-2xl bg-gold/20 border border-gold/40 flex items-center justify-center text-gold shadow-gold-glow">
+                <Bot className="w-5 h-5 text-gold-metallic" />
               </div>
               <div>
-                <h3 className="font-serif font-bold text-sm tracking-wide text-white flex items-center gap-1.5">
+                <h3 className="font-display font-bold text-base tracking-wide text-white flex items-center gap-2">
                   <span>Ask Jalsa AI</span>
-                  <span className="text-[9px] bg-gold text-primary-950 font-black px-1.5 py-0.5 rounded uppercase">
-                    Beta
+                  <span className="text-[9px] font-cinzel font-black bg-gold text-primary-950 px-2 py-0.5 rounded-full uppercase shadow">
+                    Assistant
                   </span>
                 </h3>
-                <p className="text-[10px] text-gray-300">
+                <p className="text-[11px] text-gray-300 font-serif">
                   Grounded on Ahmadiyya archives &amp; AlIslam.org
                 </p>
               </div>
             </div>
             <button
               onClick={() => setIsOpen(false)}
-              className="p-1.5 text-gray-400 hover:text-white rounded-lg hover:bg-white/10 transition-colors"
+              className="p-2 text-gray-400 hover:text-white rounded-xl hover:bg-white/10 transition-colors"
             >
               <X className="w-5 h-5" />
             </button>
