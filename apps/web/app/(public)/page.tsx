@@ -2,6 +2,7 @@ import React from 'react';
 import { getArticles, getEditions, getCurrentEdition, getSpeeches, getGalleries } from '@/lib/api';
 import HeroSection from '@/components/public/HeroSection';
 import CountdownSection from '@/components/public/CountdownSection';
+import RegistrationShowcase from '@/components/public/RegistrationShowcase';
 import EditorialGrid from '@/components/public/EditorialGrid';
 import SpeechesSection from '@/components/public/SpeechesSection';
 import MediaHighlightsSection from '@/components/public/MediaHighlightsSection';
@@ -49,6 +50,9 @@ export default async function HomePage() {
 
       {/* 2. Jalsa Salana 2026 Special Coverage Hub & Live Countdown */}
       <CountdownSection />
+
+      {/* Prominent Jalsa 2026 Registration Showcase Section */}
+      <RegistrationShowcase />
 
       {/* 3. Editor's Picks & Latest Articles Feed */}
       <EditorialGrid editorsPicks={editorsPicks} latestArticles={latestArticles} />

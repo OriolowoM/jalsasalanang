@@ -64,6 +64,12 @@ export default function EditorialFooter() {
             </h4>
             <ul className="space-y-2 text-xs text-gray-300">
               <li>
+                <Link href="/registration" className="text-gold font-bold hover:underline flex items-center gap-1.5">
+                  <span className="w-1.5 h-1.5 rounded-full bg-gold animate-ping"></span>
+                  Registration &amp; Tags Hub 2026
+                </Link>
+              </li>
+              <li>
                 <Link href="/articles" className="hover:text-gold transition-colors">
                   Articles, Research &amp; Features
                 </Link>
@@ -74,9 +80,9 @@ export default function EditorialFooter() {
                 </Link>
               </li>
               <li>
-                <Link href="/editions/2026" className="hover:text-gold transition-colors font-bold text-white flex items-center gap-1.5">
-                  <span className="w-1.5 h-1.5 rounded-full bg-gold"></span>
-                  Jalsa Salana 2026 Hub
+                <Link href="/editions/2026" className="hover:text-gold transition-colors font-medium text-white flex items-center gap-1.5">
+                  <span className="w-1.5 h-1.5 rounded-full bg-primary-light"></span>
+                  Jalsa Salana 2026 Edition Hub
                 </Link>
               </li>
               <li>
@@ -142,6 +148,17 @@ export default function EditorialFooter() {
               KM 27, Abeokuta Expressway, Ojokoro, Lagos State, Nigeria.
             </p>
             <div className="pt-1 space-y-1.5 text-xs text-gray-300">
+              <div>
+                <a
+                  href="https://jalsa.ahmadiyyanigeria.net/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-gold font-semibold hover:underline flex items-center gap-1"
+                >
+                  <span>Portal: jalsa.ahmadiyyanigeria.net</span>
+                  <span className="text-[10px]">↗</span>
+                </a>
+              </div>
               <div>
                 <Link href="/about" className="hover:text-gold transition-colors">
                   About Jalsa Salana Nigeria

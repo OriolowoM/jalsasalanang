@@ -62,12 +62,21 @@ export default function MastheadHeader() {
               </kbd>
             </button>
 
+            {/* Jalsa 2026 Registration Button */}
+            <Link
+              href="/registration"
+              className="inline-flex items-center gap-1.5 px-3 sm:px-4 py-1.5 rounded-full bg-gold hover:bg-gold-hover text-primary-950 transition-all text-xs font-black shadow-md hover:scale-105"
+              title="72nd Jalsa Salana Nigeria Registration"
+            >
+              <span className="w-2 h-2 rounded-full bg-primary animate-pulse"></span>
+              <span>Register Now</span>
+            </Link>
+
             {/* Jalsa 2026 Special Badge Link */}
             <Link
               href="/editions/2026"
-              className="hidden sm:inline-flex items-center gap-1 px-3 py-1.5 rounded-full bg-primary text-white hover:bg-primary-dark transition-colors text-xs font-bold shadow-sm"
+              className="hidden lg:inline-flex items-center gap-1 px-3 py-1.5 rounded-full bg-primary text-white hover:bg-primary-dark transition-colors text-xs font-bold shadow-sm"
             >
-              <span className="w-2 h-2 rounded-full bg-gold animate-pulse"></span>
               Jalsa 2026 Hub
             </Link>
 
@@ -89,6 +98,10 @@ export default function MastheadHeader() {
             <div className="flex items-center space-x-1 sm:space-x-4 lg:space-x-6 py-2.5 overflow-x-auto">
               <Link href="/" className="text-primary hover:text-gold transition-colors py-1">
                 Home
+              </Link>
+              <Link href="/registration" className="text-gold-dark hover:text-primary transition-colors py-1 flex items-center gap-1 font-black">
+                <span>Registration</span>
+                <span className="text-[9px] bg-gold/20 text-gold-dark border border-gold/40 px-1.5 py-0.5 rounded">2026</span>
               </Link>
               <Link href="/articles" className="text-charcoal hover:text-primary transition-colors py-1">
                 Articles & Features
@@ -129,6 +142,14 @@ export default function MastheadHeader() {
         {isMobileMenuOpen && (
           <div className="md:hidden border-t border-gray-200 bg-white px-4 pt-3 pb-6 space-y-3 animate-in slide-in-from-top-2 duration-150">
             <div className="flex flex-col space-y-2 text-sm font-semibold text-charcoal">
+              <Link
+                href="/registration"
+                onClick={() => setIsMobileMenuOpen(false)}
+                className="py-2.5 px-3 rounded-lg bg-gold/20 border border-gold/40 text-primary font-black flex items-center justify-between"
+              >
+                <span>Register for Jalsa 2026</span>
+                <span className="text-[10px] uppercase font-extrabold bg-gold text-primary-950 px-2 py-0.5 rounded">Portal</span>
+              </Link>
               <Link
                 href="/"
                 onClick={() => setIsMobileMenuOpen(false)}
