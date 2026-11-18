@@ -36,21 +36,21 @@ export default function NewsletterForm() {
   };
 
   return (
-    <section className="py-12 bg-primary-dark text-white relative overflow-hidden">
+    <section className="py-20 sm:py-24 bg-forest text-white relative overflow-hidden border-t border-teal/15">
       <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10">
-        <div className="inline-flex items-center justify-center w-12 h-12 rounded-full bg-gold/20 text-gold mb-4 border border-gold/30">
-          <Mail className="w-6 h-6" />
+        <div className="inline-flex items-center justify-center w-14 h-14 rounded-2xl bg-teal/20 text-lime mb-5 border border-teal/30">
+          <Mail className="w-7 h-7" />
         </div>
 
-        <h2 className="font-serif font-black text-2xl sm:text-3xl text-white mb-2">
+        <h2 className="font-display font-extrabold text-2xl sm:text-3xl lg:text-4xl text-white mb-3 tracking-tight">
           Subscribe to Jalsa Salana Nigeria Publications
         </h2>
-        <p className="text-sm text-gray-300 max-w-xl mx-auto mb-6 leading-relaxed">
+        <p className="text-base text-white/70 max-w-xl mx-auto mb-8 leading-relaxed font-sans">
           Receive official communiques, caliphal discourses, quarterly theological essays, and updates regarding the upcoming 72nd Annual Convention in 2026.
         </p>
 
         {status === 'success' ? (
-          <div className="p-4 rounded-xl bg-white/10 border border-gold/40 text-gold-light max-w-lg mx-auto flex items-center justify-center gap-2 animate-in fade-in">
+          <div className="p-5 rounded-2xl bg-teal/20 border border-teal/30 text-lime max-w-lg mx-auto flex items-center justify-center gap-3 animate-in fade-in">
             <CheckCircle className="w-5 h-5 flex-shrink-0" />
             <span className="text-sm font-semibold">{message}</span>
           </div>
@@ -67,13 +67,13 @@ export default function NewsletterForm() {
               autoComplete="off"
             />
 
-            <div className="grid grid-cols-1 sm:grid-cols-12 gap-2">
+            <div className="grid grid-cols-1 sm:grid-cols-12 gap-2.5">
               <input
                 type="text"
                 placeholder="Full Name (optional)"
                 value={fullName}
                 onChange={(e) => setFullName(e.target.value)}
-                className="sm:col-span-4 px-4 py-3 rounded-lg text-sm bg-white/10 border border-white/20 text-white placeholder-gray-400 outline-none focus:border-gold transition-colors"
+                className="sm:col-span-4 px-4 py-3.5 rounded-2xl text-sm bg-white/10 border border-white/15 text-white placeholder-white/40 outline-none focus:border-teal transition-colors font-sans"
               />
               <input
                 type="email"
@@ -81,12 +81,12 @@ export default function NewsletterForm() {
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
                 required
-                className="sm:col-span-5 px-4 py-3 rounded-lg text-sm bg-white/10 border border-white/20 text-white placeholder-gray-400 outline-none focus:border-gold transition-colors"
+                className="sm:col-span-5 px-4 py-3.5 rounded-2xl text-sm bg-white/10 border border-white/15 text-white placeholder-white/40 outline-none focus:border-teal transition-colors font-sans"
               />
               <button
                 type="submit"
                 disabled={status === 'loading'}
-                className="sm:col-span-3 px-5 py-3 rounded-lg bg-gold hover:bg-gold-hover text-primary-950 font-bold text-xs uppercase tracking-wider transition-colors disabled:opacity-50 flex items-center justify-center shadow-lg"
+                className="sm:col-span-3 px-6 py-3.5 rounded-2xl bg-teal hover:bg-teal-500 text-white font-bold text-xs uppercase tracking-wider transition-colors disabled:opacity-50 flex items-center justify-center shadow-glow-teal font-display"
               >
                 {status === 'loading' ? (
                   <Loader2 className="w-4 h-4 animate-spin" />
@@ -103,7 +103,7 @@ export default function NewsletterForm() {
               </div>
             )}
 
-            <p className="text-[11px] text-gray-400 mt-2">
+            <p className="text-xs text-white/40 mt-3 font-sans">
               We respect your privacy. Unsubscribe at any time with one click.
             </p>
           </form>

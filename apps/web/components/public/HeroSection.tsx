@@ -1,7 +1,8 @@
 import React from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
-import { Clock, User, ArrowUpRight } from 'lucide-react';
+import { Clock, User, ArrowRight } from 'lucide-react';
+import HeroCompanionBar from './HeroCompanionBar';
 
 interface Props {
   heroArticle?: any;
@@ -12,154 +13,145 @@ export default function HeroSection({ heroArticle, secondaryArticles = [] }: Pro
   if (!heroArticle && secondaryArticles.length === 0) return null;
 
   return (
-    <section className="py-6 sm:py-10 border-b border-surface-border bg-gradient-to-b from-white via-surface-bg to-surface-bg relative">
+    <section className="pt-6 sm:pt-14 pb-12 sm:pb-20 relative overflow-hidden">
+      {/* Soft gradient mesh background — subtle, organic feel */}
+      <div className="absolute inset-0 -z-10">
+        <div className="absolute top-0 right-0 w-[600px] h-[600px] bg-lime-50 rounded-full blur-[120px] opacity-60 -mr-40 -mt-20" />
+        <div className="absolute bottom-0 left-0 w-[500px] h-[500px] bg-teal-50 rounded-full blur-[100px] opacity-40 -ml-32 -mb-32" />
+      </div>
+
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12">
-          {/* Main Hero Story (Left Column: 7 Cols) */}
+        {/* Asymmetrical grid: hero image deliberately larger, overlapping */}
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-0 items-start">
+
+          {/* ── Main Story: Left 8 cols, image slightly bleeds right ── */}
           {heroArticle && (
-            <div className="lg:col-span-7 flex flex-col justify-between group">
+            <div className="lg:col-span-8 lg:pr-12 group">
+              {/* Oversized image container */}
               <Link
-                href={`/articles/${heroArticle.slug}`}
-                className="block overflow-hidden rounded-2xl mb-5 relative aspect-[16/10] bg-gray-100 shadow-prestige ring-1 ring-black/5"
+                href={`/blog/${heroArticle.slug}`}
+                className="block relative aspect-[16/10] sm:aspect-[16/9] rounded-2xl sm:rounded-3xl overflow-hidden bg-surface-muted mb-6 lg:mb-8 lg:-mr-8 shadow-soft"
               >
                 <Image
-                  src={heroArticle.featuredImage || '/images/70th-jalsa-hero.jpg'}
+                  src={heroArticle.featuredImage || '/images/jalsa_gallery/jalsa-main-stage-keynote-podium.jpg'}
                   alt={heroArticle.title}
                   fill
-                  className="object-cover group-hover:scale-105 transition-transform duration-700 ease-out"
+                  className="object-cover group-hover:scale-[1.03] transition-transform duration-700 ease-out"
                   priority
                 />
-                {/* Multi-layered cinematic gradient */}
-                <div className="absolute inset-0 bg-gradient-to-t from-primary-950/85 via-primary-950/25 to-transparent" />
-                
-                {/* Overlay Badge & Credit */}
-                <div className="absolute top-4 left-4 flex items-center gap-2">
-                  <span className="px-3.5 py-1.5 rounded-full bg-primary text-white text-[10px] font-black uppercase tracking-[0.2em] shadow-emerald-glow border border-primary-400/30">
+                {/* Cinematic bottom gradient */}
+                <div className="absolute inset-x-0 bottom-0 h-1/3 bg-gradient-to-t from-forest-950/60 to-transparent" />
+
+                {/* Category pill */}
+                <div className="absolute top-4 left-4 sm:top-5 sm:left-5">
+                  <span className="px-3 py-1.5 rounded-full bg-teal text-white text-[10px] sm:text-[11px] font-bold tracking-wide shadow-sm">
                     {heroArticle.categories?.[0]?.name || 'Cover Story'}
                   </span>
-                  {heroArticle.edition && (
-                    <span className="px-3 py-1.5 rounded-full bg-gold-metallic text-primary-950 text-[10px] font-black uppercase tracking-wider shadow-gold-glow border border-white/40">
-                      {heroArticle.edition.editionNumber || heroArticle.edition.year}
-                    </span>
-                  )}
                 </div>
-
-                {heroArticle.imageCredit && (
-                  <div className="absolute bottom-3 right-3 text-[10px] text-gray-200 bg-black/60 px-2.5 py-1 rounded-full backdrop-blur-md border border-white/10 font-medium">
-                    Photo: {heroArticle.imageCredit}
-                  </div>
-                )}
               </Link>
 
-              <div>
-                <div className="flex items-center gap-2 mb-2 text-xs font-bold uppercase tracking-[0.25em] text-gold-dark">
-                  <span>Lead Editorial</span>
-                  <span>·</span>
-                  <span>Featured Analysis</span>
+              {/* Text block */}
+              <div className="max-w-2xl">
+                <div className="flex items-center gap-2.5 sm:gap-3 mb-3 sm:mb-4">
+                  <span className="text-[10px] sm:text-[11px] font-bold uppercase tracking-[0.2em] text-teal">
+                    Lead Editorial
+                  </span>
+                  <span className="w-6 sm:w-8 h-[1px] bg-teal/30" />
+                  <span className="text-[10px] sm:text-[11px] font-medium uppercase tracking-[0.15em] text-ink-muted">
+                    Featured Analysis
+                  </span>
                 </div>
 
-                <Link href={`/articles/${heroArticle.slug}`}>
-                  <h1 className="font-display font-black text-2xl sm:text-3xl lg:text-4xl text-charcoal-heading group-hover:text-primary transition-colors leading-[1.15] mb-3 tracking-tight">
+                <Link href={`/blog/${heroArticle.slug}`}>
+                  <h1 className="font-display font-extrabold text-2xl sm:text-4xl lg:text-display-lg text-forest group-hover:text-teal transition-colors duration-300 mb-3 sm:mb-5 leading-snug">
                     {heroArticle.title}
                   </h1>
                 </Link>
 
                 {heroArticle.subtitle && (
-                  <p className="text-gray-600 text-sm sm:text-base leading-relaxed mb-4 line-clamp-3 font-serif">
+                  <p className="text-ink-muted text-sm sm:text-base leading-relaxed mb-4 sm:mb-6 max-w-xl font-sans">
                     {heroArticle.subtitle}
                   </p>
                 )}
 
-                <div className="flex flex-wrap items-center gap-4 text-xs text-charcoal-muted border-t border-gray-200/60 pt-3.5">
-                  <div className="flex items-center gap-2 font-semibold text-charcoal">
-                    <div className="w-5 h-5 rounded-full bg-primary/10 flex items-center justify-center text-primary">
-                      <User className="w-3 h-3" />
+                <div className="flex flex-wrap items-center gap-3 sm:gap-5 text-xs sm:text-sm text-ink-muted">
+                  <div className="flex items-center gap-2 font-medium text-ink-body">
+                    <div className="w-6 h-6 sm:w-7 sm:h-7 rounded-full bg-teal/10 flex items-center justify-center text-teal">
+                      <User className="w-3.5 h-3.5" />
                     </div>
                     <span>{heroArticle.author?.name || 'Editorial Board'}</span>
                   </div>
-                  <span className="text-gray-300">•</span>
-                  <div className="flex items-center gap-1.5 font-medium text-gold-dark">
+                  <div className="flex items-center gap-1.5 text-teal font-medium">
                     <Clock className="w-3.5 h-3.5" />
                     <span>{heroArticle.readingTime || 5} min read</span>
                   </div>
-                  <span className="text-gray-300">•</span>
-                  <time className="text-gray-400 font-medium">
+                  <time className="text-ink-light font-medium">
                     {heroArticle.publishedAt
                       ? new Date(heroArticle.publishedAt).toLocaleDateString('en-GB', { day: 'numeric', month: 'long', year: 'numeric' })
                       : 'October 2026'}
                   </time>
                 </div>
+
+                {/* AI Concierge Search Assistant Bar */}
+                <HeroCompanionBar />
               </div>
             </div>
           )}
 
-          {/* Secondary Featured Stories (Right Column: 5 Cols) */}
-          <div className="lg:col-span-5 flex flex-col justify-between">
-            <div className="mb-4 pb-2.5 border-b-2 border-gold/40 flex items-center justify-between">
-              <div className="flex items-center gap-2">
-                <span className="w-2 h-2 rounded-full bg-gold animate-pulse"></span>
-                <h2 className="text-xs font-cinzel font-black tracking-[0.2em] uppercase text-primary">
-                  Editorial Highlights
-                </h2>
-              </div>
-              <Link href="/articles" className="text-xs font-bold text-gold-dark hover:text-primary flex items-center gap-1 transition-colors">
-                <span>View Full Index</span>
-                <ArrowUpRight className="w-3.5 h-3.5" />
+          {/* ── Secondary Stories: Right 4 cols — staggered, offset ── */}
+          <div className="lg:col-span-4 lg:pt-8 flex flex-col gap-1">
+            <div className="flex items-center justify-between mb-5 pb-3 border-b border-teal/15">
+              <h2 className="text-xs font-display font-bold tracking-[0.15em] uppercase text-forest">
+                Latest Blog Highlights
+              </h2>
+              <Link href="/blog" className="text-xs font-semibold text-teal hover:text-forest flex items-center gap-1 transition-colors">
+                <span>View All</span>
+                <ArrowRight className="w-3 h-3" />
               </Link>
             </div>
 
-            <div className="space-y-4 divide-y divide-gray-100">
+            <div className="space-y-0 divide-y divide-surface-border/60">
               {secondaryArticles.slice(0, 3).map((article: any, index: number) => (
                 <article
                   key={article.id || index}
-                  className="pt-4 first:pt-0 group hover:bg-surface-parchment/70 p-2.5 rounded-xl transition-all duration-300"
+                  className="py-5 first:pt-0 last:pb-0 group"
                 >
-                  <div className="grid grid-cols-12 gap-4 items-center">
-                    <div className="col-span-8 flex gap-3">
-                      {/* Serif Numeral */}
-                      <span className="font-display font-black text-2xl sm:text-3xl text-gold/40 group-hover:text-gold transition-colors select-none leading-none pt-0.5">
-                        0{index + 1}
+                  <div className="flex gap-4 items-start">
+                    {/* Staggered numeral — large, muted */}
+                    <span className="font-display font-extrabold text-3xl text-surface-border group-hover:text-teal/30 transition-colors select-none leading-none shrink-0 mt-0.5">
+                      {String(index + 1).padStart(2, '0')}
+                    </span>
+
+                    <div className="flex-1 min-w-0">
+                      <span className="text-[10px] font-semibold uppercase tracking-widest text-teal mb-1.5 block">
+                        {article.categories?.[0]?.name || 'Editorial'}
                       </span>
-                      <div className="flex-1">
-                        <div className="flex items-center gap-2 mb-1">
-                          <span className="text-[10px] font-black uppercase tracking-wider text-primary bg-primary-50 px-2 py-0.5 rounded border border-primary-100">
-                            {article.categories?.[0]?.name || 'Editorial'}
-                          </span>
-                        </div>
 
-                        <Link href={`/articles/${article.slug}`}>
-                          <h3 className="font-display font-bold text-sm sm:text-base text-charcoal group-hover:text-primary transition-colors line-clamp-2 leading-snug">
-                            {article.title}
-                          </h3>
-                        </Link>
+                      <Link href={`/blog/${article.slug}`}>
+                        <h3 className="font-display font-bold text-[15px] text-ink-heading group-hover:text-teal transition-colors line-clamp-2 leading-snug mb-2">
+                          {article.title}
+                        </h3>
+                      </Link>
 
-                        {article.subtitle && (
-                          <p className="text-xs text-gray-500 line-clamp-1 mt-1 font-serif">
-                            {article.subtitle}
-                          </p>
-                        )}
-
-                        <div className="flex items-center gap-2 text-[11px] text-gray-400 mt-2">
-                          <span className="font-semibold text-charcoal-heading">{article.author?.name}</span>
-                          <span>•</span>
-                          <span className="text-gold-dark font-medium">{article.readingTime || 4} min</span>
-                        </div>
+                      <div className="flex items-center gap-2 text-[12px] text-ink-muted">
+                        <span className="font-semibold text-ink-body">{article.author?.name}</span>
+                        <span className="text-surface-border">·</span>
+                        <span className="text-teal font-medium">{article.readingTime || 4} min</span>
                       </div>
                     </div>
 
-                    <div className="col-span-4">
-                      <Link
-                        href={`/articles/${article.slug}`}
-                        className="block relative aspect-[4/3] rounded-xl overflow-hidden bg-gray-100 shadow-sm ring-1 ring-black/5"
-                      >
-                        <Image
-                          src={article.featuredImage || '/images/jalsa-convention-a.jpg'}
-                          alt={article.title}
-                          fill
-                          className="object-cover group-hover:scale-108 transition-transform duration-500"
-                        />
-                      </Link>
-                    </div>
+                    {/* Thumbnail — slightly rounded, smaller */}
+                    <Link
+                      href={`/blog/${article.slug}`}
+                      className="block relative w-20 h-20 shrink-0 rounded-2xl overflow-hidden bg-surface-muted"
+                    >
+                      <Image
+                        src={article.featuredImage || '/images/jalsa_gallery/jalsa-crowd-marquee-gathering.jpg'}
+                        alt={article.title}
+                        fill
+                        className="object-cover group-hover:scale-105 transition-transform duration-500"
+                      />
+                    </Link>
                   </div>
                 </article>
               ))}

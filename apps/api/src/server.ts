@@ -51,11 +51,13 @@ app.use('/api/v1', apiRouter);
 // Global Error Handler
 app.use(errorHandler);
 
-// Start server
-app.listen(config.port, () => {
-  console.log(`[API Server] Jalsa Salana Nigeria REST API running on port ${config.port} in ${config.nodeEnv} mode`);
-  console.log(`[API Server] Base URL: http://localhost:${config.port}/api/v1`);
-  console.log(`[API Server] Health Check: http://localhost:${config.port}/health`);
-});
+// Start server if run directly (standalone)
+if (require.main === module || process.env.RUN_STANDALONE === 'true') {
+  app.listen(config.port, () => {
+    console.log(`[API Server] Jalsa Salana Nigeria REST API running on port ${config.port} in ${config.nodeEnv} mode`);
+    console.log(`[API Server] Base URL: http://localhost:${config.port}/api/v1`);
+    console.log(`[API Server] Health Check: http://localhost:${config.port}/health`);
+  });
+}
 
 export default app;

@@ -1,102 +1,113 @@
-@import url('https://fonts.googleapis.com/css2?family=Amiri:ital,wght@0,400;0,700;1,400&family=Cinzel:wght@500;600;700;800;900&family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;0,800;0,900;1,400;1,600;1,700&family=Merriweather:ital,wght@0,300;0,400;0,700;0,900;1,300;1,400&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Amiri:ital,wght@0,400;0,700;1,400&family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&family=Manrope:wght@200..800&display=swap');
 
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
 :root {
-  --font-serif: 'Playfair Display', 'Merriweather', Georgia, serif;
-  --font-body-serif: 'Merriweather', Georgia, serif;
-  --font-sans: 'Plus Jakarta Sans', system-ui, sans-serif;
   --font-arabic: 'Amiri', serif;
-  --font-cinzel: 'Cinzel', serif;
+  --color-forest: #003333;
+  --color-teal: #027c68;
+  --color-green: #009933;
+  --color-lime: #b0e892;
+}
+
+html, body {
+  overflow-x: hidden;
+  max-width: 100%;
 }
 
 body {
-  background-color: #fbfaf8;
-  color: #18181b;
-  font-family: var(--font-sans);
-  overflow-x: hidden;
+  background-color: #fafaf9;
+  color: #292524;
+  font-family: var(--font-manrope), 'Manrope', system-ui, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
-/* Custom Editorial Selection */
+/* Selection Color */
 ::selection {
-  background-color: #064e3b;
-  color: #fef9ee;
+  background-color: #027c68;
+  color: #ffffff;
 }
 
-/* Custom Luxury Scrollbar */
+/* Refined Scrollbar */
 ::-webkit-scrollbar {
-  width: 9px;
-  height: 9px;
+  width: 8px;
+  height: 8px;
 }
 
 ::-webkit-scrollbar-track {
-  background: #f4f1eb;
+  background: #f5f5f4;
 }
 
 ::-webkit-scrollbar-thumb {
-  background: #166534;
-  border-radius: 5px;
-  border: 2px solid #f4f1eb;
+  background: #027c68;
+  border-radius: 4px;
+  border: 2px solid #f5f5f4;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: #064e3b;
+  background: #003333;
 }
 
-/* Islamic Geometric Pattern Subtle Overlays */
+/* ==========================================================================
+   Subtle Background Textures (Subdued, Human-Designed)
+   ========================================================================== */
 .bg-islamic-pattern {
-  background-image: radial-gradient(rgba(197, 160, 89, 0.12) 1px, transparent 0);
-  background-size: 24px 24px;
+  background-image: radial-gradient(rgba(2, 124, 104, 0.06) 1px, transparent 0);
+  background-size: 28px 28px;
 }
 
 .bg-islamic-stars {
-  background-image: radial-gradient(circle at center, rgba(197, 160, 89, 0.08) 1.5px, transparent 1.5px);
-  background-size: 32px 32px;
+  background-image: radial-gradient(circle at center, rgba(2, 124, 104, 0.05) 1.5px, transparent 1.5px);
+  background-size: 36px 36px;
 }
 
-/* Luxury Gold & Emerald Glows */
+/* ==========================================================================
+   Soft, Diffused Shadow Utilities (No Harsh Borders)
+   ========================================================================== */
 .shadow-gold-glow {
-  box-shadow: 0 10px 30px -5px rgba(197, 160, 89, 0.28), 0 4px 12px -2px rgba(197, 160, 89, 0.15);
+  box-shadow: 0 8px 30px -8px rgba(197, 160, 89, 0.2);
 }
 
 .shadow-emerald-glow {
-  box-shadow: 0 14px 35px -8px rgba(6, 78, 59, 0.35), 0 4px 14px -3px rgba(6, 78, 59, 0.2);
+  box-shadow: 0 8px 30px -8px rgba(2, 124, 104, 0.2);
 }
 
 .shadow-prestige {
-  box-shadow: 0 4px 20px -2px rgba(0, 0, 0, 0.06), 0 12px 32px -4px rgba(6, 78, 59, 0.08);
+  box-shadow: 0 2px 20px -4px rgba(0, 51, 51, 0.06);
 }
 
-/* Editorial Drop Cap */
+/* ==========================================================================
+   Editorial Drop Cap
+   ========================================================================== */
 .editorial-drop-cap::first-letter {
-  font-family: var(--font-serif);
+  font-family: var(--font-dm-sans), 'DM Sans', system-ui, sans-serif;
   font-size: 3.75rem;
   line-height: 0.85;
   float: left;
   margin-right: 0.75rem;
   margin-top: 0.25rem;
-  font-weight: 900;
-  color: #064e3b;
-  text-shadow: 1px 1px 0px rgba(197, 160, 89, 0.3);
+  font-weight: 800;
+  color: #003333;
 }
 
 /* Gold Hairline Accents */
 .border-gold-gradient {
-  border-image: linear-gradient(to right, transparent, rgba(197, 160, 89, 0.8), transparent) 1;
+  border-image: linear-gradient(to right, transparent, rgba(197, 160, 89, 0.5), transparent) 1;
 }
 
-/* TipTap Editor Styles in Admin */
+/* ==========================================================================
+   TipTap Editor Styles in Admin
+   ========================================================================== */
 .ProseMirror {
   min-height: 380px;
   outline: none;
-  font-family: var(--font-body-serif);
+  font-family: var(--font-manrope), 'Manrope', system-ui, sans-serif;
   font-size: 1.125rem;
   line-height: 1.8;
-  color: #18181b;
+  color: #292524;
 }
 
 .ProseMirror p {
@@ -104,31 +115,32 @@ body {
 }
 
 .ProseMirror h2 {
-  font-family: var(--font-serif);
+  font-family: var(--font-dm-sans), 'DM Sans', system-ui, sans-serif;
   font-size: 1.75rem;
   font-weight: 700;
-  color: #064e3b;
+  color: #003333;
+  letter-spacing: -0.02em;
   margin-top: 2rem;
   margin-bottom: 0.75rem;
 }
 
 .ProseMirror h3 {
-  font-family: var(--font-sans);
+  font-family: var(--font-dm-sans), 'DM Sans', system-ui, sans-serif;
   font-size: 1.35rem;
   font-weight: 600;
-  color: #09090b;
+  color: #0c0a09;
   margin-top: 1.5rem;
   margin-bottom: 0.5rem;
 }
 
 .ProseMirror blockquote {
-  border-left: 4px solid #c5a059;
+  border-left: 4px solid #027c68;
   padding: 0.75rem 1.25rem;
-  background-color: #fef9ee;
-  color: #022c22;
+  background-color: #e6f7f4;
+  color: #003333;
   font-style: italic;
   margin: 1.5rem 0;
-  border-radius: 0 0.375rem 0.375rem 0;
+  border-radius: 0 0.5rem 0.5rem 0;
 }
 
 .ProseMirror ul {
@@ -154,7 +166,7 @@ body {
 .ProseMirror td,
 .ProseMirror th {
   min-width: 1em;
-  border: 1px solid #d4d4d8;
+  border: 1px solid #e7e5e4;
   padding: 8px 12px;
   vertical-align: top;
   box-sizing: border-box;
@@ -163,10 +175,279 @@ body {
 .ProseMirror th {
   font-weight: bold;
   text-align: left;
-  background-color: #f4f4f5;
+  background-color: #f5f5f4;
 }
 
 /* Arabic Text Typography */
 .font-arabic {
   font-family: var(--font-arabic);
+}
+
+/* ==========================================================================
+   Executive Editorial Typography & Long-Form Reading Engine
+   ========================================================================== */
+
+/* Reading Font Sizing Controls */
+.editorial-prose-container.text-size-sm .prose {
+  font-size: 1rem !important;
+  line-height: 1.75 !important;
+}
+
+.editorial-prose-container.text-size-md .prose {
+  font-size: 1.125rem !important;
+  line-height: 1.88 !important;
+}
+
+.editorial-prose-container.text-size-lg .prose {
+  font-size: 1.25rem !important;
+  line-height: 1.95 !important;
+}
+
+/* Guard against legacy oversized SVGs / icons */
+.prose svg {
+  max-width: 1.25rem !important;
+  max-height: 1.25rem !important;
+  width: 1.25rem !important;
+  height: 1.25rem !important;
+  display: inline-block !important;
+  vertical-align: middle !important;
+}
+
+/* Drop Cap Refinements */
+.editorial-drop-cap > p:first-of-type::first-letter,
+.editorial-drop-cap > p:first-child::first-letter {
+  font-family: var(--font-dm-sans), 'DM Sans', system-ui, sans-serif;
+  font-size: 3.85rem;
+  line-height: 0.85;
+  float: left;
+  margin-right: 0.85rem;
+  margin-top: 0.2rem;
+  margin-bottom: -0.2rem;
+  font-weight: 800;
+  color: #003333;
+}
+
+/* Enhanced Blockquote & Quranic Verse Callouts */
+.prose blockquote,
+.prose .wp-block-quote {
+  position: relative;
+  background: linear-gradient(135deg, #f0fdf4 0%, #e6f7f4 100%);
+  border-left: 4px solid #027c68 !important;
+  border-radius: 0 0.875rem 0.875rem 0;
+  padding: 1.25rem 1.75rem !important;
+  font-style: italic;
+  font-family: var(--font-manrope), 'Manrope', system-ui, sans-serif;
+  color: #003333 !important;
+  box-shadow: 0 4px 16px -4px rgba(2, 124, 104, 0.08);
+  margin: 2rem 0 !important;
+}
+
+.prose blockquote p,
+.prose .wp-block-quote p {
+  margin-bottom: 0.5rem !important;
+}
+
+.prose blockquote p:last-child,
+.prose .wp-block-quote p:last-child {
+  margin-bottom: 0 !important;
+}
+
+.prose blockquote cite,
+.prose .wp-block-quote cite {
+  display: block;
+  font-size: 0.8125rem;
+  font-style: normal;
+  font-family: var(--font-manrope), 'Manrope', system-ui, sans-serif;
+  color: #027c68;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  margin-top: 0.75rem;
+}
+
+/* Pull-Quotes */
+.prose .pull-quote {
+  font-family: var(--font-dm-sans), 'DM Sans', system-ui, sans-serif;
+  font-size: 1.45rem;
+  line-height: 1.55;
+  font-weight: 600;
+  font-style: italic;
+  color: #003333;
+  border-left: 4px solid #027c68;
+  background: linear-gradient(135deg, #f0fdf4 0%, #e6f7f4 100%);
+  padding: 1.5rem 2rem;
+  margin: 2.5rem 0;
+  border-radius: 0 1rem 1rem 0;
+  box-shadow: 0 4px 20px -4px rgba(2, 124, 104, 0.08);
+}
+
+/* Headings in Long-Form Articles */
+.prose h2 {
+  font-family: var(--font-dm-sans), 'DM Sans', system-ui, sans-serif;
+  color: #003333 !important;
+  font-size: 1.75rem;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  line-height: 1.25;
+  margin-top: 2.25em !important;
+  margin-bottom: 0.75em !important;
+  padding-bottom: 0.5rem;
+  border-bottom: 1px solid rgba(2, 124, 104, 0.15);
+}
+
+.prose h3 {
+  font-family: var(--font-dm-sans), 'DM Sans', system-ui, sans-serif;
+  color: #0c0a09 !important;
+  font-size: 1.35rem;
+  font-weight: 700;
+  margin-top: 1.75em !important;
+  margin-bottom: 0.6em !important;
+}
+
+.prose h4 {
+  font-family: var(--font-manrope), 'Manrope', system-ui, sans-serif;
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: #027c68;
+  margin-top: 1.5em !important;
+  margin-bottom: 0.5em !important;
+}
+
+/* WordPress Alignments & Images */
+.prose .aligncenter {
+  display: block;
+  margin-left: auto !important;
+  margin-right: auto !important;
+  text-align: center;
+}
+
+.prose .alignleft {
+  float: left;
+  margin-right: 1.5rem !important;
+  margin-bottom: 1rem !important;
+  max-width: 50%;
+}
+
+.prose .alignright {
+  float: right;
+  margin-left: 1.5rem !important;
+  margin-bottom: 1rem !important;
+  max-width: 50%;
+}
+
+.prose img {
+  border-radius: 0.875rem;
+  box-shadow: 0 4px 20px -4px rgba(0, 0, 0, 0.06);
+  border: 1px solid #e7e5e4;
+  max-width: 100%;
+  height: auto;
+}
+
+.prose figure.wp-block-image,
+.prose .wp-block-image {
+  margin: 2.25rem auto !important;
+  text-align: center;
+}
+
+.prose figcaption,
+.prose .wp-element-caption,
+.prose .wp-caption-text {
+  font-size: 0.8125rem;
+  color: #78716c;
+  font-style: italic;
+  text-align: center;
+  margin-top: 0.5rem;
+  font-family: var(--font-manrope), 'Manrope', system-ui, sans-serif;
+}
+
+/* WordPress Gallery Grids */
+.prose .gallery,
+.prose .wp-block-gallery {
+  display: grid !important;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)) !important;
+  gap: 1rem !important;
+  margin: 2.5rem 0 !important;
+  padding: 0 !important;
+  list-style: none !important;
+}
+
+.prose .gallery-item {
+  margin: 0 !important;
+  position: relative;
+  border-radius: 0.75rem;
+  overflow: hidden;
+  border: 1px solid #e7e5e4;
+  background-color: #f5f5f4;
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.prose .gallery-item:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 24px -4px rgba(2, 124, 104, 0.12);
+}
+
+.prose .gallery-item img {
+  margin: 0 !important;
+  width: 100% !important;
+  height: 180px !important;
+  object-fit: cover !important;
+  display: block !important;
+}
+
+.prose .gallery-caption {
+  font-size: 0.75rem;
+  color: #57534e;
+  padding: 0.4rem 0.6rem;
+  background: white;
+  text-align: center;
+  font-family: var(--font-manrope), 'Manrope', system-ui, sans-serif;
+}
+
+/* Links inside prose */
+.prose a {
+  color: #027c68;
+  font-weight: 600;
+  text-decoration: underline;
+  text-decoration-color: #b0e892;
+  text-underline-offset: 3px;
+  transition: color 0.2s, text-decoration-color 0.2s;
+}
+
+.prose a:hover {
+  color: #003333;
+  text-decoration-color: #027c68;
+}
+
+/* Arabic Text and Scripture Blocks */
+.prose .arabic,
+.prose [dir="rtl"],
+.arabic-text {
+  font-family: var(--font-arabic) !important;
+  font-size: 1.45em;
+  line-height: 1.95;
+  color: #003333;
+  direction: rtl;
+  text-align: right;
+  display: block;
+  margin: 1.5rem 0;
+  padding: 0.5rem 0;
+}
+
+/* Print Styles */
+@media print {
+  header,
+  footer,
+  aside,
+  .no-print,
+  button {
+    display: none !important;
+  }
+  body {
+    background: white !important;
+    color: black !important;
+  }
+  .prose {
+    font-size: 12pt !important;
+    line-height: 1.6 !important;
+  }
 }

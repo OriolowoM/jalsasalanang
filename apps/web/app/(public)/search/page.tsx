@@ -1,156 +1,279 @@
 import React from 'react';
 import Link from 'next/link';
-import { searchContent } from '@/lib/api';
-import { Search, BookOpen, Mic, Calendar, User, ArrowRight } from 'lucide-react';
+import Image from 'next/image';
+import { semanticSearch } from '@/lib/api';
+import {
+  Search,
+  BookOpen,
+  Mic,
+  Calendar,
+  User,
+  ArrowRight,
+  Sparkles,
+  Tag,
+  Clock,
+  Compass,
+  CheckCircle2,
+} from 'lucide-react';
 
 export const metadata = {
-  title: 'Search Publication Archives',
-  description: 'Search across seven decades of articles, keynote speeches, conventions, and scholars from Jalsa Salana Nigeria.',
+  title: 'Thematic Semantic Search | Jalsa Salana Nigeria Archives',
+  description:
+    'Intent-based semantic search across seven decades of scholarly articles, keynote speeches, conventions, and theological discourses.',
 };
 
 export default async function SearchResultsPage({
   searchParams,
 }: {
-  searchParams: { q?: string };
+  searchParams: Promise<{ q?: string }>;
 }) {
-  const query = searchParams.q || '';
-  let results: any = null;
+  const { q } = await searchParams;
+  const query = q || '';
+
+  let semanticData: {
+    thematicSummary: string;
+    extractedThemes: string[];
+    articles: any[];
+    speeches: any[];
+    totalResults: number;
+  } | null = null;
 
   if (query) {
     try {
-      const res = await searchContent(query);
-      if (res.success) {
-        results = res.data;
+      const res = await semanticSearch(query);
+      if (res.success && res.data) {
+        semanticData = res.data;
       }
     } catch (err) {
-      console.error(err);
+      console.error('Semantic search error:', err);
     }
   }
 
+  const articles = semanticData?.articles || [];
+  const speeches = semanticData?.speeches || [];
+  const themes = semanticData?.extractedThemes || [];
+  const totalResults = semanticData?.totalResults ?? 0;
+
   return (
-    <div className="py-8 sm:py-12 bg-surface-bg min-h-screen">
-      <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div className="py-10 sm:py-16 bg-surface-bg min-h-screen">
+      <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Search Header */}
-        <div className="pb-6 mb-8 border-b-2 border-primary">
-          <span className="text-xs font-extrabold uppercase tracking-widest text-gold-dark block mb-1">
-            Global Search
-          </span>
-          <h1 className="font-serif font-black text-3xl sm:text-4xl text-charcoal">
-            {query ? `Search Results for "${query}"` : 'Search Publication Archives'}
+        <div className="max-w-3xl mb-8">
+          <div className="flex items-center gap-2 text-xs font-bold text-teal uppercase tracking-widest mb-2">
+            <Sparkles className="w-4 h-4 text-lime" />
+            <span>AI-Powered Semantic Knowledge Retrieval</span>
+          </div>
+
+          <h1 className="font-display font-black text-3xl sm:text-5xl text-forest tracking-tight mb-4">
+            {query ? `Search: “${query}”` : 'Search Publication Archives'}
           </h1>
-          {results && (
-            <p className="text-xs text-gray-500 mt-2 font-medium">
-              Found {results.totalResults} matching records across all archives
-            </p>
-          )}
+
+          <p className="text-sm sm:text-base text-ink-muted">
+            Intent-based theological search across conventions, keynote addresses, and scholarly discourses.
+          </p>
         </div>
 
-        {/* Search Bar */}
+        {/* Search Bar Input */}
         <form method="GET" action="/search" className="mb-10">
-          <div className="flex items-center gap-2 p-2 bg-white rounded-xl border border-gray-200 shadow-sm">
-            <Search className="w-5 h-5 text-gray-400 ml-2" />
+          <div className="relative flex items-center gap-2 p-2 sm:p-2.5 bg-white rounded-2xl border border-surface-border shadow-soft-lg hover:border-teal/40 focus-within:border-teal transition-all">
+            <Search className="w-5 h-5 text-teal ml-3 flex-shrink-0" />
             <input
               type="text"
               name="q"
               defaultValue={query}
-              placeholder="Search by keywords, themes, speakers, or editions..."
-              className="w-full text-base outline-none p-2 text-charcoal bg-transparent"
+              placeholder="Search concepts e.g., 'spiritual peace in hardship', 'women in Islam', 'justice and taqwa'..."
+              className="w-full text-xs sm:text-sm outline-none px-3 py-2 text-forest bg-transparent font-medium"
             />
             <button
               type="submit"
-              className="px-6 py-2.5 rounded-lg bg-primary hover:bg-primary-dark text-white font-bold text-xs uppercase tracking-wider transition-colors shadow"
+              className="px-6 py-3 rounded-xl bg-forest hover:bg-forest-900 text-white font-display font-bold text-xs uppercase tracking-wider transition-all shadow-sm flex-shrink-0"
             >
-              Search
+              Analyze &amp; Search
             </button>
+          </div>
+
+          {/* Quick theme search pills */}
+          <div className="mt-3 flex items-center gap-2 flex-wrap text-xs text-ink-muted">
+            <span className="text-[11px] font-bold text-ink-light">Popular themes:</span>
+            {['Justice & Peace', 'Spiritual Purity', '72nd Jalsa 2026', 'Taqwa', 'Khilafat Guidance'].map((pill) => (
+              <Link
+                key={pill}
+                href={`/search?q=${encodeURIComponent(pill)}`}
+                className="px-2.5 py-1 rounded-full bg-white hover:bg-teal hover:text-white border border-surface-border text-[11px] font-medium transition-colors"
+              >
+                {pill}
+              </Link>
+            ))}
           </div>
         </form>
 
-        {/* Results Sections */}
-        {results ? (
-          results.totalResults === 0 ? (
-            <div className="p-12 text-center bg-white rounded-xl border border-gray-200 shadow-sm">
-              <h3 className="font-serif font-bold text-lg text-charcoal mb-1">No matching results</h3>
-              <p className="text-xs text-gray-500 max-w-sm mx-auto">
-                No items matched &ldquo;{query}&rdquo;. Try searching for &ldquo;Taqwa&rdquo;, &ldquo;Justice&rdquo;, &ldquo;Khilafat&rdquo;, or &ldquo;2024&rdquo;.
-              </p>
+        {query && semanticData && (
+          <div className="space-y-10">
+            {/* ── Top Feature Section: AI Thematic Intent Summary Card ── */}
+            {semanticData.thematicSummary && (
+              <div className="relative rounded-3xl bg-gradient-to-br from-forest-950 via-forest to-forest-900 text-white p-6 sm:p-8 shadow-xl border border-teal/30 overflow-hidden">
+                <div className="absolute top-0 right-0 w-80 h-80 bg-teal/20 rounded-full blur-3xl pointer-events-none" />
+
+                <div className="relative z-10">
+                  <div className="flex items-center gap-2 mb-3">
+                    <span className="px-2.5 py-0.5 rounded-full bg-lime text-forest-950 font-display font-black text-[10px] uppercase tracking-wider flex items-center gap-1">
+                      <Sparkles className="w-3 h-3" /> Thematic Synthesis
+                    </span>
+                    <span className="text-xs text-white/60">
+                      Grounded in Ahmadiyya Teachings
+                    </span>
+                  </div>
+
+                  <p className="font-display font-medium text-base sm:text-lg leading-relaxed text-white/95 max-w-4xl mb-6">
+                    {semanticData.thematicSummary}
+                  </p>
+
+                  {/* Extracted Core Themes Pills */}
+                  {themes.length > 0 && (
+                    <div className="flex items-center gap-2 flex-wrap pt-4 border-t border-white/10">
+                      <span className="text-[11px] font-bold uppercase tracking-wider text-lime">
+                        Identified Theological Themes:
+                      </span>
+                      {themes.map((theme, idx) => (
+                        <span
+                          key={idx}
+                          className="px-3 py-1 rounded-full bg-white/10 text-white text-xs font-semibold border border-white/15"
+                        >
+                          #{theme}
+                        </span>
+                      ))}
+                    </div>
+                  )}
+                </div>
+              </div>
+            )}
+
+            {/* Total Results Count */}
+            <div className="flex items-center justify-between text-xs font-bold text-ink-muted pb-2 border-b border-surface-border">
+              <span>FOUND {totalResults} MATCHING ARCHIVE RECORDS</span>
+              <span>SEMANTIC INTENT MATCH</span>
             </div>
-          ) : (
-            <div className="space-y-8">
-              {/* Articles Results */}
-              {results.articles.length > 0 && (
-                <div className="bg-white p-6 rounded-xl border border-gray-200 shadow-sm">
-                  <h3 className="font-serif font-bold text-lg text-primary mb-4 flex items-center gap-2 pb-2 border-b border-gray-100">
-                    <BookOpen className="w-4 h-4" /> Articles ({results.articles.length})
-                  </h3>
-                  <div className="divide-y divide-gray-100">
-                    {results.articles.map((art: any) => (
-                      <div key={art.id} className="py-4 first:pt-0 last:pb-0 group">
-                        <Link href={`/articles/${art.slug}`}>
-                          <h4 className="font-serif font-bold text-base text-charcoal group-hover:text-primary transition-colors">
-                            {art.title}
-                          </h4>
-                        </Link>
-                        {art.subtitle && (
-                          <p className="text-xs text-gray-500 line-clamp-2 mt-1">{art.subtitle}</p>
-                        )}
-                        <div className="flex items-center gap-2 text-[11px] text-gray-400 mt-2">
-                          <span>By {art.author?.name}</span>
-                          <span>•</span>
-                          <span>{art.categories?.[0]?.name || 'Article'}</span>
+
+            {totalResults === 0 ? (
+              <div className="py-16 text-center bg-white rounded-3xl border border-surface-border p-8">
+                <Compass className="w-10 h-10 text-ink-light mx-auto mb-3" />
+                <h3 className="font-display font-bold text-base text-forest mb-1">
+                  No records matched this specific query
+                </h3>
+                <p className="text-xs text-ink-muted max-w-sm mx-auto">
+                  Try exploring one of the popular theological themes above or query the Jalsa Companion directly.
+                </p>
+              </div>
+            ) : (
+              <div className="space-y-12">
+                {/* ── Masonry Grid of Matched Articles ── */}
+                {articles.length > 0 && (
+                  <div>
+                    <h3 className="font-display font-black text-xl text-forest mb-6 flex items-center gap-2">
+                      <BookOpen className="w-5 h-5 text-teal" />
+                      <span>Editorial Articles &amp; Papers ({articles.length})</span>
+                    </h3>
+
+                    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                      {articles.map((art: any) => (
+                        <article
+                          key={art.id}
+                          className="rounded-3xl bg-white border border-surface-border overflow-hidden hover:border-teal/40 transition-all hover:shadow-soft flex flex-col justify-between group"
+                        >
+                          <div>
+                            {/* Card Image */}
+                            <Link href={`/blog/${art.slug}`} className="block relative aspect-[16/10] bg-surface-muted overflow-hidden">
+                              <Image
+                                src={art.featuredImage || '/images/jalsa_gallery/jalsa-main-stage-keynote-podium.jpg'}
+                                alt={art.title}
+                                fill
+                                className="object-cover group-hover:scale-105 transition-transform duration-500"
+                              />
+                              <div className="absolute top-3 left-3">
+                                <span className="px-2.5 py-1 rounded-full bg-forest text-white text-[10px] font-bold">
+                                  {art.categories?.[0]?.name || 'Editorial'}
+                                </span>
+                              </div>
+                            </Link>
+
+                            {/* Card Content */}
+                            <div className="p-5">
+                              <Link href={`/blog/${art.slug}`}>
+                                <h4 className="font-display font-bold text-base text-forest group-hover:text-teal transition-colors line-clamp-2 mb-2">
+                                  {art.title}
+                                </h4>
+                              </Link>
+
+                              {art.subtitle && (
+                                <p className="text-xs text-ink-muted line-clamp-2 leading-relaxed mb-4">
+                                  {art.subtitle}
+                                </p>
+                              )}
+                            </div>
+                          </div>
+
+                          {/* Card Footer Metadata */}
+                          <div className="px-5 pb-5 pt-3 border-t border-surface-border/60 flex items-center justify-between text-[11px] text-ink-muted">
+                            <span className="font-semibold text-ink-body truncate max-w-[140px]">
+                              {art.author?.name || 'Editorial Board'}
+                            </span>
+                            <span className="text-teal font-medium flex items-center gap-1">
+                              <Clock className="w-3 h-3" /> {art.readingTime || 4}m read
+                            </span>
+                          </div>
+                        </article>
+                      ))}
+                    </div>
+                  </div>
+                )}
+
+                {/* ── Matched Keynote Speeches ── */}
+                {speeches.length > 0 && (
+                  <div>
+                    <h3 className="font-display font-black text-xl text-forest mb-6 flex items-center gap-2">
+                      <Mic className="w-5 h-5 text-teal" />
+                      <span>Convention Speeches &amp; Addresses ({speeches.length})</span>
+                    </h3>
+
+                    <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                      {speeches.map((sp: any) => (
+                        <div
+                          key={sp.id}
+                          className="p-5 rounded-2xl bg-white border border-surface-border hover:border-teal/40 transition-all hover:shadow-soft"
+                        >
+                          <div className="flex items-start justify-between gap-3 mb-2">
+                            <h4 className="font-display font-bold text-base text-forest">
+                              {sp.title}
+                            </h4>
+                            <span className="text-[10px] font-mono px-2 py-0.5 rounded-full bg-teal-50 text-teal font-bold flex-shrink-0">
+                              {sp.edition?.editionNumber || 'Convention Speech'}
+                            </span>
+                          </div>
+
+                          <div className="text-xs font-semibold text-teal mb-2">
+                            Speaker: {sp.speakerName}
+                          </div>
+
+                          {sp.summary && (
+                            <p className="text-xs text-ink-muted line-clamp-2 leading-relaxed mb-3">
+                              {sp.summary}
+                            </p>
+                          )}
+
+                          <Link
+                            href={`/speeches/${sp.slug}`}
+                            className="inline-flex items-center gap-1 text-xs font-bold text-forest hover:text-teal transition-colors"
+                          >
+                            <span>Read Full Transcript</span>
+                            <ArrowRight className="w-3 h-3" />
+                          </Link>
                         </div>
-                      </div>
-                    ))}
+                      ))}
+                    </div>
                   </div>
-                </div>
-              )}
-
-              {/* Speeches Results */}
-              {results.speeches.length > 0 && (
-                <div className="bg-white p-6 rounded-xl border border-gray-200 shadow-sm">
-                  <h3 className="font-serif font-bold text-lg text-primary mb-4 flex items-center gap-2 pb-2 border-b border-gray-100">
-                    <Mic className="w-4 h-4" /> Speeches &amp; Sermons ({results.speeches.length})
-                  </h3>
-                  <div className="divide-y divide-gray-100">
-                    {results.speeches.map((sp: any) => (
-                      <div key={sp.id} className="py-4 first:pt-0 last:pb-0 group">
-                        <Link href={`/speeches/${sp.slug}`}>
-                          <h4 className="font-serif font-bold text-base text-charcoal group-hover:text-primary transition-colors">
-                            {sp.title}
-                          </h4>
-                        </Link>
-                        <div className="text-xs text-primary font-bold mt-1">{sp.speakerName}</div>
-                        {sp.summary && (
-                          <p className="text-xs text-gray-500 line-clamp-2 mt-1">{sp.summary}</p>
-                        )}
-                      </div>
-                    ))}
-                  </div>
-                </div>
-              )}
-
-              {/* Editions Results */}
-              {results.editions.length > 0 && (
-                <div className="bg-white p-6 rounded-xl border border-gray-200 shadow-sm">
-                  <h3 className="font-serif font-bold text-lg text-primary mb-4 flex items-center gap-2 pb-2 border-b border-gray-100">
-                    <Calendar className="w-4 h-4" /> Conventions ({results.editions.length})
-                  </h3>
-                  <div className="divide-y divide-gray-100">
-                    {results.editions.map((ed: any) => (
-                      <div key={ed.id} className="py-3 first:pt-0 last:pb-0">
-                        <Link href={`/editions/${ed.year}`} className="font-bold text-sm text-charcoal hover:text-primary">
-                          {ed.year} — {ed.editionNumber}
-                        </Link>
-                        <div className="text-xs text-gray-500 mt-0.5">{ed.themeEnglish}</div>
-                      </div>
-                    ))}
-                  </div>
-                </div>
-              )}
-            </div>
-          )
-        ) : (
-          <div className="py-12 text-center text-xs text-gray-400">
-            Enter search terms above to search all Jalsa Salana publications.
+                )}
+              </div>
+            )}
           </div>
         )}
       </div>

@@ -1,7 +1,19 @@
-const API_BASE = process.env.NEXT_PUBLIC_API_URL || 'http://localhost:5000/api/v1';
+function getBaseUrl(): string {
+  if (typeof window !== 'undefined') {
+    // In browser: use relative /api/v1 so requests are same-origin
+    return '/api/v1';
+  }
+  if (process.env.INTERNAL_API_URL) return process.env.INTERNAL_API_URL;
+  if (process.env.NEXT_PUBLIC_SITE_URL) return `${process.env.NEXT_PUBLIC_SITE_URL}/api/v1`;
+  if (process.env.PORT && !isNaN(Number(process.env.PORT))) {
+    return `http://127.0.0.1:${process.env.PORT}/api/v1`;
+  }
+  return 'https://jalsasalana.ng/api/v1';
+}
 
 export async function fetchApi<T = any>(endpoint: string, options: RequestInit = {}): Promise<T> {
-  const url = endpoint.startsWith('http') ? endpoint : `${API_BASE}${endpoint.startsWith('/') ? '' : '/'}${endpoint}`;
+  const base = getBaseUrl();
+  const url = endpoint.startsWith('http') ? endpoint : `${base}${endpoint.startsWith('/') ? '' : '/'}${endpoint}`;
   
   const headers = {
     'Content-Type': 'application/json',
@@ -9,6 +21,7 @@ export async function fetchApi<T = any>(endpoint: string, options: RequestInit =
   };
 
   const res = await fetch(url, {
+    cache: 'no-store',
     ...options,
     headers,
     credentials: 'include',
@@ -80,6 +93,15 @@ export async function getCategoryBySlug(slug: string) {
   return fetchApi(`/categories/${slug}`);
 }
 
+// Pages API (Static & Event Pages)
+export async function getPages() {
+  return fetchApi('/pages');
+}
+
+export async function getPageBySlug(slug: string) {
+  return fetchApi(`/pages/${slug}`);
+}
+
 // Settings API
 export async function getSiteSettings() {
   return fetchApi('/settings');
@@ -88,6 +110,10 @@ export async function getSiteSettings() {
 // Search API
 export async function searchContent(q: string) {
   return fetchApi(`/search?q=${encodeURIComponent(q)}`);
+}
+
+export async function semanticSearch(q: string) {
+  return fetchApi(`/ai/semantic-search?q=${encodeURIComponent(q)}`);
 }
 
 // Newsletter

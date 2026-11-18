@@ -36,7 +36,7 @@ export default function AboutPage() {
         {/* Hero image */}
         <div className="relative aspect-[16/9] rounded-2xl overflow-hidden bg-gray-100 mb-8 shadow-sm">
           <Image
-            src="/images/70th-jalsa-hero.jpg"
+            src="/images/jalsa_gallery/jalsa-main-stage-keynote-podium.jpg"
             alt="Jalsa Salana Nigeria Assembly"
             fill
             className="object-cover"

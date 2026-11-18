@@ -232,7 +232,7 @@ export default function RegistrationPage() {
   return (
     <div className="bg-surface-bg min-h-screen">
       {/* 1. HERO SECTION */}
-      <section className="relative py-14 sm:py-20 bg-gradient-to-br from-primary-night via-primary-dark to-primary-900 text-white overflow-hidden border-b-4 border-gold">
+      <section className="relative py-14 sm:py-20 bg-forest text-white overflow-hidden border-b-4 border-teal">
         {/* Background Islamic Stars Pattern & Glow */}
         <div className="absolute inset-0 bg-islamic-stars opacity-40 pointer-events-none" />
         <div className="absolute top-0 right-0 w-[550px] h-[550px] bg-gold/15 rounded-full blur-3xl pointer-events-none" />
@@ -679,64 +679,124 @@ export default function RegistrationPage() {
             </div>
           </div>
 
-          {/* Features Grid with Flyer Graphics & Lightbox Preview */}
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-            {filteredFeatures.map((feat) => (
-              <div
-                key={feat.id}
-                className="bg-surface-bg rounded-2xl border border-gray-200 p-4 hover:border-gold/80 transition-all hover:shadow-xl flex flex-col justify-between group shadow-sm"
-              >
-                <div>
-                  <div
-                    onClick={() => {
-                      setSelectedFlyer(feat);
-                      setModalFormat('feed');
-                    }}
-                    className="relative aspect-[4/5] rounded-xl overflow-hidden mb-3 bg-gray-900 shadow-sm cursor-pointer ring-1 ring-black/5 group-hover:ring-gold/50"
-                  >
-                    <Image
-                      src={feat.flyer}
-                      alt={feat.name}
-                      fill
-                      className="object-cover group-hover:scale-106 transition-transform duration-500"
-                    />
-                    <span className="absolute top-2 left-2 bg-primary text-white text-[10px] font-mono font-black px-2 py-0.5 rounded shadow border border-gold/30">
-                      {feat.id}
-                    </span>
+          {/* Spotlight on Official Digital Pass Flyer (Flyer #2 on this page) */}
+          <div className="max-w-4xl mx-auto mb-12 bg-surface-bg rounded-3xl border border-gray-200 p-6 sm:p-8 shadow-sm flex flex-col md:flex-row items-center gap-8">
+            <div
+              onClick={() => {
+                setSelectedFlyer({
+                  id: 'F01',
+                  name: 'Your Tag on Your Phone — Digital Pass Guide',
+                  flyer: '/images/registration/jalsa2026-feature-01-your-tag-on-your-phone_feed.webp',
+                  desc: 'Instant digital delegate tag with high-density QR code stored on your mobile device. Works completely offline with Apple Wallet and Google Wallet support.',
+                });
+                setModalFormat('feed');
+              }}
+              className="relative w-full max-w-[240px] aspect-[4/5] rounded-2xl overflow-hidden bg-forest-950 shadow-lg cursor-pointer ring-1 ring-black/10 group flex-shrink-0"
+            >
+              <Image
+                src="/images/registration/jalsa2026-feature-01-your-tag-on-your-phone_feed.webp"
+                alt="Digital Tag on Your Phone Official Flyer"
+                fill
+                className="object-cover group-hover:scale-105 transition-transform duration-500"
+              />
+              <div className="absolute inset-0 bg-forest-950/60 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center gap-1.5 text-xs font-bold text-white backdrop-blur-[2px]">
+                <Maximize2 className="w-4 h-4 text-lime" />
+                <span>Enlarge Flyer</span>
+              </div>
+            </div>
 
-                    {/* Hover Prompt */}
-                    <div className="absolute inset-0 bg-primary-950/60 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center gap-1.5 text-xs font-bold text-white backdrop-blur-[2px]">
-                      <Maximize2 className="w-4 h-4 text-gold" />
-                      <span>Inspect Flyer</span>
+            <div className="flex-1 text-left">
+              <span className="text-[11px] font-mono font-bold text-teal uppercase tracking-widest block mb-1">
+                ✦ OFFICIAL PASS GUIDE ✦
+              </span>
+              <h3 className="font-display font-bold text-xl sm:text-2xl text-charcoal">
+                Your Tag Lives on Your Phone
+              </h3>
+              <p className="text-sm text-gray-600 mt-2 leading-relaxed font-sans">
+                No paper slips required. The 72nd Jalsa Salana Nigeria introduces instant digital delegate passes with high-density QR verification and offline Apple &amp; Google Wallet compatibility.
+              </p>
+              <div className="mt-4 flex flex-wrap items-center gap-3">
+                <button
+                  type="button"
+                  onClick={() => {
+                    setSelectedFlyer({
+                      id: 'F01',
+                      name: 'Your Tag on Your Phone — Digital Pass Guide',
+                      flyer: '/images/registration/jalsa2026-feature-01-your-tag-on-your-phone_feed.webp',
+                      desc: 'Instant digital delegate tag with high-density QR code stored on your mobile device.',
+                    });
+                    setModalFormat('feed');
+                  }}
+                  className="inline-flex items-center gap-1.5 px-4 py-2 rounded-xl bg-forest text-white text-xs font-bold hover:bg-forest-900 transition-colors"
+                >
+                  <Maximize2 className="w-3.5 h-3.5 text-lime" />
+                  <span>View Flyer Details</span>
+                </button>
+                <a
+                  href={portalUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center gap-1.5 px-4 py-2 rounded-xl bg-teal text-white text-xs font-bold hover:bg-teal-600 transition-colors"
+                >
+                  <span>Open Portal</span>
+                  <ExternalLink className="w-3.5 h-3.5" />
+                </a>
+              </div>
+            </div>
+          </div>
+
+          {/* Clean Features Grid — No Flyer Image Duplication */}
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+            {filteredFeatures.map((feat) => {
+              const Icon = feat.category === 'travel'
+                ? Bus
+                : feat.category === 'volunteer'
+                ? Briefcase
+                : feat.category === 'safety'
+                ? ShieldCheck
+                : feat.id === 'F01'
+                ? Smartphone
+                : feat.id === 'F02'
+                ? Users
+                : feat.id === 'F03'
+                ? MessageSquare
+                : feat.id === 'F04'
+                ? QrCode
+                : CheckCircle2;
+
+              return (
+                <div
+                  key={feat.id}
+                  className="bg-surface-bg rounded-2xl border border-gray-200 p-5 hover:border-teal/60 transition-all hover:shadow-md flex flex-col justify-between group shadow-sm"
+                >
+                  <div>
+                    <div className="flex items-center justify-between mb-3">
+                      <div className="w-9 h-9 rounded-xl bg-primary/10 border border-primary/20 flex items-center justify-center text-primary group-hover:bg-primary group-hover:text-white transition-colors">
+                        <Icon className="w-4 h-4" />
+                      </div>
+                      <span className="text-[10px] font-mono font-bold text-gold-dark bg-gold/10 px-2 py-0.5 rounded border border-gold/20">
+                        {feat.id}
+                      </span>
                     </div>
+
+                    <h3 className="font-display font-bold text-sm text-charcoal group-hover:text-primary transition-colors leading-snug mb-1.5">
+                      {feat.name}
+                    </h3>
+                    <p className="text-xs text-gray-600 leading-relaxed font-serif line-clamp-3">
+                      {feat.desc}
+                    </p>
                   </div>
 
-                  <h3 className="font-display font-bold text-sm text-charcoal group-hover:text-primary transition-colors leading-snug mb-1">
-                    {feat.name}
-                  </h3>
-                  <p className="text-xs text-gray-600 leading-relaxed line-clamp-3 font-serif">
-                    {feat.desc}
-                  </p>
+                  <div className="pt-3 mt-4 border-t border-gray-100 flex items-center justify-between text-[11px] text-gray-500">
+                    <span className="capitalize">{feat.category} Portal</span>
+                    <span className="text-teal font-bold flex items-center gap-1">
+                      <CheckCircle2 className="w-3 h-3 text-teal" />
+                      Integrated
+                    </span>
+                  </div>
                 </div>
-
-                <div className="pt-3 mt-3 border-t border-gray-200 flex items-center justify-between text-[11px] text-primary font-bold">
-                  <span className="flex items-center gap-1 text-gold-dark font-medium">
-                    <CheckCircle2 className="w-3.5 h-3.5 text-gold" />
-                    <span>Portal Feature</span>
-                  </span>
-                  <button
-                    type="button"
-                    onClick={() => {
-                      setSelectedFlyer(feat);
-                      setModalFormat('feed');
-                    }}
-                    className="text-xs text-gray-500 hover:text-primary underline font-medium"
-                  >
-                    Preview
-                  </button>
-                </div>
-              </div>
-            ))}
+              );
+            })}
           </div>
         </div>
       </section>
@@ -752,18 +812,18 @@ export default function RegistrationPage() {
               Regional Delegations &amp; Convoys
             </h2>
             <p className="text-xs sm:text-sm text-gray-500 mt-2">
-              Chartered transportation networks and circuit coordination points across Nigeria (Flyers 75–80).
+              Chartered transportation networks and circuit coordination hubs across Nigeria.
             </p>
           </div>
 
           <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-4">
             {[
-              { city: 'Lagos', note: 'Ojokoro & Island Convoys', flyer: '75' },
-              { city: 'Ogun State', note: 'Host Circuit & Ilaro Hub', flyer: '76' },
-              { city: 'Ibadan', note: 'Oyo State Delegations', flyer: '77' },
-              { city: 'Ilorin', note: 'Kwara & Central Corridor', flyer: '78' },
-              { city: 'Kano', note: 'Northern States Transit', flyer: '79' },
-              { city: 'Abuja FCT', note: 'Federal Capital Fleet', flyer: '80' },
+              { city: 'Lagos', note: 'Ojokoro & Island Convoys', sector: 'Sector 01' },
+              { city: 'Ogun State', note: 'Host Circuit & Ilaro Hub', sector: 'Sector 02' },
+              { city: 'Ibadan', note: 'Oyo State Delegations', sector: 'Sector 03' },
+              { city: 'Ilorin', note: 'Kwara & Central Corridor', sector: 'Sector 04' },
+              { city: 'Kano', note: 'Northern States Transit', sector: 'Sector 05' },
+              { city: 'Abuja FCT', note: 'Federal Capital Fleet', sector: 'Sector 06' },
             ].map((reg, idx) => (
               <div
                 key={idx}
@@ -774,7 +834,7 @@ export default function RegistrationPage() {
                 </div>
                 <div className="font-serif font-bold text-sm text-charcoal">{reg.city}</div>
                 <div className="text-[10px] text-gray-500 mt-0.5">{reg.note}</div>
-                <div className="text-[9px] uppercase font-bold text-gold-dark mt-2">Flyer {reg.flyer}</div>
+                <div className="text-[9px] uppercase font-bold text-teal mt-2">{reg.sector}</div>
               </div>
             ))}
           </div>
@@ -890,7 +950,7 @@ export default function RegistrationPage() {
       </section>
 
       {/* 10. FINAL CALL TO ACTION BANNER */}
-      <section className="py-16 bg-gradient-to-r from-primary-950 via-primary to-primary-950 text-white text-center relative overflow-hidden">
+      <section className="py-16 bg-forest text-white text-center relative overflow-hidden border-t border-teal/20">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 space-y-6">
           <div className="w-16 h-16 rounded-full bg-gold/20 border border-gold/40 flex items-center justify-center mx-auto text-gold shadow-lg">
             <Sparkles className="w-8 h-8" />
@@ -932,7 +992,7 @@ export default function RegistrationPage() {
       {/* High-Resolution Flyer Lightbox Modal */}
       {selectedFlyer && (
         <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/85 backdrop-blur-md animate-in fade-in duration-200">
-          <div className="relative max-w-lg w-full bg-primary-night border border-gold/40 rounded-3xl p-6 shadow-2xl text-white">
+          <div className="relative max-w-lg w-full bg-forest-950 border border-teal/40 rounded-3xl p-6 shadow-2xl text-white">
             <div className="flex items-center justify-between pb-3 border-b border-white/10 mb-4">
               <div>
                 <span className="text-[10px] font-mono font-bold text-gold uppercase tracking-wider">

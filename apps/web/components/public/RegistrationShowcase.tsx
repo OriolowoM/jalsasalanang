@@ -18,44 +18,43 @@ import {
   Download,
 } from 'lucide-react';
 
-const HIGHLIGHTS = [
+const HIGHLIGHT_POINTS = [
   {
     code: 'F01',
     badge: 'WALLET PASS',
     icon: Smartphone,
     title: 'Digital Tag on Your Phone',
-    desc: 'No paper slips required. Download your delegate badge directly to your device with offline access.',
-    flyerFeed: '/images/registration/jalsa2026-feature-01-your-tag-on-your-phone_feed.webp',
-    flyerStatus: '/images/registration/jalsa2026-feature-01-your-tag-on-your-phone_status.webp',
+    desc: 'No paper slips required. Download your delegate badge directly to your device with offline Apple & Google Wallet access.',
   },
   {
     code: 'F02',
     badge: 'HOUSEHOLD',
     icon: Users,
     title: 'Whole Family Registration',
-    desc: 'Household heads can register spouse, children, and elders in one seamless submission.',
-    flyerFeed: '/images/registration/jalsa2026-feature-02-whole-family_feed.webp',
-    flyerStatus: '/images/registration/jalsa2026-feature-02-whole-family_status.webp',
+    desc: 'Household heads can register spouse, children, and elderly relatives in one single seamless submission.',
   },
   {
     code: 'F04',
     badge: 'GATE QR',
     icon: QrCode,
     title: 'Self Check-In at Ilaro Gates',
-    desc: 'Scan gate QR posters upon arrival at Jamia Ilaro to verify attendance and skip long queues.',
-    flyerFeed: '/images/registration/jalsa2026-feature-04-self-check-in_feed.webp',
-    flyerStatus: '/images/registration/jalsa2026-feature-04-self-check-in_status.webp',
+    desc: 'Scan gate QR posters upon arrival at Jamia Ilaro to verify attendance and skip long manual verification queues.',
   },
   {
     code: 'F05',
     badge: 'CONVOY BUS',
     icon: Bus,
     title: 'Conveyance & Group Forms',
-    desc: 'Circuit coordinators can register chartered buses and check in entire convoys with one scan.',
-    flyerFeed: '/images/registration/jalsa2026-feature-05-travel-group-form_feed.webp',
-    flyerStatus: '/images/registration/jalsa2026-feature-05-travel-group-form_status.webp',
+    desc: 'Circuit coordinators can register chartered buses and check in entire convoys with one single scan.',
   },
 ];
+
+const SINGLE_FEATURED_FLYER = {
+  title: 'Official 72nd Jalsa Salana Registration Poster',
+  desc: 'Justice and Equality: Indispensable Prerequisites for Global Peace and National Harmony — Official publicity design for the 72nd Annual Convention.',
+  flyerFeed: '/images/registration/jalsa2026-flyer-01-the-arch_feed.webp',
+  flyerStatus: '/images/registration/jalsa2026-flyer-01-the-arch_status.webp',
+};
 
 export default function RegistrationShowcase() {
   const portalUrl = 'https://jalsa.ahmadiyyanigeria.net/';
@@ -63,165 +62,177 @@ export default function RegistrationShowcase() {
   const [modalFormat, setModalFormat] = useState<'feed' | 'status'>('feed');
 
   return (
-    <section className="py-14 sm:py-20 bg-gradient-to-b from-primary-night via-primary-dark to-primary-950 text-white relative overflow-hidden border-y-2 border-gold/40">
-      {/* Subtle Islamic Stars Background Overlay */}
-      <div className="absolute inset-0 bg-islamic-stars opacity-35 pointer-events-none" />
+    <section className="py-20 sm:py-28 bg-forest text-white relative overflow-hidden">
+      {/* Subtle organic background mesh */}
+      <div className="absolute inset-0 bg-islamic-stars opacity-20 pointer-events-none" />
 
-      {/* Background Decorative Rings */}
-      <div className="absolute top-0 right-0 -mr-20 -mt-20 w-[500px] h-[500px] rounded-full bg-gold/10 blur-3xl pointer-events-none" />
-      <div className="absolute bottom-0 left-0 -ml-20 -mb-20 w-[500px] h-[500px] rounded-full bg-emerald-500/10 blur-3xl pointer-events-none" />
+      {/* Soft gradient aura */}
+      <div className="absolute top-0 right-0 w-[550px] h-[550px] bg-teal/15 rounded-full blur-[140px] pointer-events-none" />
+      <div className="absolute bottom-0 left-0 w-[550px] h-[550px] bg-lime/10 rounded-full blur-[140px] pointer-events-none" />
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-        {/* Top Header Badge & Navigation */}
-        <div className="flex flex-col md:flex-row md:items-end md:justify-between gap-6 pb-8 border-b border-white/10 mb-12">
-          <div>
-            <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-gold/20 text-gold-metallic border border-gold/40 text-xs font-cinzel font-black uppercase tracking-widest mb-3">
-              <Sparkles className="w-3.5 h-3.5 text-gold" />
-              <span>OFFICIAL DELEGATE REGISTRATION PORTAL</span>
+        {/* Main 2-Column Showcase: Features on Left, Exactly ONE Featured Flyer on Right */}
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-14 items-center mb-16">
+          {/* Left Column (7 cols): Information, Core Highlights, and CTAs */}
+          <div className="lg:col-span-7">
+            <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-teal/20 text-lime border border-teal/30 text-[11px] font-display font-semibold tracking-widest uppercase mb-4">
+              <Sparkles className="w-3.5 h-3.5 text-lime" />
+              <span>Official Delegate Registration Portal</span>
             </div>
-            <h2 className="font-display font-black text-3xl sm:text-4xl lg:text-5xl text-white leading-[1.15] tracking-tight">
-              Register for Jalsa Salana 2026
+
+            <h2 className="font-display font-extrabold text-display-lg text-white leading-tight">
+              Register for Jalsa Salana Nigeria 2026
             </h2>
-            <p className="text-sm sm:text-base text-gray-300 mt-2 max-w-2xl leading-relaxed font-serif">
-              Your spiritual journey to Jamia Ahmadiyya Ilaro begins with registration. Secure your digital tag, lodging allocation, and meal access in advance.
+
+            <p className="text-base sm:text-lg text-white/70 mt-3 max-w-2xl leading-relaxed">
+              Your spiritual journey to Jamia Ahmadiyya Ilaro begins with registration. Secure your digital tag, household badge, lodging allocation, and meal access in advance.
             </p>
-          </div>
 
-          {/* Action Buttons */}
-          <div className="flex flex-wrap items-center gap-3.5 flex-shrink-0">
-            <a
-              href={portalUrl}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-flex items-center gap-2 px-6 py-3.5 rounded-xl bg-gradient-to-r from-gold to-gold-metallic hover:from-gold-hover hover:to-gold text-primary-950 font-black text-xs uppercase tracking-wider transition-all shadow-gold-glow hover:scale-105 active:scale-95"
-            >
-              <span>Register on Portal Now</span>
-              <ExternalLink className="w-4 h-4" />
-            </a>
-
-            <Link
-              href="/registration"
-              className="inline-flex items-center gap-2 px-5 py-3.5 rounded-xl bg-white/10 hover:bg-white/20 text-white font-bold text-xs uppercase tracking-wider transition-colors border border-white/20"
-            >
-              <span>Full Information Hub</span>
-              <ArrowRight className="w-4 h-4" />
-            </Link>
-          </div>
-        </div>
-
-        {/* 4 Feature Highlights Grid with Flyer Preview Lightbox */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 mb-12">
-          {HIGHLIGHTS.map((item, idx) => {
-            const Icon = item.icon;
-            return (
-              <div
-                key={idx}
-                className="bg-gradient-to-b from-white/10 via-black/30 to-black/50 backdrop-blur-md rounded-2xl border border-gold/30 p-5 hover:border-gold transition-all duration-500 group flex flex-col justify-between shadow-2xl hover:-translate-y-1.5"
-              >
-                <div>
-                  {/* Interactive Flyer Card with Click-to-Enlarge */}
+            {/* Core Benefits 2x2 Grid — Clean Cards without Clutter */}
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mt-8 mb-8">
+              {HIGHLIGHT_POINTS.map((item, idx) => {
+                const Icon = item.icon;
+                return (
                   <div
-                    onClick={() => {
-                      setSelectedFlyer(item);
-                      setModalFormat('feed');
-                    }}
-                    className="relative aspect-[4/5] rounded-xl overflow-hidden mb-4 bg-black/50 shadow-inner cursor-pointer ring-1 ring-white/10 group-hover:ring-gold/50"
+                    key={idx}
+                    className="bg-forest-950/60 backdrop-blur-md rounded-2xl border border-white/10 p-4 hover:border-teal/40 transition-colors group"
                   >
-                    <Image
-                      src={item.flyerFeed}
-                      alt={item.title}
-                      fill
-                      className="object-cover group-hover:scale-108 transition-transform duration-700"
-                    />
-                    {/* Top Tag Badges */}
-                    <div className="absolute top-2.5 left-2.5 flex items-center gap-1.5">
-                      <div className="w-7 h-7 rounded-lg bg-primary-950/90 backdrop-blur-sm border border-gold/40 flex items-center justify-center text-gold shadow">
-                        <Icon className="w-3.5 h-3.5" />
+                    <div className="flex items-center gap-3 mb-2">
+                      <div className="w-9 h-9 rounded-xl bg-teal/20 border border-teal/30 flex items-center justify-center text-lime flex-shrink-0">
+                        <Icon className="w-4 h-4 text-lime" />
                       </div>
-                      <span className="text-[9px] font-cinzel font-black uppercase tracking-wider bg-gold text-primary-950 px-2 py-0.5 rounded shadow">
-                        {item.badge}
-                      </span>
+                      <div>
+                        <span className="text-[10px] font-mono font-bold text-lime/90 uppercase tracking-wider block">
+                          {item.badge}
+                        </span>
+                        <h3 className="font-display font-bold text-sm text-white group-hover:text-lime transition-colors leading-snug">
+                          {item.title}
+                        </h3>
+                      </div>
                     </div>
-
-                    {/* Hover Zoom Prompt */}
-                    <div className="absolute inset-0 bg-primary-950/60 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center gap-2 text-xs font-bold text-white backdrop-blur-[2px]">
-                      <Maximize2 className="w-4 h-4 text-gold" />
-                      <span>Preview Flyer</span>
-                    </div>
+                    <p className="text-xs text-white/70 leading-relaxed font-sans">
+                      {item.desc}
+                    </p>
                   </div>
+                );
+              })}
+            </div>
 
-                  <div className="flex items-center gap-2 mb-1.5">
-                    <span className="text-[10px] font-mono font-bold text-gold-metallic bg-gold/15 px-1.5 py-0.5 rounded border border-gold/30">
-                      {item.code}
-                    </span>
-                    <h3 className="font-display font-bold text-base text-white group-hover:text-gold transition-colors leading-snug">
-                      {item.title}
-                    </h3>
-                  </div>
+            {/* Action CTAs */}
+            <div className="flex flex-wrap items-center gap-4">
+              <a
+                href={portalUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-2 px-6 py-3.5 rounded-2xl bg-teal hover:bg-teal-500 text-white font-bold text-xs uppercase tracking-wider transition-all shadow-glow-teal hover:scale-[1.02] active:scale-[0.98]"
+              >
+                <span>Register on Portal Now</span>
+                <ExternalLink className="w-4 h-4" />
+              </a>
 
-                  <p className="text-xs text-gray-300 leading-relaxed font-serif">
-                    {item.desc}
-                  </p>
-                </div>
+              <Link
+                href="/registration"
+                className="inline-flex items-center gap-2 px-6 py-3.5 rounded-2xl bg-white/10 hover:bg-white/15 text-white font-semibold text-xs uppercase tracking-wider transition-colors border border-white/15"
+              >
+                <span>Full Registration Guide</span>
+                <ArrowRight className="w-4 h-4" />
+              </Link>
+            </div>
+          </div>
 
-                <div className="pt-4 mt-4 border-t border-white/10 flex items-center justify-between text-[11px] text-gold-metallic font-semibold">
-                  <span className="flex items-center gap-1">
-                    <CheckCircle2 className="w-3.5 h-3.5 text-gold" />
-                    <span>Portal Integrated</span>
-                  </span>
-                  <button
-                    type="button"
-                    onClick={() => {
-                      setSelectedFlyer(item);
-                      setModalFormat('feed');
-                    }}
-                    className="text-gray-400 hover:text-white transition-colors underline text-[10px]"
-                  >
-                    Inspect
-                  </button>
+          {/* Right Column (5 cols): Exactly ONE Featured Flyer */}
+          <div className="lg:col-span-5 flex justify-center">
+            <div className="w-full max-w-sm sm:max-w-md bg-forest-950/70 backdrop-blur-md rounded-3xl border border-white/15 p-5 shadow-2xl group hover:border-teal/50 transition-all">
+              <div className="flex items-center justify-between pb-3 mb-3 border-b border-white/10">
+                <span className="text-[10px] font-display font-bold uppercase tracking-widest text-lime flex items-center gap-1.5">
+                  <Sparkles className="w-3.5 h-3.5 text-lime" />
+                  Official Convention Flyer
+                </span>
+                <span className="text-[10px] font-mono text-white/50 bg-white/10 px-2 py-0.5 rounded">
+                  72nd Jalsa
+                </span>
+              </div>
+
+              {/* The Single Flyer Artwork */}
+              <div
+                onClick={() => {
+                  setSelectedFlyer(SINGLE_FEATURED_FLYER);
+                  setModalFormat('feed');
+                }}
+                className="relative aspect-[4/5] rounded-2xl overflow-hidden bg-forest-900/60 shadow-inner cursor-pointer ring-1 ring-white/10 group-hover:ring-teal/40 transition-all"
+              >
+                <Image
+                  src={SINGLE_FEATURED_FLYER.flyerFeed}
+                  alt={SINGLE_FEATURED_FLYER.title}
+                  fill
+                  className="object-cover group-hover:scale-105 transition-transform duration-700"
+                  priority
+                />
+
+                {/* Hover Zoom Prompt */}
+                <div className="absolute inset-0 bg-forest-950/60 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center gap-2 text-xs font-bold text-white backdrop-blur-[2px]">
+                  <Maximize2 className="w-4 h-4 text-lime" />
+                  <span>Click to Enlarge Flyer</span>
                 </div>
               </div>
-            );
-          })}
+
+              <div className="pt-3 mt-3 flex items-center justify-between text-xs">
+                <span className="text-white/70 text-[11px] font-sans">
+                  Tap artwork to inspect &amp; download
+                </span>
+                <button
+                  type="button"
+                  onClick={() => {
+                    setSelectedFlyer(SINGLE_FEATURED_FLYER);
+                    setModalFormat('feed');
+                  }}
+                  className="text-lime hover:underline font-bold text-xs flex items-center gap-1"
+                >
+                  <Maximize2 className="w-3.5 h-3.5" />
+                  <span>View Fullsize</span>
+                </button>
+              </div>
+            </div>
+          </div>
         </div>
 
-        {/* 4 Trust Badges Strip */}
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-3 sm:gap-4 mb-10 text-center">
-          <div className="bg-white/5 border border-white/10 rounded-xl p-3 backdrop-blur-sm">
-            <span className="text-gold font-bold text-xs uppercase tracking-wider block">100% Free Entry</span>
-            <span className="text-[11px] text-gray-400">Zero registration fees</span>
+        {/* 4 Trust Badges Strip: Subdued Background Blocking */}
+        <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-12 text-center">
+          <div className="bg-white/5 border border-white/10 rounded-2xl p-4 backdrop-blur-sm">
+            <span className="text-lime font-display font-bold text-xs uppercase tracking-wider block">100% Free Entry</span>
+            <span className="text-xs text-white/60 mt-0.5 block">Zero registration fees</span>
           </div>
-          <div className="bg-white/5 border border-white/10 rounded-xl p-3 backdrop-blur-sm">
-            <span className="text-gold font-bold text-xs uppercase tracking-wider block">Langar Meals</span>
-            <span className="text-[11px] text-gray-400">Breakfast, lunch &amp; dinner</span>
+          <div className="bg-white/5 border border-white/10 rounded-2xl p-4 backdrop-blur-sm">
+            <span className="text-lime font-display font-bold text-xs uppercase tracking-wider block">Langar Meals</span>
+            <span className="text-xs text-white/60 mt-0.5 block">Breakfast, lunch &amp; dinner</span>
           </div>
-          <div className="bg-white/5 border border-white/10 rounded-xl p-3 backdrop-blur-sm">
-            <span className="text-gold font-bold text-xs uppercase tracking-wider block">Marquee Lodging</span>
-            <span className="text-[11px] text-gray-400">Designated auxiliary sectors</span>
+          <div className="bg-white/5 border border-white/10 rounded-2xl p-4 backdrop-blur-sm">
+            <span className="text-lime font-display font-bold text-xs uppercase tracking-wider block">Marquee Lodging</span>
+            <span className="text-xs text-white/60 mt-0.5 block">Designated auxiliary sectors</span>
           </div>
-          <div className="bg-white/5 border border-white/10 rounded-xl p-3 backdrop-blur-sm">
-            <span className="text-gold font-bold text-xs uppercase tracking-wider block">Digital Wallet</span>
-            <span className="text-[11px] text-gray-400">Offline Apple &amp; Google pass</span>
+          <div className="bg-white/5 border border-white/10 rounded-2xl p-4 backdrop-blur-sm">
+            <span className="text-lime font-display font-bold text-xs uppercase tracking-wider block">Digital Wallet</span>
+            <span className="text-xs text-white/60 mt-0.5 block">Offline Apple &amp; Google pass</span>
           </div>
         </div>
 
         {/* Bottom Banner with Verification Callout */}
-        <div className="bg-gradient-to-r from-black/60 via-black/40 to-black/60 backdrop-blur-md rounded-3xl border border-gold/30 p-6 sm:p-8 flex flex-col md:flex-row items-center justify-between gap-6 shadow-2xl">
+        <div className="bg-forest-950/70 backdrop-blur-md rounded-3xl border border-white/10 p-6 sm:p-8 flex flex-col md:flex-row items-center justify-between gap-6 shadow-soft">
           <div className="flex items-center gap-4">
-            <div className="w-12 h-12 rounded-2xl bg-gold/20 border border-gold/40 flex items-center justify-center text-gold flex-shrink-0 shadow-gold-glow">
-              <ShieldCheck className="w-6 h-6 text-gold-metallic" />
+            <div className="w-12 h-12 rounded-2xl bg-teal/20 border border-teal/30 flex items-center justify-center text-lime flex-shrink-0">
+              <ShieldCheck className="w-6 h-6 text-lime" />
             </div>
             <div>
               <h4 className="font-display font-bold text-base text-white">
                 Official Convention Registration Link
               </h4>
-              <p className="text-xs text-gray-300 mt-0.5 font-serif">
+              <p className="text-xs text-white/70 mt-0.5">
                 Always ensure you complete your registration directly via{' '}
                 <a
                   href={portalUrl}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="text-gold-metallic font-mono hover:underline font-bold"
+                  className="text-lime font-mono hover:underline font-bold"
                 >
                   jalsa.ahmadiyyanigeria.net
                 </a>
@@ -229,17 +240,17 @@ export default function RegistrationShowcase() {
             </div>
           </div>
 
-          <div className="flex items-center gap-3 w-full md:w-auto">
+          <div className="flex items-center gap-4 w-full md:w-auto">
             <Link
               href="/registration#faqs"
-              className="text-xs text-gray-300 hover:text-white underline font-medium whitespace-nowrap"
+              className="text-xs text-white/70 hover:text-white underline font-medium whitespace-nowrap"
             >
               Registration FAQs
             </Link>
-            <span className="text-gray-500">•</span>
+            <span className="text-white/30">•</span>
             <Link
               href="/registration#steps"
-              className="text-xs text-gray-300 hover:text-white underline font-medium whitespace-nowrap"
+              className="text-xs text-white/70 hover:text-white underline font-medium whitespace-nowrap"
             >
               How to Register
             </Link>
@@ -247,7 +258,7 @@ export default function RegistrationShowcase() {
               href={portalUrl}
               target="_blank"
               rel="noopener noreferrer"
-              className="ml-auto md:ml-2 inline-flex items-center gap-1.5 px-4 py-2.5 rounded-xl bg-gradient-to-r from-gold to-gold-metallic text-primary-950 font-black text-xs uppercase tracking-wider hover:from-gold-hover hover:to-gold transition-all shadow-gold-glow"
+              className="ml-auto md:ml-2 inline-flex items-center gap-1.5 px-5 py-2.5 rounded-xl bg-teal text-white font-bold text-xs uppercase tracking-wider hover:bg-teal-500 transition-all shadow-glow-teal"
             >
               <span>Register Now</span>
               <ArrowRight className="w-3.5 h-3.5" />
@@ -259,11 +270,11 @@ export default function RegistrationShowcase() {
       {/* High-Resolution Flyer Lightbox Modal */}
       {selectedFlyer && (
         <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/85 backdrop-blur-md animate-in fade-in duration-200">
-          <div className="relative max-w-lg w-full bg-primary-night border border-gold/40 rounded-3xl p-6 shadow-2xl text-white">
+          <div className="relative max-w-lg w-full bg-forest-950 border border-teal/30 rounded-3xl p-6 shadow-2xl text-white">
             <div className="flex items-center justify-between pb-3 border-b border-white/10 mb-4">
               <div>
-                <span className="text-[10px] font-mono font-bold text-gold uppercase tracking-wider">
-                  {selectedFlyer.code} · {selectedFlyer.badge}
+                <span className="text-[10px] font-mono font-bold text-lime uppercase tracking-wider">
+                  OFFICIAL ARTWORK
                 </span>
                 <h3 className="font-display font-bold text-lg text-white">
                   {selectedFlyer.title}
@@ -279,12 +290,12 @@ export default function RegistrationShowcase() {
             </div>
 
             {/* Format Selector Toggle */}
-            <div className="flex items-center justify-center gap-2 mb-4 bg-black/40 p-1 rounded-xl border border-white/10">
+            <div className="flex items-center justify-center gap-2 mb-4 bg-forest-900/60 p-1 rounded-xl border border-white/10">
               <button
                 type="button"
                 onClick={() => setModalFormat('feed')}
                 className={`px-3 py-1 rounded-lg text-xs font-bold transition-all ${
-                  modalFormat === 'feed' ? 'bg-gold text-primary-950 shadow' : 'text-gray-400 hover:text-white'
+                  modalFormat === 'feed' ? 'bg-teal text-white shadow' : 'text-gray-400 hover:text-white'
                 }`}
               >
                 Square / Feed (4:5)
@@ -293,7 +304,7 @@ export default function RegistrationShowcase() {
                 type="button"
                 onClick={() => setModalFormat('status')}
                 className={`px-3 py-1 rounded-lg text-xs font-bold transition-all ${
-                  modalFormat === 'status' ? 'bg-gold text-primary-950 shadow' : 'text-gray-400 hover:text-white'
+                  modalFormat === 'status' ? 'bg-teal text-white shadow' : 'text-gray-400 hover:text-white'
                 }`}
               >
                 Story / WhatsApp Status (9:16)
@@ -302,7 +313,7 @@ export default function RegistrationShowcase() {
 
             {/* Flyer Image Container */}
             <div
-              className={`relative mx-auto rounded-xl overflow-hidden bg-black shadow-2xl ring-1 ring-gold/30 ${
+              className={`relative mx-auto rounded-xl overflow-hidden bg-black shadow-2xl ring-1 ring-white/10 ${
                 modalFormat === 'feed' ? 'aspect-[4/5] max-h-[380px]' : 'aspect-[9/16] max-h-[440px]'
               }`}
             >
@@ -314,7 +325,7 @@ export default function RegistrationShowcase() {
               />
             </div>
 
-            <p className="text-xs text-gray-300 mt-4 leading-relaxed text-center font-serif">
+            <p className="text-xs text-white/70 mt-4 leading-relaxed text-center font-sans">
               {selectedFlyer.desc}
             </p>
 
@@ -324,14 +335,14 @@ export default function RegistrationShowcase() {
                 download
                 className="inline-flex items-center gap-1.5 px-3.5 py-2 rounded-xl bg-white/10 hover:bg-white/20 text-xs font-semibold text-white transition-colors"
               >
-                <Download className="w-3.5 h-3.5 text-gold" />
+                <Download className="w-3.5 h-3.5 text-lime" />
                 <span>Save Artwork</span>
               </a>
               <a
                 href={portalUrl}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center gap-1.5 px-5 py-2 rounded-xl bg-gradient-to-r from-gold to-gold-metallic text-primary-950 font-black text-xs uppercase tracking-wider hover:from-gold-hover hover:to-gold transition-all shadow-gold-glow"
+                className="inline-flex items-center gap-1.5 px-5 py-2 rounded-xl bg-teal text-white font-bold text-xs uppercase tracking-wider hover:bg-teal-500 transition-all shadow-glow-teal"
               >
                 <span>Register on Portal</span>
                 <ExternalLink className="w-3.5 h-3.5" />

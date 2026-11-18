@@ -77,12 +77,6 @@ export default async function EditionsArchivePage() {
                     {edition.themeEnglish}
                   </h2>
 
-                  {edition.themeArabic && (
-                    <div className={`font-arabic text-lg sm:text-xl ${edition.isCurrent ? 'text-gold-light' : 'text-primary'}`} dir="rtl">
-                      {edition.themeArabic}
-                    </div>
-                  )}
-
                   <div className={`flex flex-wrap items-center gap-4 text-xs pt-1 ${edition.isCurrent ? 'text-gray-300' : 'text-gray-500'}`}>
                     <span className="flex items-center gap-1">
                       <Calendar className="w-3.5 h-3.5 text-gold-dark" />

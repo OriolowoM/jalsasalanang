@@ -39,7 +39,7 @@ export default async function GalleriesListingPage() {
               <div>
                 <div className="relative aspect-[16/10] bg-gray-100 overflow-hidden">
                   <Image
-                    src={gallery.coverImage || gallery.photos?.[0]?.url || '/images/70th-jalsa-hero.jpg'}
+                    src={gallery.coverImage || gallery.photos?.[0]?.url || '/images/jalsa_gallery/jalsa-main-stage-keynote-podium.jpg'}
                     alt={gallery.title}
                     fill
                     className="object-cover group-hover:scale-105 transition-transform duration-300"

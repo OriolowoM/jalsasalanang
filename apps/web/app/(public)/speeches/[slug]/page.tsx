@@ -5,9 +5,14 @@ import { getSpeechBySlug } from '@/lib/api';
 import { Mic, Video, FileText, Download, Calendar, User, ChevronRight, Share2 } from 'lucide-react';
 import SocialShareButtons from '@/components/public/SocialShareButtons';
 
-export async function generateMetadata({ params }: { params: { slug: string } }) {
+interface SpeechDetailPageProps {
+  params: Promise<{ slug: string }>;
+}
+
+export async function generateMetadata({ params }: SpeechDetailPageProps) {
+  const { slug } = await params;
   try {
-    const res = await getSpeechBySlug(params.slug);
+    const res = await getSpeechBySlug(slug);
     const speech = res.data;
     if (!speech) return {};
 
@@ -20,10 +25,11 @@ export async function generateMetadata({ params }: { params: { slug: string } })
   }
 }
 
-export default async function SpeechDetailPage({ params }: { params: { slug: string } }) {
+export default async function SpeechDetailPage({ params }: SpeechDetailPageProps) {
+  const { slug } = await params;
   let speech: any;
   try {
-    const res = await getSpeechBySlug(params.slug);
+    const res = await getSpeechBySlug(slug);
     speech = res.data;
   } catch {
     notFound();

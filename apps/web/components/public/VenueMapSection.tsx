@@ -1,7 +1,8 @@
 'use client';
 
 import React from 'react';
-import { MapPin, Navigation, Compass, Phone, MessageSquare, Car, ExternalLink, ShieldCheck } from 'lucide-react';
+import Link from 'next/link';
+import { MapPin, Navigation, Compass, Phone, MessageSquare, Car, ExternalLink, ShieldCheck, Activity } from 'lucide-react';
 
 export default function VenueMapSection() {
   const directionsUrl = 'https://www.google.com/maps/dir/?api=1&destination=6.8872,3.0142';
@@ -24,7 +25,14 @@ export default function VenueMapSection() {
             </p>
           </div>
 
-          <div className="flex items-center gap-3">
+          <div className="flex flex-wrap items-center gap-3">
+            <Link
+              href="/live-crowd"
+              className="inline-flex items-center gap-2 px-4 py-2 bg-forest hover:bg-forest-900 text-white rounded-lg text-xs font-bold transition-all shadow-sm border border-teal/30 hover:scale-105 active:scale-95"
+            >
+              <Activity className="w-3.5 h-3.5 text-lime animate-pulse" />
+              <span>Live Crowd &amp; Gate Routing</span>
+            </Link>
             <a
               href={directionsUrl}
               target="_blank"

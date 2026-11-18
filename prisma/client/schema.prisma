@@ -1,0 +1,554 @@
+// Prisma Schema for Jalsa Salana Nigeria Digital Editorial & Publishing Platform
+// Database: MySQL
+
+generator client {
+  provider      = "prisma-client-js"
+  output        = "./client"
+  binaryTargets = ["native", "rhel-openssl-1.0.x", "rhel-openssl-3.0.x", "debian-openssl-1.1.x", "debian-openssl-3.0.x"]
+}
+
+datasource db {
+  provider = "mysql"
+  url      = env("DATABASE_URL")
+}
+
+enum ArticleStatus {
+  DRAFT
+  PENDING_REVIEW
+  APPROVED
+  SCHEDULED
+  PUBLISHED
+  ARCHIVED
+}
+
+enum FeaturedType {
+  NONE
+  HERO
+  SECONDARY
+  EDITORS_PICK
+}
+
+enum UserStatus {
+  ACTIVE
+  INACTIVE
+  SUSPENDED
+}
+
+enum SubscriberStatus {
+  ACTIVE
+  UNSUBSCRIBED
+}
+
+enum MenuLocation {
+  HEADER_PRIMARY
+  HEADER_TOP
+  FOOTER_EXPLORE
+  FOOTER_LEGAL
+  FOOTER_EDITIONS
+}
+
+model User {
+  id               String            @id @default(cuid())
+  email            String            @unique
+  passwordHash     String
+  firstName        String
+  lastName         String
+  avatar           String?
+  status           UserStatus        @default(ACTIVE)
+  attendeeCategory String?           @default("MEMBER")
+  travelOrigin     String?
+  assignedGate     String?
+  roleId           String
+  role             Role              @relation(fields: [roleId], references: [id])
+  authorProfile    Author?
+  articlesAuthored Article[]
+  revisionsCreated ArticleRevision[]
+  auditLogs        AuditLog[]
+  createdAt        DateTime          @default(now())
+  updatedAt        DateTime          @updatedAt
+
+  @@index([roleId])
+}
+
+model Role {
+  id          String           @id @default(cuid())
+  name        String           @unique
+  slug        String           @unique
+  description String?
+  isSystem    Boolean          @default(false)
+  users       User[]
+  permissions RolePermission[]
+  createdAt   DateTime         @default(now())
+  updatedAt   DateTime         @updatedAt
+}
+
+model Permission {
+  id          String           @id @default(cuid())
+  name        String
+  slug        String           @unique
+  module      String
+  description String?
+  roles       RolePermission[]
+}
+
+model RolePermission {
+  roleId       String
+  permissionId String
+  role         Role       @relation(fields: [roleId], references: [id], onDelete: Cascade)
+  permission   Permission @relation(fields: [permissionId], references: [id], onDelete: Cascade)
+
+  @@id([roleId, permissionId])
+  @@index([permissionId])
+}
+
+model Author {
+  id        String    @id @default(cuid())
+  name      String
+  slug      String    @unique
+  title     String? // e.g., Missionary in Charge, Central Editorial Board
+  bio       String?   @db.Text
+  avatar    String?
+  email     String?
+  twitter   String?
+  linkedin  String?
+  userId    String?   @unique
+  user      User?     @relation(fields: [userId], references: [id], onDelete: SetNull)
+  articles  Article[]
+  createdAt DateTime  @default(now())
+  updatedAt DateTime  @updatedAt
+}
+
+model Article {
+  id            String        @id @default(cuid())
+  title         String        @db.VarChar(255)
+  slug          String        @unique @db.VarChar(255)
+  subtitle      String?       @db.Text
+  excerpt       String?       @db.Text
+  content       String        @db.LongText
+  featuredImage String?       @db.VarChar(512)
+  imageCredit   String?       @db.VarChar(255)
+  readingTime   Int           @default(3)
+  featuredType  FeaturedType  @default(NONE)
+  status        ArticleStatus @default(DRAFT)
+  publishedAt   DateTime?
+  scheduledAt   DateTime?
+  viewsCount    Int           @default(0)
+
+  // Editorial Ownership
+  authorId    String
+  author      Author  @relation(fields: [authorId], references: [id])
+  createdById String?
+  createdBy   User?   @relation(fields: [createdById], references: [id], onDelete: SetNull)
+
+  // Edition Association
+  editionId String?
+  edition   JalsaEdition? @relation(fields: [editionId], references: [id], onDelete: SetNull)
+
+  // SEO & Social Meta
+  metaTitle       String? @db.VarChar(255)
+  metaDescription String? @db.Text
+  canonicalUrl    String? @db.VarChar(512)
+  ogImage         String? @db.VarChar(512)
+
+  // Migration Provenance
+  wpId        Int?
+  sourceSite  String? @db.VarChar(100)
+  originalUrl String? @db.VarChar(512)
+
+  // Relations
+  categories   ArticleCategory[]
+  tags         ArticleTag[]
+  revisions    ArticleRevision[]
+  views        ArticleView[]
+  translations ArticleTranslation[]
+
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  @@index([authorId])
+  @@index([editionId])
+  @@index([status])
+  @@index([featuredType])
+  @@index([publishedAt])
+}
+
+model ArticleRevision {
+  id          String   @id @default(cuid())
+  articleId   String
+  article     Article  @relation(fields: [articleId], references: [id], onDelete: Cascade)
+  title       String   @db.VarChar(255)
+  subtitle    String?  @db.Text
+  excerpt     String?  @db.Text
+  content     String   @db.LongText
+  changedById String?
+  changedBy   User?    @relation(fields: [changedById], references: [id], onDelete: SetNull)
+  createdAt   DateTime @default(now())
+
+  @@index([articleId])
+  @@index([changedById])
+}
+
+model Category {
+  id          String            @id @default(cuid())
+  name        String            @db.VarChar(100)
+  slug        String            @unique @db.VarChar(100)
+  description String?           @db.Text
+  image       String?           @db.VarChar(512)
+  color       String?           @db.VarChar(30) // Accent color code
+  sortOrder   Int               @default(0)
+  articles    ArticleCategory[]
+  createdAt   DateTime          @default(now())
+  updatedAt   DateTime          @updatedAt
+}
+
+model ArticleCategory {
+  articleId  String
+  categoryId String
+  article    Article  @relation(fields: [articleId], references: [id], onDelete: Cascade)
+  category   Category @relation(fields: [categoryId], references: [id], onDelete: Cascade)
+
+  @@id([articleId, categoryId])
+  @@index([categoryId])
+}
+
+model Tag {
+  id        String       @id @default(cuid())
+  name      String       @db.VarChar(100)
+  slug      String       @unique @db.VarChar(100)
+  articles  ArticleTag[]
+  createdAt DateTime     @default(now())
+}
+
+model ArticleTag {
+  articleId String
+  tagId     String
+  article   Article @relation(fields: [articleId], references: [id], onDelete: Cascade)
+  tag       Tag     @relation(fields: [tagId], references: [id], onDelete: Cascade)
+
+  @@id([articleId, tagId])
+  @@index([tagId])
+}
+
+model JalsaEdition {
+  id            String    @id @default(cuid())
+  year          Int       @unique
+  editionNumber String    @db.VarChar(100) // e.g. "72nd Annual Convention", "70th Platinum Jubilee"
+  themeEnglish  String    @db.VarChar(255)
+  themeArabic   String?   @db.VarChar(255)
+  venue         String    @db.VarChar(255)
+  dates         String    @db.VarChar(100) // e.g. "December 18–20, 2026"
+  attendance    String?   @db.VarChar(100)
+  description   String?   @db.Text
+  history       String?   @db.LongText
+  featuredImage String?   @db.VarChar(512)
+  liveStreamUrl String?   @db.VarChar(512)
+  isCurrent     Boolean   @default(false)
+  schedule      Json? // Daily session schedule details
+  articles      Article[]
+  speeches      Speech[]
+  galleries     Gallery[]
+  media         Media[]
+  createdAt     DateTime  @default(now())
+  updatedAt     DateTime  @updatedAt
+
+  @@index([year])
+  @@index([isCurrent])
+}
+
+model Speech {
+  id             String        @id @default(cuid())
+  title          String        @db.VarChar(255)
+  slug           String        @unique @db.VarChar(255)
+  speakerName    String        @db.VarChar(191)
+  speakerTitle   String?       @db.VarChar(255)
+  speechType     String        @db.VarChar(100) // Keynote, Friday Sermon, Concluding, Lecture
+  session        String?       @db.VarChar(100) // Day 1 - Opening Session
+  audioUrl       String?       @db.VarChar(512)
+  videoUrl       String?       @db.VarChar(512)
+  transcript     String?       @db.LongText
+  downloadPdfUrl String?       @db.VarChar(512)
+  summary        String?       @db.Text
+  editionId      String?
+  edition        JalsaEdition? @relation(fields: [editionId], references: [id], onDelete: SetNull)
+  createdAt      DateTime      @default(now())
+  updatedAt      DateTime      @updatedAt
+
+  @@index([editionId])
+  @@index([speechType])
+}
+
+model Media {
+  id           String        @id @default(cuid())
+  title        String        @db.VarChar(255)
+  caption      String?       @db.Text
+  credit       String?       @db.VarChar(255)
+  fileUrl      String        @db.VarChar(512)
+  mimeType     String        @db.VarChar(100)
+  fileSize     Int           @default(0)
+  width        Int?
+  height       Int?
+  editionId    String?
+  edition      JalsaEdition? @relation(fields: [editionId], references: [id], onDelete: SetNull)
+  galleryItems GalleryItem[]
+  createdAt    DateTime      @default(now())
+  updatedAt    DateTime      @updatedAt
+
+  @@index([editionId])
+}
+
+model Gallery {
+  id           String        @id @default(cuid())
+  title        String        @db.VarChar(255)
+  slug         String        @unique @db.VarChar(255)
+  description  String?       @db.Text
+  coverImage   String?       @db.VarChar(512)
+  photographer String?       @db.VarChar(255)
+  eventDay     String?       @db.VarChar(100)
+  videoUrl     String?       @db.VarChar(512)
+  editionId    String?
+  edition      JalsaEdition? @relation(fields: [editionId], references: [id], onDelete: SetNull)
+  items        GalleryItem[]
+  createdAt    DateTime      @default(now())
+  updatedAt    DateTime      @updatedAt
+
+  @@index([editionId])
+}
+
+model GalleryItem {
+  id              String  @id @default(cuid())
+  galleryId       String
+  gallery         Gallery @relation(fields: [galleryId], references: [id], onDelete: Cascade)
+  mediaId         String
+  media           Media   @relation(fields: [mediaId], references: [id], onDelete: Cascade)
+  sortOrder       Int     @default(0)
+  captionOverride String? @db.Text
+
+  @@index([galleryId])
+  @@index([mediaId])
+}
+
+model Page {
+  id              String   @id @default(cuid())
+  title           String   @db.VarChar(255)
+  slug            String   @unique @db.VarChar(255)
+  content         String   @db.LongText
+  metaTitle       String?  @db.VarChar(255)
+  metaDescription String?  @db.Text
+  isPublished     Boolean  @default(true)
+  wpId            Int?
+  sourceSite      String?  @db.VarChar(100)
+  originalUrl     String?  @db.VarChar(512)
+  featuredImage   String?  @db.VarChar(512)
+  excerpt         String?  @db.Text
+  createdAt       DateTime @default(now())
+  updatedAt       DateTime @updatedAt
+}
+
+model NavigationMenu {
+  id        String           @id @default(cuid())
+  name      String           @db.VarChar(100)
+  location  MenuLocation     @unique
+  items     NavigationItem[]
+  createdAt DateTime         @default(now())
+  updatedAt DateTime         @updatedAt
+}
+
+model NavigationItem {
+  id        String         @id @default(cuid())
+  menuId    String
+  menu      NavigationMenu @relation(fields: [menuId], references: [id], onDelete: Cascade)
+  title     String         @db.VarChar(100)
+  url       String         @db.VarChar(255)
+  sortOrder Int            @default(0)
+  parentId  String?
+  target    String         @default("_self") @db.VarChar(20)
+
+  @@index([menuId])
+}
+
+model NewsletterSubscriber {
+  id             String           @id @default(cuid())
+  email          String           @unique @db.VarChar(191)
+  fullName       String?          @db.VarChar(191)
+  status         SubscriberStatus @default(ACTIVE)
+  token          String           @unique @db.VarChar(64)
+  ipAddress      String?          @db.VarChar(45)
+  subscribedAt   DateTime         @default(now())
+  unsubscribedAt DateTime?
+
+  @@index([status])
+}
+
+model SiteSetting {
+  id          String   @id @default(cuid())
+  key         String   @unique @db.VarChar(100)
+  value       String   @db.LongText
+  group       String   @default("general") @db.VarChar(50)
+  description String?  @db.VarChar(255)
+  updatedAt   DateTime @updatedAt
+
+  @@index([group])
+}
+
+model ArticleView {
+  id        String   @id @default(cuid())
+  articleId String
+  article   Article  @relation(fields: [articleId], references: [id], onDelete: Cascade)
+  ipAddress String?  @db.VarChar(45)
+  userAgent String?  @db.VarChar(255)
+  referrer  String?  @db.VarChar(512)
+  viewedAt  DateTime @default(now())
+
+  @@index([articleId])
+  @@index([viewedAt])
+}
+
+model AuditLog {
+  id         String   @id @default(cuid())
+  userId     String?
+  user       User?    @relation(fields: [userId], references: [id], onDelete: SetNull)
+  action     String   @db.VarChar(100) // e.g. "ARTICLE_PUBLISHED", "USER_CREATED"
+  entityType String   @db.VarChar(50) // "Article", "Speech", "Edition"
+  entityId   String?  @db.VarChar(100)
+  details    Json?
+  ipAddress  String?  @db.VarChar(45)
+  createdAt  DateTime @default(now())
+
+  @@index([userId])
+  @@index([createdAt])
+}
+
+model WordPressMigrationRecord {
+  id             String    @id @default(cuid())
+  wpId           Int
+  sourceSite     String    @db.VarChar(100)
+  postType       String    @db.VarChar(50)
+  title          String    @db.VarChar(512)
+  slug           String    @db.VarChar(255)
+  date           DateTime?
+  originalUrl    String?   @db.VarChar(512)
+  cleanContent   String    @db.LongText
+  rawContent     String    @db.LongText
+  excerpt        String?   @db.Text
+  featuredImage  String?   @db.VarChar(512)
+  associatedType String    @db.VarChar(50)
+  associatedId   String?   @db.VarChar(100)
+  createdAt      DateTime  @default(now())
+  updatedAt      DateTime  @updatedAt
+
+  @@unique([sourceSite, wpId, postType])
+  @@index([sourceSite])
+  @@index([postType])
+  @@index([slug])
+  @@map("wordpress_migration_record")
+}
+
+model WordPressAsset {
+  id              String   @id @default(cuid())
+  originalUrl     String   @unique @db.VarChar(512)
+  localPath       String?  @db.VarChar(512)
+  sourceSite      String   @db.VarChar(100)
+  fileName        String   @db.VarChar(255)
+  mimeType        String?  @db.VarChar(100)
+  postOrPageTitle String?  @db.VarChar(255)
+  status          String   @default("DISCOVERED") @db.VarChar(50)
+  referenceCount  Int      @default(1)
+  createdAt       DateTime @default(now())
+  updatedAt       DateTime @updatedAt
+
+  @@index([sourceSite])
+  @@index([status])
+  @@map("wordpress_asset")
+}
+
+// -------------------------------------------------------------
+// AI Automation & Smart Logistics Suite
+// -------------------------------------------------------------
+
+enum ZoneType {
+  DINING
+  SANITARY
+  PRAYER
+  PARKING
+  ENTRANCE
+  CLINIC
+}
+
+enum ZoneStatus {
+  GREEN
+  ORANGE
+  RED
+}
+
+model ZoneTraffic {
+  id               String        @id @default(cuid())
+  zoneKey          String        @unique @db.VarChar(100) // e.g. "main-dining-hall", "female-dining", "gate-1"
+  name             String        @db.VarChar(150)
+  type             ZoneType
+  status           ZoneStatus    @default(GREEN)
+  currentOccupancy Int           @default(0)
+  maxCapacity      Int           @default(1000)
+  alternateZoneId  String?
+  alternateZone    ZoneTraffic?  @relation("ZoneAlternates", fields: [alternateZoneId], references: [id], onDelete: SetNull)
+  alternativeFor   ZoneTraffic[] @relation("ZoneAlternates")
+  alternateNote    String?       @db.VarChar(255)
+  mapCoordinates   Json? // { x: number, y: number, label: string }
+  lastUpdatedBy    String?       @db.VarChar(100)
+  createdAt        DateTime      @default(now())
+  updatedAt        DateTime      @updatedAt
+
+  @@index([type])
+  @@index([status])
+  @@map("zone_traffic")
+}
+
+enum TranslationLocale {
+  YO // Yoruba
+  HA // Hausa
+  IG // Igbo
+  AR // Arabic
+}
+
+enum TranslationStatus {
+  PENDING_REVIEW
+  APPROVED
+  REJECTED
+}
+
+model ArticleTranslation {
+  id           String            @id @default(cuid())
+  articleId    String
+  article      Article           @relation(fields: [articleId], references: [id], onDelete: Cascade)
+  locale       TranslationLocale
+  title        String            @db.VarChar(255)
+  subtitle     String?           @db.Text
+  excerpt      String?           @db.Text
+  content      String            @db.LongText
+  status       TranslationStatus @default(PENDING_REVIEW)
+  reviewedBy   String?           @db.VarChar(100)
+  reviewedAt   DateTime?
+  translatedBy String            @default("GEMINI_AI") @db.VarChar(50)
+  createdAt    DateTime          @default(now())
+  updatedAt    DateTime          @updatedAt
+
+  @@unique([articleId, locale])
+  @@index([articleId])
+  @@index([locale])
+  @@index([status])
+  @@map("article_translations")
+}
+
+model ConciergeQuery {
+  id         String   @id @default(cuid())
+  sessionId  String?  @db.VarChar(100)
+  userQuery  String   @db.Text
+  aiResponse String   @db.LongText
+  category   String?  @db.VarChar(100)
+  resolved   Boolean  @default(true)
+  clientIp   String?  @db.VarChar(45)
+  createdAt  DateTime @default(now())
+
+  @@index([sessionId])
+  @@index([createdAt])
+  @@map("concierge_queries")
+}

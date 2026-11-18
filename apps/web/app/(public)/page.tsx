@@ -3,6 +3,8 @@ import { getArticles, getEditions, getCurrentEdition, getSpeeches, getGalleries 
 import HeroSection from '@/components/public/HeroSection';
 import CountdownSection from '@/components/public/CountdownSection';
 import RegistrationShowcase from '@/components/public/RegistrationShowcase';
+import EventAttendeeHub from '@/components/public/EventAttendeeHub';
+import EditorialCategoryTabs from '@/components/public/EditorialCategoryTabs';
 import EditorialGrid from '@/components/public/EditorialGrid';
 import SpeechesSection from '@/components/public/SpeechesSection';
 import MediaHighlightsSection from '@/components/public/MediaHighlightsSection';
@@ -20,6 +22,7 @@ export default async function HomePage() {
     secondaryRes,
     editorsPicksRes,
     latestRes,
+    allDispatchesRes,
     editionsRes,
     currentEditionRes,
     speechesRes,
@@ -29,6 +32,7 @@ export default async function HomePage() {
     getArticles({ featuredType: 'SECONDARY', limit: 3 }).catch(() => ({ data: [] })),
     getArticles({ featuredType: 'EDITORS_PICK', limit: 4 }).catch(() => ({ data: [] })),
     getArticles({ limit: 6 }).catch(() => ({ data: [] })),
+    getArticles({ limit: 40 }).catch(() => ({ data: [] })),
     getEditions().catch(() => ({ data: [] })),
     getCurrentEdition().catch(() => ({ data: null })),
     getSpeeches({ limit: 3 }).catch(() => ({ data: [] })),
@@ -39,6 +43,7 @@ export default async function HomePage() {
   const secondaryArticles = secondaryRes.data?.length > 0 ? secondaryRes.data : latestRes.data?.slice(1, 4);
   const editorsPicks = editorsPicksRes.data?.length > 0 ? editorsPicksRes.data : latestRes.data?.slice(0, 4);
   const latestArticles = latestRes.data || [];
+  const dispatchesArticles = allDispatchesRes.data || latestArticles;
   const editions = editionsRes.data || [];
   const speeches = speechesRes.data || [];
   const galleries = galleriesRes.data || [];
@@ -51,13 +56,19 @@ export default async function HomePage() {
       {/* 2. Jalsa Salana 2026 Special Coverage Hub & Live Countdown */}
       <CountdownSection />
 
-      {/* Prominent Jalsa 2026 Registration Showcase Section */}
+      {/* 3. Prominent Jalsa 2026 Registration Showcase Section */}
       <RegistrationShowcase />
 
-      {/* 3. Editor's Picks & Latest Articles Feed */}
+      {/* 4. Event Attendee Services & Logistics Hub (Programme, Accommodation, Transportation, Security) */}
+      <EventAttendeeHub />
+
+      {/* 5. Migrated Digital Magazine Dispatches by Thematic Category Tabs */}
+      <EditorialCategoryTabs articles={dispatchesArticles} />
+
+      {/* 6. Editor's Picks & Classic Editorial Grid */}
       <EditorialGrid editorsPicks={editorsPicks} latestArticles={latestArticles} />
 
-      {/* 4. Speeches & Addresses */}
+      {/* 7. Speeches & Addresses */}
       <SpeechesSection speeches={speeches} />
 
       {/* Quranic Foundation Anchor linked to AlIslam.org */}
@@ -65,16 +76,16 @@ export default async function HomePage() {
         <QuranCitationCard />
       </div>
 
-      {/* 5. Photography & Visual Highlights */}
+      {/* 8. Photography & Visual Highlights */}
       <MediaHighlightsSection galleries={galleries} />
 
-      {/* 6. Historical Jalsa Archives (2026, 2025, 2024 Platinum Jubilee, etc.) */}
+      {/* 9. Historical Jalsa Archives (2026, 2025, 2024 Platinum Jubilee, etc.) */}
       <ArchivesTimeline editions={editions} />
 
       {/* Official WhatsApp Delegate Broadcast Banner */}
       <WhatsAppBroadcastBanner />
 
-      {/* 7. Newsletter Subscription Component */}
+      {/* 10. Newsletter Subscription Component */}
       <NewsletterForm />
     </div>
   );

@@ -240,12 +240,6 @@ export default function AdminEditionsPage() {
                 {ed.themeEnglish}
               </h3>
 
-              {ed.themeArabic && (
-                <div className="font-arabic text-sm text-gold-dark mb-3 line-clamp-1" dir="rtl">
-                  {ed.themeArabic}
-                </div>
-              )}
-
               <div className="text-xs text-gray-500 space-y-1 mb-4">
                 <div>📅 {ed.dates}</div>
                 <div>📍 {ed.venue}</div>

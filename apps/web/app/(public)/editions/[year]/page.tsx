@@ -8,9 +8,14 @@ import AddToCalendarButton from '@/components/public/AddToCalendarButton';
 import VenueMapSection from '@/components/public/VenueMapSection';
 import QuranCitationCard from '@/components/public/QuranCitationCard';
 
-export async function generateMetadata({ params }: { params: { year: string } }) {
+interface EditionDetailPageProps {
+  params: Promise<{ year: string }>;
+}
+
+export async function generateMetadata({ params }: EditionDetailPageProps) {
+  const { year } = await params;
   try {
-    const res = await getEditionByYear(params.year);
+    const res = await getEditionByYear(year);
     const edition = res.data;
     if (!edition) return {};
 
@@ -23,10 +28,11 @@ export async function generateMetadata({ params }: { params: { year: string } })
   }
 }
 
-export default async function EditionDetailPage({ params }: { params: { year: string } }) {
+export default async function EditionDetailPage({ params }: EditionDetailPageProps) {
+  const { year } = await params;
   let edition: any;
   try {
-    const res = await getEditionByYear(params.year);
+    const res = await getEditionByYear(year);
     edition = res.data;
   } catch {
     notFound();
@@ -73,14 +79,7 @@ export default async function EditionDetailPage({ params }: { params: { year: st
               Jalsa Salana Nigeria {edition.year}
             </h1>
 
-            {/* Arabic Theme */}
-            {edition.themeArabic && (
-              <div className="font-arabic text-2xl sm:text-3xl text-gold-light pt-2 leading-relaxed" dir="rtl">
-                {edition.themeArabic}
-              </div>
-            )}
-
-            <p className="font-serif text-lg sm:text-xl text-gray-200 italic leading-relaxed">
+            <p className="font-serif text-lg sm:text-xl text-gray-200 italic leading-relaxed pt-2">
               &ldquo;{edition.themeEnglish}&rdquo;
             </p>
 
@@ -176,7 +175,7 @@ export default async function EditionDetailPage({ params }: { params: { year: st
                 <article key={art.id} className="bg-white rounded-xl overflow-hidden border border-gray-200 shadow-sm flex flex-col justify-between group">
                   <Link href={`/articles/${art.slug}`} className="block relative aspect-[16/10] bg-gray-100">
                     <Image
-                      src={art.featuredImage || '/images/jalsa-convention-a.jpg'}
+                      src={art.featuredImage || '/images/jalsa_gallery/jalsa-crowd-marquee-gathering.jpg'}
                       alt={art.title}
                       fill
                       className="object-cover group-hover:scale-105 transition-transform duration-300"

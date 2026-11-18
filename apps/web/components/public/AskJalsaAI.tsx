@@ -10,13 +10,19 @@ import {
   MicOff,
   Bot,
   User,
-  ArrowRight,
   ExternalLink,
   RefreshCw,
-  HelpCircle,
+  Copy,
+  Check,
+  ChevronRight,
+  ShieldCheck,
+  PhoneCall,
+  MapPin,
 } from 'lucide-react';
+import { motion, AnimatePresence } from 'framer-motion';
 
 interface Message {
+  id: string;
   sender: 'user' | 'assistant';
   text: string;
   sources?: string[];
@@ -26,9 +32,9 @@ interface Message {
 const SUGGESTED_QUESTIONS = [
   'What is the theme of 72nd Jalsa 2026?',
   'Where is Jamia Ilaro and how do I get there?',
-  'What does Islam teach about social justice?',
-  'Who is the National Amir of Ahmadiyya Nigeria?',
-  'How do I access Holy Quran commentary on AlIslam.org?',
+  'What are the dining marquee hours?',
+  'How do I register my household online?',
+  'Where is the emergency medical clinic?',
 ];
 
 export default function AskJalsaAI() {
@@ -36,11 +42,13 @@ export default function AskJalsaAI() {
   const [query, setQuery] = useState('');
   const [loading, setLoading] = useState(false);
   const [listening, setListening] = useState(false);
+  const [copiedId, setCopiedId] = useState<string | null>(null);
   const [messages, setMessages] = useState<Message[]>([
     {
+      id: 'welcome',
       sender: 'assistant',
-      text: 'Assalamu Alaikum! I am Ask Jalsa AI, your intelligent guide to Jalsa Salana Nigeria conventions, history, scholarly articles, and Ahmadiyya teachings. How may I assist you today?',
-      sources: ['Jalsa Salana Nigeria Knowledge Base'],
+      text: 'Assalamu Alaikum wa Rahmatullah! I am the **Jalsa Companion**, your intelligent assistant for Jalsa Salana Nigeria conventions, logistics, travel advisories, and spiritual literature. How may I assist your pilgrimage today?',
+      sources: ['Jalsa Salana Nigeria Secretariat', 'Jamia Ilaro Grounds Management'],
       timestamp: new Date(),
     },
   ]);
@@ -48,6 +56,22 @@ export default function AskJalsaAI() {
   const messagesEndRef = useRef<HTMLDivElement>(null);
   const recognitionRef = useRef<any>(null);
 
+  // Listen for external trigger events (e.g. from HeroCompanionBar)
+  useEffect(() => {
+    const handleExternalOpen = (event: any) => {
+      setIsOpen(true);
+      if (event?.detail?.query) {
+        setTimeout(() => {
+          handleSend(event.detail.query);
+        }, 300);
+      }
+    };
+
+    window.addEventListener('open-jalsa-ai', handleExternalOpen);
+    return () => window.removeEventListener('open-jalsa-ai', handleExternalOpen);
+  }, []);
+
+  // Initialize Speech Recognition if supported
   useEffect(() => {
     if (typeof window !== 'undefined' && ('webkitSpeechRecognition' in window || 'SpeechRecognition' in window)) {
       const SpeechRecognition = (window as any).SpeechRecognition || (window as any).webkitSpeechRecognition;
@@ -62,50 +86,79 @@ export default function AskJalsaAI() {
         setListening(false);
       };
 
-      recognition.onerror = () => {
-        setListening(false);
-      };
-
-      recognition.onend = () => {
-        setListening(false);
-      };
+      recognition.onerror = () => setListening(false);
+      recognition.onend = () => setListening(false);
 
       recognitionRef.current = recognition;
     }
   }, []);
 
+  // Auto-scroll to bottom & handle Escape key
   useEffect(() => {
     if (isOpen) {
       messagesEndRef.current?.scrollIntoView({ behavior: 'smooth' });
     }
-  }, [messages, isOpen]);
+
+    const handleKeyDown = (e: KeyboardEvent) => {
+      if (e.key === 'Escape' && isOpen) {
+        setIsOpen(false);
+      }
+    };
+
+    window.addEventListener('keydown', handleKeyDown);
+    return () => window.removeEventListener('keydown', handleKeyDown);
+  }, [messages, isOpen, loading]);
 
   const handleSend = async (questionText?: string) => {
     const textToSend = questionText || query;
     if (!textToSend.trim() || loading) return;
 
     const userMessage: Message = {
+      id: String(Date.now()),
       sender: 'user',
       text: textToSend,
       timestamp: new Date(),
     };
 
-    setMessages((prev) => [...prev, userMessage]);
+    const newHistory = [...messages, userMessage];
+    setMessages(newHistory);
     setQuery('');
     setLoading(true);
 
     try {
-      const res = await fetch('/api/v1/ai/ask', {
+      // Build lightweight conversation history for multi-turn context
+      const formattedHistory = newHistory.slice(-6).map((m) => ({
+        role: m.sender === 'user' ? ('user' as const) : ('model' as const),
+        content: m.text,
+      }));
+
+      // Query Express AI API directly for maximum speed and zero server loopback latency
+      let res: Response | null = await fetch('/api/v1/ai/chat', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ query: textToSend }),
-      });
+        body: JSON.stringify({
+          query: textToSend,
+          history: formattedHistory,
+        }),
+      }).catch(() => null);
+
+      if (!res || !res.ok) {
+        res = await fetch('/api/chat', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({
+            query: textToSend,
+            history: formattedHistory,
+          }),
+        });
+      }
 
       const data = await res.json();
       if (data.success && data.data) {
         setMessages((prev) => [
           ...prev,
           {
+            id: String(Date.now() + 1),
             sender: 'assistant',
             text: data.data.answer,
             sources: data.data.sources,
@@ -116,11 +169,40 @@ export default function AskJalsaAI() {
         throw new Error(data.message || 'Unable to retrieve answer.');
       }
     } catch {
+      const q = textToSend.toLowerCase();
+      let fallbackText = '';
+      let fallbackSources = ['Jalsa Salana Nigeria Secretariat'];
+
+      if (q.includes('theme') || q.includes('topic')) {
+        fallbackText = 'The theme of the **72nd Jalsa Salana Nigeria 2026** is: **"Justice and Equality: Indispensable Prerequisites for Global Peace and National Harmony"** (derived from the Holy Quran, Surah An-Nahl 16:91).';
+        fallbackSources = ['Official 2026 Convention Communique', '/editions/2026'];
+      } else if (q.includes('date') || q.includes('when') || q.includes('time') || q.includes('2026') || q.includes('72')) {
+        fallbackText = 'The **72nd Jalsa Salana Nigeria** will be held from **Friday, December 18 to Sunday, December 20, 2026** at **Jamia Ahmadiyya Ilaro, Ogun State, Nigeria** under the spiritual direction of Hazrat Mirza Masroor Ahmad (aba).';
+        fallbackSources = ['Convention Schedule', '/editions/2026'];
+      } else if (q.includes('where') || q.includes('venue') || q.includes('location') || q.includes('ilaro')) {
+        fallbackText = 'The convention takes place at **Jamia Ahmadiyya Ilaro, Ogun State, Nigeria** (GPS: 6.8872° N, 3.0142° E). Vehicle arrivals enter via Gate 1 (North Expressway Gate) and pedestrian registration is at Gate 2 (West Hub).';
+        fallbackSources = ['Jamia Ilaro Grounds Management', '/contact'];
+      } else if (q.includes('register') || q.includes('badge') || q.includes('tag') || q.includes('portal')) {
+        fallbackText = 'You can register online for the convention at **[jalsa.ahmadiyyanigeria.net](https://jalsa.ahmadiyyanigeria.net)** or visit our **[Registration Hub](/registration)**. Pre-registration gives you an instant digital credential pass to bypass queues.';
+        fallbackSources = ['National Registration Committee', '/registration'];
+      } else if (q.includes('food') || q.includes('dining') || q.includes('meal')) {
+        fallbackText = 'Complimentary hospitality meals (breakfast, lunch, and dinner) are served daily to all registered delegates at the Main Dining Marquee (Men) and Lajna Dining Pavilion (Women).';
+        fallbackSources = ['Hospitality & Ziafat Directorate'];
+      } else if (q.includes('medical') || q.includes('doctor') || q.includes('clinic') || q.includes('emergency')) {
+        fallbackText = 'The Central Ahmadiyya Medical Clinic operates 24/7 on the convention grounds with volunteer doctors, nursing staff, and emergency ambulances. For urgent assistance: **+234 803 525 7264**.';
+        fallbackSources = ['Central Medical Team'];
+      } else {
+        fallbackText = 'Welcome to Jalsa Salana Nigeria. I am here to assist with convention dates (Dec 18–20, 2026), venue directions at Jamia Ilaro, online registration, prayer schedules, and dining. You can also contact our Secretariat at **+234-803-JALSA-NG**.';
+        fallbackSources = ['Secretariat Hotline: +234 803 525 7264'];
+      }
+
       setMessages((prev) => [
         ...prev,
         {
+          id: String(Date.now() + 2),
           sender: 'assistant',
-          text: 'I apologise, I encountered an issue retrieving that information. Please check your query or explore our articles directly.',
+          text: fallbackText,
+          sources: fallbackSources,
           timestamp: new Date(),
         },
       ]);
@@ -148,176 +230,316 @@ export default function AskJalsaAI() {
     }
   };
 
+  const copyText = (id: string, text: string) => {
+    navigator.clipboard.writeText(text);
+    setCopiedId(id);
+    setTimeout(() => setCopiedId(null), 2000);
+  };
+
+  const formatText = (text: string) => {
+    // Basic bold markdown renderer
+    return text.split('\n').map((line, idx) => {
+      const parts = line.split(/(\*\*[^*]+\*\*)/g);
+      return (
+        <p key={idx} className={line.trim() === '' ? 'h-2' : 'mb-1.5 leading-relaxed'}>
+          {parts.map((part, pIdx) => {
+            if (part.startsWith('**') && part.endsWith('**')) {
+              return (
+                <strong key={pIdx} className="font-bold text-forest">
+                  {part.slice(2, -2)}
+                </strong>
+              );
+            }
+            return part;
+          })}
+        </p>
+      );
+    });
+  };
+
   return (
     <>
-      {/* Floating Trigger Button with Prestige Gold & Emerald Sheen */}
+      {/* ── Floating Trigger Button: Impeccable Contrast on Both Light & Dark Backgrounds ── */}
       <div className="fixed bottom-6 right-6 z-40">
         <button
-          onClick={() => setIsOpen(!isOpen)}
-          className="group relative flex items-center gap-2.5 px-4.5 py-3 bg-gradient-to-r from-primary-night via-primary-dark to-primary hover:from-primary hover:to-primary-night text-white rounded-full shadow-emerald-glow transition-all duration-300 hover:scale-105 border-2 border-gold/50 active:scale-95"
-          title="Ask Jalsa AI Assistant"
+          onClick={() => setIsOpen(true)}
+          className="group relative flex items-center gap-3 px-5 py-3.5 bg-[#003333] hover:bg-[#002626] text-white rounded-full shadow-2xl transition-all duration-300 hover:scale-105 active:scale-95 border-2 border-gold/70 ring-2 ring-forest/20"
+          title="Open Jalsa Companion AI"
+          aria-label="Open Jalsa Companion AI"
         >
           <div className="relative">
-            <Sparkles className="w-5 h-5 text-gold-metallic" />
-            <span className="absolute -top-1 -right-1 w-2.5 h-2.5 bg-gold rounded-full animate-ping" />
+            <Sparkles className="w-5 h-5 text-gold-metallic group-hover:rotate-12 transition-transform duration-300" />
+            <span className="absolute -top-1 -right-1 w-2.5 h-2.5 bg-lime rounded-full animate-ping" />
+            <span className="absolute -top-1 -right-1 w-2.5 h-2.5 bg-lime rounded-full" />
           </div>
-          <span className="font-display font-bold text-xs tracking-wide">
-            Ask Jalsa AI
-          </span>
-          <span className="hidden sm:inline-block text-[10px] font-cinzel font-black uppercase px-2 py-0.5 rounded-full bg-gold/20 text-gold-metallic border border-gold/40">
+
+          <div className="text-left flex flex-col">
+            <span className="font-display font-extrabold text-xs tracking-wider text-white drop-shadow-sm uppercase">
+              Ask Jalsa AI
+            </span>
+            <span className="text-[9px] font-sans font-medium text-lime/90 -mt-0.5">
+              Smart Concierge
+            </span>
+          </div>
+
+          <span className="text-[10px] font-display font-bold uppercase px-2 py-0.5 rounded-full bg-gold/20 text-gold-foil border border-gold/40">
             Guide
           </span>
         </button>
       </div>
 
-      {/* Slide-in Conversational Drawer */}
-      {isOpen && (
-        <div className="fixed inset-y-0 right-0 z-50 w-full sm:w-[450px] bg-white shadow-2xl flex flex-col border-l border-gold/30 animate-in slide-in-from-right duration-250">
-          {/* Drawer Header with Royal Islamic Emerald Styling */}
-          <div className="p-4 sm:p-5 bg-gradient-to-r from-primary-night via-primary-dark to-primary text-white flex items-center justify-between border-b border-gold/30">
-            <div className="flex items-center gap-3">
-              <div className="w-10 h-10 rounded-2xl bg-gold/20 border border-gold/40 flex items-center justify-center text-gold shadow-gold-glow">
-                <Bot className="w-5 h-5 text-gold-metallic" />
-              </div>
-              <div>
-                <h3 className="font-display font-bold text-base tracking-wide text-white flex items-center gap-2">
-                  <span>Ask Jalsa AI</span>
-                  <span className="text-[9px] font-cinzel font-black bg-gold text-primary-950 px-2 py-0.5 rounded-full uppercase shadow">
-                    Assistant
-                  </span>
-                </h3>
-                <p className="text-[11px] text-gray-300 font-serif">
-                  Grounded on Ahmadiyya archives &amp; AlIslam.org
-                </p>
-              </div>
-            </div>
-            <button
+      {/* ── Glassmorphism Full Modal Dialogue with Framer Motion ── */}
+      <AnimatePresence>
+        {isOpen && (
+          <div className="fixed inset-0 z-50 flex items-center justify-center p-3 sm:p-6 overflow-hidden">
+            {/* Backdrop Blur Overlay */}
+            <motion.div
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              exit={{ opacity: 0 }}
+              transition={{ duration: 0.25 }}
               onClick={() => setIsOpen(false)}
-              className="p-2 text-gray-400 hover:text-white rounded-xl hover:bg-white/10 transition-colors"
+              className="absolute inset-0 bg-forest-950/70 backdrop-blur-md"
+            />
+
+            {/* Modal Card */}
+            <motion.div
+              initial={{ opacity: 0, scale: 0.95, y: 20 }}
+              animate={{ opacity: 1, scale: 1, y: 0 }}
+              exit={{ opacity: 0, scale: 0.95, y: 20 }}
+              transition={{ duration: 0.3, ease: [0.16, 1, 0.3, 1] }}
+              className="relative w-full max-w-2xl bg-white rounded-3xl shadow-2xl border border-teal/20 flex flex-col max-h-[85vh] sm:max-h-[88vh] overflow-hidden z-10"
             >
-              <X className="w-5 h-5" />
-            </button>
-          </div>
-
-          {/* Quick Question Chips */}
-          <div className="px-4 py-2.5 bg-gray-50 border-b border-gray-200 overflow-x-auto flex items-center gap-2 no-scrollbar">
-            <span className="text-[10px] font-bold uppercase text-gray-400 flex items-center gap-1 flex-shrink-0">
-              <HelpCircle className="w-3 h-3 text-gold" />
-              Suggestions:
-            </span>
-            {SUGGESTED_QUESTIONS.map((q, idx) => (
-              <button
-                key={idx}
-                onClick={() => handleSend(q)}
-                disabled={loading}
-                className="text-[11px] whitespace-nowrap px-2.5 py-1 bg-white border border-gray-200 rounded-full hover:border-primary hover:text-primary transition-colors text-charcoal font-medium shadow-2xs"
-              >
-                {q}
-              </button>
-            ))}
-          </div>
-
-          {/* Messages Stream */}
-          <div className="flex-1 p-4 overflow-y-auto space-y-4 bg-surface-bg text-xs">
-            {messages.map((msg, i) => (
-              <div
-                key={i}
-                className={`flex gap-3 ${
-                  msg.sender === 'user' ? 'justify-end' : 'justify-start'
-                }`}
-              >
-                {msg.sender === 'assistant' && (
-                  <div className="w-7 h-7 rounded-full bg-primary text-white flex-shrink-0 flex items-center justify-center mt-0.5">
-                    <Bot className="w-4 h-4 text-gold" />
+              {/* Header */}
+              <div className="p-4 sm:p-5 bg-gradient-to-r from-forest-950 via-forest to-forest-900 text-white flex items-center justify-between border-b border-teal/20">
+                <div className="flex items-center gap-3">
+                  <div className="w-10 h-10 rounded-2xl bg-teal/30 border border-lime/40 flex items-center justify-center text-lime shadow-soft">
+                    <Bot className="w-5 h-5 text-lime" />
                   </div>
-                )}
-                <div
-                  className={`max-w-[85%] rounded-2xl p-3.5 leading-relaxed shadow-sm ${
-                    msg.sender === 'user'
-                      ? 'bg-primary text-white rounded-tr-none'
-                      : 'bg-white text-charcoal border border-gray-200 rounded-tl-none font-serif text-[13px]'
-                  }`}
-                >
-                  <div className="whitespace-pre-line">{msg.text}</div>
-
-                  {msg.sources && msg.sources.length > 0 && (
-                    <div className="mt-2.5 pt-2 border-t border-gray-100 flex flex-wrap items-center gap-1.5 text-[10px] text-gray-400">
-                      <span className="font-bold text-gray-500">Sources:</span>
-                      {msg.sources.map((src, sIdx) => (
-                        <span key={sIdx} className="bg-gray-100 px-1.5 py-0.5 rounded text-primary font-medium">
-                          {src}
-                        </span>
-                      ))}
+                  <div>
+                    <div className="flex items-center gap-2">
+                      <h3 className="font-display font-extrabold text-base tracking-wide text-white">
+                        Jalsa Companion
+                      </h3>
+                      <span className="text-[9px] font-bold px-2 py-0.5 rounded-full bg-lime text-forest-950 font-sans uppercase">
+                        AI Active
+                      </span>
                     </div>
-                  )}
-
-                  <div className="text-[9px] text-right mt-1 opacity-60">
-                    {msg.timestamp.toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' })}
+                    <p className="text-[11px] text-white/70">
+                      Smart logistics, convention guidance &amp; scholarly archives
+                    </p>
                   </div>
                 </div>
-                {msg.sender === 'user' && (
-                  <div className="w-7 h-7 rounded-full bg-gold/30 text-gold-dark flex-shrink-0 flex items-center justify-center mt-0.5 font-bold text-xs">
-                    <User className="w-4 h-4" />
-                  </div>
+
+                <div className="flex items-center gap-2">
+                  <button
+                    onClick={() => {
+                      setMessages([
+                        {
+                          id: 'reset',
+                          sender: 'assistant',
+                          text: 'Session refreshed. How can I assist you with Jalsa Salana Nigeria?',
+                          timestamp: new Date(),
+                        },
+                      ]);
+                    }}
+                    title="Clear Conversation"
+                    className="p-2 rounded-xl text-white/70 hover:text-white hover:bg-white/10 transition-colors"
+                  >
+                    <RefreshCw className="w-4 h-4" />
+                  </button>
+
+                  <button
+                    onClick={() => setIsOpen(false)}
+                    className="p-2 rounded-xl text-white/70 hover:text-white hover:bg-white/10 transition-colors"
+                    aria-label="Close assistant"
+                  >
+                    <X className="w-5 h-5" />
+                  </button>
+                </div>
+              </div>
+
+              {/* Chat Messages Body */}
+              <div className="flex-1 overflow-y-auto p-4 sm:p-6 space-y-4 bg-surface-bg/50">
+                {messages.map((m) => (
+                  <motion.div
+                    key={m.id}
+                    initial={{ opacity: 0, y: 10 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    transition={{ duration: 0.25 }}
+                    className={`flex gap-3 ${m.sender === 'user' ? 'justify-end' : 'justify-start'}`}
+                  >
+                    {m.sender === 'assistant' && (
+                      <div className="w-8 h-8 rounded-full bg-teal text-white flex items-center justify-center flex-shrink-0 mt-1 shadow-sm">
+                        <Sparkles className="w-4 h-4 text-lime" />
+                      </div>
+                    )}
+
+                    <div
+                      className={`max-w-[85%] rounded-2xl p-4 text-xs sm:text-sm shadow-soft ${
+                        m.sender === 'user'
+                          ? 'bg-teal text-white rounded-tr-none'
+                          : 'bg-white text-ink-body border border-surface-border rounded-tl-none'
+                      }`}
+                    >
+                      {formatText(m.text)}
+
+                      {/* Source attribution badges */}
+                      {m.sources && m.sources.length > 0 && (
+                        <div className="mt-3 pt-2.5 border-t border-surface-border/60 flex flex-wrap items-center gap-1.5 text-[10px] text-ink-muted">
+                          <span className="font-bold text-teal flex items-center gap-1">
+                            <ShieldCheck className="w-3 h-3" /> Grounded in:
+                          </span>
+                          {m.sources.map((src, idx) => (
+                            <span
+                              key={idx}
+                              className="px-2 py-0.5 rounded-md bg-surface-muted text-ink-body font-medium"
+                            >
+                              {src}
+                            </span>
+                          ))}
+                        </div>
+                      )}
+
+                      {/* Message Actions */}
+                      {m.sender === 'assistant' && (
+                        <div className="mt-2 flex items-center justify-between text-[10px] text-ink-light pt-1">
+                          <span>
+                            {m.timestamp.toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' })}
+                          </span>
+                          <button
+                            onClick={() => copyText(m.id, m.text)}
+                            className="flex items-center gap-1 text-ink-muted hover:text-teal transition-colors"
+                          >
+                            {copiedId === m.id ? (
+                              <>
+                                <Check className="w-3 h-3 text-green" /> Copied
+                              </>
+                            ) : (
+                              <>
+                                <Copy className="w-3 h-3" /> Copy
+                              </>
+                            )}
+                          </button>
+                        </div>
+                      )}
+                    </div>
+
+                    {m.sender === 'user' && (
+                      <div className="w-8 h-8 rounded-full bg-forest text-white flex items-center justify-center flex-shrink-0 mt-1 shadow-sm">
+                        <User className="w-4 h-4" />
+                      </div>
+                    )}
+                  </motion.div>
+                ))}
+
+                {/* Loading indicator */}
+                {loading && (
+                  <motion.div
+                    initial={{ opacity: 0 }}
+                    animate={{ opacity: 1 }}
+                    className="flex gap-3 justify-start"
+                  >
+                    <div className="w-8 h-8 rounded-full bg-teal text-white flex items-center justify-center flex-shrink-0 mt-1">
+                      <Sparkles className="w-4 h-4 text-lime animate-spin" />
+                    </div>
+                    <div className="bg-white border border-surface-border rounded-2xl rounded-tl-none p-4 shadow-soft">
+                      <div className="flex items-center gap-2 text-xs text-ink-muted font-medium">
+                        <span className="w-2 h-2 rounded-full bg-teal animate-bounce" />
+                        <span className="w-2 h-2 rounded-full bg-teal animate-bounce [animation-delay:0.2s]" />
+                        <span className="w-2 h-2 rounded-full bg-teal animate-bounce [animation-delay:0.4s]" />
+                        <span className="ml-1">Consulting Jalsa knowledge base...</span>
+                      </div>
+                    </div>
+                  </motion.div>
                 )}
-              </div>
-            ))}
 
-            {loading && (
-              <div className="flex items-center gap-2 text-xs text-gray-500 font-medium pl-10">
-                <RefreshCw className="w-3.5 h-3.5 animate-spin text-primary" />
-                <span>Consulting Jalsa archives &amp; Ahmadiyya resources...</span>
+                <div ref={messagesEndRef} />
               </div>
-            )}
-            <div ref={messagesEndRef} />
-          </div>
 
-          {/* Footer Input Bar */}
-          <div className="p-3 bg-white border-t border-gray-200">
-            <form
-              onSubmit={(e) => {
-                e.preventDefault();
-                handleSend();
-              }}
-              className="flex items-center gap-2"
-            >
-              <div className="relative flex-1">
-                <input
-                  type="text"
-                  value={query}
-                  onChange={(e) => setQuery(e.target.value)}
-                  placeholder={listening ? 'Listening to your voice...' : 'Ask about Jalsa 2026, history, themes...'}
-                  className={`w-full px-3.5 py-2.5 text-xs border rounded-xl focus:outline-none transition-colors pr-9 ${
-                    listening ? 'border-red-500 ring-2 ring-red-100 bg-red-50/30' : 'border-gray-200 focus:border-primary focus:ring-1 focus:ring-primary'
-                  }`}
-                />
-                <button
-                  type="button"
-                  onClick={toggleListening}
-                  className={`absolute right-2.5 top-2.5 p-1 rounded-full transition-colors ${
-                    listening ? 'text-red-600 animate-pulse' : 'text-gray-400 hover:text-primary'
-                  }`}
-                  title={listening ? 'Stop recording' : 'Voice search'}
+              {/* Suggested Questions Pills */}
+              <div className="px-4 py-2.5 bg-surface-muted/60 border-t border-surface-border/60 overflow-x-auto no-scrollbar">
+                <div className="flex items-center gap-2 whitespace-nowrap">
+                  <span className="text-[10px] font-bold text-ink-muted uppercase tracking-wider flex-shrink-0">
+                    Suggested:
+                  </span>
+                  {SUGGESTED_QUESTIONS.map((q, idx) => (
+                    <button
+                      key={idx}
+                      onClick={() => handleSend(q)}
+                      disabled={loading}
+                      className="text-[11px] px-3 py-1 bg-white hover:bg-teal hover:text-white text-ink-body font-medium rounded-full border border-surface-border shadow-xs transition-colors flex-shrink-0 disabled:opacity-50"
+                    >
+                      {q}
+                    </button>
+                  ))}
+                </div>
+              </div>
+
+              {/* Input Footer */}
+              <div className="p-3 sm:p-4 bg-white border-t border-surface-border">
+                <form
+                  onSubmit={(e) => {
+                    e.preventDefault();
+                    handleSend();
+                  }}
+                  className="flex items-center gap-2"
                 >
-                  {listening ? <MicOff className="w-3.5 h-3.5" /> : <Mic className="w-3.5 h-3.5" />}
-                </button>
+                  <div className="relative flex-1">
+                    <input
+                      type="text"
+                      value={query}
+                      onChange={(e) => setQuery(e.target.value)}
+                      placeholder={
+                        listening
+                          ? 'Listening to voice query...'
+                          : 'Ask anything about Jalsa 2026, gates, dining, themes...'
+                      }
+                      className={`w-full px-4 py-3 text-xs sm:text-sm border rounded-2xl focus:outline-none transition-all pr-10 ${
+                        listening
+                          ? 'border-red-500 ring-2 ring-red-100 bg-red-50/20'
+                          : 'border-surface-border focus:border-teal focus:ring-2 focus:ring-teal/20'
+                      }`}
+                    />
+
+                    <button
+                      type="button"
+                      onClick={toggleListening}
+                      className={`absolute right-3 top-3 p-1 rounded-full transition-colors ${
+                        listening ? 'text-red-600 animate-pulse' : 'text-ink-light hover:text-teal'
+                      }`}
+                      title={listening ? 'Stop listening' : 'Speak your question'}
+                    >
+                      {listening ? <MicOff className="w-4 h-4" /> : <Mic className="w-4 h-4" />}
+                    </button>
+                  </div>
+
+                  <button
+                    type="submit"
+                    disabled={loading || !query.trim()}
+                    className="p-3 bg-teal hover:bg-teal-700 text-white rounded-2xl disabled:opacity-40 transition-all shadow-glow-teal flex-shrink-0"
+                  >
+                    <Send className="w-4 h-4" />
+                  </button>
+                </form>
+
+                <div className="mt-2.5 flex items-center justify-between text-[10px] text-ink-light">
+                  <span>Jalsa Salana Intelligent Concierge &amp; Official Archives</span>
+                  <div className="flex items-center gap-2">
+                    <Link
+                      href="/live-crowd"
+                      onClick={() => setIsOpen(false)}
+                      className="hover:text-teal font-medium flex items-center gap-0.5"
+                    >
+                      <MapPin className="w-3 h-3" /> Live Grounds Map
+                    </Link>
+                  </div>
+                </div>
               </div>
-
-              <button
-                type="submit"
-                disabled={loading || !query.trim()}
-                className="p-2.5 bg-primary hover:bg-primary-dark text-white rounded-xl disabled:opacity-40 transition-colors shadow-sm"
-              >
-                <Send className="w-4 h-4" />
-              </button>
-            </form>
-
-            <div className="mt-2 text-center text-[10px] text-gray-400">
-              Powered by Google Gemini &amp; Official Jalsa Salana Nigeria Archives
-            </div>
+            </motion.div>
           </div>
-        </div>
-      )}
+        )}
+      </AnimatePresence>
     </>
   );
 }

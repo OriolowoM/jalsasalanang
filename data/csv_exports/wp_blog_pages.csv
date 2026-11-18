@@ -1,0 +1,989 @@
+ID,Title,Content,Excerpt,Date,"Post Type",Permalink
+2,"Sample Page","<!-- wp:paragraph -->
+<p>This is an example page. It's different from a blog post because it will stay in one place and will show up in your site navigation (in most themes). Most people start with an About page that introduces them to potential site visitors. It might say something like this:</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:quote -->
+<blockquote class=""wp-block-quote""><p>Hi there! I'm a bike messenger by day, aspiring actor by night, and this is my website. I live in Los Angeles, have a great dog named Jack, and I like pi&#241;a coladas. (And gettin' caught in the rain.)</p></blockquote>
+<!-- /wp:quote -->
+
+<!-- wp:paragraph -->
+<p>...or something like this:</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:quote -->
+<blockquote class=""wp-block-quote""><p>The XYZ Doohickey Company was founded in 1971, and has been providing quality doohickeys to the public ever since. Located in Gotham City, XYZ employs over 2,000 people and does all kinds of awesome things for the Gotham community.</p></blockquote>
+<!-- /wp:quote -->
+
+<!-- wp:paragraph -->
+<p>As a new WordPress user, you should go to <a href=""https://blog.jalsasalana.ng/wp-admin/"">your dashboard</a> to delete this page and create new pages for your content. Have fun!</p>
+<!-- /wp:paragraph -->",,"2024-12-17 09:05:36",page,https://blog.jalsasalana.ng/sample-page/
+3,"Privacy Policy","<!-- wp:heading -->
+<h2 class=""wp-block-heading"">Who we are</h2>
+<!-- /wp:heading -->
+<!-- wp:paragraph -->
+<p><strong class=""privacy-policy-tutorial"">Suggested text: </strong>Our website address is: https://blog.jalsasalana.ng.</p>
+<!-- /wp:paragraph -->
+<!-- wp:heading -->
+<h2 class=""wp-block-heading"">Comments</h2>
+<!-- /wp:heading -->
+<!-- wp:paragraph -->
+<p><strong class=""privacy-policy-tutorial"">Suggested text: </strong>When visitors leave comments on the site we collect the data shown in the comments form, and also the visitor&#8217;s IP address and browser user agent string to help spam detection.</p>
+<!-- /wp:paragraph -->
+<!-- wp:paragraph -->
+<p>An anonymized string created from your email address (also called a hash) may be provided to the Gravatar service to see if you are using it. The Gravatar service privacy policy is available here: https://automattic.com/privacy/. After approval of your comment, your profile picture is visible to the public in the context of your comment.</p>
+<!-- /wp:paragraph -->
+<!-- wp:heading -->
+<h2 class=""wp-block-heading"">Media</h2>
+<!-- /wp:heading -->
+<!-- wp:paragraph -->
+<p><strong class=""privacy-policy-tutorial"">Suggested text: </strong>If you upload images to the website, you should avoid uploading images with embedded location data (EXIF GPS) included. Visitors to the website can download and extract any location data from images on the website.</p>
+<!-- /wp:paragraph -->
+<!-- wp:heading -->
+<h2 class=""wp-block-heading"">Cookies</h2>
+<!-- /wp:heading -->
+<!-- wp:paragraph -->
+<p><strong class=""privacy-policy-tutorial"">Suggested text: </strong>If you leave a comment on our site you may opt-in to saving your name, email address and website in cookies. These are for your convenience so that you do not have to fill in your details again when you leave another comment. These cookies will last for one year.</p>
+<!-- /wp:paragraph -->
+<!-- wp:paragraph -->
+<p>If you visit our login page, we will set a temporary cookie to determine if your browser accepts cookies. This cookie contains no personal data and is discarded when you close your browser.</p>
+<!-- /wp:paragraph -->
+<!-- wp:paragraph -->
+<p>When you log in, we will also set up several cookies to save your login information and your screen display choices. Login cookies last for two days, and screen options cookies last for a year. If you select &quot;Remember Me&quot;, your login will persist for two weeks. If you log out of your account, the login cookies will be removed.</p>
+<!-- /wp:paragraph -->
+<!-- wp:paragraph -->
+<p>If you edit or publish an article, an additional cookie will be saved in your browser. This cookie includes no personal data and simply indicates the post ID of the article you just edited. It expires after 1 day.</p>
+<!-- /wp:paragraph -->
+<!-- wp:heading -->
+<h2 class=""wp-block-heading"">Embedded content from other websites</h2>
+<!-- /wp:heading -->
+<!-- wp:paragraph -->
+<p><strong class=""privacy-policy-tutorial"">Suggested text: </strong>Articles on this site may include embedded content (e.g. videos, images, articles, etc.). Embedded content from other websites behaves in the exact same way as if the visitor has visited the other website.</p>
+<!-- /wp:paragraph -->
+<!-- wp:paragraph -->
+<p>These websites may collect data about you, use cookies, embed additional third-party tracking, and monitor your interaction with that embedded content, including tracking your interaction with the embedded content if you have an account and are logged in to that website.</p>
+<!-- /wp:paragraph -->
+<!-- wp:heading -->
+<h2 class=""wp-block-heading"">Who we share your data with</h2>
+<!-- /wp:heading -->
+<!-- wp:paragraph -->
+<p><strong class=""privacy-policy-tutorial"">Suggested text: </strong>If you request a password reset, your IP address will be included in the reset email.</p>
+<!-- /wp:paragraph -->
+<!-- wp:heading -->
+<h2 class=""wp-block-heading"">How long we retain your data</h2>
+<!-- /wp:heading -->
+<!-- wp:paragraph -->
+<p><strong class=""privacy-policy-tutorial"">Suggested text: </strong>If you leave a comment, the comment and its metadata are retained indefinitely. This is so we can recognize and approve any follow-up comments automatically instead of holding them in a moderation queue.</p>
+<!-- /wp:paragraph -->
+<!-- wp:paragraph -->
+<p>For users that register on our website (if any), we also store the personal information they provide in their user profile. All users can see, edit, or delete their personal information at any time (except they cannot change their username). Website administrators can also see and edit that information.</p>
+<!-- /wp:paragraph -->
+<!-- wp:heading -->
+<h2 class=""wp-block-heading"">What rights you have over your data</h2>
+<!-- /wp:heading -->
+<!-- wp:paragraph -->
+<p><strong class=""privacy-policy-tutorial"">Suggested text: </strong>If you have an account on this site, or have left comments, you can request to receive an exported file of the personal data we hold about you, including any data you have provided to us. You can also request that we erase any personal data we hold about you. This does not include any data we are obliged to keep for administrative, legal, or security purposes.</p>
+<!-- /wp:paragraph -->
+<!-- wp:heading -->
+<h2 class=""wp-block-heading"">Where your data is sent</h2>
+<!-- /wp:heading -->
+<!-- wp:paragraph -->
+<p><strong class=""privacy-policy-tutorial"">Suggested text: </strong>Visitor comments may be checked through an automated spam detection service.</p>
+<!-- /wp:paragraph -->
+",,"2024-12-17 09:05:36",page,https://blog.jalsasalana.ng/?page_id=3
+21,"press24 categories",,,"2024-12-17 09:21:16",page,https://blog.jalsasalana.ng/press24-categories/
+29,"Press24 Home","<ul>
+							<li>
+							<svg aria-hidden=""true"" viewBox=""0 0 512 512"" xmlns=""http://www.w3.org/2000/svg""><path d=""M256 8C119 8 8 119 8 256s111 248 248 248 248-111 248-248S393 8 256 8z""></path></svg>						
+										hot news
+									</li>
+						</ul>
+            <article data-id=""102"">
+            <header><h2><a
+                        href=""https://blog.jalsasalana.ng/index.php/2024/12/17/mark-donovan-completes-first-tour-de-france/""
+                        title=""Mark Donovan completes first Tour de France…"">Mark Donovan completes first Tour de France…</a></h2></header>
+                        <p></p><a
+                            href=""https://blog.jalsasalana.ng/index.php/2024/12/17/mark-donovan-completes-first-tour-de-france/""
+                           >Read More</a>
+    </article>
+							<ul>
+							<li>
+							<svg aria-hidden=""true"" viewBox=""0 0 512 512"" xmlns=""http://www.w3.org/2000/svg""><path d=""M256 8C119 8 8 119 8 256s111 248 248 248 248-111 248-248S393 8 256 8z""></path></svg>						
+										breaking news
+									</li>
+						</ul>
+							<ul>
+							<li>
+							<svg aria-hidden=""true"" viewBox=""0 0 512 512"" xmlns=""http://www.w3.org/2000/svg""><path d=""M256 8C119 8 8 119 8 256s111 248 248 248 248-111 248-248S393 8 256 8z""></path></svg>						
+										Trending News
+									</li>
+						</ul>
+							<ul>
+							<li>
+							<svg aria-hidden=""true"" viewBox=""0 0 512 512"" xmlns=""http://www.w3.org/2000/svg""><path d=""M256 8C119 8 8 119 8 256s111 248 248 248 248-111 248-248S393 8 256 8z""></path></svg>						
+										breaking news
+									</li>
+						</ul>
+							<ul>
+							<li>
+							<svg aria-hidden=""true"" viewBox=""0 0 512 512"" xmlns=""http://www.w3.org/2000/svg""><path d=""M256 8C119 8 8 119 8 256s111 248 248 248 248-111 248-248S393 8 256 8z""></path></svg>						
+										last news
+									</li>
+						</ul>
+					<h2>LATEST LIFESTYLE POSTS</h2>				
+							<ul>
+							<li>
+							<svg aria-hidden=""true"" viewBox=""0 0 512 512"" xmlns=""http://www.w3.org/2000/svg""><path d=""M256 8C119 8 8 119 8 256s111 248 248 248 248-111 248-248S393 8 256 8z""></path></svg>						
+										international news
+									</li>
+						</ul>
+            <article data-id=""62"">
+            <a href=""https://blog.jalsasalana.ng/index.php/2024/12/17/south-african-leader-has-been-able-to-restore-balance-in-most-of-the-places/""></a>
+                 <img width=""830"" height=""430"" src=""https://blog.jalsasalana.ng/wp-content/uploads/2021/07/gavin-poh-zZtVGafOvNE-unsplash-1-min.png"" alt="""" />
+        <header><h2><a
+                        href=""https://blog.jalsasalana.ng/index.php/2024/12/17/south-african-leader-has-been-able-to-restore-balance-in-most-of-the-places/""
+                        title=""South African Leader Has Been Able To Restore Balance In Most Of The Places"">South African Leader Has Been Able To Restore Balance In Most Of The Places</a></h2></header><a href=""https://blog.jalsasalana.ng/index.php/author/f8qzn/"" title=""Posts by f8qzn"" rel=""author"">f8qzn</a><time datetime=""December 17, 2024"">December 17, 2024</time>
+                        <p>Maecenas arcu nulla, efficitur sit amet gravida a, venenatis sit amet massa. Curabitur eget ex at lacus convallis vehicula. Sed imperdiet dapibus nibh in consequat. Nam tristique metus arcu, vitae ultricies nunc luctus sit amet. Fusce viverra velit purus. Maecenas ultricies libero nibh, posuere dapibus odio ullamcorper at.</p><a
+                            href=""https://blog.jalsasalana.ng/index.php/2024/12/17/south-african-leader-has-been-able-to-restore-balance-in-most-of-the-places/""
+                           >Read More</a>
+    </article><article data-id=""63"">
+            <a href=""https://blog.jalsasalana.ng/index.php/2024/12/17/new-album-is-dropping-by-venessa-gekko-this-christmas/""></a>
+                 <img width=""830"" height=""430"" src=""https://blog.jalsasalana.ng/wp-content/uploads/2021/07/vadim-sadovski-pATN2khKfGM-unsplash-1-min.png"" alt="""" />
+        <header><h2><a
+                        href=""https://blog.jalsasalana.ng/index.php/2024/12/17/new-album-is-dropping-by-venessa-gekko-this-christmas/""
+                        title=""New Album Is Dropping By Venessa Gekko This Christmas"">New Album Is Dropping By Venessa Gekko This Christmas</a></h2></header><a href=""https://blog.jalsasalana.ng/index.php/author/f8qzn/"" title=""Posts by f8qzn"" rel=""author"">f8qzn</a><time datetime=""December 17, 2024"">December 17, 2024</time>
+                        <p>Maecenas arcu nulla, efficitur sit amet gravida a, venenatis sit amet massa. Curabitur eget ex at lacus convallis vehicula. Sed imperdiet dapibus nibh in consequat. Nam tristique metus arcu, vitae ultricies nunc luctus sit amet. Fusce viverra velit purus. Maecenas ultricies libero nibh, posuere dapibus odio ullamcorper at.</p><a
+                            href=""https://blog.jalsasalana.ng/index.php/2024/12/17/new-album-is-dropping-by-venessa-gekko-this-christmas/""
+                           >Read More</a>
+    </article>
+							<ul>
+							<li>
+							<svg aria-hidden=""true"" viewBox=""0 0 512 512"" xmlns=""http://www.w3.org/2000/svg""><path d=""M256 8C119 8 8 119 8 256s111 248 248 248 248-111 248-248S393 8 256 8z""></path></svg>						
+										international news
+									</li>
+						</ul>
+					<h2>YOU MIGHT ALSO LIKE</h2>				
+            <article data-id=""64"">
+            <a href=""https://blog.jalsasalana.ng/index.php/2024/12/17/3-mountaineers-are-missing-from-colorado-national-park/""></a>
+                 <img width=""530"" height=""400"" src=""https://blog.jalsasalana.ng/wp-content/uploads/2021/07/roman-kirienko-X-ceils-p3I-unsplash-1-min.png"" alt="""" />
+        <header><h2><a
+                        href=""https://blog.jalsasalana.ng/index.php/2024/12/17/3-mountaineers-are-missing-from-colorado-national-park/""
+                        title=""3 Mountaineers Are Missing From Colorado National Park"">3 Mountaineers Are Missing From Colorado National Park</a></h2></header><a href=""https://blog.jalsasalana.ng/index.php/author/f8qzn/"" title=""Posts by f8qzn"" rel=""author"">f8qzn</a><time datetime=""December 17, 2024"">December 17, 2024</time>
+                        <p>Praesent vel consequat ante, sit amet scelerisque diam. Praesent suscipit, neque eu porttitor rutrum, lacus nisl bibendum metus, et condimentum lorem massa in augue. Vestibulum venenatis nec mi sed bibendum.</p><a
+                            href=""https://blog.jalsasalana.ng/index.php/2024/12/17/3-mountaineers-are-missing-from-colorado-national-park/""
+                           >Read More</a>
+    </article><article data-id=""65"">
+            <a href=""https://blog.jalsasalana.ng/index.php/2024/12/17/did-you-know-that-allthese-celebs-dropped-out-of-school/""></a>
+                 <img width=""530"" height=""400"" src=""https://blog.jalsasalana.ng/wp-content/uploads/2021/07/jimmy-dean-DyQiNSgrM58-unsplash-1-min.png"" alt="""" />
+        <header><h2><a
+                        href=""https://blog.jalsasalana.ng/index.php/2024/12/17/did-you-know-that-allthese-celebs-dropped-out-of-school/""
+                        title=""Did You Know That AllThese Celebs Dropped Out Of School?"">Did You Know That AllThese Celebs Dropped Out Of School?</a></h2></header><a href=""https://blog.jalsasalana.ng/index.php/author/f8qzn/"" title=""Posts by f8qzn"" rel=""author"">f8qzn</a><time datetime=""December 17, 2024"">December 17, 2024</time>
+                        <p>Praesent vel consequat ante, sit amet scelerisque diam. Praesent suscipit, neque eu porttitor rutrum, lacus nisl bibendum metus, et condimentum lorem massa in augue. Vestibulum venenatis nec mi sed bibendum.</p><a
+                            href=""https://blog.jalsasalana.ng/index.php/2024/12/17/did-you-know-that-allthese-celebs-dropped-out-of-school/""
+                           >Read More</a>
+    </article><article data-id=""66"">
+            <a href=""https://blog.jalsasalana.ng/index.php/2024/12/17/santorini-has-become-the-new-tourist-attraction/""></a>
+                 <img width=""530"" height=""400"" src=""https://blog.jalsasalana.ng/wp-content/uploads/2021/07/karis-soritau-ZszM1AgldwQ-unsplash-1-min.png"" alt="""" />
+        <header><h2><a
+                        href=""https://blog.jalsasalana.ng/index.php/2024/12/17/santorini-has-become-the-new-tourist-attraction/""
+                        title=""Santorini Has Become The New Tourist Attraction"">Santorini Has Become The New Tourist Attraction</a></h2></header><a href=""https://blog.jalsasalana.ng/index.php/author/f8qzn/"" title=""Posts by f8qzn"" rel=""author"">f8qzn</a><time datetime=""December 17, 2024"">December 17, 2024</time>
+                        <p>Praesent vel consequat ante, sit amet scelerisque diam. Praesent suscipit, neque eu porttitor rutrum, lacus nisl bibendum metus, et condimentum lorem massa in augue. Vestibulum venenatis nec mi sed bibendum.</p><a
+                            href=""https://blog.jalsasalana.ng/index.php/2024/12/17/santorini-has-become-the-new-tourist-attraction/""
+                           >Read More</a>
+    </article><article data-id=""67"">
+            <a href=""https://blog.jalsasalana.ng/index.php/2024/12/17/indie-songs-ranked-high-on-spotify-monthly-ranking-list/""></a>
+                 <img width=""530"" height=""400"" src=""https://blog.jalsasalana.ng/wp-content/uploads/2021/07/david-glessner-1BndnOh-eCE-unsplash-1-min.png"" alt="""" />
+        <header><h2><a
+                        href=""https://blog.jalsasalana.ng/index.php/2024/12/17/indie-songs-ranked-high-on-spotify-monthly-ranking-list/""
+                        title=""Indie Songs Ranked High On Spotify Monthly Ranking List"">Indie Songs Ranked High On Spotify Monthly Ranking List</a></h2></header><a href=""https://blog.jalsasalana.ng/index.php/author/f8qzn/"" title=""Posts by f8qzn"" rel=""author"">f8qzn</a><time datetime=""December 17, 2024"">December 17, 2024</time>
+                        <p>Praesent vel consequat ante, sit amet scelerisque diam. Praesent suscipit, neque eu porttitor rutrum, lacus nisl bibendum metus, et condimentum lorem massa in augue. Vestibulum venenatis nec mi sed bibendum.</p><a
+                            href=""https://blog.jalsasalana.ng/index.php/2024/12/17/indie-songs-ranked-high-on-spotify-monthly-ranking-list/""
+                           >Read More</a>
+    </article><article data-id=""68"">
+            <a href=""https://blog.jalsasalana.ng/index.php/2024/12/17/athletes-who-faced-major-backlash-during-national-sports-day/""></a>
+                 <img width=""530"" height=""400"" src=""https://blog.jalsasalana.ng/wp-content/uploads/2021/07/andrius-simkus-QYpFx_LOqg0-unsplash-1-min.png"" alt="""" />
+        <header><h2><a
+                        href=""https://blog.jalsasalana.ng/index.php/2024/12/17/athletes-who-faced-major-backlash-during-national-sports-day/""
+                        title=""Athletes Who Faced Major Backlash During National Sports Day"">Athletes Who Faced Major Backlash During National Sports Day</a></h2></header><a href=""https://blog.jalsasalana.ng/index.php/author/f8qzn/"" title=""Posts by f8qzn"" rel=""author"">f8qzn</a><time datetime=""December 17, 2024"">December 17, 2024</time>
+                        <p>Praesent vel consequat ante, sit amet scelerisque diam. Praesent suscipit, neque eu porttitor rutrum, lacus nisl bibendum metus, et condimentum lorem massa in augue. Vestibulum venenatis nec mi sed bibendum.</p><a
+                            href=""https://blog.jalsasalana.ng/index.php/2024/12/17/athletes-who-faced-major-backlash-during-national-sports-day/""
+                           >Read More</a>
+    </article><article data-id=""69"">
+            <a href=""https://blog.jalsasalana.ng/index.php/2024/12/17/roman-church-has-declared-seize-in-ba-sing-se/""></a>
+                 <img width=""530"" height=""400"" src=""https://blog.jalsasalana.ng/wp-content/uploads/2021/07/karsten-winegeart-I4YKLwzkWcQ-unsplash-1-min.png"" alt="""" />
+        <header><h2><a
+                        href=""https://blog.jalsasalana.ng/index.php/2024/12/17/roman-church-has-declared-seize-in-ba-sing-se/""
+                        title=""Roman Church Has Declared Seize In Ba-Sing-Se"">Roman Church Has Declared Seize In Ba-Sing-Se</a></h2></header><a href=""https://blog.jalsasalana.ng/index.php/author/f8qzn/"" title=""Posts by f8qzn"" rel=""author"">f8qzn</a><time datetime=""December 17, 2024"">December 17, 2024</time>
+                        <p>Praesent vel consequat ante, sit amet scelerisque diam. Praesent suscipit, neque eu porttitor rutrum, lacus nisl bibendum metus, et condimentum lorem massa in augue. Vestibulum venenatis nec mi sed bibendum.</p><a
+                            href=""https://blog.jalsasalana.ng/index.php/2024/12/17/roman-church-has-declared-seize-in-ba-sing-se/""
+                           >Read More</a>
+    </article>
+					<h2>PROMOTED POST</h2>				
+            <article data-id=""70"">
+            <a href=""https://blog.jalsasalana.ng/index.php/2024/12/17/tesla-has-launched-full-self-driven-facility-beta-version/""></a>
+                 <img width=""530"" height=""730"" src=""https://blog.jalsasalana.ng/wp-content/uploads/2021/07/philip-myrtorp-fL8WLU-LmFE-unsplash-1-min.png"" alt="""" />
+        <header><h2><a
+                        href=""https://blog.jalsasalana.ng/index.php/2024/12/17/tesla-has-launched-full-self-driven-facility-beta-version/""
+                        title=""Tesla Has Launched Full Self-Driven Facility Beta Version"">Tesla Has Launched Full Self-Driven Facility Beta Version</a></h2></header><a href=""https://blog.jalsasalana.ng/index.php/author/f8qzn/"" title=""Posts by f8qzn"" rel=""author"">f8qzn</a><time datetime=""December 17, 2024"">December 17, 2024</time>
+    </article>
+					<h2>OUR AUTHORS</h2>				
+				<figure>
+										<img src=""https://blog.jalsasalana.ng/wp-content/uploads/2024/12/image-01-min.png"" alt=""Leonel Hernandez"">
+				</figure>
+				<h2>Leonel Hernandez</h2>
+				<h3>Marketing advisor</h3>
+														<p></p>
+				<figure>
+										<img src=""https://blog.jalsasalana.ng/wp-content/uploads/2024/12/image-02-min.png"" alt=""Cibelly Roberta"">
+				</figure>
+				<h2>Cibelly Roberta</h2>
+				<h3>Marketing advisor</h3>
+														<p></p>
+				<figure>
+										<img src=""https://blog.jalsasalana.ng/wp-content/uploads/2024/12/image-03-min.png"" alt=""Elijah Hiett"">
+				</figure>
+				<h2>Elijah Hiett</h2>
+				<h3>Marketing advisor</h3>
+														<p></p>
+				<figure>
+										<img src=""https://blog.jalsasalana.ng/wp-content/uploads/2024/12/image-04-min.png"" alt=""Paul Castanie"">
+				</figure>
+				<h2>Paul Castanie</h2>
+				<h3>Marketing advisor</h3>
+														<p></p>",,"2024-12-17 09:21:23",page,https://blog.jalsasalana.ng/press24-home/
+32,"Press24 contact","<h2>contact</h2>				
+							<ul>
+							<li>
+											<a href=""#"">
+											home
+											</a>
+									</li>
+								<li>
+											<a href=""#"">
+							<svg aria-hidden=""true"" viewBox=""0 0 512 512"" xmlns=""http://www.w3.org/2000/svg""><path d=""M256 8C119 8 8 119 8 256s111 248 248 248 248-111 248-248S393 8 256 8z""></path></svg>						
+										contact
+											</a>
+									</li>
+						</ul>
+					<h2>Impressum</h2>				
+					Address: 
+				<noscript>
+									</noscript>
+					  805 East Woody Road, Birmingham
+			<!-- close .eael-fancy-text-container -->
+					Phone: 
+				<noscript>
+									</noscript>
+					  +33-257634 534
+			<!-- close .eael-fancy-text-container -->
+					email: 
+				<noscript>
+									</noscript>
+					  contactpress24@gmail.com
+			<!-- close .eael-fancy-text-container -->
+					<h2>Main HQ</h2>				
+					Address: 
+				<noscript>
+									</noscript>
+					  805 East Woody Road, Birmingham
+			<!-- close .eael-fancy-text-container -->
+					Phone: 
+				<noscript>
+									</noscript>
+					  +33-257634 534
+			<!-- close .eael-fancy-text-container -->
+					email: 
+				<noscript>
+									</noscript>
+					  contactpress24@gmail.com
+			<!-- close .eael-fancy-text-container -->
+					<h2>Advertise</h2>				
+					Address: 
+				<noscript>
+									</noscript>
+					  805 East Woody Road, Birmingham
+			<!-- close .eael-fancy-text-container -->
+					Phone: 
+				<noscript>
+									</noscript>
+					  +33-257634 534
+			<!-- close .eael-fancy-text-container -->
+					email: 
+				<noscript>
+									</noscript>
+					  contactpress24@gmail.com
+			<!-- close .eael-fancy-text-container -->
+					<h2>Get In Touch &amp; Let Us Know</h2>				
+			<iframe loading=""lazy""
+					src=""https://maps.google.com/maps?q=birminghum%2CUK&#038;t=m&#038;z=12&#038;output=embed&#038;iwloc=near""
+					title=""birminghum,UK""
+					aria-label=""birminghum,UK""
+			></iframe>",,"2024-12-17 09:21:26",page,https://blog.jalsasalana.ng/press24-contact/
+35,"press24 about us","<h2>about us</h2>				
+							<ul>
+							<li>
+											<a href=""#"">
+											home
+											</a>
+									</li>
+								<li>
+											<a href=""#"">
+							<svg aria-hidden=""true"" viewBox=""0 0 512 512"" xmlns=""http://www.w3.org/2000/svg""><path d=""M256 8C119 8 8 119 8 256s111 248 248 248 248-111 248-248S393 8 256 8z""></path></svg>						
+										about us
+											</a>
+									</li>
+						</ul>
+					<h2>Impression </h2>				
+					<h2>We care about quality content. We never wanted to be a big publishing house: Our team is small, but it’s a truly wonderful team of people who really care about what
+they do. Passionate and dedicated. Honest and respectful. Professional but informal. Quirky and personal.
+ Through our articles, digital books, job openings, conferences
+and membership, we are committed to nourishing productivity, improving design and development skills and finessing the work-life balance. Getting better, together,
+by learning from each other — that’s the spirit that has been our mantra for all these years.</h2>				
+					<h2>At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint
+occaecati cupiditate non provident, similique sunt in culpa qui officia deserunt mollitia animi, id est laborum et dolorum fuga. Et harum quidem rerum facilis est et
+expedita distinctio. Nam libero tempore, cum soluta nobis est eligendi optio cumque nihil impedit quo minus id quod maxime placeat facere possimus, omnis voluptas
+assumenda est, omnis dolor repellendus. Temporibus autem quibusdam et aut officiis debitis aut rerum necessitatibus saepe eveniet ut et voluptates repudiandae sint
+et molestiae non recusandae. Itaque earum rerum hic tenetur a sapiente delectus, ut aut reiciendis voluptatibus maiores alias consequatur aut perferendis doloribus
+asperiores repellat."" On the other hand, we denounce with righteous indignation and dislike men who are so beguiled and demoralized by the charms of pleasure of the
+moment, so blinded by desire, that they cannot foresee the pain and trouble that are bound to ensue; and equal blame belongs to those who fail in their duty through
+weakness of will, which is the same as saying through shrinking from toil and pain. These cases are perfectly simple and easy to distinguish. In a free hour, when our power
+of choice is untrammelled and when nothing prevents our being able to do what we like best, every pleasure is to be welcomed and every pain avoided. But in certain
+circumstances and owing to the claims of duty or the obligations of business it will frequently occur that pleasures have to be repudiated and annoyances accepted.
+The wise man therefore always holds in these matters to this principle of selection: he rejects pleasures to secure other greater pleasures, or else he endures pains to avoid
+worse pains.</h2>				
+															<img width=""1920"" height=""660"" src=""https://blog.jalsasalana.ng/wp-content/uploads/2024/12/van-tay-media-Hh-PIe3qIug-unsplash-1.png"" alt="""" srcset=""https://blog.jalsasalana.ng/wp-content/uploads/2024/12/van-tay-media-Hh-PIe3qIug-unsplash-1.png 1920w, https://blog.jalsasalana.ng/wp-content/uploads/2024/12/van-tay-media-Hh-PIe3qIug-unsplash-1-300x103.png 300w, https://blog.jalsasalana.ng/wp-content/uploads/2024/12/van-tay-media-Hh-PIe3qIug-unsplash-1-1024x352.png 1024w, https://blog.jalsasalana.ng/wp-content/uploads/2024/12/van-tay-media-Hh-PIe3qIug-unsplash-1-768x264.png 768w, https://blog.jalsasalana.ng/wp-content/uploads/2024/12/van-tay-media-Hh-PIe3qIug-unsplash-1-1536x528.png 1536w"" sizes=""(max-width: 1920px) 100vw, 1920px"" />															
+					<h2>our Mission</h2>				
+					<h2>We care about quality content. We never wanted to be a big publishing
+house: Our team is small, but it’s a truly wonderful team of people who
+really care about what they do. Passionate and dedicated. Honest and
+respectful. Professional but informal. Quirky and personal.
+ Through our
+articles, digital books, job openings, conferences and membership, we
+committed to nourishing productivity, improving design and  skills and
+finessing the work-life balance. Getting better, together,</h2>				
+					<h2>our Vision</h2>				
+					<h2>We care about quality content. We never wanted to be a big publishing
+house: Our team is small, but it’s a truly wonderful team of people who
+really care about what they do. Passionate and dedicated. Honest and
+respectful. Professional but informal. Quirky and personal.
+ Through our
+articles, digital books, job openings, conferences and membership, we
+committed to nourishing productivity, improving design and  skills and
+finessing the work-life balance. Getting better, together,</h2>",,"2024-12-17 09:21:28",page,https://blog.jalsasalana.ng/press24-about-us/
+39,"Press24 worldwide team","<h2>Online News Team</h2>				
+							<ul>
+							<li>
+											<a href=""#"">
+											home
+											</a>
+									</li>
+								<li>
+											<a href=""#"">
+							<svg aria-hidden=""true"" viewBox=""0 0 512 512"" xmlns=""http://www.w3.org/2000/svg""><path d=""M256 8C119 8 8 119 8 256s111 248 248 248 248-111 248-248S393 8 256 8z""></path></svg>						
+										team
+											</a>
+									</li>
+						</ul>
+				<figure>
+										<img src=""https://blog.jalsasalana.ng/wp-content/uploads/2024/12/Group-159-min.png"" alt=""Alek Burley"">
+				</figure>
+				<h2>Alek Burley</h2>
+				<h3>Director</h3>
+															<ul>
+																																									<li>
+										<a href=""http://Facebook.com"" target=""_blank"">
+																							<svg aria-hidden=""true"" viewBox=""0 0 320 512"" xmlns=""http://www.w3.org/2000/svg""><path d=""M279.14 288l14.22-92.66h-88.91v-60.13c0-25.35 12.42-50.06 52.24-50.06h40.42V6.26S260.43 0 225.36 0c-73.22 0-121.08 44.38-121.08 124.72v70.62H22.89V288h81.39v224h100.17V288z""></path></svg>																					</a>
+									</li>
+																																																	<li>
+										<a href=""http://twitter.com"" target=""_blank"">
+																							<svg aria-hidden=""true"" viewBox=""0 0 512 512"" xmlns=""http://www.w3.org/2000/svg""><path d=""M459.37 151.716c.325 4.548.325 9.097.325 13.645 0 138.72-105.583 298.558-298.558 298.558-59.452 0-114.68-17.219-161.137-47.106 8.447.974 16.568 1.299 25.34 1.299 49.055 0 94.213-16.568 130.274-44.832-46.132-.975-84.792-31.188-98.112-72.772 6.498.974 12.995 1.624 19.818 1.624 9.421 0 18.843-1.3 27.614-3.573-48.081-9.747-84.143-51.98-84.143-102.985v-1.299c13.969 7.797 30.214 12.67 47.431 13.319-28.264-18.843-46.781-51.005-46.781-87.391 0-19.492 5.197-37.36 14.294-52.954 51.655 63.675 129.3 105.258 216.365 109.807-1.624-7.797-2.599-15.918-2.599-24.04 0-57.828 46.782-104.934 104.934-104.934 30.213 0 57.502 12.67 76.67 33.137 23.715-4.548 46.456-13.32 66.599-25.34-7.798 24.366-24.366 44.833-46.132 57.827 21.117-2.273 41.584-8.122 60.426-16.243-14.292 20.791-32.161 39.308-52.628 54.253z""></path></svg>																					</a>
+									</li>
+																																																	<li>
+										<a href=""http://instagram.com"" target=""_blank"">
+																							<svg aria-hidden=""true"" viewBox=""0 0 448 512"" xmlns=""http://www.w3.org/2000/svg""><path d=""M224.1 141c-63.6 0-114.9 51.3-114.9 114.9s51.3 114.9 114.9 114.9S339 319.5 339 255.9 287.7 141 224.1 141zm0 189.6c-41.1 0-74.7-33.5-74.7-74.7s33.5-74.7 74.7-74.7 74.7 33.5 74.7 74.7-33.6 74.7-74.7 74.7zm146.4-194.3c0 14.9-12 26.8-26.8 26.8-14.9 0-26.8-12-26.8-26.8s12-26.8 26.8-26.8 26.8 12 26.8 26.8zm76.1 27.2c-1.7-35.9-9.9-67.7-36.2-93.9-26.2-26.2-58-34.4-93.9-36.2-37-2.1-147.9-2.1-184.9 0-35.8 1.7-67.6 9.9-93.9 36.1s-34.4 58-36.2 93.9c-2.1 37-2.1 147.9 0 184.9 1.7 35.9 9.9 67.7 36.2 93.9s58 34.4 93.9 36.2c37 2.1 147.9 2.1 184.9 0 35.9-1.7 67.7-9.9 93.9-36.2 26.2-26.2 34.4-58 36.2-93.9 2.1-37 2.1-147.8 0-184.8zM398.8 388c-7.8 19.6-22.9 34.7-42.6 42.6-29.5 11.7-99.5 9-132.1 9s-102.7 2.6-132.1-9c-19.6-7.8-34.7-22.9-42.6-42.6-11.7-29.5-9-99.5-9-132.1s-2.6-102.7 9-132.1c7.8-19.6 22.9-34.7 42.6-42.6 29.5-11.7 99.5-9 132.1-9s102.7-2.6 132.1 9c19.6 7.8 34.7 22.9 42.6 42.6 11.7 29.5 9 99.5 9 132.1s2.7 102.7-9 132.1z""></path></svg>																					</a>
+									</li>
+																					</ul>
+										<p>He is the sole creator of this platform who dreams to provide the trending news to your finger tip. </p>
+				<figure>
+										<img src=""https://blog.jalsasalana.ng/wp-content/plugins/elementor/assets/images/placeholder.png"" alt=""Jason Leung"">
+				</figure>
+				<h2>Jason Leung</h2>
+				<h3>Chief Reporter </h3>
+															<ul>
+																																									<li>
+										<a href=""http://Facebook.com"" target=""_blank"">
+																							<svg aria-hidden=""true"" viewBox=""0 0 320 512"" xmlns=""http://www.w3.org/2000/svg""><path d=""M279.14 288l14.22-92.66h-88.91v-60.13c0-25.35 12.42-50.06 52.24-50.06h40.42V6.26S260.43 0 225.36 0c-73.22 0-121.08 44.38-121.08 124.72v70.62H22.89V288h81.39v224h100.17V288z""></path></svg>																					</a>
+									</li>
+																																																	<li>
+										<a href=""http://twitter.com"" target=""_blank"">
+																							<svg aria-hidden=""true"" viewBox=""0 0 512 512"" xmlns=""http://www.w3.org/2000/svg""><path d=""M459.37 151.716c.325 4.548.325 9.097.325 13.645 0 138.72-105.583 298.558-298.558 298.558-59.452 0-114.68-17.219-161.137-47.106 8.447.974 16.568 1.299 25.34 1.299 49.055 0 94.213-16.568 130.274-44.832-46.132-.975-84.792-31.188-98.112-72.772 6.498.974 12.995 1.624 19.818 1.624 9.421 0 18.843-1.3 27.614-3.573-48.081-9.747-84.143-51.98-84.143-102.985v-1.299c13.969 7.797 30.214 12.67 47.431 13.319-28.264-18.843-46.781-51.005-46.781-87.391 0-19.492 5.197-37.36 14.294-52.954 51.655 63.675 129.3 105.258 216.365 109.807-1.624-7.797-2.599-15.918-2.599-24.04 0-57.828 46.782-104.934 104.934-104.934 30.213 0 57.502 12.67 76.67 33.137 23.715-4.548 46.456-13.32 66.599-25.34-7.798 24.366-24.366 44.833-46.132 57.827 21.117-2.273 41.584-8.122 60.426-16.243-14.292 20.791-32.161 39.308-52.628 54.253z""></path></svg>																					</a>
+									</li>
+																																																	<li>
+										<a href=""http://instagram.com"" target=""_blank"">
+																							<svg aria-hidden=""true"" viewBox=""0 0 448 512"" xmlns=""http://www.w3.org/2000/svg""><path d=""M224.1 141c-63.6 0-114.9 51.3-114.9 114.9s51.3 114.9 114.9 114.9S339 319.5 339 255.9 287.7 141 224.1 141zm0 189.6c-41.1 0-74.7-33.5-74.7-74.7s33.5-74.7 74.7-74.7 74.7 33.5 74.7 74.7-33.6 74.7-74.7 74.7zm146.4-194.3c0 14.9-12 26.8-26.8 26.8-14.9 0-26.8-12-26.8-26.8s12-26.8 26.8-26.8 26.8 12 26.8 26.8zm76.1 27.2c-1.7-35.9-9.9-67.7-36.2-93.9-26.2-26.2-58-34.4-93.9-36.2-37-2.1-147.9-2.1-184.9 0-35.8 1.7-67.6 9.9-93.9 36.1s-34.4 58-36.2 93.9c-2.1 37-2.1 147.9 0 184.9 1.7 35.9 9.9 67.7 36.2 93.9s58 34.4 93.9 36.2c37 2.1 147.9 2.1 184.9 0 35.9-1.7 67.7-9.9 93.9-36.2 26.2-26.2 34.4-58 36.2-93.9 2.1-37 2.1-147.8 0-184.8zM398.8 388c-7.8 19.6-22.9 34.7-42.6 42.6-29.5 11.7-99.5 9-132.1 9s-102.7 2.6-132.1-9c-19.6-7.8-34.7-22.9-42.6-42.6-11.7-29.5-9-99.5-9-132.1s-2.6-102.7 9-132.1c7.8-19.6 22.9-34.7 42.6-42.6 29.5-11.7 99.5-9 132.1-9s102.7-2.6 132.1 9c19.6 7.8 34.7 22.9 42.6 42.6 11.7 29.5 9 99.5 9 132.1s2.7 102.7-9 132.1z""></path></svg>																					</a>
+									</li>
+																					</ul>
+										<p>His passion for organizing people and creating documentaries has brought him to this place. </p>
+				<figure>
+										<img src=""https://blog.jalsasalana.ng/wp-content/plugins/elementor/assets/images/placeholder.png"" alt=""Damian Barczak"">
+				</figure>
+				<h2>Damian Barczak</h2>
+				<h3>Senior Reporter</h3>
+															<ul>
+																																									<li>
+										<a href=""http://Facebook.com"" target=""_blank"">
+																							<svg aria-hidden=""true"" viewBox=""0 0 320 512"" xmlns=""http://www.w3.org/2000/svg""><path d=""M279.14 288l14.22-92.66h-88.91v-60.13c0-25.35 12.42-50.06 52.24-50.06h40.42V6.26S260.43 0 225.36 0c-73.22 0-121.08 44.38-121.08 124.72v70.62H22.89V288h81.39v224h100.17V288z""></path></svg>																					</a>
+									</li>
+																																																	<li>
+										<a href=""http://twitter.com"" target=""_blank"">
+																							<svg aria-hidden=""true"" viewBox=""0 0 512 512"" xmlns=""http://www.w3.org/2000/svg""><path d=""M459.37 151.716c.325 4.548.325 9.097.325 13.645 0 138.72-105.583 298.558-298.558 298.558-59.452 0-114.68-17.219-161.137-47.106 8.447.974 16.568 1.299 25.34 1.299 49.055 0 94.213-16.568 130.274-44.832-46.132-.975-84.792-31.188-98.112-72.772 6.498.974 12.995 1.624 19.818 1.624 9.421 0 18.843-1.3 27.614-3.573-48.081-9.747-84.143-51.98-84.143-102.985v-1.299c13.969 7.797 30.214 12.67 47.431 13.319-28.264-18.843-46.781-51.005-46.781-87.391 0-19.492 5.197-37.36 14.294-52.954 51.655 63.675 129.3 105.258 216.365 109.807-1.624-7.797-2.599-15.918-2.599-24.04 0-57.828 46.782-104.934 104.934-104.934 30.213 0 57.502 12.67 76.67 33.137 23.715-4.548 46.456-13.32 66.599-25.34-7.798 24.366-24.366 44.833-46.132 57.827 21.117-2.273 41.584-8.122 60.426-16.243-14.292 20.791-32.161 39.308-52.628 54.253z""></path></svg>																					</a>
+									</li>
+																																																	<li>
+										<a href=""http://instagram.com"" target=""_blank"">
+																							<svg aria-hidden=""true"" viewBox=""0 0 448 512"" xmlns=""http://www.w3.org/2000/svg""><path d=""M224.1 141c-63.6 0-114.9 51.3-114.9 114.9s51.3 114.9 114.9 114.9S339 319.5 339 255.9 287.7 141 224.1 141zm0 189.6c-41.1 0-74.7-33.5-74.7-74.7s33.5-74.7 74.7-74.7 74.7 33.5 74.7 74.7-33.6 74.7-74.7 74.7zm146.4-194.3c0 14.9-12 26.8-26.8 26.8-14.9 0-26.8-12-26.8-26.8s12-26.8 26.8-26.8 26.8 12 26.8 26.8zm76.1 27.2c-1.7-35.9-9.9-67.7-36.2-93.9-26.2-26.2-58-34.4-93.9-36.2-37-2.1-147.9-2.1-184.9 0-35.8 1.7-67.6 9.9-93.9 36.1s-34.4 58-36.2 93.9c-2.1 37-2.1 147.9 0 184.9 1.7 35.9 9.9 67.7 36.2 93.9s58 34.4 93.9 36.2c37 2.1 147.9 2.1 184.9 0 35.9-1.7 67.7-9.9 93.9-36.2 26.2-26.2 34.4-58 36.2-93.9 2.1-37 2.1-147.8 0-184.8zM398.8 388c-7.8 19.6-22.9 34.7-42.6 42.6-29.5 11.7-99.5 9-132.1 9s-102.7 2.6-132.1-9c-19.6-7.8-34.7-22.9-42.6-42.6-11.7-29.5-9-99.5-9-132.1s-2.6-102.7 9-132.1c7.8-19.6 22.9-34.7 42.6-42.6 29.5-11.7 99.5-9 132.1-9s102.7-2.6 132.1 9c19.6 7.8 34.7 22.9 42.6 42.6 11.7 29.5 9 99.5 9 132.1s2.7 102.7-9 132.1z""></path></svg>																					</a>
+									</li>
+																					</ul>
+										<p>He is one of the best senior reporters to create, and organize the news content for you. </p>
+				<figure>
+										<img src=""https://blog.jalsasalana.ng/wp-content/plugins/elementor/assets/images/placeholder.png"" alt=""Micheal Jenner"">
+				</figure>
+				<h2>Micheal Jenner</h2>
+				<h3>Staff Reporter </h3>
+															<ul>
+																																									<li>
+										<a href=""http://Facebook.com"" target=""_blank"">
+																							<svg aria-hidden=""true"" viewBox=""0 0 320 512"" xmlns=""http://www.w3.org/2000/svg""><path d=""M279.14 288l14.22-92.66h-88.91v-60.13c0-25.35 12.42-50.06 52.24-50.06h40.42V6.26S260.43 0 225.36 0c-73.22 0-121.08 44.38-121.08 124.72v70.62H22.89V288h81.39v224h100.17V288z""></path></svg>																					</a>
+									</li>
+																																																	<li>
+										<a href=""http://twitter.com"" target=""_blank"">
+																							<svg aria-hidden=""true"" viewBox=""0 0 512 512"" xmlns=""http://www.w3.org/2000/svg""><path d=""M459.37 151.716c.325 4.548.325 9.097.325 13.645 0 138.72-105.583 298.558-298.558 298.558-59.452 0-114.68-17.219-161.137-47.106 8.447.974 16.568 1.299 25.34 1.299 49.055 0 94.213-16.568 130.274-44.832-46.132-.975-84.792-31.188-98.112-72.772 6.498.974 12.995 1.624 19.818 1.624 9.421 0 18.843-1.3 27.614-3.573-48.081-9.747-84.143-51.98-84.143-102.985v-1.299c13.969 7.797 30.214 12.67 47.431 13.319-28.264-18.843-46.781-51.005-46.781-87.391 0-19.492 5.197-37.36 14.294-52.954 51.655 63.675 129.3 105.258 216.365 109.807-1.624-7.797-2.599-15.918-2.599-24.04 0-57.828 46.782-104.934 104.934-104.934 30.213 0 57.502 12.67 76.67 33.137 23.715-4.548 46.456-13.32 66.599-25.34-7.798 24.366-24.366 44.833-46.132 57.827 21.117-2.273 41.584-8.122 60.426-16.243-14.292 20.791-32.161 39.308-52.628 54.253z""></path></svg>																					</a>
+									</li>
+																																																	<li>
+										<a href=""http://instagram.com"" target=""_blank"">
+																							<svg aria-hidden=""true"" viewBox=""0 0 448 512"" xmlns=""http://www.w3.org/2000/svg""><path d=""M224.1 141c-63.6 0-114.9 51.3-114.9 114.9s51.3 114.9 114.9 114.9S339 319.5 339 255.9 287.7 141 224.1 141zm0 189.6c-41.1 0-74.7-33.5-74.7-74.7s33.5-74.7 74.7-74.7 74.7 33.5 74.7 74.7-33.6 74.7-74.7 74.7zm146.4-194.3c0 14.9-12 26.8-26.8 26.8-14.9 0-26.8-12-26.8-26.8s12-26.8 26.8-26.8 26.8 12 26.8 26.8zm76.1 27.2c-1.7-35.9-9.9-67.7-36.2-93.9-26.2-26.2-58-34.4-93.9-36.2-37-2.1-147.9-2.1-184.9 0-35.8 1.7-67.6 9.9-93.9 36.1s-34.4 58-36.2 93.9c-2.1 37-2.1 147.9 0 184.9 1.7 35.9 9.9 67.7 36.2 93.9s58 34.4 93.9 36.2c37 2.1 147.9 2.1 184.9 0 35.9-1.7 67.7-9.9 93.9-36.2 26.2-26.2 34.4-58 36.2-93.9 2.1-37 2.1-147.8 0-184.8zM398.8 388c-7.8 19.6-22.9 34.7-42.6 42.6-29.5 11.7-99.5 9-132.1 9s-102.7 2.6-132.1-9c-19.6-7.8-34.7-22.9-42.6-42.6-11.7-29.5-9-99.5-9-132.1s-2.6-102.7 9-132.1c7.8-19.6 22.9-34.7 42.6-42.6 29.5-11.7 99.5-9 132.1-9s102.7-2.6 132.1 9c19.6 7.8 34.7 22.9 42.6 42.6 11.7 29.5 9 99.5 9 132.1s2.7 102.7-9 132.1z""></path></svg>																					</a>
+									</li>
+																					</ul>
+										<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam sit amet purus augue. Ut sagittis fermentum neque, eu imperdiet mi</p>
+				<figure>
+										<img src=""https://blog.jalsasalana.ng/wp-content/plugins/elementor/assets/images/placeholder.png"" alt=""Isaac Mehegan"">
+				</figure>
+				<h2>Isaac Mehegan</h2>
+				<h3>Staff Reporter</h3>
+															<ul>
+																																									<li>
+										<a href=""http://Facebook.com"" target=""_blank"">
+																							<svg aria-hidden=""true"" viewBox=""0 0 320 512"" xmlns=""http://www.w3.org/2000/svg""><path d=""M279.14 288l14.22-92.66h-88.91v-60.13c0-25.35 12.42-50.06 52.24-50.06h40.42V6.26S260.43 0 225.36 0c-73.22 0-121.08 44.38-121.08 124.72v70.62H22.89V288h81.39v224h100.17V288z""></path></svg>																					</a>
+									</li>
+																																																	<li>
+										<a href=""http://twitter.com"" target=""_blank"">
+																							<svg aria-hidden=""true"" viewBox=""0 0 512 512"" xmlns=""http://www.w3.org/2000/svg""><path d=""M459.37 151.716c.325 4.548.325 9.097.325 13.645 0 138.72-105.583 298.558-298.558 298.558-59.452 0-114.68-17.219-161.137-47.106 8.447.974 16.568 1.299 25.34 1.299 49.055 0 94.213-16.568 130.274-44.832-46.132-.975-84.792-31.188-98.112-72.772 6.498.974 12.995 1.624 19.818 1.624 9.421 0 18.843-1.3 27.614-3.573-48.081-9.747-84.143-51.98-84.143-102.985v-1.299c13.969 7.797 30.214 12.67 47.431 13.319-28.264-18.843-46.781-51.005-46.781-87.391 0-19.492 5.197-37.36 14.294-52.954 51.655 63.675 129.3 105.258 216.365 109.807-1.624-7.797-2.599-15.918-2.599-24.04 0-57.828 46.782-104.934 104.934-104.934 30.213 0 57.502 12.67 76.67 33.137 23.715-4.548 46.456-13.32 66.599-25.34-7.798 24.366-24.366 44.833-46.132 57.827 21.117-2.273 41.584-8.122 60.426-16.243-14.292 20.791-32.161 39.308-52.628 54.253z""></path></svg>																					</a>
+									</li>
+																																																	<li>
+										<a href=""http://instagram.com"" target=""_blank"">
+																							<svg aria-hidden=""true"" viewBox=""0 0 448 512"" xmlns=""http://www.w3.org/2000/svg""><path d=""M224.1 141c-63.6 0-114.9 51.3-114.9 114.9s51.3 114.9 114.9 114.9S339 319.5 339 255.9 287.7 141 224.1 141zm0 189.6c-41.1 0-74.7-33.5-74.7-74.7s33.5-74.7 74.7-74.7 74.7 33.5 74.7 74.7-33.6 74.7-74.7 74.7zm146.4-194.3c0 14.9-12 26.8-26.8 26.8-14.9 0-26.8-12-26.8-26.8s12-26.8 26.8-26.8 26.8 12 26.8 26.8zm76.1 27.2c-1.7-35.9-9.9-67.7-36.2-93.9-26.2-26.2-58-34.4-93.9-36.2-37-2.1-147.9-2.1-184.9 0-35.8 1.7-67.6 9.9-93.9 36.1s-34.4 58-36.2 93.9c-2.1 37-2.1 147.9 0 184.9 1.7 35.9 9.9 67.7 36.2 93.9s58 34.4 93.9 36.2c37 2.1 147.9 2.1 184.9 0 35.9-1.7 67.7-9.9 93.9-36.2 26.2-26.2 34.4-58 36.2-93.9 2.1-37 2.1-147.8 0-184.8zM398.8 388c-7.8 19.6-22.9 34.7-42.6 42.6-29.5 11.7-99.5 9-132.1 9s-102.7 2.6-132.1-9c-19.6-7.8-34.7-22.9-42.6-42.6-11.7-29.5-9-99.5-9-132.1s-2.6-102.7 9-132.1c7.8-19.6 22.9-34.7 42.6-42.6 29.5-11.7 99.5-9 132.1-9s102.7-2.6 132.1 9c19.6 7.8 34.7 22.9 42.6 42.6 11.7 29.5 9 99.5 9 132.1s2.7 102.7-9 132.1z""></path></svg>																					</a>
+									</li>
+																					</ul>
+										<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam sit amet purus augue. Ut sagittis fermentum neque, eu imperdiet mi</p>
+				<figure>
+										<img src=""https://blog.jalsasalana.ng/wp-content/plugins/elementor/assets/images/placeholder.png"" alt=""Anthony Berlin"">
+				</figure>
+				<h2>Anthony Berlin</h2>
+				<h3>Senior Reporter</h3>
+															<ul>
+																																									<li>
+										<a href=""http://Facebook.com"" target=""_blank"">
+																							<svg aria-hidden=""true"" viewBox=""0 0 320 512"" xmlns=""http://www.w3.org/2000/svg""><path d=""M279.14 288l14.22-92.66h-88.91v-60.13c0-25.35 12.42-50.06 52.24-50.06h40.42V6.26S260.43 0 225.36 0c-73.22 0-121.08 44.38-121.08 124.72v70.62H22.89V288h81.39v224h100.17V288z""></path></svg>																					</a>
+									</li>
+																																																	<li>
+										<a href=""http://twitter.com"" target=""_blank"">
+																							<svg aria-hidden=""true"" viewBox=""0 0 512 512"" xmlns=""http://www.w3.org/2000/svg""><path d=""M459.37 151.716c.325 4.548.325 9.097.325 13.645 0 138.72-105.583 298.558-298.558 298.558-59.452 0-114.68-17.219-161.137-47.106 8.447.974 16.568 1.299 25.34 1.299 49.055 0 94.213-16.568 130.274-44.832-46.132-.975-84.792-31.188-98.112-72.772 6.498.974 12.995 1.624 19.818 1.624 9.421 0 18.843-1.3 27.614-3.573-48.081-9.747-84.143-51.98-84.143-102.985v-1.299c13.969 7.797 30.214 12.67 47.431 13.319-28.264-18.843-46.781-51.005-46.781-87.391 0-19.492 5.197-37.36 14.294-52.954 51.655 63.675 129.3 105.258 216.365 109.807-1.624-7.797-2.599-15.918-2.599-24.04 0-57.828 46.782-104.934 104.934-104.934 30.213 0 57.502 12.67 76.67 33.137 23.715-4.548 46.456-13.32 66.599-25.34-7.798 24.366-24.366 44.833-46.132 57.827 21.117-2.273 41.584-8.122 60.426-16.243-14.292 20.791-32.161 39.308-52.628 54.253z""></path></svg>																					</a>
+									</li>
+																																																	<li>
+										<a href=""http://instagram.com"" target=""_blank"">
+																							<svg aria-hidden=""true"" viewBox=""0 0 448 512"" xmlns=""http://www.w3.org/2000/svg""><path d=""M224.1 141c-63.6 0-114.9 51.3-114.9 114.9s51.3 114.9 114.9 114.9S339 319.5 339 255.9 287.7 141 224.1 141zm0 189.6c-41.1 0-74.7-33.5-74.7-74.7s33.5-74.7 74.7-74.7 74.7 33.5 74.7 74.7-33.6 74.7-74.7 74.7zm146.4-194.3c0 14.9-12 26.8-26.8 26.8-14.9 0-26.8-12-26.8-26.8s12-26.8 26.8-26.8 26.8 12 26.8 26.8zm76.1 27.2c-1.7-35.9-9.9-67.7-36.2-93.9-26.2-26.2-58-34.4-93.9-36.2-37-2.1-147.9-2.1-184.9 0-35.8 1.7-67.6 9.9-93.9 36.1s-34.4 58-36.2 93.9c-2.1 37-2.1 147.9 0 184.9 1.7 35.9 9.9 67.7 36.2 93.9s58 34.4 93.9 36.2c37 2.1 147.9 2.1 184.9 0 35.9-1.7 67.7-9.9 93.9-36.2 26.2-26.2 34.4-58 36.2-93.9 2.1-37 2.1-147.8 0-184.8zM398.8 388c-7.8 19.6-22.9 34.7-42.6 42.6-29.5 11.7-99.5 9-132.1 9s-102.7 2.6-132.1-9c-19.6-7.8-34.7-22.9-42.6-42.6-11.7-29.5-9-99.5-9-132.1s-2.6-102.7 9-132.1c7.8-19.6 22.9-34.7 42.6-42.6 29.5-11.7 99.5-9 132.1-9s102.7-2.6 132.1 9c19.6 7.8 34.7 22.9 42.6 42.6 11.7 29.5 9 99.5 9 132.1s2.7 102.7-9 132.1z""></path></svg>																					</a>
+									</li>
+																					</ul>
+										<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam sit amet purus augue. Ut sagittis fermentum neque, eu imperdiet mi</p>
+				<figure>
+										<img src=""https://blog.jalsasalana.ng/wp-content/plugins/elementor/assets/images/placeholder.png"" alt=""Juhumin Ungurs"">
+				</figure>
+				<h2>Juhumin Ungurs</h2>
+				<h3>Junior Reporter</h3>
+															<ul>
+																																									<li>
+										<a href=""http://Facebook.com"" target=""_blank"">
+																							<svg aria-hidden=""true"" viewBox=""0 0 320 512"" xmlns=""http://www.w3.org/2000/svg""><path d=""M279.14 288l14.22-92.66h-88.91v-60.13c0-25.35 12.42-50.06 52.24-50.06h40.42V6.26S260.43 0 225.36 0c-73.22 0-121.08 44.38-121.08 124.72v70.62H22.89V288h81.39v224h100.17V288z""></path></svg>																					</a>
+									</li>
+																																																	<li>
+										<a href=""http://twitter.com"" target=""_blank"">
+																							<svg aria-hidden=""true"" viewBox=""0 0 512 512"" xmlns=""http://www.w3.org/2000/svg""><path d=""M459.37 151.716c.325 4.548.325 9.097.325 13.645 0 138.72-105.583 298.558-298.558 298.558-59.452 0-114.68-17.219-161.137-47.106 8.447.974 16.568 1.299 25.34 1.299 49.055 0 94.213-16.568 130.274-44.832-46.132-.975-84.792-31.188-98.112-72.772 6.498.974 12.995 1.624 19.818 1.624 9.421 0 18.843-1.3 27.614-3.573-48.081-9.747-84.143-51.98-84.143-102.985v-1.299c13.969 7.797 30.214 12.67 47.431 13.319-28.264-18.843-46.781-51.005-46.781-87.391 0-19.492 5.197-37.36 14.294-52.954 51.655 63.675 129.3 105.258 216.365 109.807-1.624-7.797-2.599-15.918-2.599-24.04 0-57.828 46.782-104.934 104.934-104.934 30.213 0 57.502 12.67 76.67 33.137 23.715-4.548 46.456-13.32 66.599-25.34-7.798 24.366-24.366 44.833-46.132 57.827 21.117-2.273 41.584-8.122 60.426-16.243-14.292 20.791-32.161 39.308-52.628 54.253z""></path></svg>																					</a>
+									</li>
+																																																	<li>
+										<a href=""http://instagram.com"" target=""_blank"">
+																							<svg aria-hidden=""true"" viewBox=""0 0 448 512"" xmlns=""http://www.w3.org/2000/svg""><path d=""M224.1 141c-63.6 0-114.9 51.3-114.9 114.9s51.3 114.9 114.9 114.9S339 319.5 339 255.9 287.7 141 224.1 141zm0 189.6c-41.1 0-74.7-33.5-74.7-74.7s33.5-74.7 74.7-74.7 74.7 33.5 74.7 74.7-33.6 74.7-74.7 74.7zm146.4-194.3c0 14.9-12 26.8-26.8 26.8-14.9 0-26.8-12-26.8-26.8s12-26.8 26.8-26.8 26.8 12 26.8 26.8zm76.1 27.2c-1.7-35.9-9.9-67.7-36.2-93.9-26.2-26.2-58-34.4-93.9-36.2-37-2.1-147.9-2.1-184.9 0-35.8 1.7-67.6 9.9-93.9 36.1s-34.4 58-36.2 93.9c-2.1 37-2.1 147.9 0 184.9 1.7 35.9 9.9 67.7 36.2 93.9s58 34.4 93.9 36.2c37 2.1 147.9 2.1 184.9 0 35.9-1.7 67.7-9.9 93.9-36.2 26.2-26.2 34.4-58 36.2-93.9 2.1-37 2.1-147.8 0-184.8zM398.8 388c-7.8 19.6-22.9 34.7-42.6 42.6-29.5 11.7-99.5 9-132.1 9s-102.7 2.6-132.1-9c-19.6-7.8-34.7-22.9-42.6-42.6-11.7-29.5-9-99.5-9-132.1s-2.6-102.7 9-132.1c7.8-19.6 22.9-34.7 42.6-42.6 29.5-11.7 99.5-9 132.1-9s102.7-2.6 132.1 9c19.6 7.8 34.7 22.9 42.6 42.6 11.7 29.5 9 99.5 9 132.1s2.7 102.7-9 132.1z""></path></svg>																					</a>
+									</li>
+																					</ul>
+										<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam sit amet purus augue. Ut sagittis fermentum neque, eu imperdiet mi</p>
+				<figure>
+										<img src=""https://blog.jalsasalana.ng/wp-content/plugins/elementor/assets/images/placeholder.png"" alt=""Karsten Wine"">
+				</figure>
+				<h2>Karsten Wine</h2>
+				<h3>Junior Reporter</h3>
+															<ul>
+																																									<li>
+										<a href=""http://Facebook.com"" target=""_blank"">
+																							<svg aria-hidden=""true"" viewBox=""0 0 320 512"" xmlns=""http://www.w3.org/2000/svg""><path d=""M279.14 288l14.22-92.66h-88.91v-60.13c0-25.35 12.42-50.06 52.24-50.06h40.42V6.26S260.43 0 225.36 0c-73.22 0-121.08 44.38-121.08 124.72v70.62H22.89V288h81.39v224h100.17V288z""></path></svg>																					</a>
+									</li>
+																																																	<li>
+										<a href=""http://twitter.com"" target=""_blank"">
+																							<svg aria-hidden=""true"" viewBox=""0 0 512 512"" xmlns=""http://www.w3.org/2000/svg""><path d=""M459.37 151.716c.325 4.548.325 9.097.325 13.645 0 138.72-105.583 298.558-298.558 298.558-59.452 0-114.68-17.219-161.137-47.106 8.447.974 16.568 1.299 25.34 1.299 49.055 0 94.213-16.568 130.274-44.832-46.132-.975-84.792-31.188-98.112-72.772 6.498.974 12.995 1.624 19.818 1.624 9.421 0 18.843-1.3 27.614-3.573-48.081-9.747-84.143-51.98-84.143-102.985v-1.299c13.969 7.797 30.214 12.67 47.431 13.319-28.264-18.843-46.781-51.005-46.781-87.391 0-19.492 5.197-37.36 14.294-52.954 51.655 63.675 129.3 105.258 216.365 109.807-1.624-7.797-2.599-15.918-2.599-24.04 0-57.828 46.782-104.934 104.934-104.934 30.213 0 57.502 12.67 76.67 33.137 23.715-4.548 46.456-13.32 66.599-25.34-7.798 24.366-24.366 44.833-46.132 57.827 21.117-2.273 41.584-8.122 60.426-16.243-14.292 20.791-32.161 39.308-52.628 54.253z""></path></svg>																					</a>
+									</li>
+																																																	<li>
+										<a href=""http://instagram.com"" target=""_blank"">
+																							<svg aria-hidden=""true"" viewBox=""0 0 448 512"" xmlns=""http://www.w3.org/2000/svg""><path d=""M224.1 141c-63.6 0-114.9 51.3-114.9 114.9s51.3 114.9 114.9 114.9S339 319.5 339 255.9 287.7 141 224.1 141zm0 189.6c-41.1 0-74.7-33.5-74.7-74.7s33.5-74.7 74.7-74.7 74.7 33.5 74.7 74.7-33.6 74.7-74.7 74.7zm146.4-194.3c0 14.9-12 26.8-26.8 26.8-14.9 0-26.8-12-26.8-26.8s12-26.8 26.8-26.8 26.8 12 26.8 26.8zm76.1 27.2c-1.7-35.9-9.9-67.7-36.2-93.9-26.2-26.2-58-34.4-93.9-36.2-37-2.1-147.9-2.1-184.9 0-35.8 1.7-67.6 9.9-93.9 36.1s-34.4 58-36.2 93.9c-2.1 37-2.1 147.9 0 184.9 1.7 35.9 9.9 67.7 36.2 93.9s58 34.4 93.9 36.2c37 2.1 147.9 2.1 184.9 0 35.9-1.7 67.7-9.9 93.9-36.2 26.2-26.2 34.4-58 36.2-93.9 2.1-37 2.1-147.8 0-184.8zM398.8 388c-7.8 19.6-22.9 34.7-42.6 42.6-29.5 11.7-99.5 9-132.1 9s-102.7 2.6-132.1-9c-19.6-7.8-34.7-22.9-42.6-42.6-11.7-29.5-9-99.5-9-132.1s-2.6-102.7 9-132.1c7.8-19.6 22.9-34.7 42.6-42.6 29.5-11.7 99.5-9 132.1-9s102.7-2.6 132.1 9c19.6 7.8 34.7 22.9 42.6 42.6 11.7 29.5 9 99.5 9 132.1s2.7 102.7-9 132.1z""></path></svg>																					</a>
+									</li>
+																					</ul>
+										<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam sit amet purus augue. Ut sagittis fermentum neque, eu imperdiet mi</p>
+				<figure>
+										<img src=""https://blog.jalsasalana.ng/wp-content/plugins/elementor/assets/images/placeholder.png"" alt=""Rizky Sabria"">
+				</figure>
+				<h2>Rizky Sabria</h2>
+				<h3>Columnist </h3>
+															<ul>
+																																									<li>
+										<a href=""http://Facebook.com"" target=""_blank"">
+																							<svg aria-hidden=""true"" viewBox=""0 0 320 512"" xmlns=""http://www.w3.org/2000/svg""><path d=""M279.14 288l14.22-92.66h-88.91v-60.13c0-25.35 12.42-50.06 52.24-50.06h40.42V6.26S260.43 0 225.36 0c-73.22 0-121.08 44.38-121.08 124.72v70.62H22.89V288h81.39v224h100.17V288z""></path></svg>																					</a>
+									</li>
+																																																	<li>
+										<a href=""http://twitter.com"" target=""_blank"">
+																							<svg aria-hidden=""true"" viewBox=""0 0 512 512"" xmlns=""http://www.w3.org/2000/svg""><path d=""M459.37 151.716c.325 4.548.325 9.097.325 13.645 0 138.72-105.583 298.558-298.558 298.558-59.452 0-114.68-17.219-161.137-47.106 8.447.974 16.568 1.299 25.34 1.299 49.055 0 94.213-16.568 130.274-44.832-46.132-.975-84.792-31.188-98.112-72.772 6.498.974 12.995 1.624 19.818 1.624 9.421 0 18.843-1.3 27.614-3.573-48.081-9.747-84.143-51.98-84.143-102.985v-1.299c13.969 7.797 30.214 12.67 47.431 13.319-28.264-18.843-46.781-51.005-46.781-87.391 0-19.492 5.197-37.36 14.294-52.954 51.655 63.675 129.3 105.258 216.365 109.807-1.624-7.797-2.599-15.918-2.599-24.04 0-57.828 46.782-104.934 104.934-104.934 30.213 0 57.502 12.67 76.67 33.137 23.715-4.548 46.456-13.32 66.599-25.34-7.798 24.366-24.366 44.833-46.132 57.827 21.117-2.273 41.584-8.122 60.426-16.243-14.292 20.791-32.161 39.308-52.628 54.253z""></path></svg>																					</a>
+									</li>
+																																																	<li>
+										<a href=""http://instagram.com"" target=""_blank"">
+																							<svg aria-hidden=""true"" viewBox=""0 0 448 512"" xmlns=""http://www.w3.org/2000/svg""><path d=""M224.1 141c-63.6 0-114.9 51.3-114.9 114.9s51.3 114.9 114.9 114.9S339 319.5 339 255.9 287.7 141 224.1 141zm0 189.6c-41.1 0-74.7-33.5-74.7-74.7s33.5-74.7 74.7-74.7 74.7 33.5 74.7 74.7-33.6 74.7-74.7 74.7zm146.4-194.3c0 14.9-12 26.8-26.8 26.8-14.9 0-26.8-12-26.8-26.8s12-26.8 26.8-26.8 26.8 12 26.8 26.8zm76.1 27.2c-1.7-35.9-9.9-67.7-36.2-93.9-26.2-26.2-58-34.4-93.9-36.2-37-2.1-147.9-2.1-184.9 0-35.8 1.7-67.6 9.9-93.9 36.1s-34.4 58-36.2 93.9c-2.1 37-2.1 147.9 0 184.9 1.7 35.9 9.9 67.7 36.2 93.9s58 34.4 93.9 36.2c37 2.1 147.9 2.1 184.9 0 35.9-1.7 67.7-9.9 93.9-36.2 26.2-26.2 34.4-58 36.2-93.9 2.1-37 2.1-147.8 0-184.8zM398.8 388c-7.8 19.6-22.9 34.7-42.6 42.6-29.5 11.7-99.5 9-132.1 9s-102.7 2.6-132.1-9c-19.6-7.8-34.7-22.9-42.6-42.6-11.7-29.5-9-99.5-9-132.1s-2.6-102.7 9-132.1c7.8-19.6 22.9-34.7 42.6-42.6 29.5-11.7 99.5-9 132.1-9s102.7-2.6 132.1 9c19.6 7.8 34.7 22.9 42.6 42.6 11.7 29.5 9 99.5 9 132.1s2.7 102.7-9 132.1z""></path></svg>																					</a>
+									</li>
+																					</ul>
+										<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam sit amet purus augue. Ut sagittis fermentum neque, eu imperdiet mi</p>",,"2024-12-17 09:21:35",page,https://blog.jalsasalana.ng/press24-worldwide-team/
+147,"jalsa NG categories",,,"2024-12-17 09:37:19",page,https://blog.jalsasalana.ng/jalsa-ng-categories/
+155,"Jalsa NG Home","<section><article><a href=""https://blog.jalsasalana.ng/category/interviews/"">Interviews, </a><a href=""https://blog.jalsasalana.ng/category/news/"">Latest News</a><h2><a  target=""_self""  href=""https://blog.jalsasalana.ng/jalsa-salana-clinic-a-beacon-of-compassion-and-care/"">JALSA SALANA CLINIC: A BEACON OF COMPASSION AND&hellip;</a></h2><a href=""https://blog.jalsasalana.ng/author/editor/"">Jalsa Salana</a>December 28, 2025</article><article><a href=""https://blog.jalsasalana.ng/category/news/"">Latest News</a><h2><a  target=""_self""  href=""https://blog.jalsasalana.ng/a-new-think-tank-for-education-amir-mobilizes-academics-to-power-minaret-university/"">A New Think-Tank for Education&#8221; – Amir Mobilizes&hellip;</a></h2><a href=""https://blog.jalsasalana.ng/author/editor/"">Jalsa Salana</a>December 28, 2025</article><article><a href=""https://blog.jalsasalana.ng/category/news/"">Latest News</a><h2><a  target=""_self""  href=""https://blog.jalsasalana.ng/drop-social-media-fantasies-leaders-charge-16-couples-at-jalsa-mass-wedding/"">“Drop Social Media Fantasies” – Leaders Charge 16&hellip;</a></h2><a href=""https://blog.jalsasalana.ng/author/editor/"">Jalsa Salana</a>December 26, 2025</article><article><a href=""https://blog.jalsasalana.ng/category/news/"">Latest News</a><h2><a  target=""_self""  href=""https://blog.jalsasalana.ng/from-professors-to-prodigies-ahmadiyya-nigeria-honours-68-at-jalsa-academic-awards/"">From Professors to Prodigies: Ahmadiyya Nigeria Honours 68&hellip;</a></h2><a href=""https://blog.jalsasalana.ng/author/editor/"">Jalsa Salana</a>December 26, 2025</article><article><a href=""https://blog.jalsasalana.ng/category/news/"">Latest News</a><h2><a  target=""_self""  href=""https://blog.jalsasalana.ng/divine-homes-rishta-nata-meet-and-greet-matches-41-pairs-at-jalsa/"">Divine Homes: Rishta-Nata ‘Meet and Greet’ Matches 41&hellip;</a></h2><a href=""https://blog.jalsasalana.ng/author/editor/"">Jalsa Salana</a>December 26, 2025</article></section>				
+					<a href=""#"">
+									AMIR'S CORNER
+					</a>
+					<ul><li>All Posts<em></em></li><li>Amir&#039;s Corner<em></em></li></ul><section data-settings=""{&quot;layout&quot;:&quot;fitRows&quot;,&quot;stick_last_element_to_bottom&quot;:&quot;&quot;,&quot;columns_desktop&quot;:&quot;1&quot;,&quot;gutter_hr&quot;:15,&quot;gutter_hr_mobile&quot;:15,&quot;gutter_hr_mobile_extra&quot;:15,&quot;gutter_hr_tablet&quot;:15,&quot;gutter_hr_tablet_extra&quot;:15,&quot;gutter_hr_laptop&quot;:15,&quot;gutter_hr_widescreen&quot;:15,&quot;gutter_vr&quot;:15,&quot;gutter_vr_mobile&quot;:&quot;&quot;,&quot;gutter_vr_mobile_extra&quot;:&quot;&quot;,&quot;gutter_vr_tablet&quot;:&quot;&quot;,&quot;gutter_vr_tablet_extra&quot;:15,&quot;gutter_vr_laptop&quot;:15,&quot;gutter_vr_widescreen&quot;:15,&quot;animation&quot;:&quot;default&quot;,&quot;animation_duration&quot;:0.3,&quot;animation_delay&quot;:0.1,&quot;deeplinking&quot;:&quot;&quot;,&quot;filters_linkable&quot;:&quot;no&quot;,&quot;filters_default_filter&quot;:&quot;&quot;,&quot;filters_count&quot;:&quot;&quot;,&quot;filters_hide_empty&quot;:&quot;no&quot;,&quot;filters_animation&quot;:&quot;default&quot;,&quot;filters_animation_duration&quot;:0.3,&quot;filters_animation_delay&quot;:0.1,&quot;pagination_type&quot;:&quot;load-more&quot;,&quot;pagination_max_pages&quot;:5,&quot;lightbox&quot;:{&quot;selector&quot;:&quot;.wpr-grid-image-wrap&quot;,&quot;iframeMaxWidth&quot;:&quot;60%&quot;,&quot;hash&quot;:false,&quot;autoplay&quot;:&quot;true&quot;,&quot;pause&quot;:5000,&quot;progressBar&quot;:&quot;true&quot;,&quot;counter&quot;:&quot;true&quot;,&quot;controls&quot;:&quot;true&quot;,&quot;getCaptionFromTitleOrAlt&quot;:&quot;true&quot;,&quot;thumbnail&quot;:&quot;&quot;,&quot;showThumbByDefault&quot;:&quot;&quot;,&quot;share&quot;:&quot;&quot;,&quot;zoom&quot;:&quot;true&quot;,&quot;fullScreen&quot;:&quot;true&quot;,&quot;download&quot;:&quot;true&quot;}}"" data-advanced-filters=""no""><article><img data-no-lazy=""1"" src=""https://blog.jalsasalana.ng/wp-content/uploads/2025/12/DSC_3531-scaled.jpg"" alt=""&#8220;The Sword of this Age is Knowledge&#8221; – Amir AMJN""><h2><a target=""_self""  href=""https://blog.jalsasalana.ng/the-sword-of-this-age-is-knowledge-amir-amjn/"">&#8220;The Sword of this Age is Knowledge&#8221; – Amir AMJN</a></h2><p>By Abdulbasit Oladejo &nbsp; The Amir (National President) of the Ahmadiyya Muslim Jama‘at Nigeria, Alhaji (Barr.) Abdul Azeez Alatoye Folorunso,...</p><a target=""_self"" href=""https://blog.jalsasalana.ng/the-sword-of-this-age-is-knowledge-amir-amjn/"">Read More</a></article></section>				
+					<a href=""#"">
+									ARTICLES
+					</a>
+					<ul><li>All Posts<em></em></li><li>Articles<em></em></li></ul><section data-settings=""{&quot;layout&quot;:&quot;list&quot;,&quot;stick_last_element_to_bottom&quot;:&quot;no&quot;,&quot;columns_desktop&quot;:&quot;1&quot;,&quot;gutter_hr&quot;:15,&quot;gutter_hr_mobile&quot;:15,&quot;gutter_hr_mobile_extra&quot;:15,&quot;gutter_hr_tablet&quot;:15,&quot;gutter_hr_tablet_extra&quot;:15,&quot;gutter_hr_laptop&quot;:15,&quot;gutter_hr_widescreen&quot;:15,&quot;gutter_vr&quot;:15,&quot;gutter_vr_mobile&quot;:&quot;&quot;,&quot;gutter_vr_mobile_extra&quot;:&quot;&quot;,&quot;gutter_vr_tablet&quot;:&quot;&quot;,&quot;gutter_vr_tablet_extra&quot;:15,&quot;gutter_vr_laptop&quot;:15,&quot;gutter_vr_widescreen&quot;:15,&quot;animation&quot;:&quot;default&quot;,&quot;animation_duration&quot;:0.3,&quot;animation_delay&quot;:0.1,&quot;deeplinking&quot;:&quot;&quot;,&quot;filters_linkable&quot;:&quot;no&quot;,&quot;filters_default_filter&quot;:&quot;&quot;,&quot;filters_count&quot;:&quot;&quot;,&quot;filters_hide_empty&quot;:&quot;no&quot;,&quot;filters_animation&quot;:&quot;default&quot;,&quot;filters_animation_duration&quot;:0.3,&quot;filters_animation_delay&quot;:0.1,&quot;pagination_type&quot;:&quot;load-more&quot;,&quot;pagination_max_pages&quot;:12,&quot;media_align&quot;:&quot;left&quot;,&quot;media_width&quot;:30,&quot;media_distance&quot;:20,&quot;lightbox&quot;:{&quot;selector&quot;:&quot;.wpr-grid-image-wrap&quot;,&quot;iframeMaxWidth&quot;:&quot;60%&quot;,&quot;hash&quot;:false,&quot;autoplay&quot;:&quot;true&quot;,&quot;pause&quot;:5000,&quot;progressBar&quot;:&quot;true&quot;,&quot;counter&quot;:&quot;true&quot;,&quot;controls&quot;:&quot;true&quot;,&quot;getCaptionFromTitleOrAlt&quot;:&quot;true&quot;,&quot;thumbnail&quot;:&quot;&quot;,&quot;showThumbByDefault&quot;:&quot;&quot;,&quot;share&quot;:&quot;&quot;,&quot;zoom&quot;:&quot;true&quot;,&quot;fullScreen&quot;:&quot;true&quot;,&quot;download&quot;:&quot;true&quot;}}"" data-advanced-filters=""no""><article><img data-no-lazy=""1"" src=""https://blog.jalsasalana.ng/wp-content/uploads/2025/12/DSC_4102-scaled.jpg"" alt=""From Jalsa to Daily Life — Living the Lessons Learned""><h2><a target=""_self""  href=""https://blog.jalsasalana.ng/from-jalsa-to-daily-life-living-the-lessons-learned/"">From Jalsa to Daily Life — Living the Lessons Learned</a></h2><p>By Giwa Zafrullah Ishola As the closing prayer ends and the crowd softly murmurs Ameen,...</p></article><article><img data-no-lazy=""1"" src=""https://blog.jalsasalana.ng/wp-content/uploads/2024/12/415223992_669947298636345_8820086842910487637_n.jpg"" alt=""The Vision of the Promised Messiah for Jalsa Salana: A Timeless Mission""><h2><a target=""_self""  href=""https://blog.jalsasalana.ng/the-vision-of-the-promised-messiah-for-jalsa-salana-a-timeless-mission-2/"">The Vision of the Promised Messiah for Jalsa Salana: A Timeless Mission</a></h2><p>By Muhammadul Waa&#8217;iz Apooyin Jalsa Salana (Urdu: جلسہ سالانہ, literarily translated as &#8217;Annual Gathering&#8217;) is a...</p></article><article><img data-no-lazy=""1"" src=""https://blog.jalsasalana.ng/wp-content/uploads/2024/12/photo_2023-12-23_18-50-43.jpg"" alt=""Exemplary manners at Jalsa Salana: How to conduct ourselves as guests of Allah.""><h2><a target=""_self""  href=""https://blog.jalsasalana.ng/exemplary-manners-at-jalsa-salana-how-to-conduct-ourselves-as-guests-of-allah/"">Exemplary manners at Jalsa Salana: How to conduct ourselves as guests of Allah.</a></h2><p>By Ridwanullah Bamigbade &nbsp; Introduction  Jasa salana, the Ahmadiyya community&#8217;s annual convention holds huge spiritual...</p></article></section>				
+					<a href=""#"">
+									IMPORTANT
+					</a>
+					<ul><li>All Posts<em></em></li><li>Important<em></em></li><li>Story<em></em></li></ul><section data-settings=""{&quot;layout&quot;:&quot;fitRows&quot;,&quot;stick_last_element_to_bottom&quot;:&quot;&quot;,&quot;columns_desktop&quot;:&quot;1&quot;,&quot;gutter_hr&quot;:15,&quot;gutter_hr_mobile&quot;:15,&quot;gutter_hr_mobile_extra&quot;:15,&quot;gutter_hr_tablet&quot;:15,&quot;gutter_hr_tablet_extra&quot;:15,&quot;gutter_hr_laptop&quot;:15,&quot;gutter_hr_widescreen&quot;:15,&quot;gutter_vr&quot;:15,&quot;gutter_vr_mobile&quot;:&quot;&quot;,&quot;gutter_vr_mobile_extra&quot;:&quot;&quot;,&quot;gutter_vr_tablet&quot;:&quot;&quot;,&quot;gutter_vr_tablet_extra&quot;:15,&quot;gutter_vr_laptop&quot;:15,&quot;gutter_vr_widescreen&quot;:15,&quot;animation&quot;:&quot;default&quot;,&quot;animation_duration&quot;:0.3,&quot;animation_delay&quot;:0.1,&quot;deeplinking&quot;:&quot;&quot;,&quot;filters_linkable&quot;:&quot;no&quot;,&quot;filters_default_filter&quot;:&quot;&quot;,&quot;filters_count&quot;:&quot;&quot;,&quot;filters_hide_empty&quot;:&quot;no&quot;,&quot;filters_animation&quot;:&quot;default&quot;,&quot;filters_animation_duration&quot;:0.3,&quot;filters_animation_delay&quot;:0.1,&quot;pagination_type&quot;:&quot;load-more&quot;,&quot;pagination_max_pages&quot;:40,&quot;lightbox&quot;:{&quot;selector&quot;:&quot;.wpr-grid-image-wrap&quot;,&quot;iframeMaxWidth&quot;:&quot;60%&quot;,&quot;hash&quot;:false,&quot;autoplay&quot;:&quot;true&quot;,&quot;pause&quot;:5000,&quot;progressBar&quot;:&quot;true&quot;,&quot;counter&quot;:&quot;true&quot;,&quot;controls&quot;:&quot;true&quot;,&quot;getCaptionFromTitleOrAlt&quot;:&quot;true&quot;,&quot;thumbnail&quot;:&quot;&quot;,&quot;showThumbByDefault&quot;:&quot;&quot;,&quot;share&quot;:&quot;&quot;,&quot;zoom&quot;:&quot;true&quot;,&quot;fullScreen&quot;:&quot;true&quot;,&quot;download&quot;:&quot;true&quot;}}"" data-advanced-filters=""no""><article><img data-no-lazy=""1"" src=""https://blog.jalsasalana.ng/wp-content/uploads/2025/12/IMG_0821-scaled.jpg"" alt=""Lessons Learned at Jalsa: A Journey of Faith and Connection""><h2><a target=""_self""  href=""https://blog.jalsasalana.ng/lessons-learned-at-jalsa-a-journey-of-faith-and-connection/"">Lessons Learned at Jalsa: A Journey of Faith and Connection</a></h2><p>By Yussuf Amatulhafeez Mrs. Widadullah, a dedicated member of Lajna Imaillah from the North Central region of Nigeria, shared some...</p></article></section>				
+					<ul><li>All Posts<em></em></li><li>Hot news<em></em></li></ul><section data-settings=""{&quot;layout&quot;:&quot;list&quot;,&quot;stick_last_element_to_bottom&quot;:&quot;no&quot;,&quot;columns_desktop&quot;:&quot;1&quot;,&quot;gutter_hr&quot;:15,&quot;gutter_hr_mobile&quot;:15,&quot;gutter_hr_mobile_extra&quot;:15,&quot;gutter_hr_tablet&quot;:15,&quot;gutter_hr_tablet_extra&quot;:15,&quot;gutter_hr_laptop&quot;:15,&quot;gutter_hr_widescreen&quot;:15,&quot;gutter_vr&quot;:15,&quot;gutter_vr_mobile&quot;:&quot;&quot;,&quot;gutter_vr_mobile_extra&quot;:&quot;&quot;,&quot;gutter_vr_tablet&quot;:&quot;&quot;,&quot;gutter_vr_tablet_extra&quot;:15,&quot;gutter_vr_laptop&quot;:15,&quot;gutter_vr_widescreen&quot;:15,&quot;animation&quot;:&quot;default&quot;,&quot;animation_duration&quot;:0.3,&quot;animation_delay&quot;:0.1,&quot;deeplinking&quot;:&quot;&quot;,&quot;filters_linkable&quot;:&quot;no&quot;,&quot;filters_default_filter&quot;:&quot;&quot;,&quot;filters_count&quot;:&quot;&quot;,&quot;filters_hide_empty&quot;:&quot;no&quot;,&quot;filters_animation&quot;:&quot;default&quot;,&quot;filters_animation_duration&quot;:0.3,&quot;filters_animation_delay&quot;:0.1,&quot;pagination_type&quot;:&quot;load-more&quot;,&quot;pagination_max_pages&quot;:1,&quot;media_align&quot;:&quot;left&quot;,&quot;media_width&quot;:30,&quot;media_distance&quot;:20,&quot;lightbox&quot;:{&quot;selector&quot;:&quot;.wpr-grid-image-wrap&quot;,&quot;iframeMaxWidth&quot;:&quot;60%&quot;,&quot;hash&quot;:false,&quot;autoplay&quot;:&quot;true&quot;,&quot;pause&quot;:5000,&quot;progressBar&quot;:&quot;true&quot;,&quot;counter&quot;:&quot;true&quot;,&quot;controls&quot;:&quot;true&quot;,&quot;getCaptionFromTitleOrAlt&quot;:&quot;true&quot;,&quot;thumbnail&quot;:&quot;&quot;,&quot;showThumbByDefault&quot;:&quot;&quot;,&quot;share&quot;:&quot;&quot;,&quot;zoom&quot;:&quot;true&quot;,&quot;fullScreen&quot;:&quot;true&quot;,&quot;download&quot;:&quot;true&quot;}}"" data-advanced-filters=""no""><article><img data-no-lazy=""1"" src=""https://blog.jalsasalana.ng/wp-content/uploads/2024/12/DSC_6340-scaled.jpg"" alt=""Smile, Do Not Frown: Amir Ahmadiyya Inspires Volunteers Ahead of Nigeria’s Jalsa Platinum Jubilee""><h2><a target=""_self""  href=""https://blog.jalsasalana.ng/smile-do-not-frown-amir-ahmadiyya-inspires-volunteers-ahead-of-nigerias-jalsa-platinum-jubilee/"">Smile, Do Not Frown: Amir Ahmadiyya Inspires Volunteers Ahead of Nigeria’s Jalsa Platinum Jubilee</a></h2>December 19, 2024</article><article><img data-no-lazy=""1"" src=""https://blog.jalsasalana.ng/wp-content/uploads/2024/12/DSC_2493-scaled.jpg"" alt=""Amir Ahmadiyya Nigeria Inspects Jamia Ahmadiyya Ahead of 70th Annual Jalsa Salana""><h2><a target=""_self""  href=""https://blog.jalsasalana.ng/amir-ahmadiyya-nigeria-inspects-jamia-ahmadiyya-ahead-of-70th-annual-jalsa-salana/"">Amir Ahmadiyya Nigeria Inspects Jamia Ahmadiyya Ahead of 70th Annual Jalsa Salana</a></h2>December 19, 2024</article></section>				
+					<a href=""#"">
+									POEMS
+					</a>
+					<ul><li>All Posts<em></em></li><li>Poems<em></em></li></ul><section data-settings=""{&quot;layout&quot;:&quot;fitRows&quot;,&quot;stick_last_element_to_bottom&quot;:&quot;&quot;,&quot;columns_desktop&quot;:&quot;2&quot;,&quot;gutter_hr&quot;:15,&quot;gutter_hr_mobile&quot;:15,&quot;gutter_hr_mobile_extra&quot;:15,&quot;gutter_hr_tablet&quot;:15,&quot;gutter_hr_tablet_extra&quot;:15,&quot;gutter_hr_laptop&quot;:15,&quot;gutter_hr_widescreen&quot;:15,&quot;gutter_vr&quot;:15,&quot;gutter_vr_mobile&quot;:&quot;&quot;,&quot;gutter_vr_mobile_extra&quot;:&quot;&quot;,&quot;gutter_vr_tablet&quot;:&quot;&quot;,&quot;gutter_vr_tablet_extra&quot;:15,&quot;gutter_vr_laptop&quot;:15,&quot;gutter_vr_widescreen&quot;:15,&quot;animation&quot;:&quot;default&quot;,&quot;animation_duration&quot;:0.3,&quot;animation_delay&quot;:0.1,&quot;deeplinking&quot;:&quot;&quot;,&quot;filters_linkable&quot;:&quot;no&quot;,&quot;filters_default_filter&quot;:&quot;&quot;,&quot;filters_count&quot;:&quot;&quot;,&quot;filters_hide_empty&quot;:&quot;no&quot;,&quot;filters_animation&quot;:&quot;default&quot;,&quot;filters_animation_duration&quot;:0.3,&quot;filters_animation_delay&quot;:0.1,&quot;pagination_type&quot;:&quot;load-more&quot;,&quot;pagination_max_pages&quot;:6,&quot;lightbox&quot;:{&quot;selector&quot;:&quot;.wpr-grid-image-wrap&quot;,&quot;iframeMaxWidth&quot;:&quot;60%&quot;,&quot;hash&quot;:false,&quot;autoplay&quot;:&quot;true&quot;,&quot;pause&quot;:5000,&quot;progressBar&quot;:&quot;true&quot;,&quot;counter&quot;:&quot;true&quot;,&quot;controls&quot;:&quot;true&quot;,&quot;getCaptionFromTitleOrAlt&quot;:&quot;true&quot;,&quot;thumbnail&quot;:&quot;&quot;,&quot;showThumbByDefault&quot;:&quot;&quot;,&quot;share&quot;:&quot;&quot;,&quot;zoom&quot;:&quot;true&quot;,&quot;fullScreen&quot;:&quot;true&quot;,&quot;download&quot;:&quot;true&quot;}}"" data-advanced-filters=""no""><article><img data-no-lazy=""1"" src=""https://blog.jalsasalana.ng/wp-content/uploads/2025/12/DSC_3671-scaled.jpg"" alt=""Jalsa Salana: Where Hearts Unite""><h2><a target=""_self""  href=""https://blog.jalsasalana.ng/jalsa-salana-where-hearts-unite/"">Jalsa Salana: Where Hearts Unite</a></h2><p>By Rofiah Oriolowo &nbsp; Jalsa Salana, Ahlan Wa Sahlan, Jalsa Salana, Mubarak to all. A gathering of love, of peace,...</p></article><article><img data-no-lazy=""1"" src=""https://blog.jalsasalana.ng/wp-content/uploads/2025/12/DSC_4102-scaled.jpg"" alt=""From Jalsa to Daily Life — Living the Lessons Learned""><h2><a target=""_self""  href=""https://blog.jalsasalana.ng/from-jalsa-to-daily-life-living-the-lessons-learned/"">From Jalsa to Daily Life — Living the Lessons Learned</a></h2><p>By Giwa Zafrullah Ishola As the closing prayer ends and the crowd softly murmurs Ameen, a sacred silence falls across...</p></article><article><img data-no-lazy=""1"" src=""https://blog.jalsasalana.ng/wp-content/uploads/2025/12/DSC_4060-scaled.jpg"" alt=""Echoes of Jalsa: A Gathering of Hearts""><h2><a target=""_self""  href=""https://blog.jalsasalana.ng/echoes-of-jalsa-a-gathering-of-hearts/"">Echoes of Jalsa: A Gathering of Hearts</a></h2><p>By Sekinat Ayole As we gather from far and wide, For Jalsa Salana, a blessed tide, Our hearts united, our...</p></article><article><img data-no-lazy=""1"" src=""https://blog.jalsasalana.ng/wp-content/uploads/2025/12/DSC_3996-scaled.jpg"" alt=""A Community of Peace""><h2><a target=""_self""  href=""https://blog.jalsasalana.ng/a-community-of-peace/"">A Community of Peace</a></h2><p>By Rofiah Oriolowo A community of peace, of justice, of love, of integrity, of truthfulness, of sincerity, and of light...</p></article></section>				
+					<a href=""#"">
+									INTERVIEWS
+					</a>
+					<ul><li>All Posts<em></em></li><li>Interviews<em></em></li></ul><section data-settings=""{&quot;layout&quot;:&quot;list&quot;,&quot;stick_last_element_to_bottom&quot;:&quot;no&quot;,&quot;columns_desktop&quot;:&quot;2&quot;,&quot;gutter_hr&quot;:15,&quot;gutter_hr_mobile&quot;:15,&quot;gutter_hr_mobile_extra&quot;:15,&quot;gutter_hr_tablet&quot;:15,&quot;gutter_hr_tablet_extra&quot;:15,&quot;gutter_hr_laptop&quot;:15,&quot;gutter_hr_widescreen&quot;:15,&quot;gutter_vr&quot;:15,&quot;gutter_vr_mobile&quot;:15,&quot;gutter_vr_mobile_extra&quot;:&quot;&quot;,&quot;gutter_vr_tablet&quot;:&quot;&quot;,&quot;gutter_vr_tablet_extra&quot;:15,&quot;gutter_vr_laptop&quot;:15,&quot;gutter_vr_widescreen&quot;:15,&quot;animation&quot;:&quot;default&quot;,&quot;animation_duration&quot;:0.3,&quot;animation_delay&quot;:0.1,&quot;deeplinking&quot;:&quot;&quot;,&quot;filters_linkable&quot;:&quot;no&quot;,&quot;filters_default_filter&quot;:&quot;&quot;,&quot;filters_count&quot;:&quot;&quot;,&quot;filters_hide_empty&quot;:&quot;no&quot;,&quot;filters_animation&quot;:&quot;default&quot;,&quot;filters_animation_duration&quot;:0.3,&quot;filters_animation_delay&quot;:0.1,&quot;pagination_type&quot;:&quot;load-more&quot;,&quot;pagination_max_pages&quot;:2,&quot;media_align&quot;:&quot;left&quot;,&quot;media_width&quot;:30,&quot;media_distance&quot;:20,&quot;lightbox&quot;:{&quot;selector&quot;:&quot;.wpr-grid-image-wrap&quot;,&quot;iframeMaxWidth&quot;:&quot;60%&quot;,&quot;hash&quot;:false,&quot;autoplay&quot;:&quot;true&quot;,&quot;pause&quot;:5000,&quot;progressBar&quot;:&quot;true&quot;,&quot;counter&quot;:&quot;true&quot;,&quot;controls&quot;:&quot;true&quot;,&quot;getCaptionFromTitleOrAlt&quot;:&quot;true&quot;,&quot;thumbnail&quot;:&quot;&quot;,&quot;showThumbByDefault&quot;:&quot;&quot;,&quot;share&quot;:&quot;&quot;,&quot;zoom&quot;:&quot;true&quot;,&quot;fullScreen&quot;:&quot;true&quot;,&quot;download&quot;:&quot;true&quot;}}"" data-advanced-filters=""no""><article><img data-no-lazy=""1"" src=""https://blog.jalsasalana.ng/wp-content/uploads/2025/12/IMG_COM_20241223_0702_35_30619-scaled.jpg"" alt=""A Season of Blessings""><h2><a target=""_self""  href=""https://blog.jalsasalana.ng/a-season-of-blessings-2/"">A Season of Blessings</a></h2></article><article><img data-no-lazy=""1"" src=""https://blog.jalsasalana.ng/wp-content/uploads/2025/12/DSC06682-scaled.jpg"" alt=""Jalsa Salana Water Supply: Unsung Heroes of Jalsa""><h2><a target=""_self""  href=""https://blog.jalsasalana.ng/jalsa-salana-water-supply-unsung-heroes-of-jalsa/"">Jalsa Salana Water Supply: Unsung Heroes of Jalsa</a></h2></article><article><img data-no-lazy=""1"" src=""https://blog.jalsasalana.ng/wp-content/uploads/2025/12/DSC_3852-scaled.jpg"" alt=""JALSA SALANA CLINIC: A BEACON OF COMPASSION AND CARE""><h2><a target=""_self""  href=""https://blog.jalsasalana.ng/jalsa-salana-clinic-a-beacon-of-compassion-and-care/"">JALSA SALANA CLINIC: A BEACON OF COMPASSION AND CARE</a></h2></article><article><img data-no-lazy=""1"" src=""https://blog.jalsasalana.ng/wp-content/uploads/2025/12/DSC_3581-scaled.jpg"" alt=""Jalsa Registration: A Prophecy Fulfilled""><h2><a target=""_self""  href=""https://blog.jalsasalana.ng/jalsa-registration-a-prophecy-fulfilled/"">Jalsa Registration: A Prophecy Fulfilled</a></h2></article></section>				
+		<form role=""search"" method=""get"" action=""https://blog.jalsasalana.ng"">
+				<input placeholder=""Search..."" aria-label=""Search"" type=""search"" name=""s"" title=""Search"" value="""" wpr-query-type=""all"" wpr-taxonomy-type="""" number-of-results=""2"" ajax-search="""" meta-query="""" show-description=""yes"" number-of-words=""30"" show-ajax-thumbnails="""" show-view-result-btn="""" show-product-price=""no"" view-result-text=""View Results"" no-results=""No Results Found"" exclude-without-thumb="""" link-target=""_self"" password-protected="""" attachments="""">
+		<button aria-label=""Search"" type=""submit"">
+					</button>
+					</form>
+			<ul></ul>
+							<p>More than 2 results are available in the PRO version (This notice is only visible to admin users)</p>
+					<h2>Recent Posts</h2>				
+					<ul><li>All Posts<em></em></li><li>Amir&#039;s Corner<em></em></li><li>Articles<em></em></li><li>Behind the Scenes<em></em></li><li>Community Insights<em></em></li><li>Editor&#039;s Choice<em></em></li><li>Exclusive<em></em></li><li>Experience<em></em></li><li>Health<em></em></li><li>Hot news<em></em></li><li>Important<em></em></li><li>Interviews<em></em></li><li data-role=""parent"">Jalsa 2023<em></em></li><li>jalsa category<em></em></li><li>Latest News<em></em></li><li>Main Stage Lectures<em></em></li><li>Poems<em></em></li><li>Press conference<em></em></li><li>Proceedings<em></em></li><li>Spotlight<em></em></li><li>Story<em></em></li><li>Unsung Heroes<em></em></li><ul data-parent="".category-jalsa-2023""><li data-role=""back"">&nbsp;&nbsp;Back</li><li data-role=""sub"">Lecture<em></em></li></ul></ul><section data-settings=""{&quot;layout&quot;:&quot;list&quot;,&quot;stick_last_element_to_bottom&quot;:&quot;no&quot;,&quot;columns_desktop&quot;:&quot;1&quot;,&quot;gutter_hr&quot;:15,&quot;gutter_hr_mobile&quot;:15,&quot;gutter_hr_mobile_extra&quot;:15,&quot;gutter_hr_tablet&quot;:15,&quot;gutter_hr_tablet_extra&quot;:15,&quot;gutter_hr_laptop&quot;:15,&quot;gutter_hr_widescreen&quot;:15,&quot;gutter_vr&quot;:15,&quot;gutter_vr_mobile&quot;:15,&quot;gutter_vr_mobile_extra&quot;:&quot;&quot;,&quot;gutter_vr_tablet&quot;:&quot;&quot;,&quot;gutter_vr_tablet_extra&quot;:15,&quot;gutter_vr_laptop&quot;:15,&quot;gutter_vr_widescreen&quot;:15,&quot;animation&quot;:&quot;default&quot;,&quot;animation_duration&quot;:0.3,&quot;animation_delay&quot;:0.1,&quot;deeplinking&quot;:&quot;&quot;,&quot;filters_linkable&quot;:&quot;no&quot;,&quot;filters_default_filter&quot;:&quot;&quot;,&quot;filters_count&quot;:&quot;&quot;,&quot;filters_hide_empty&quot;:&quot;no&quot;,&quot;filters_animation&quot;:&quot;default&quot;,&quot;filters_animation_duration&quot;:0.3,&quot;filters_animation_delay&quot;:0.1,&quot;pagination_type&quot;:&quot;load-more&quot;,&quot;pagination_max_pages&quot;:42,&quot;media_align&quot;:&quot;left&quot;,&quot;media_width&quot;:30,&quot;media_distance&quot;:20,&quot;lightbox&quot;:{&quot;selector&quot;:&quot;.wpr-grid-image-wrap&quot;,&quot;iframeMaxWidth&quot;:&quot;60%&quot;,&quot;hash&quot;:false,&quot;autoplay&quot;:&quot;true&quot;,&quot;pause&quot;:5000,&quot;progressBar&quot;:&quot;true&quot;,&quot;counter&quot;:&quot;true&quot;,&quot;controls&quot;:&quot;true&quot;,&quot;getCaptionFromTitleOrAlt&quot;:&quot;true&quot;,&quot;thumbnail&quot;:&quot;&quot;,&quot;showThumbByDefault&quot;:&quot;&quot;,&quot;share&quot;:&quot;&quot;,&quot;zoom&quot;:&quot;true&quot;,&quot;fullScreen&quot;:&quot;true&quot;,&quot;download&quot;:&quot;true&quot;}}"" data-advanced-filters=""no""><article><img data-no-lazy=""1"" src=""https://blog.jalsasalana.ng/wp-content/uploads/2025/12/IMG_0821-scaled.jpg"" alt=""Lessons Learned at Jalsa: A Journey of Faith and Connection""><h2><a target=""_self""  href=""https://blog.jalsasalana.ng/lessons-learned-at-jalsa-a-journey-of-faith-and-connection/"">Lessons Learned at Jalsa: A Journey of Faith and Connection</a></h2></article><article><img data-no-lazy=""1"" src=""https://blog.jalsasalana.ng/wp-content/uploads/2025/12/IMG_COM_20241223_0702_35_30619-scaled.jpg"" alt=""A Season of Blessings""><h2><a target=""_self""  href=""https://blog.jalsasalana.ng/a-season-of-blessings-2/"">A Season of Blessings</a></h2></article><article><img data-no-lazy=""1"" src=""https://blog.jalsasalana.ng/wp-content/uploads/2025/12/DSC_3671-scaled.jpg"" alt=""Jalsa Salana: Where Hearts Unite""><h2><a target=""_self""  href=""https://blog.jalsasalana.ng/jalsa-salana-where-hearts-unite/"">Jalsa Salana: Where Hearts Unite</a></h2></article></section>				
+				<h3>Experience the Spirit of Jalsa Salana Online</h3>
+						<p><p>Stay connected to the heart of the Jalsa Salana experience! From inspiring speeches and community stories to event highlights and reflections, our blog brings the celebration and learning right to your screen. Discover insights, share experiences, and be part of the Jalsa Salana family no matter where you are.</p></p>	
+					<h2>Category</h2>				
+					<ul data-show-on-click=""""><lidata-term-id=""14""><a target=""_blank"" href=""https://blog.jalsasalana.ng/category/amirs-corner/""> Amir&#039;s Corner&nbsp;(5)</a></li><lidata-term-id=""31""><a target=""_blank"" href=""https://blog.jalsasalana.ng/category/articles/""> Articles&nbsp;(36)</a></li><lidata-term-id=""32""><a target=""_blank"" href=""https://blog.jalsasalana.ng/category/editors-choice/""> Editor&#039;s Choice&nbsp;(8)</a></li><lidata-term-id=""34""><a target=""_blank"" href=""https://blog.jalsasalana.ng/category/health/""> Health&nbsp;(2)</a></li><lidata-term-id=""8""><a target=""_blank"" href=""https://blog.jalsasalana.ng/category/hot-news/""> Hot news&nbsp;(2)</a></li><lidata-term-id=""33""><a target=""_blank"" href=""https://blog.jalsasalana.ng/category/important/""> Important&nbsp;(34)</a></li><lidata-term-id=""45""><a target=""_blank"" href=""https://blog.jalsasalana.ng/category/interviews/""> Interviews&nbsp;(7)</a></li><lidata-term-id=""36""><a target=""_blank"" href=""https://blog.jalsasalana.ng/category/jalsa-2023/""> Jalsa 2023&nbsp;(4)</a></li><lidata-term-id=""13""><a target=""_blank"" href=""https://blog.jalsasalana.ng/category/jalsa-category/""> jalsa category&nbsp;(4)</a></li><lidata-term-id=""22""><a target=""_blank"" href=""https://blog.jalsasalana.ng/category/news/""> Latest News&nbsp;(53)</a></li><lidata-term-id=""35""><a target=""_blank"" href=""https://blog.jalsasalana.ng/category/poems/""> Poems&nbsp;(22)</a></li><lidata-term-id=""21""><a target=""_blank"" href=""https://blog.jalsasalana.ng/category/press-conference/""> Press conference&nbsp;(6)</a></li><lidata-term-id=""43""><a target=""_blank"" href=""https://blog.jalsasalana.ng/category/story/""> Story&nbsp;(8)</a></li></ul>",,"2024-12-17 09:37:27",page,https://blog.jalsasalana.ng/
+158,"Press24 contact","<h2>contact</h2>				
+							<ul>
+							<li>
+											<a href=""#"">
+											home
+											</a>
+									</li>
+								<li>
+											<a href=""#"">
+							<svg aria-hidden=""true"" viewBox=""0 0 512 512"" xmlns=""http://www.w3.org/2000/svg""><path d=""M256 8C119 8 8 119 8 256s111 248 248 248 248-111 248-248S393 8 256 8z""></path></svg>						
+										contact
+											</a>
+									</li>
+						</ul>
+					<h2>Impressum</h2>				
+					Address: 
+				<noscript>
+									</noscript>
+					  805 East Woody Road, Birmingham
+			<!-- close .eael-fancy-text-container -->
+					Phone: 
+				<noscript>
+									</noscript>
+					  +33-257634 534
+			<!-- close .eael-fancy-text-container -->
+					email: 
+				<noscript>
+									</noscript>
+					  contactpress24@gmail.com
+			<!-- close .eael-fancy-text-container -->
+					<h2>Main HQ</h2>				
+					Address: 
+				<noscript>
+									</noscript>
+					  805 East Woody Road, Birmingham
+			<!-- close .eael-fancy-text-container -->
+					Phone: 
+				<noscript>
+									</noscript>
+					  +33-257634 534
+			<!-- close .eael-fancy-text-container -->
+					email: 
+				<noscript>
+									</noscript>
+					  contactpress24@gmail.com
+			<!-- close .eael-fancy-text-container -->
+					<h2>Advertise</h2>				
+					Address: 
+				<noscript>
+									</noscript>
+					  805 East Woody Road, Birmingham
+			<!-- close .eael-fancy-text-container -->
+					Phone: 
+				<noscript>
+									</noscript>
+					  +33-257634 534
+			<!-- close .eael-fancy-text-container -->
+					email: 
+				<noscript>
+									</noscript>
+					  contactpress24@gmail.com
+			<!-- close .eael-fancy-text-container -->
+					<h2>Get In Touch &amp; Let Us Know</h2>				
+			<iframe loading=""lazy""
+					src=""https://maps.google.com/maps?q=birminghum%2CUK&#038;t=m&#038;z=12&#038;output=embed&#038;iwloc=near""
+					title=""birminghum,UK""
+					aria-label=""birminghum,UK""
+			></iframe>",,"2024-12-17 09:37:29",page,https://blog.jalsasalana.ng/press24-contact-2/
+161,"press24 about us","<h2>about us</h2>				
+							<ul>
+							<li>
+											<a href=""#"">
+											home
+											</a>
+									</li>
+								<li>
+											<a href=""#"">
+							<svg aria-hidden=""true"" viewBox=""0 0 512 512"" xmlns=""http://www.w3.org/2000/svg""><path d=""M256 8C119 8 8 119 8 256s111 248 248 248 248-111 248-248S393 8 256 8z""></path></svg>						
+										about us
+											</a>
+									</li>
+						</ul>
+					<h2>Impression </h2>				
+					<h2>We care about quality content. We never wanted to be a big publishing house: Our team is small, but it’s a truly wonderful team of people who really care about what
+they do. Passionate and dedicated. Honest and respectful. Professional but informal. Quirky and personal.
+ Through our articles, digital books, job openings, conferences
+and membership, we are committed to nourishing productivity, improving design and development skills and finessing the work-life balance. Getting better, together,
+by learning from each other — that’s the spirit that has been our mantra for all these years.</h2>				
+					<h2>At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint
+occaecati cupiditate non provident, similique sunt in culpa qui officia deserunt mollitia animi, id est laborum et dolorum fuga. Et harum quidem rerum facilis est et
+expedita distinctio. Nam libero tempore, cum soluta nobis est eligendi optio cumque nihil impedit quo minus id quod maxime placeat facere possimus, omnis voluptas
+assumenda est, omnis dolor repellendus. Temporibus autem quibusdam et aut officiis debitis aut rerum necessitatibus saepe eveniet ut et voluptates repudiandae sint
+et molestiae non recusandae. Itaque earum rerum hic tenetur a sapiente delectus, ut aut reiciendis voluptatibus maiores alias consequatur aut perferendis doloribus
+asperiores repellat."" On the other hand, we denounce with righteous indignation and dislike men who are so beguiled and demoralized by the charms of pleasure of the
+moment, so blinded by desire, that they cannot foresee the pain and trouble that are bound to ensue; and equal blame belongs to those who fail in their duty through
+weakness of will, which is the same as saying through shrinking from toil and pain. These cases are perfectly simple and easy to distinguish. In a free hour, when our power
+of choice is untrammelled and when nothing prevents our being able to do what we like best, every pleasure is to be welcomed and every pain avoided. But in certain
+circumstances and owing to the claims of duty or the obligations of business it will frequently occur that pleasures have to be repudiated and annoyances accepted.
+The wise man therefore always holds in these matters to this principle of selection: he rejects pleasures to secure other greater pleasures, or else he endures pains to avoid
+worse pains.</h2>				
+															<img width=""1920"" height=""660"" src=""https://blog.jalsasalana.ng/wp-content/uploads/2024/12/van-tay-media-Hh-PIe3qIug-unsplash-1.png"" alt="""" srcset=""https://blog.jalsasalana.ng/wp-content/uploads/2024/12/van-tay-media-Hh-PIe3qIug-unsplash-1.png 1920w, https://blog.jalsasalana.ng/wp-content/uploads/2024/12/van-tay-media-Hh-PIe3qIug-unsplash-1-300x103.png 300w, https://blog.jalsasalana.ng/wp-content/uploads/2024/12/van-tay-media-Hh-PIe3qIug-unsplash-1-1024x352.png 1024w, https://blog.jalsasalana.ng/wp-content/uploads/2024/12/van-tay-media-Hh-PIe3qIug-unsplash-1-768x264.png 768w, https://blog.jalsasalana.ng/wp-content/uploads/2024/12/van-tay-media-Hh-PIe3qIug-unsplash-1-1536x528.png 1536w"" sizes=""(max-width: 1920px) 100vw, 1920px"" />															
+					<h2>our Mission</h2>				
+					<h2>We care about quality content. We never wanted to be a big publishing
+house: Our team is small, but it’s a truly wonderful team of people who
+really care about what they do. Passionate and dedicated. Honest and
+respectful. Professional but informal. Quirky and personal.
+ Through our
+articles, digital books, job openings, conferences and membership, we
+committed to nourishing productivity, improving design and  skills and
+finessing the work-life balance. Getting better, together,</h2>				
+					<h2>our Vision</h2>				
+					<h2>We care about quality content. We never wanted to be a big publishing
+house: Our team is small, but it’s a truly wonderful team of people who
+really care about what they do. Passionate and dedicated. Honest and
+respectful. Professional but informal. Quirky and personal.
+ Through our
+articles, digital books, job openings, conferences and membership, we
+committed to nourishing productivity, improving design and  skills and
+finessing the work-life balance. Getting better, together,</h2>",,"2024-12-17 09:37:31",page,https://blog.jalsasalana.ng/press24-about-us-2/
+164,"Press24 worldwide team","<h2>Online News Team</h2>				
+							<ul>
+							<li>
+											<a href=""#"">
+											home
+											</a>
+									</li>
+								<li>
+											<a href=""#"">
+							<svg aria-hidden=""true"" viewBox=""0 0 512 512"" xmlns=""http://www.w3.org/2000/svg""><path d=""M256 8C119 8 8 119 8 256s111 248 248 248 248-111 248-248S393 8 256 8z""></path></svg>						
+										team
+											</a>
+									</li>
+						</ul>
+				<figure>
+										<img src=""https://blog.jalsasalana.ng/wp-content/uploads/2024/12/Group-159-min.png"" alt=""Alek Burley"">
+				</figure>
+				<h2>Alek Burley</h2>
+				<h3>Director</h3>
+															<ul>
+																																									<li>
+										<a href=""http://Facebook.com"" target=""_blank"">
+																							<svg aria-hidden=""true"" viewBox=""0 0 320 512"" xmlns=""http://www.w3.org/2000/svg""><path d=""M279.14 288l14.22-92.66h-88.91v-60.13c0-25.35 12.42-50.06 52.24-50.06h40.42V6.26S260.43 0 225.36 0c-73.22 0-121.08 44.38-121.08 124.72v70.62H22.89V288h81.39v224h100.17V288z""></path></svg>																					</a>
+									</li>
+																																																	<li>
+										<a href=""http://twitter.com"" target=""_blank"">
+																							<svg aria-hidden=""true"" viewBox=""0 0 512 512"" xmlns=""http://www.w3.org/2000/svg""><path d=""M459.37 151.716c.325 4.548.325 9.097.325 13.645 0 138.72-105.583 298.558-298.558 298.558-59.452 0-114.68-17.219-161.137-47.106 8.447.974 16.568 1.299 25.34 1.299 49.055 0 94.213-16.568 130.274-44.832-46.132-.975-84.792-31.188-98.112-72.772 6.498.974 12.995 1.624 19.818 1.624 9.421 0 18.843-1.3 27.614-3.573-48.081-9.747-84.143-51.98-84.143-102.985v-1.299c13.969 7.797 30.214 12.67 47.431 13.319-28.264-18.843-46.781-51.005-46.781-87.391 0-19.492 5.197-37.36 14.294-52.954 51.655 63.675 129.3 105.258 216.365 109.807-1.624-7.797-2.599-15.918-2.599-24.04 0-57.828 46.782-104.934 104.934-104.934 30.213 0 57.502 12.67 76.67 33.137 23.715-4.548 46.456-13.32 66.599-25.34-7.798 24.366-24.366 44.833-46.132 57.827 21.117-2.273 41.584-8.122 60.426-16.243-14.292 20.791-32.161 39.308-52.628 54.253z""></path></svg>																					</a>
+									</li>
+																																																	<li>
+										<a href=""http://instagram.com"" target=""_blank"">
+																							<svg aria-hidden=""true"" viewBox=""0 0 448 512"" xmlns=""http://www.w3.org/2000/svg""><path d=""M224.1 141c-63.6 0-114.9 51.3-114.9 114.9s51.3 114.9 114.9 114.9S339 319.5 339 255.9 287.7 141 224.1 141zm0 189.6c-41.1 0-74.7-33.5-74.7-74.7s33.5-74.7 74.7-74.7 74.7 33.5 74.7 74.7-33.6 74.7-74.7 74.7zm146.4-194.3c0 14.9-12 26.8-26.8 26.8-14.9 0-26.8-12-26.8-26.8s12-26.8 26.8-26.8 26.8 12 26.8 26.8zm76.1 27.2c-1.7-35.9-9.9-67.7-36.2-93.9-26.2-26.2-58-34.4-93.9-36.2-37-2.1-147.9-2.1-184.9 0-35.8 1.7-67.6 9.9-93.9 36.1s-34.4 58-36.2 93.9c-2.1 37-2.1 147.9 0 184.9 1.7 35.9 9.9 67.7 36.2 93.9s58 34.4 93.9 36.2c37 2.1 147.9 2.1 184.9 0 35.9-1.7 67.7-9.9 93.9-36.2 26.2-26.2 34.4-58 36.2-93.9 2.1-37 2.1-147.8 0-184.8zM398.8 388c-7.8 19.6-22.9 34.7-42.6 42.6-29.5 11.7-99.5 9-132.1 9s-102.7 2.6-132.1-9c-19.6-7.8-34.7-22.9-42.6-42.6-11.7-29.5-9-99.5-9-132.1s-2.6-102.7 9-132.1c7.8-19.6 22.9-34.7 42.6-42.6 29.5-11.7 99.5-9 132.1-9s102.7-2.6 132.1 9c19.6 7.8 34.7 22.9 42.6 42.6 11.7 29.5 9 99.5 9 132.1s2.7 102.7-9 132.1z""></path></svg>																					</a>
+									</li>
+																					</ul>
+										<p>He is the sole creator of this platform who dreams to provide the trending news to your finger tip. </p>
+				<figure>
+										<img src=""https://blog.jalsasalana.ng/wp-content/plugins/elementor/assets/images/placeholder.png"" alt=""Jason Leung"">
+				</figure>
+				<h2>Jason Leung</h2>
+				<h3>Chief Reporter </h3>
+															<ul>
+																																									<li>
+										<a href=""http://Facebook.com"" target=""_blank"">
+																							<svg aria-hidden=""true"" viewBox=""0 0 320 512"" xmlns=""http://www.w3.org/2000/svg""><path d=""M279.14 288l14.22-92.66h-88.91v-60.13c0-25.35 12.42-50.06 52.24-50.06h40.42V6.26S260.43 0 225.36 0c-73.22 0-121.08 44.38-121.08 124.72v70.62H22.89V288h81.39v224h100.17V288z""></path></svg>																					</a>
+									</li>
+																																																	<li>
+										<a href=""http://twitter.com"" target=""_blank"">
+																							<svg aria-hidden=""true"" viewBox=""0 0 512 512"" xmlns=""http://www.w3.org/2000/svg""><path d=""M459.37 151.716c.325 4.548.325 9.097.325 13.645 0 138.72-105.583 298.558-298.558 298.558-59.452 0-114.68-17.219-161.137-47.106 8.447.974 16.568 1.299 25.34 1.299 49.055 0 94.213-16.568 130.274-44.832-46.132-.975-84.792-31.188-98.112-72.772 6.498.974 12.995 1.624 19.818 1.624 9.421 0 18.843-1.3 27.614-3.573-48.081-9.747-84.143-51.98-84.143-102.985v-1.299c13.969 7.797 30.214 12.67 47.431 13.319-28.264-18.843-46.781-51.005-46.781-87.391 0-19.492 5.197-37.36 14.294-52.954 51.655 63.675 129.3 105.258 216.365 109.807-1.624-7.797-2.599-15.918-2.599-24.04 0-57.828 46.782-104.934 104.934-104.934 30.213 0 57.502 12.67 76.67 33.137 23.715-4.548 46.456-13.32 66.599-25.34-7.798 24.366-24.366 44.833-46.132 57.827 21.117-2.273 41.584-8.122 60.426-16.243-14.292 20.791-32.161 39.308-52.628 54.253z""></path></svg>																					</a>
+									</li>
+																																																	<li>
+										<a href=""http://instagram.com"" target=""_blank"">
+																							<svg aria-hidden=""true"" viewBox=""0 0 448 512"" xmlns=""http://www.w3.org/2000/svg""><path d=""M224.1 141c-63.6 0-114.9 51.3-114.9 114.9s51.3 114.9 114.9 114.9S339 319.5 339 255.9 287.7 141 224.1 141zm0 189.6c-41.1 0-74.7-33.5-74.7-74.7s33.5-74.7 74.7-74.7 74.7 33.5 74.7 74.7-33.6 74.7-74.7 74.7zm146.4-194.3c0 14.9-12 26.8-26.8 26.8-14.9 0-26.8-12-26.8-26.8s12-26.8 26.8-26.8 26.8 12 26.8 26.8zm76.1 27.2c-1.7-35.9-9.9-67.7-36.2-93.9-26.2-26.2-58-34.4-93.9-36.2-37-2.1-147.9-2.1-184.9 0-35.8 1.7-67.6 9.9-93.9 36.1s-34.4 58-36.2 93.9c-2.1 37-2.1 147.9 0 184.9 1.7 35.9 9.9 67.7 36.2 93.9s58 34.4 93.9 36.2c37 2.1 147.9 2.1 184.9 0 35.9-1.7 67.7-9.9 93.9-36.2 26.2-26.2 34.4-58 36.2-93.9 2.1-37 2.1-147.8 0-184.8zM398.8 388c-7.8 19.6-22.9 34.7-42.6 42.6-29.5 11.7-99.5 9-132.1 9s-102.7 2.6-132.1-9c-19.6-7.8-34.7-22.9-42.6-42.6-11.7-29.5-9-99.5-9-132.1s-2.6-102.7 9-132.1c7.8-19.6 22.9-34.7 42.6-42.6 29.5-11.7 99.5-9 132.1-9s102.7-2.6 132.1 9c19.6 7.8 34.7 22.9 42.6 42.6 11.7 29.5 9 99.5 9 132.1s2.7 102.7-9 132.1z""></path></svg>																					</a>
+									</li>
+																					</ul>
+										<p>His passion for organizing people and creating documentaries has brought him to this place. </p>
+				<figure>
+										<img src=""https://blog.jalsasalana.ng/wp-content/plugins/elementor/assets/images/placeholder.png"" alt=""Damian Barczak"">
+				</figure>
+				<h2>Damian Barczak</h2>
+				<h3>Senior Reporter</h3>
+															<ul>
+																																									<li>
+										<a href=""http://Facebook.com"" target=""_blank"">
+																							<svg aria-hidden=""true"" viewBox=""0 0 320 512"" xmlns=""http://www.w3.org/2000/svg""><path d=""M279.14 288l14.22-92.66h-88.91v-60.13c0-25.35 12.42-50.06 52.24-50.06h40.42V6.26S260.43 0 225.36 0c-73.22 0-121.08 44.38-121.08 124.72v70.62H22.89V288h81.39v224h100.17V288z""></path></svg>																					</a>
+									</li>
+																																																	<li>
+										<a href=""http://twitter.com"" target=""_blank"">
+																							<svg aria-hidden=""true"" viewBox=""0 0 512 512"" xmlns=""http://www.w3.org/2000/svg""><path d=""M459.37 151.716c.325 4.548.325 9.097.325 13.645 0 138.72-105.583 298.558-298.558 298.558-59.452 0-114.68-17.219-161.137-47.106 8.447.974 16.568 1.299 25.34 1.299 49.055 0 94.213-16.568 130.274-44.832-46.132-.975-84.792-31.188-98.112-72.772 6.498.974 12.995 1.624 19.818 1.624 9.421 0 18.843-1.3 27.614-3.573-48.081-9.747-84.143-51.98-84.143-102.985v-1.299c13.969 7.797 30.214 12.67 47.431 13.319-28.264-18.843-46.781-51.005-46.781-87.391 0-19.492 5.197-37.36 14.294-52.954 51.655 63.675 129.3 105.258 216.365 109.807-1.624-7.797-2.599-15.918-2.599-24.04 0-57.828 46.782-104.934 104.934-104.934 30.213 0 57.502 12.67 76.67 33.137 23.715-4.548 46.456-13.32 66.599-25.34-7.798 24.366-24.366 44.833-46.132 57.827 21.117-2.273 41.584-8.122 60.426-16.243-14.292 20.791-32.161 39.308-52.628 54.253z""></path></svg>																					</a>
+									</li>
+																																																	<li>
+										<a href=""http://instagram.com"" target=""_blank"">
+																							<svg aria-hidden=""true"" viewBox=""0 0 448 512"" xmlns=""http://www.w3.org/2000/svg""><path d=""M224.1 141c-63.6 0-114.9 51.3-114.9 114.9s51.3 114.9 114.9 114.9S339 319.5 339 255.9 287.7 141 224.1 141zm0 189.6c-41.1 0-74.7-33.5-74.7-74.7s33.5-74.7 74.7-74.7 74.7 33.5 74.7 74.7-33.6 74.7-74.7 74.7zm146.4-194.3c0 14.9-12 26.8-26.8 26.8-14.9 0-26.8-12-26.8-26.8s12-26.8 26.8-26.8 26.8 12 26.8 26.8zm76.1 27.2c-1.7-35.9-9.9-67.7-36.2-93.9-26.2-26.2-58-34.4-93.9-36.2-37-2.1-147.9-2.1-184.9 0-35.8 1.7-67.6 9.9-93.9 36.1s-34.4 58-36.2 93.9c-2.1 37-2.1 147.9 0 184.9 1.7 35.9 9.9 67.7 36.2 93.9s58 34.4 93.9 36.2c37 2.1 147.9 2.1 184.9 0 35.9-1.7 67.7-9.9 93.9-36.2 26.2-26.2 34.4-58 36.2-93.9 2.1-37 2.1-147.8 0-184.8zM398.8 388c-7.8 19.6-22.9 34.7-42.6 42.6-29.5 11.7-99.5 9-132.1 9s-102.7 2.6-132.1-9c-19.6-7.8-34.7-22.9-42.6-42.6-11.7-29.5-9-99.5-9-132.1s-2.6-102.7 9-132.1c7.8-19.6 22.9-34.7 42.6-42.6 29.5-11.7 99.5-9 132.1-9s102.7-2.6 132.1 9c19.6 7.8 34.7 22.9 42.6 42.6 11.7 29.5 9 99.5 9 132.1s2.7 102.7-9 132.1z""></path></svg>																					</a>
+									</li>
+																					</ul>
+										<p>He is one of the best senior reporters to create, and organize the news content for you. </p>
+				<figure>
+										<img src=""https://blog.jalsasalana.ng/wp-content/plugins/elementor/assets/images/placeholder.png"" alt=""Micheal Jenner"">
+				</figure>
+				<h2>Micheal Jenner</h2>
+				<h3>Staff Reporter </h3>
+															<ul>
+																																									<li>
+										<a href=""http://Facebook.com"" target=""_blank"">
+																							<svg aria-hidden=""true"" viewBox=""0 0 320 512"" xmlns=""http://www.w3.org/2000/svg""><path d=""M279.14 288l14.22-92.66h-88.91v-60.13c0-25.35 12.42-50.06 52.24-50.06h40.42V6.26S260.43 0 225.36 0c-73.22 0-121.08 44.38-121.08 124.72v70.62H22.89V288h81.39v224h100.17V288z""></path></svg>																					</a>
+									</li>
+																																																	<li>
+										<a href=""http://twitter.com"" target=""_blank"">
+																							<svg aria-hidden=""true"" viewBox=""0 0 512 512"" xmlns=""http://www.w3.org/2000/svg""><path d=""M459.37 151.716c.325 4.548.325 9.097.325 13.645 0 138.72-105.583 298.558-298.558 298.558-59.452 0-114.68-17.219-161.137-47.106 8.447.974 16.568 1.299 25.34 1.299 49.055 0 94.213-16.568 130.274-44.832-46.132-.975-84.792-31.188-98.112-72.772 6.498.974 12.995 1.624 19.818 1.624 9.421 0 18.843-1.3 27.614-3.573-48.081-9.747-84.143-51.98-84.143-102.985v-1.299c13.969 7.797 30.214 12.67 47.431 13.319-28.264-18.843-46.781-51.005-46.781-87.391 0-19.492 5.197-37.36 14.294-52.954 51.655 63.675 129.3 105.258 216.365 109.807-1.624-7.797-2.599-15.918-2.599-24.04 0-57.828 46.782-104.934 104.934-104.934 30.213 0 57.502 12.67 76.67 33.137 23.715-4.548 46.456-13.32 66.599-25.34-7.798 24.366-24.366 44.833-46.132 57.827 21.117-2.273 41.584-8.122 60.426-16.243-14.292 20.791-32.161 39.308-52.628 54.253z""></path></svg>																					</a>
+									</li>
+																																																	<li>
+										<a href=""http://instagram.com"" target=""_blank"">
+																							<svg aria-hidden=""true"" viewBox=""0 0 448 512"" xmlns=""http://www.w3.org/2000/svg""><path d=""M224.1 141c-63.6 0-114.9 51.3-114.9 114.9s51.3 114.9 114.9 114.9S339 319.5 339 255.9 287.7 141 224.1 141zm0 189.6c-41.1 0-74.7-33.5-74.7-74.7s33.5-74.7 74.7-74.7 74.7 33.5 74.7 74.7-33.6 74.7-74.7 74.7zm146.4-194.3c0 14.9-12 26.8-26.8 26.8-14.9 0-26.8-12-26.8-26.8s12-26.8 26.8-26.8 26.8 12 26.8 26.8zm76.1 27.2c-1.7-35.9-9.9-67.7-36.2-93.9-26.2-26.2-58-34.4-93.9-36.2-37-2.1-147.9-2.1-184.9 0-35.8 1.7-67.6 9.9-93.9 36.1s-34.4 58-36.2 93.9c-2.1 37-2.1 147.9 0 184.9 1.7 35.9 9.9 67.7 36.2 93.9s58 34.4 93.9 36.2c37 2.1 147.9 2.1 184.9 0 35.9-1.7 67.7-9.9 93.9-36.2 26.2-26.2 34.4-58 36.2-93.9 2.1-37 2.1-147.8 0-184.8zM398.8 388c-7.8 19.6-22.9 34.7-42.6 42.6-29.5 11.7-99.5 9-132.1 9s-102.7 2.6-132.1-9c-19.6-7.8-34.7-22.9-42.6-42.6-11.7-29.5-9-99.5-9-132.1s-2.6-102.7 9-132.1c7.8-19.6 22.9-34.7 42.6-42.6 29.5-11.7 99.5-9 132.1-9s102.7-2.6 132.1 9c19.6 7.8 34.7 22.9 42.6 42.6 11.7 29.5 9 99.5 9 132.1s2.7 102.7-9 132.1z""></path></svg>																					</a>
+									</li>
+																					</ul>
+										<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam sit amet purus augue. Ut sagittis fermentum neque, eu imperdiet mi</p>
+				<figure>
+										<img src=""https://blog.jalsasalana.ng/wp-content/plugins/elementor/assets/images/placeholder.png"" alt=""Isaac Mehegan"">
+				</figure>
+				<h2>Isaac Mehegan</h2>
+				<h3>Staff Reporter</h3>
+															<ul>
+																																									<li>
+										<a href=""http://Facebook.com"" target=""_blank"">
+																							<svg aria-hidden=""true"" viewBox=""0 0 320 512"" xmlns=""http://www.w3.org/2000/svg""><path d=""M279.14 288l14.22-92.66h-88.91v-60.13c0-25.35 12.42-50.06 52.24-50.06h40.42V6.26S260.43 0 225.36 0c-73.22 0-121.08 44.38-121.08 124.72v70.62H22.89V288h81.39v224h100.17V288z""></path></svg>																					</a>
+									</li>
+																																																	<li>
+										<a href=""http://twitter.com"" target=""_blank"">
+																							<svg aria-hidden=""true"" viewBox=""0 0 512 512"" xmlns=""http://www.w3.org/2000/svg""><path d=""M459.37 151.716c.325 4.548.325 9.097.325 13.645 0 138.72-105.583 298.558-298.558 298.558-59.452 0-114.68-17.219-161.137-47.106 8.447.974 16.568 1.299 25.34 1.299 49.055 0 94.213-16.568 130.274-44.832-46.132-.975-84.792-31.188-98.112-72.772 6.498.974 12.995 1.624 19.818 1.624 9.421 0 18.843-1.3 27.614-3.573-48.081-9.747-84.143-51.98-84.143-102.985v-1.299c13.969 7.797 30.214 12.67 47.431 13.319-28.264-18.843-46.781-51.005-46.781-87.391 0-19.492 5.197-37.36 14.294-52.954 51.655 63.675 129.3 105.258 216.365 109.807-1.624-7.797-2.599-15.918-2.599-24.04 0-57.828 46.782-104.934 104.934-104.934 30.213 0 57.502 12.67 76.67 33.137 23.715-4.548 46.456-13.32 66.599-25.34-7.798 24.366-24.366 44.833-46.132 57.827 21.117-2.273 41.584-8.122 60.426-16.243-14.292 20.791-32.161 39.308-52.628 54.253z""></path></svg>																					</a>
+									</li>
+																																																	<li>
+										<a href=""http://instagram.com"" target=""_blank"">
+																							<svg aria-hidden=""true"" viewBox=""0 0 448 512"" xmlns=""http://www.w3.org/2000/svg""><path d=""M224.1 141c-63.6 0-114.9 51.3-114.9 114.9s51.3 114.9 114.9 114.9S339 319.5 339 255.9 287.7 141 224.1 141zm0 189.6c-41.1 0-74.7-33.5-74.7-74.7s33.5-74.7 74.7-74.7 74.7 33.5 74.7 74.7-33.6 74.7-74.7 74.7zm146.4-194.3c0 14.9-12 26.8-26.8 26.8-14.9 0-26.8-12-26.8-26.8s12-26.8 26.8-26.8 26.8 12 26.8 26.8zm76.1 27.2c-1.7-35.9-9.9-67.7-36.2-93.9-26.2-26.2-58-34.4-93.9-36.2-37-2.1-147.9-2.1-184.9 0-35.8 1.7-67.6 9.9-93.9 36.1s-34.4 58-36.2 93.9c-2.1 37-2.1 147.9 0 184.9 1.7 35.9 9.9 67.7 36.2 93.9s58 34.4 93.9 36.2c37 2.1 147.9 2.1 184.9 0 35.9-1.7 67.7-9.9 93.9-36.2 26.2-26.2 34.4-58 36.2-93.9 2.1-37 2.1-147.8 0-184.8zM398.8 388c-7.8 19.6-22.9 34.7-42.6 42.6-29.5 11.7-99.5 9-132.1 9s-102.7 2.6-132.1-9c-19.6-7.8-34.7-22.9-42.6-42.6-11.7-29.5-9-99.5-9-132.1s-2.6-102.7 9-132.1c7.8-19.6 22.9-34.7 42.6-42.6 29.5-11.7 99.5-9 132.1-9s102.7-2.6 132.1 9c19.6 7.8 34.7 22.9 42.6 42.6 11.7 29.5 9 99.5 9 132.1s2.7 102.7-9 132.1z""></path></svg>																					</a>
+									</li>
+																					</ul>
+										<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam sit amet purus augue. Ut sagittis fermentum neque, eu imperdiet mi</p>
+				<figure>
+										<img src=""https://blog.jalsasalana.ng/wp-content/plugins/elementor/assets/images/placeholder.png"" alt=""Anthony Berlin"">
+				</figure>
+				<h2>Anthony Berlin</h2>
+				<h3>Senior Reporter</h3>
+															<ul>
+																																									<li>
+										<a href=""http://Facebook.com"" target=""_blank"">
+																							<svg aria-hidden=""true"" viewBox=""0 0 320 512"" xmlns=""http://www.w3.org/2000/svg""><path d=""M279.14 288l14.22-92.66h-88.91v-60.13c0-25.35 12.42-50.06 52.24-50.06h40.42V6.26S260.43 0 225.36 0c-73.22 0-121.08 44.38-121.08 124.72v70.62H22.89V288h81.39v224h100.17V288z""></path></svg>																					</a>
+									</li>
+																																																	<li>
+										<a href=""http://twitter.com"" target=""_blank"">
+																							<svg aria-hidden=""true"" viewBox=""0 0 512 512"" xmlns=""http://www.w3.org/2000/svg""><path d=""M459.37 151.716c.325 4.548.325 9.097.325 13.645 0 138.72-105.583 298.558-298.558 298.558-59.452 0-114.68-17.219-161.137-47.106 8.447.974 16.568 1.299 25.34 1.299 49.055 0 94.213-16.568 130.274-44.832-46.132-.975-84.792-31.188-98.112-72.772 6.498.974 12.995 1.624 19.818 1.624 9.421 0 18.843-1.3 27.614-3.573-48.081-9.747-84.143-51.98-84.143-102.985v-1.299c13.969 7.797 30.214 12.67 47.431 13.319-28.264-18.843-46.781-51.005-46.781-87.391 0-19.492 5.197-37.36 14.294-52.954 51.655 63.675 129.3 105.258 216.365 109.807-1.624-7.797-2.599-15.918-2.599-24.04 0-57.828 46.782-104.934 104.934-104.934 30.213 0 57.502 12.67 76.67 33.137 23.715-4.548 46.456-13.32 66.599-25.34-7.798 24.366-24.366 44.833-46.132 57.827 21.117-2.273 41.584-8.122 60.426-16.243-14.292 20.791-32.161 39.308-52.628 54.253z""></path></svg>																					</a>
+									</li>
+																																																	<li>
+										<a href=""http://instagram.com"" target=""_blank"">
+																							<svg aria-hidden=""true"" viewBox=""0 0 448 512"" xmlns=""http://www.w3.org/2000/svg""><path d=""M224.1 141c-63.6 0-114.9 51.3-114.9 114.9s51.3 114.9 114.9 114.9S339 319.5 339 255.9 287.7 141 224.1 141zm0 189.6c-41.1 0-74.7-33.5-74.7-74.7s33.5-74.7 74.7-74.7 74.7 33.5 74.7 74.7-33.6 74.7-74.7 74.7zm146.4-194.3c0 14.9-12 26.8-26.8 26.8-14.9 0-26.8-12-26.8-26.8s12-26.8 26.8-26.8 26.8 12 26.8 26.8zm76.1 27.2c-1.7-35.9-9.9-67.7-36.2-93.9-26.2-26.2-58-34.4-93.9-36.2-37-2.1-147.9-2.1-184.9 0-35.8 1.7-67.6 9.9-93.9 36.1s-34.4 58-36.2 93.9c-2.1 37-2.1 147.9 0 184.9 1.7 35.9 9.9 67.7 36.2 93.9s58 34.4 93.9 36.2c37 2.1 147.9 2.1 184.9 0 35.9-1.7 67.7-9.9 93.9-36.2 26.2-26.2 34.4-58 36.2-93.9 2.1-37 2.1-147.8 0-184.8zM398.8 388c-7.8 19.6-22.9 34.7-42.6 42.6-29.5 11.7-99.5 9-132.1 9s-102.7 2.6-132.1-9c-19.6-7.8-34.7-22.9-42.6-42.6-11.7-29.5-9-99.5-9-132.1s-2.6-102.7 9-132.1c7.8-19.6 22.9-34.7 42.6-42.6 29.5-11.7 99.5-9 132.1-9s102.7-2.6 132.1 9c19.6 7.8 34.7 22.9 42.6 42.6 11.7 29.5 9 99.5 9 132.1s2.7 102.7-9 132.1z""></path></svg>																					</a>
+									</li>
+																					</ul>
+										<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam sit amet purus augue. Ut sagittis fermentum neque, eu imperdiet mi</p>
+				<figure>
+										<img src=""https://blog.jalsasalana.ng/wp-content/plugins/elementor/assets/images/placeholder.png"" alt=""Juhumin Ungurs"">
+				</figure>
+				<h2>Juhumin Ungurs</h2>
+				<h3>Junior Reporter</h3>
+															<ul>
+																																									<li>
+										<a href=""http://Facebook.com"" target=""_blank"">
+																							<svg aria-hidden=""true"" viewBox=""0 0 320 512"" xmlns=""http://www.w3.org/2000/svg""><path d=""M279.14 288l14.22-92.66h-88.91v-60.13c0-25.35 12.42-50.06 52.24-50.06h40.42V6.26S260.43 0 225.36 0c-73.22 0-121.08 44.38-121.08 124.72v70.62H22.89V288h81.39v224h100.17V288z""></path></svg>																					</a>
+									</li>
+																																																	<li>
+										<a href=""http://twitter.com"" target=""_blank"">
+																							<svg aria-hidden=""true"" viewBox=""0 0 512 512"" xmlns=""http://www.w3.org/2000/svg""><path d=""M459.37 151.716c.325 4.548.325 9.097.325 13.645 0 138.72-105.583 298.558-298.558 298.558-59.452 0-114.68-17.219-161.137-47.106 8.447.974 16.568 1.299 25.34 1.299 49.055 0 94.213-16.568 130.274-44.832-46.132-.975-84.792-31.188-98.112-72.772 6.498.974 12.995 1.624 19.818 1.624 9.421 0 18.843-1.3 27.614-3.573-48.081-9.747-84.143-51.98-84.143-102.985v-1.299c13.969 7.797 30.214 12.67 47.431 13.319-28.264-18.843-46.781-51.005-46.781-87.391 0-19.492 5.197-37.36 14.294-52.954 51.655 63.675 129.3 105.258 216.365 109.807-1.624-7.797-2.599-15.918-2.599-24.04 0-57.828 46.782-104.934 104.934-104.934 30.213 0 57.502 12.67 76.67 33.137 23.715-4.548 46.456-13.32 66.599-25.34-7.798 24.366-24.366 44.833-46.132 57.827 21.117-2.273 41.584-8.122 60.426-16.243-14.292 20.791-32.161 39.308-52.628 54.253z""></path></svg>																					</a>
+									</li>
+																																																	<li>
+										<a href=""http://instagram.com"" target=""_blank"">
+																							<svg aria-hidden=""true"" viewBox=""0 0 448 512"" xmlns=""http://www.w3.org/2000/svg""><path d=""M224.1 141c-63.6 0-114.9 51.3-114.9 114.9s51.3 114.9 114.9 114.9S339 319.5 339 255.9 287.7 141 224.1 141zm0 189.6c-41.1 0-74.7-33.5-74.7-74.7s33.5-74.7 74.7-74.7 74.7 33.5 74.7 74.7-33.6 74.7-74.7 74.7zm146.4-194.3c0 14.9-12 26.8-26.8 26.8-14.9 0-26.8-12-26.8-26.8s12-26.8 26.8-26.8 26.8 12 26.8 26.8zm76.1 27.2c-1.7-35.9-9.9-67.7-36.2-93.9-26.2-26.2-58-34.4-93.9-36.2-37-2.1-147.9-2.1-184.9 0-35.8 1.7-67.6 9.9-93.9 36.1s-34.4 58-36.2 93.9c-2.1 37-2.1 147.9 0 184.9 1.7 35.9 9.9 67.7 36.2 93.9s58 34.4 93.9 36.2c37 2.1 147.9 2.1 184.9 0 35.9-1.7 67.7-9.9 93.9-36.2 26.2-26.2 34.4-58 36.2-93.9 2.1-37 2.1-147.8 0-184.8zM398.8 388c-7.8 19.6-22.9 34.7-42.6 42.6-29.5 11.7-99.5 9-132.1 9s-102.7 2.6-132.1-9c-19.6-7.8-34.7-22.9-42.6-42.6-11.7-29.5-9-99.5-9-132.1s-2.6-102.7 9-132.1c7.8-19.6 22.9-34.7 42.6-42.6 29.5-11.7 99.5-9 132.1-9s102.7-2.6 132.1 9c19.6 7.8 34.7 22.9 42.6 42.6 11.7 29.5 9 99.5 9 132.1s2.7 102.7-9 132.1z""></path></svg>																					</a>
+									</li>
+																					</ul>
+										<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam sit amet purus augue. Ut sagittis fermentum neque, eu imperdiet mi</p>
+				<figure>
+										<img src=""https://blog.jalsasalana.ng/wp-content/plugins/elementor/assets/images/placeholder.png"" alt=""Karsten Wine"">
+				</figure>
+				<h2>Karsten Wine</h2>
+				<h3>Junior Reporter</h3>
+															<ul>
+																																									<li>
+										<a href=""http://Facebook.com"" target=""_blank"">
+																							<svg aria-hidden=""true"" viewBox=""0 0 320 512"" xmlns=""http://www.w3.org/2000/svg""><path d=""M279.14 288l14.22-92.66h-88.91v-60.13c0-25.35 12.42-50.06 52.24-50.06h40.42V6.26S260.43 0 225.36 0c-73.22 0-121.08 44.38-121.08 124.72v70.62H22.89V288h81.39v224h100.17V288z""></path></svg>																					</a>
+									</li>
+																																																	<li>
+										<a href=""http://twitter.com"" target=""_blank"">
+																							<svg aria-hidden=""true"" viewBox=""0 0 512 512"" xmlns=""http://www.w3.org/2000/svg""><path d=""M459.37 151.716c.325 4.548.325 9.097.325 13.645 0 138.72-105.583 298.558-298.558 298.558-59.452 0-114.68-17.219-161.137-47.106 8.447.974 16.568 1.299 25.34 1.299 49.055 0 94.213-16.568 130.274-44.832-46.132-.975-84.792-31.188-98.112-72.772 6.498.974 12.995 1.624 19.818 1.624 9.421 0 18.843-1.3 27.614-3.573-48.081-9.747-84.143-51.98-84.143-102.985v-1.299c13.969 7.797 30.214 12.67 47.431 13.319-28.264-18.843-46.781-51.005-46.781-87.391 0-19.492 5.197-37.36 14.294-52.954 51.655 63.675 129.3 105.258 216.365 109.807-1.624-7.797-2.599-15.918-2.599-24.04 0-57.828 46.782-104.934 104.934-104.934 30.213 0 57.502 12.67 76.67 33.137 23.715-4.548 46.456-13.32 66.599-25.34-7.798 24.366-24.366 44.833-46.132 57.827 21.117-2.273 41.584-8.122 60.426-16.243-14.292 20.791-32.161 39.308-52.628 54.253z""></path></svg>																					</a>
+									</li>
+																																																	<li>
+										<a href=""http://instagram.com"" target=""_blank"">
+																							<svg aria-hidden=""true"" viewBox=""0 0 448 512"" xmlns=""http://www.w3.org/2000/svg""><path d=""M224.1 141c-63.6 0-114.9 51.3-114.9 114.9s51.3 114.9 114.9 114.9S339 319.5 339 255.9 287.7 141 224.1 141zm0 189.6c-41.1 0-74.7-33.5-74.7-74.7s33.5-74.7 74.7-74.7 74.7 33.5 74.7 74.7-33.6 74.7-74.7 74.7zm146.4-194.3c0 14.9-12 26.8-26.8 26.8-14.9 0-26.8-12-26.8-26.8s12-26.8 26.8-26.8 26.8 12 26.8 26.8zm76.1 27.2c-1.7-35.9-9.9-67.7-36.2-93.9-26.2-26.2-58-34.4-93.9-36.2-37-2.1-147.9-2.1-184.9 0-35.8 1.7-67.6 9.9-93.9 36.1s-34.4 58-36.2 93.9c-2.1 37-2.1 147.9 0 184.9 1.7 35.9 9.9 67.7 36.2 93.9s58 34.4 93.9 36.2c37 2.1 147.9 2.1 184.9 0 35.9-1.7 67.7-9.9 93.9-36.2 26.2-26.2 34.4-58 36.2-93.9 2.1-37 2.1-147.8 0-184.8zM398.8 388c-7.8 19.6-22.9 34.7-42.6 42.6-29.5 11.7-99.5 9-132.1 9s-102.7 2.6-132.1-9c-19.6-7.8-34.7-22.9-42.6-42.6-11.7-29.5-9-99.5-9-132.1s-2.6-102.7 9-132.1c7.8-19.6 22.9-34.7 42.6-42.6 29.5-11.7 99.5-9 132.1-9s102.7-2.6 132.1 9c19.6 7.8 34.7 22.9 42.6 42.6 11.7 29.5 9 99.5 9 132.1s2.7 102.7-9 132.1z""></path></svg>																					</a>
+									</li>
+																					</ul>
+										<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam sit amet purus augue. Ut sagittis fermentum neque, eu imperdiet mi</p>
+				<figure>
+										<img src=""https://blog.jalsasalana.ng/wp-content/plugins/elementor/assets/images/placeholder.png"" alt=""Rizky Sabria"">
+				</figure>
+				<h2>Rizky Sabria</h2>
+				<h3>Columnist </h3>
+															<ul>
+																																									<li>
+										<a href=""http://Facebook.com"" target=""_blank"">
+																							<svg aria-hidden=""true"" viewBox=""0 0 320 512"" xmlns=""http://www.w3.org/2000/svg""><path d=""M279.14 288l14.22-92.66h-88.91v-60.13c0-25.35 12.42-50.06 52.24-50.06h40.42V6.26S260.43 0 225.36 0c-73.22 0-121.08 44.38-121.08 124.72v70.62H22.89V288h81.39v224h100.17V288z""></path></svg>																					</a>
+									</li>
+																																																	<li>
+										<a href=""http://twitter.com"" target=""_blank"">
+																							<svg aria-hidden=""true"" viewBox=""0 0 512 512"" xmlns=""http://www.w3.org/2000/svg""><path d=""M459.37 151.716c.325 4.548.325 9.097.325 13.645 0 138.72-105.583 298.558-298.558 298.558-59.452 0-114.68-17.219-161.137-47.106 8.447.974 16.568 1.299 25.34 1.299 49.055 0 94.213-16.568 130.274-44.832-46.132-.975-84.792-31.188-98.112-72.772 6.498.974 12.995 1.624 19.818 1.624 9.421 0 18.843-1.3 27.614-3.573-48.081-9.747-84.143-51.98-84.143-102.985v-1.299c13.969 7.797 30.214 12.67 47.431 13.319-28.264-18.843-46.781-51.005-46.781-87.391 0-19.492 5.197-37.36 14.294-52.954 51.655 63.675 129.3 105.258 216.365 109.807-1.624-7.797-2.599-15.918-2.599-24.04 0-57.828 46.782-104.934 104.934-104.934 30.213 0 57.502 12.67 76.67 33.137 23.715-4.548 46.456-13.32 66.599-25.34-7.798 24.366-24.366 44.833-46.132 57.827 21.117-2.273 41.584-8.122 60.426-16.243-14.292 20.791-32.161 39.308-52.628 54.253z""></path></svg>																					</a>
+									</li>
+																																																	<li>
+										<a href=""http://instagram.com"" target=""_blank"">
+																							<svg aria-hidden=""true"" viewBox=""0 0 448 512"" xmlns=""http://www.w3.org/2000/svg""><path d=""M224.1 141c-63.6 0-114.9 51.3-114.9 114.9s51.3 114.9 114.9 114.9S339 319.5 339 255.9 287.7 141 224.1 141zm0 189.6c-41.1 0-74.7-33.5-74.7-74.7s33.5-74.7 74.7-74.7 74.7 33.5 74.7 74.7-33.6 74.7-74.7 74.7zm146.4-194.3c0 14.9-12 26.8-26.8 26.8-14.9 0-26.8-12-26.8-26.8s12-26.8 26.8-26.8 26.8 12 26.8 26.8zm76.1 27.2c-1.7-35.9-9.9-67.7-36.2-93.9-26.2-26.2-58-34.4-93.9-36.2-37-2.1-147.9-2.1-184.9 0-35.8 1.7-67.6 9.9-93.9 36.1s-34.4 58-36.2 93.9c-2.1 37-2.1 147.9 0 184.9 1.7 35.9 9.9 67.7 36.2 93.9s58 34.4 93.9 36.2c37 2.1 147.9 2.1 184.9 0 35.9-1.7 67.7-9.9 93.9-36.2 26.2-26.2 34.4-58 36.2-93.9 2.1-37 2.1-147.8 0-184.8zM398.8 388c-7.8 19.6-22.9 34.7-42.6 42.6-29.5 11.7-99.5 9-132.1 9s-102.7 2.6-132.1-9c-19.6-7.8-34.7-22.9-42.6-42.6-11.7-29.5-9-99.5-9-132.1s-2.6-102.7 9-132.1c7.8-19.6 22.9-34.7 42.6-42.6 29.5-11.7 99.5-9 132.1-9s102.7-2.6 132.1 9c19.6 7.8 34.7 22.9 42.6 42.6 11.7 29.5 9 99.5 9 132.1s2.7 102.7-9 132.1z""></path></svg>																					</a>
+									</li>
+																					</ul>
+										<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam sit amet purus augue. Ut sagittis fermentum neque, eu imperdiet mi</p>",,"2024-12-17 09:37:33",page,https://blog.jalsasalana.ng/press24-worldwide-team-2/
+2654,"Blog Page","<article data-id=""2371"">
+            <a href=""https://blog.jalsasalana.ng/respect-and-kindness-towards-strangers-a-key-part-of-jalsa/""></a>
+                <img width=""300"" height=""200"" src=""https://blog.jalsasalana.ng/wp-content/uploads/2024/12/DSC_5648-scaled-1-300x200.jpg"" alt="""" />
+        <header><h3><a
+                        href=""https://blog.jalsasalana.ng/respect-and-kindness-towards-strangers-a-key-part-of-jalsa/""
+                        title=""Respect and Kindness Towards Strangers: A Key Part Of Jalsa"">Respect and Kindness Towards Strangers: A Key Part</a></h3></header><time datetime=""December 15, 2024"">December 15, 2024</time>
+                        <p>By Masroor Mahmud Adeeyo Imagine that an important dignitary is...</p><a href=""https://blog.jalsasalana.ng/respect-and-kindness-towards-strangers-a-key-part-of-jalsa/"">Read More</a>
+    </article><article data-id=""2368"">
+            <a href=""https://blog.jalsasalana.ng/the-gathering-of-hearts/""></a>
+                <img width=""300"" height=""200"" src=""https://blog.jalsasalana.ng/wp-content/uploads/2024/12/DSC_4440-scaled-1-300x200.jpg"" alt="""" />
+        <header><h3><a
+                        href=""https://blog.jalsasalana.ng/the-gathering-of-hearts/""
+                        title=""The Gathering of Hearts"">The Gathering of Hearts</a></h3></header><time datetime=""December 15, 2024"">December 15, 2024</time>
+                        <p>By Oladejo Haneef Olalekan O Jalsa! O Jalsa Salana! A...</p><a href=""https://blog.jalsasalana.ng/the-gathering-of-hearts/"">Read More</a>
+    </article><article data-id=""2366"">
+            <a href=""https://blog.jalsasalana.ng/ahmadiyya-muslim-community-celebrates-70-years-of-convention-spiritual-growth-and-unity/""></a>
+                <img width=""300"" height=""165"" src=""https://blog.jalsasalana.ng/wp-content/uploads/2024/01/WhatsApp-Image-2024-10-03-at-06.51.37-e1732438209880-1-300x165.jpeg"" alt="""" />
+        <header><h3><a
+                        href=""https://blog.jalsasalana.ng/ahmadiyya-muslim-community-celebrates-70-years-of-convention-spiritual-growth-and-unity/""
+                        title=""Ahmadiyya Muslim Community Celebrates 70 Years of Convention, Spiritual Growth, and Unity"">Ahmadiyya Muslim Community Celebrates 70 Years of Convention,</a></h3></header><time datetime=""December 15, 2024"">December 15, 2024</time>
+                        <p>By AbdulHameed Oguntimehin The Ahmadiyya Muslim Community is celebrating its...</p><a href=""https://blog.jalsasalana.ng/ahmadiyya-muslim-community-celebrates-70-years-of-convention-spiritual-growth-and-unity/"">Read More</a>
+    </article><article data-id=""2363"">
+            <a href=""https://blog.jalsasalana.ng/the-jalsas-call/""></a>
+                <img width=""300"" height=""200"" src=""https://blog.jalsasalana.ng/wp-content/uploads/2024/12/DSC_4387-scaled-1-300x200.jpg"" alt="""" />
+        <header><h3><a
+                        href=""https://blog.jalsasalana.ng/the-jalsas-call/""
+                        title=""The Jalsa’s Call"">The Jalsa’s Call</a></h3></header><time datetime=""December 15, 2024"">December 15, 2024</time>
+                        <p>By Mu’allim AbdulBāsit Odusanya Olasunkanmi In the gathering of hearts,...</p><a href=""https://blog.jalsasalana.ng/the-jalsas-call/"">Read More</a>
+    </article><article data-id=""2358"">
+            <a href=""https://blog.jalsasalana.ng/jalsa-salana-a-legacy-rooted-in-the-history-of-islamic-gathering/""></a>
+                <img width=""300"" height=""200"" src=""https://blog.jalsasalana.ng/wp-content/uploads/2024/12/DSC_5658-scaled-1-300x200.jpg"" alt="""" />
+        <header><h3><a
+                        href=""https://blog.jalsasalana.ng/jalsa-salana-a-legacy-rooted-in-the-history-of-islamic-gathering/""
+                        title=""Jalsa Salana: A Legacy Rooted in the History of Islamic Gathering"">Jalsa Salana: A Legacy Rooted in the History</a></h3></header><time datetime=""December 13, 2024"">December 13, 2024</time>
+                        <p>By Mu’allim Sulaiman Tasleem Across the world, countless gatherings—whether they...</p><a href=""https://blog.jalsasalana.ng/jalsa-salana-a-legacy-rooted-in-the-history-of-islamic-gathering/"">Read More</a>
+    </article><article data-id=""2355"">
+            <a href=""https://blog.jalsasalana.ng/understanding-jalsa-its-purpose-significance-and-role-in-the-ahmadiyya-muslim-community/""></a>
+                <img width=""300"" height=""200"" src=""https://blog.jalsasalana.ng/wp-content/uploads/2024/12/DSC_4445-scaled-1-300x200.jpg"" alt="""" />
+        <header><h3><a
+                        href=""https://blog.jalsasalana.ng/understanding-jalsa-its-purpose-significance-and-role-in-the-ahmadiyya-muslim-community/""
+                        title=""Understanding Jalsa: Its Purpose, Significance and role in the Ahmadiyya Muslim Community"">Understanding Jalsa: Its Purpose, Significance and role in</a></h3></header><time datetime=""December 13, 2024"">December 13, 2024</time>
+                        <p>Written by: Nabeel-Ahmad Oyekola Muhammad Qasim Oyekola What is Jalsa...</p><a href=""https://blog.jalsasalana.ng/understanding-jalsa-its-purpose-significance-and-role-in-the-ahmadiyya-muslim-community/"">Read More</a>
+    </article><article data-id=""2354"">
+            <a href=""https://blog.jalsasalana.ng/health-and-hygiene-at-jalsa-21-practical-tips-for-a-safe-and-comfortable-experience/""></a>
+                <img width=""300"" height=""200"" src=""https://blog.jalsasalana.ng/wp-content/uploads/2024/12/DSC_4400-scaled-1-300x200.jpg"" alt="""" />
+        <header><h3><a
+                        href=""https://blog.jalsasalana.ng/health-and-hygiene-at-jalsa-21-practical-tips-for-a-safe-and-comfortable-experience/""
+                        title=""Health and Hygiene at Jalsa: 21 Practical tips for a safe and comfortable experience"">Health and Hygiene at Jalsa: 21 Practical tips</a></h3></header><time datetime=""December 13, 2024"">December 13, 2024</time>
+                        <p>By Dr. Taofeek Sanni Health is defined as a state...</p><a href=""https://blog.jalsasalana.ng/health-and-hygiene-at-jalsa-21-practical-tips-for-a-safe-and-comfortable-experience/"">Read More</a>
+    </article><article data-id=""2351"">
+            <a href=""https://blog.jalsasalana.ng/leadership-by-example-inspiring-workers-through-action-at-jalsa/""></a>
+                <img width=""300"" height=""200"" src=""https://blog.jalsasalana.ng/wp-content/uploads/2024/12/DSC_4391-scaled-1-300x200.jpg"" alt="""" />
+        <header><h3><a
+                        href=""https://blog.jalsasalana.ng/leadership-by-example-inspiring-workers-through-action-at-jalsa/""
+                        title=""Leadership by Example: Inspiring Workers through action at Jalsa"">Leadership by Example: Inspiring Workers through action at</a></h3></header><time datetime=""December 13, 2024"">December 13, 2024</time>
+                        <p>By Hussein Muftau Akinwunmi It is yet another season of...</p><a href=""https://blog.jalsasalana.ng/leadership-by-example-inspiring-workers-through-action-at-jalsa/"">Read More</a>
+    </article><article data-id=""2344"">
+            <a href=""https://blog.jalsasalana.ng/ahmadiyya-jalsa-salana-a-blueprint-for-global-peace/""></a>
+                <img width=""300"" height=""200"" src=""https://blog.jalsasalana.ng/wp-content/uploads/2024/12/DSC_4445-scaled-1-300x200.jpg"" alt="""" />
+        <header><h3><a
+                        href=""https://blog.jalsasalana.ng/ahmadiyya-jalsa-salana-a-blueprint-for-global-peace/""
+                        title=""Ahmadiyya Jalsa Salana: A Blueprint for Global Peace"">Ahmadiyya Jalsa Salana: A Blueprint for Global Peace</a></h3></header><time datetime=""December 13, 2024"">December 13, 2024</time>
+                        <p>By Nasir Khalilurahman Mubaligh-e-Silsila, Ahmadiyya Muslim Jamaat Nigeria In a...</p><a href=""https://blog.jalsasalana.ng/ahmadiyya-jalsa-salana-a-blueprint-for-global-peace/"">Read More</a>
+    </article><article data-id=""983"">
+            <a href=""https://blog.jalsasalana.ng/challenges-beyond-palliatives-amir-ahmadiyya-advocates-long-term-solutions-for-nigeria/""></a>
+                <img width=""300"" height=""214"" src=""https://blog.jalsasalana.ng/wp-content/uploads/2024/12/IMG-20241205-WA0020-2-300x214.jpg"" alt="""" />
+        <header><h3><a
+                        href=""https://blog.jalsasalana.ng/challenges-beyond-palliatives-amir-ahmadiyya-advocates-long-term-solutions-for-nigeria/""
+                        title=""Challenges Beyond Palliatives, Amir Ahmadiyya Advocates Long-Term Solutions for Nigeria "">Challenges Beyond Palliatives, Amir Ahmadiyya Advocates Long-Term Solutions</a></h3></header><time datetime=""December 7, 2024"">December 7, 2024</time>
+                        <p>By Abdulquadri Olanrewaju&nbsp; The Amir (National Head) of the Ahmadiyya...</p><a href=""https://blog.jalsasalana.ng/challenges-beyond-palliatives-amir-ahmadiyya-advocates-long-term-solutions-for-nigeria/"">Read More</a>
+    </article>
+                <button id=""eael-load-more-btn-b5386d5"" data-widget-id=""b5386d5"" data-widget=""b5386d5"" data-page-id=""2654"" data-template=""{&quot;dir&quot;:&quot;lite&quot;,&quot;file_name&quot;:&quot;default.php&quot;,&quot;name&quot;:&quot;Post-Grid&quot;}"" data-class=""Essential_Addons_ElementorElementsPost_Grid"" data-layout=""grid"" data-page=""1"" data-args=""orderby=date&amp;order=desc&amp;ignore_sticky_posts=1&amp;post_status=publish&amp;posts_per_page=10&amp;offset=0&amp;post_type=post"" data-max-page=""4"">
+                    Load More
+                </button>",,"2024-12-17 17:45:39",page,https://blog.jalsasalana.ng/blog/

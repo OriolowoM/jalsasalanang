@@ -5,6 +5,89 @@ import { authenticate, requireRole } from '../middleware/auth';
 
 export const usersRouter = Router();
 
+// GET /api/v1/users/me/dashboard — Feature 2: Personalized Dashboard Data
+usersRouter.get('/me/dashboard', authenticate, async (req: Request, res: Response, next: NextFunction): Promise<void> => {
+  try {
+    const user = await prisma.user.findUnique({
+      where: { id: req.user!.id },
+      include: {
+        role: true,
+      },
+    });
+
+    if (!user) {
+      res.status(404).json({ success: false, message: 'User not found.' });
+      return;
+    }
+
+    const currentEdition = await prisma.jalsaEdition.findFirst({
+      where: { isCurrent: true },
+      include: {
+        speeches: { take: 5 },
+      },
+    });
+
+    const liveZones = await prisma.zoneTraffic.findMany({
+      take: 6,
+      orderBy: { status: 'desc' },
+    });
+
+    res.json({
+      success: true,
+      data: {
+        user: {
+          id: user.id,
+          email: user.email,
+          firstName: user.firstName,
+          lastName: user.lastName,
+          role: user.role.name,
+          roleSlug: user.role.slug,
+          attendeeCategory: user.attendeeCategory || 'MEMBER',
+          travelOrigin: user.travelOrigin || 'Lagos, Nigeria',
+          assignedGate: user.assignedGate || 'Gate 2 (West Registration Hub)',
+        },
+        currentEdition,
+        liveZones,
+      },
+    });
+  } catch (err) {
+    next(err);
+  }
+});
+
+// PUT /api/v1/users/me/profile — Update attendee profile (travel origin, attendee category)
+usersRouter.put('/me/profile', authenticate, async (req: Request, res: Response, next: NextFunction): Promise<void> => {
+  try {
+    const { travelOrigin, attendeeCategory, assignedGate } = req.body;
+
+    const updated = await prisma.user.update({
+      where: { id: req.user!.id },
+      data: {
+        ...(travelOrigin ? { travelOrigin } : {}),
+        ...(attendeeCategory ? { attendeeCategory } : {}),
+        ...(assignedGate ? { assignedGate } : {}),
+      },
+      select: {
+        id: true,
+        email: true,
+        firstName: true,
+        lastName: true,
+        attendeeCategory: true,
+        travelOrigin: true,
+        assignedGate: true,
+      },
+    });
+
+    res.json({
+      success: true,
+      message: 'Profile preferences updated.',
+      data: updated,
+    });
+  } catch (err) {
+    next(err);
+  }
+});
+
 // GET /api/v1/users
 usersRouter.get('/', authenticate, requireRole('super_administrator', 'editor_in_chief'), async (req: Request, res: Response, next: NextFunction): Promise<void> => {
   try {

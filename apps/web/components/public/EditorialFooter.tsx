@@ -1,20 +1,29 @@
 import React from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
+import { 
+  FileText, 
+  Home as HomeIcon, 
+  Truck, 
+  Shield, 
+  PhoneCall, 
+  ExternalLink
+} from 'lucide-react';
 
 export default function EditorialFooter() {
   const currentYear = new Date().getFullYear();
 
   return (
-    <footer className="bg-gradient-to-b from-primary-night via-primary-dark to-black text-white border-t-2 border-gold/40 mt-auto relative overflow-hidden">
-      {/* Subtle Islamic Stars Background Overlay */}
-      <div className="absolute inset-0 bg-islamic-stars opacity-25 pointer-events-none" />
+    <footer className="bg-forest text-white border-t border-teal/15 mt-auto relative overflow-hidden">
+      {/* Subtle background stars */}
+      <div className="absolute inset-0 bg-islamic-stars opacity-15 pointer-events-none" />
 
       {/* Top Footer Grid */}
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-14 lg:py-16 relative z-10">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-8 lg:gap-12">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 lg:py-24 relative z-10">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-10 lg:gap-12">
+          
           {/* Col 1: Brand & Jama'at Summary (4 cols) */}
-          <div className="lg:col-span-4 space-y-4">
+          <div className="lg:col-span-4 space-y-5">
             <Link href="/" className="flex items-center gap-3.5 group">
               <div className="relative w-12 h-12 flex-shrink-0 group-hover:scale-105 transition-transform">
                 <Image
@@ -25,25 +34,25 @@ export default function EditorialFooter() {
                 />
               </div>
               <div>
-                <span className="font-display font-black text-xl tracking-[0.14em] text-white block group-hover:text-gold transition-colors">
+                <span className="font-display font-extrabold text-xl tracking-[0.06em] text-white block group-hover:text-lime transition-colors">
                   JALSA SALANA
                 </span>
-                <span className="text-[10px] uppercase font-bold tracking-[0.28em] text-gold-metallic block">
+                <span className="text-[10px] uppercase font-bold tracking-[0.22em] text-lime/80 block">
                   Nigeria — Digital Publication
                 </span>
               </div>
             </Link>
 
-            <p className="text-xs text-gray-300 leading-relaxed font-serif">
+            <p className="text-xs text-white/70 leading-relaxed font-sans">
               Jalsa Salana Nigeria is the premier annual spiritual, educational, and intellectual gathering of the Ahmadiyya Muslim Jama&apos;at Nigeria, dedicated to peace, moral reformation, and divine guidance under the blessed institution of Khilafat-e-Ahmadiyya.
             </p>
 
             {/* Official 72nd Edition Logo Badge */}
-            <div className="pt-1">
-              <span className="text-[10px] uppercase font-cinzel font-bold tracking-[0.2em] text-gold block mb-2">
+            <div className="pt-2">
+              <span className="text-[10px] uppercase font-display font-bold tracking-[0.2em] text-lime/80 block mb-2">
                 Upcoming Convention
               </span>
-              <div className="inline-block bg-white/95 px-3.5 py-1.5 rounded-xl shadow-md border border-gold/30">
+              <div className="inline-block bg-white/95 px-3.5 py-1.5 rounded-xl shadow-soft border border-white/20">
                 <div className="relative h-8 w-36 sm:w-44">
                   <Image
                     src="/images/jalsa72-logo.jpg"
@@ -55,155 +64,163 @@ export default function EditorialFooter() {
               </div>
             </div>
 
-            <div className="text-[11px] text-gray-400 border-l-2 border-gold pl-3 italic font-serif">
+            <div className="text-[11px] text-white/50 border-l-2 border-lime/40 pl-3 italic">
               &ldquo;Love for All, Hatred for None&rdquo; — Universal motto of the Ahmadiyya Muslim Community.
             </div>
           </div>
 
-          {/* Col 2: Publication Sections (3 cols) */}
-          <div className="lg:col-span-3 space-y-3">
-            <h4 className="font-cinzel font-black text-xs uppercase tracking-[0.2em] text-gold-metallic">
-              Editorial Sections
+          {/* Col 2: Digital Magazine & Columns (3 cols) */}
+          <div className="lg:col-span-3 space-y-4">
+            <h4 className="font-display font-bold text-xs uppercase tracking-[0.2em] text-lime">
+              Official Blog
             </h4>
-            <ul className="space-y-2 text-xs text-gray-300 font-medium">
+            <ul className="space-y-2.5 text-xs text-white/70 font-medium">
               <li>
-                <Link href="/registration" className="text-gold font-bold hover:underline flex items-center gap-1.5">
-                  <span className="w-1.5 h-1.5 rounded-full bg-gold animate-ping"></span>
+                <Link href="/registration" className="text-lime font-bold hover:underline flex items-center gap-2">
+                  <span className="w-1.5 h-1.5 rounded-full bg-lime animate-ping"></span>
                   Registration &amp; Tags Hub 2026
                 </Link>
               </li>
               <li>
-                <Link href="/articles" className="hover:text-gold transition-colors">
-                  Articles, Research &amp; Features
+                <Link href="/blog" className="hover:text-lime transition-colors">
+                  All Blog Articles (148)
                 </Link>
               </li>
               <li>
-                <Link href="/speeches" className="hover:text-gold transition-colors">
-                  Speeches &amp; Keynote Transcripts
+                <Link href="/blog?category=amirs-corner" className="hover:text-lime transition-colors flex items-center justify-between">
+                  <span>Amir&apos;s Corner</span>
+                  <span className="text-[9px] bg-teal-600/50 text-lime font-bold px-1.5 py-0.5 rounded">Official</span>
                 </Link>
               </li>
               <li>
-                <Link href="/editions/2026" className="hover:text-gold transition-colors font-medium text-white flex items-center gap-1.5">
-                  <span className="w-1.5 h-1.5 rounded-full bg-primary-light"></span>
-                  Jalsa Salana 2026 Edition Hub
+                <Link href="/blog?category=convention-lectures" className="hover:text-lime transition-colors">
+                  Convention Lectures &amp; Papers
                 </Link>
               </li>
               <li>
-                <Link href="/editions" className="hover:text-gold transition-colors">
-                  Historical Conventions Timeline
+                <Link href="/blog?category=press-conference" className="hover:text-lime transition-colors">
+                  Press Conferences &amp; Communiques
                 </Link>
               </li>
               <li>
-                <Link href="/galleries" className="hover:text-gold transition-colors">
-                  Photo &amp; Video Highlights
+                <Link href="/speeches" className="hover:text-lime transition-colors">
+                  Speeches &amp; Audio Transcripts
                 </Link>
               </li>
               <li>
-                <Link href="/search" className="hover:text-gold transition-colors">
-                  Site-wide Archive Search
+                <Link href="/categories/poems-reflections" className="hover:text-lime transition-colors">
+                  Poems &amp; Personal Memories
+                </Link>
+              </li>
+              <li>
+                <Link href="/galleries" className="hover:text-lime transition-colors">
+                  Photography &amp; Video Galleries
                 </Link>
               </li>
             </ul>
           </div>
 
-          {/* Col 3: Historical Editions (2 cols) */}
-          <div className="lg:col-span-2 space-y-3">
-            <h4 className="font-bold text-xs uppercase tracking-widest text-gold">
-              Conventions
+          {/* Col 3: Event Attendees & Logistics (2.5 cols) */}
+          <div className="lg:col-span-2 space-y-4">
+            <h4 className="font-display font-bold text-xs uppercase tracking-[0.2em] text-lime">
+              Event Logistics
             </h4>
-            <ul className="space-y-2 text-xs text-gray-300">
+            <ul className="space-y-2.5 text-xs text-white/70">
               <li>
-                <Link href="/editions/2026" className="hover:text-gold transition-colors font-semibold">
-                  2026 (72nd)
+                <Link href="/programme-of-events-jalsa-salana-nigeria-2024" className="hover:text-lime transition-colors flex items-center gap-2">
+                  <FileText className="w-3.5 h-3.5 text-teal-400" />
+                  <span>Programme timetable</span>
                 </Link>
               </li>
               <li>
-                <Link href="/editions/2025" className="hover:text-gold transition-colors">
-                  2025 (71st)
+                <Link href="/accommodation" className="hover:text-lime transition-colors flex items-center gap-2">
+                  <HomeIcon className="w-3.5 h-3.5 text-teal-400" />
+                  <span>Accommodation</span>
                 </Link>
               </li>
               <li>
-                <Link href="/editions/2024" className="hover:text-gold transition-colors">
-                  2024 (70th Jubilee)
+                <Link href="/transportation" className="hover:text-lime transition-colors flex items-center gap-2">
+                  <Truck className="w-3.5 h-3.5 text-teal-400" />
+                  <span>Transportation</span>
                 </Link>
               </li>
               <li>
-                <Link href="/editions/2023" className="hover:text-gold transition-colors">
-                  2023 (69th)
+                <Link href="/security" className="hover:text-lime transition-colors flex items-center gap-2">
+                  <Shield className="w-3.5 h-3.5 text-teal-400" />
+                  <span>Security &amp; Protocol</span>
                 </Link>
               </li>
               <li>
-                <Link href="/editions/2022" className="hover:text-gold transition-colors">
-                  2022 (68th)
+                <Link href="/info-emergency" className="hover:text-red-300 text-red-400 font-semibold transition-colors flex items-center gap-2">
+                  <PhoneCall className="w-3.5 h-3.5 text-red-400" />
+                  <span>Emergency Desk</span>
+                </Link>
+              </li>
+              <li>
+                <Link href="/editions" className="hover:text-lime transition-colors">
+                  Historical Editions Timeline
                 </Link>
               </li>
             </ul>
           </div>
 
-          {/* Col 4: Institutional & Legal (3 cols) */}
-          <div className="lg:col-span-3 space-y-3">
-            <h4 className="font-bold text-xs uppercase tracking-widest text-gold">
-              Institution &amp; Contact
+          {/* Col 4: Institutional & National Office (2.5 cols) */}
+          <div className="lg:col-span-3 space-y-4">
+            <h4 className="font-display font-bold text-xs uppercase tracking-[0.2em] text-lime">
+              National Secretariat
             </h4>
-            <p className="text-xs text-gray-300 leading-relaxed">
-              <strong>National Headquarters:</strong><br />
-              Ahmadiyya Muslim Jama&apos;at Nigeria,<br />
+            <p className="text-xs text-white/70 leading-relaxed font-sans">
+              <strong>Ahmadiyya Muslim Jama&apos;at Nigeria</strong><br />
               KM 27, Abeokuta Expressway, Ojokoro, Lagos State, Nigeria.
             </p>
-            <div className="pt-1 space-y-1.5 text-xs text-gray-300">
+            <div className="pt-1 space-y-2.5 text-xs text-white/70">
+              <div>
+                <a
+                  href="https://www.alislam.org/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-lime font-semibold hover:underline flex items-center gap-1.5"
+                >
+                  <span>Al Islam Official (alislam.org)</span>
+                  <ExternalLink className="w-3.5 h-3.5" />
+                </a>
+              </div>
               <div>
                 <a
                   href="https://jalsa.ahmadiyyanigeria.net/"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="text-gold font-semibold hover:underline flex items-center gap-1"
+                  className="text-white/70 hover:text-lime flex items-center gap-1.5"
                 >
-                  <span>Portal: jalsa.ahmadiyyanigeria.net</span>
-                  <span className="text-[10px]">↗</span>
+                  <span>Jalsa Nigeria Online Portal</span>
+                  <ExternalLink className="w-3.5 h-3.5" />
                 </a>
               </div>
-              <div>
-                <Link href="/about" className="hover:text-gold transition-colors">
-                  About Jalsa Salana Nigeria
-                </Link>
-              </div>
-              <div>
-                <Link href="/editorial-policy" className="hover:text-gold transition-colors">
-                  Editorial &amp; Archival Policy
-                </Link>
-              </div>
-              <div>
-                <Link href="/contact" className="hover:text-gold transition-colors">
-                  Media &amp; Press Accreditation
-                </Link>
-              </div>
-              <div>
-                <Link href="/login" className="text-gold hover:underline">
-                  Staff &amp; Editorial Login
-                </Link>
+              <div className="pt-2 border-t border-white/10 text-[11px] text-white/50">
+                Editorial Enquiries: <span className="text-lime/90">press@jalsasalana.ng</span>
               </div>
             </div>
           </div>
-        </div>
-      </div>
 
-      {/* Bottom Sub-Footer Bar */}
-      <div className="border-t border-primary-900 bg-black/30 py-4 text-xs text-gray-400">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col sm:flex-row items-center justify-between gap-3 text-center sm:text-left">
+        </div>
+
+        {/* Bottom Legal / Editorial Attribution */}
+        <div className="mt-16 pt-8 border-t border-white/10 flex flex-col md:flex-row items-center justify-between text-[11px] text-white/40 gap-4">
           <div>
-            &copy; {currentYear} Jalsa Salana Nigeria. An official digital publishing organ of the Ahmadiyya Muslim Jama&apos;at Nigeria. All rights reserved.
+            &copy; {currentYear} Jalsa Salana Nigeria Digital Publication. All rights reserved. Under the auspices of Ahmadiyya Muslim Jama&apos;at Nigeria.
           </div>
-          <div className="flex items-center gap-4 text-gray-400">
-            <Link href="/editorial-policy" className="hover:text-white transition-colors">
+          <div className="flex items-center space-x-6">
+            <Link href="/editorial-policy" className="hover:text-lime transition-colors">
               Editorial Policy
             </Link>
-            <span>•</span>
-            <Link href="/contact" className="hover:text-white transition-colors">
-              Contact
+            <Link href="/privacy-policy" className="hover:text-lime transition-colors">
+              Privacy Policy
             </Link>
-            <span>•</span>
-            <Link href="/login" className="text-gold-light hover:text-white transition-colors">
-              Admin Portal
+            <Link href="/contact" className="hover:text-lime transition-colors">
+              Contact Desk
+            </Link>
+            <Link href="/login" className="hover:text-lime transition-colors font-semibold text-white/60">
+              Staff Portal
             </Link>
           </div>
         </div>

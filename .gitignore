@@ -9,3 +9,7 @@ build/
 cookies.txt
 apps/api/uploads/*
 !apps/api/uploads/.gitkeep
+deploy_key*
+*.zip
+*.tar.gz
+libquery_engine.so.node.gz

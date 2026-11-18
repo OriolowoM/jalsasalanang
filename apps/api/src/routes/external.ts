@@ -48,21 +48,18 @@ externalRouter.get('/quran/:surah/:verse', (req: Request, res: Response) => {
   const curatedVerses: Record<string, any> = {
     '16:91': {
       surahName: 'An-Nahl (The Bee)',
-      arabic: 'إِنَّ اللَّهَ يَأْمُرُ بِالْعَدْلِ وَالْإِحْسَانِ وَإِيتَاءِ ذِي الْقُرْبَىٰ وَيَنْهَىٰ عَنِ الْفَحْشَاءِ وَالْمُنكَرِ وَالْبَغْيِ ۚ يَعِظُكُمْ لَعَلَّكُمْ تَذَكَّرُونَ',
       english: 'Verily, Allah enjoins justice, and the doing of good to others; and giving like kindred; and forbids indecency, and evil, and rebellion. He admonishes you that you may take heed.',
       alislamUrl: 'https://www.alislam.org/quran/16:91',
       themeNote: 'Official theme anchor verse for the 72nd Jalsa Salana Nigeria 2026.',
     },
     '49:14': {
       surahName: 'Al-Hujurat (The Chambers)',
-      arabic: 'يَا أَيُّهَا النَّاسُ إِنَّا خَلَقْنَاكُم مِّن ذَكَرٍ وَأُنثَىٰ وَجَعَلْنَاكُمْ شُعُوبًا وَقَبَائِلَ لِتَعَارَفُوا ۚ إِنَّ أَكْرَمَكُمْ عِندَ اللَّهِ أَتْقَاكُمْ',
       english: 'O mankind, We have created you from a male and a female; and We have made you into clans and tribes that you may recognise one another. Verily, the most honourable among you, in the sight of Allah, is he who is the most righteous.',
       alislamUrl: 'https://www.alislam.org/quran/49:14',
       themeNote: 'Foundation of universal human equality in Islam.',
     },
     '5:9': {
       surahName: 'Al-Ma\'idah (The Table Spread)',
-      arabic: 'يَا أَيُّهَا الَّذِينَ آمَنُوا كُونُوا قَوَّامِينَ لِلَّهِ شُهَدَاءَ بِالْقِسْطِ ۖ وَلَا يَجْرِمَنَّكُمْ شَنَآنُ قَوْمٍ عَلَىٰ أَلَّا تَعْدِلُوا ۚ اعْدِلُوا هُوَ أَقْرَبُ لِلتَّقْوَىٰ',
       english: 'O ye who believe! be steadfast in the cause of Allah, bearing witness in equity; and let not a people\'s enmity incite you to act otherwise than with justice. Be always just, that is nearer to righteousness.',
       alislamUrl: 'https://www.alislam.org/quran/5:9',
       themeNote: 'Absolute justice even towards adversaries.',

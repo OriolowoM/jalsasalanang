@@ -143,6 +143,7 @@ articlesRouter.get('/:slugOrId', async (req: Request, res: Response, next: NextF
       include: {
         author: true,
         edition: true,
+        translations: true,
         categories: {
           include: {
             category: true,

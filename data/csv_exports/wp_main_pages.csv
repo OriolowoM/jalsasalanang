@@ -1,0 +1,772 @@
+﻿id,Title,Content
+2,"Sample Page","<!-- wp:paragraph -->
+<p>This is an example page. It's different from a blog post because it will stay in one place and will show up in your site navigation (in most themes). Most people start with an About page that introduces them to potential site visitors. It might say something like this:</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:quote -->
+<blockquote class=""wp-block-quote""><p>Hi there! I'm a bike messenger by day, aspiring actor by night, and this is my website. I live in Los Angeles, have a great dog named Jack, and I like pi&#241;a coladas. (And gettin' caught in the rain.)</p></blockquote>
+<!-- /wp:quote -->
+
+<!-- wp:paragraph -->
+<p>...or something like this:</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:quote -->
+<blockquote class=""wp-block-quote""><p>The XYZ Doohickey Company was founded in 1971, and has been providing quality doohickeys to the public ever since. Located in Gotham City, XYZ employs over 2,000 people and does all kinds of awesome things for the Gotham community.</p></blockquote>
+<!-- /wp:quote -->
+
+<!-- wp:paragraph -->
+<p>As a new WordPress user, you should go to <a href=""https://jalsasalana.ng/wp-admin/"">your dashboard</a> to delete this page and create new pages for your content. Have fun!</p>
+<!-- /wp:paragraph -->"
+3,"Privacy Policy","<!-- wp:heading --><h2>Who we are</h2><!-- /wp:heading --><!-- wp:paragraph --><p><strong class=""privacy-policy-tutorial"">Suggested text: </strong>Our website address is: https://jalsasalana.ng.</p><!-- /wp:paragraph --><!-- wp:heading --><h2>Comments</h2><!-- /wp:heading --><!-- wp:paragraph --><p><strong class=""privacy-policy-tutorial"">Suggested text: </strong>When visitors leave comments on the site we collect the data shown in the comments form, and also the visitor&#8217;s IP address and browser user agent string to help spam detection.</p><!-- /wp:paragraph --><!-- wp:paragraph --><p>An anonymized string created from your email address (also called a hash) may be provided to the Gravatar service to see if you are using it. The Gravatar service privacy policy is available here: https://automattic.com/privacy/. After approval of your comment, your profile picture is visible to the public in the context of your comment.</p><!-- /wp:paragraph --><!-- wp:heading --><h2>Media</h2><!-- /wp:heading --><!-- wp:paragraph --><p><strong class=""privacy-policy-tutorial"">Suggested text: </strong>If you upload images to the website, you should avoid uploading images with embedded location data (EXIF GPS) included. Visitors to the website can download and extract any location data from images on the website.</p><!-- /wp:paragraph --><!-- wp:heading --><h2>Cookies</h2><!-- /wp:heading --><!-- wp:paragraph --><p><strong class=""privacy-policy-tutorial"">Suggested text: </strong>If you leave a comment on our site you may opt-in to saving your name, email address and website in cookies. These are for your convenience so that you do not have to fill in your details again when you leave another comment. These cookies will last for one year.</p><!-- /wp:paragraph --><!-- wp:paragraph --><p>If you visit our login page, we will set a temporary cookie to determine if your browser accepts cookies. This cookie contains no personal data and is discarded when you close your browser.</p><!-- /wp:paragraph --><!-- wp:paragraph --><p>When you log in, we will also set up several cookies to save your login information and your screen display choices. Login cookies last for two days, and screen options cookies last for a year. If you select &quot;Remember Me&quot;, your login will persist for two weeks. If you log out of your account, the login cookies will be removed.</p><!-- /wp:paragraph --><!-- wp:paragraph --><p>If you edit or publish an article, an additional cookie will be saved in your browser. This cookie includes no personal data and simply indicates the post ID of the article you just edited. It expires after 1 day.</p><!-- /wp:paragraph --><!-- wp:heading --><h2>Embedded content from other websites</h2><!-- /wp:heading --><!-- wp:paragraph --><p><strong class=""privacy-policy-tutorial"">Suggested text: </strong>Articles on this site may include embedded content (e.g. videos, images, articles, etc.). Embedded content from other websites behaves in the exact same way as if the visitor has visited the other website.</p><!-- /wp:paragraph --><!-- wp:paragraph --><p>These websites may collect data about you, use cookies, embed additional third-party tracking, and monitor your interaction with that embedded content, including tracking your interaction with the embedded content if you have an account and are logged in to that website.</p><!-- /wp:paragraph --><!-- wp:heading --><h2>Who we share your data with</h2><!-- /wp:heading --><!-- wp:paragraph --><p><strong class=""privacy-policy-tutorial"">Suggested text: </strong>If you request a password reset, your IP address will be included in the reset email.</p><!-- /wp:paragraph --><!-- wp:heading --><h2>How long we retain your data</h2><!-- /wp:heading --><!-- wp:paragraph --><p><strong class=""privacy-policy-tutorial"">Suggested text: </strong>If you leave a comment, the comment and its metadata are retained indefinitely. This is so we can recognize and approve any follow-up comments automatically instead of holding them in a moderation queue.</p><!-- /wp:paragraph --><!-- wp:paragraph --><p>For users that register on our website (if any), we also store the personal information they provide in their user profile. All users can see, edit, or delete their personal information at any time (except they cannot change their username). Website administrators can also see and edit that information.</p><!-- /wp:paragraph --><!-- wp:heading --><h2>What rights you have over your data</h2><!-- /wp:heading --><!-- wp:paragraph --><p><strong class=""privacy-policy-tutorial"">Suggested text: </strong>If you have an account on this site, or have left comments, you can request to receive an exported file of the personal data we hold about you, including any data you have provided to us. You can also request that we erase any personal data we hold about you. This does not include any data we are obliged to keep for administrative, legal, or security purposes.</p><!-- /wp:paragraph --><!-- wp:heading --><h2>Where your data is sent</h2><!-- /wp:heading --><!-- wp:paragraph --><p><strong class=""privacy-policy-tutorial"">Suggested text: </strong>Visitor comments may be checked through an automated spam detection service.</p><!-- /wp:paragraph -->"
+245,"About Us","<style>/*! elementor - v3.18.0 - 08-12-2023 */
+.elementor-widget-image-box .elementor-image-box-content{width:100%}@media (min-width:768px){.elementor-widget-image-box.elementor-position-left .elementor-image-box-wrapper,.elementor-widget-image-box.elementor-position-right .elementor-image-box-wrapper{display:flex}.elementor-widget-image-box.elementor-position-right .elementor-image-box-wrapper{text-align:right;flex-direction:row-reverse}.elementor-widget-image-box.elementor-position-left .elementor-image-box-wrapper{text-align:left;flex-direction:row}.elementor-widget-image-box.elementor-position-top .elementor-image-box-img{margin:auto}.elementor-widget-image-box.elementor-vertical-align-top .elementor-image-box-wrapper{align-items:flex-start}.elementor-widget-image-box.elementor-vertical-align-middle .elementor-image-box-wrapper{align-items:center}.elementor-widget-image-box.elementor-vertical-align-bottom .elementor-image-box-wrapper{align-items:flex-end}}@media (max-width:767px){.elementor-widget-image-box .elementor-image-box-img{margin-left:auto!important;margin-right:auto!important;margin-bottom:15px}}.elementor-widget-image-box .elementor-image-box-img{display:inline-block}.elementor-widget-image-box .elementor-image-box-title a{color:inherit}.elementor-widget-image-box .elementor-image-box-wrapper{text-align:center}.elementor-widget-image-box .elementor-image-box-description{margin:0}</style><h1>About Us</h1>		
+			<style>/*! elementor - v3.18.0 - 08-12-2023 */
+.elementor-widget-image{text-align:center}.elementor-widget-image a{display:inline-block}.elementor-widget-image a img[src$="".svg""]{width:48px}.elementor-widget-image img{vertical-align:middle;display:inline-block}</style>												<img src=""http://jalsasalana.ng/wp-content/uploads/elementor/thumbs/Khalifatul-Masih-V-768x512-1-qh1fsu98grccn8jbdximv5518ufj5w1x9790yu4ohs.jpg"" title=""Khalifatul-Masih-V-768&#215;512"" alt=""Khalifatul-Masih-V-768x512"" loading=""lazy"" />															
+			<style>/*! elementor - v3.18.0 - 08-12-2023 */
+.elementor-heading-title{padding:0;margin:0;line-height:1}.elementor-widget-heading .elementor-heading-title[class*=elementor-size-]>a{color:inherit;font-size:inherit;line-height:inherit}.elementor-widget-heading .elementor-heading-title.elementor-size-small{font-size:15px}.elementor-widget-heading .elementor-heading-title.elementor-size-medium{font-size:19px}.elementor-widget-heading .elementor-heading-title.elementor-size-large{font-size:29px}.elementor-widget-heading .elementor-heading-title.elementor-size-xl{font-size:39px}.elementor-widget-heading .elementor-heading-title.elementor-size-xxl{font-size:59px}</style><h2>REVIVING TRUE ISLAMIC VALUES</h2>		
+		<p>We believe that Islam, which was established over 1,400 years ago by the Prophet Muhammad (peace and blessings be upon him), is a universal religion of peace, with a simple but perfect message for mankind to develop and maintain a living relationship with a living God and to live in perfect harmony with all.</p>		
+			<h3>Our Mission</h3>		
+		We strive to provide the most reliable and efficient plumbing services, without compromising on quality or safety. We also aim to prove our quality skills, fair prices and customer care, so that we continue our business relationship for many years, beyond the first job we complete.		
+			<h3>Core Values</h3>		
+			<link rel=""stylesheet"" href=""https://jalsasalana.ng/wp-content/plugins/elementor/assets/css/widget-icon-list.min.css"">		<ul>
+							<li>
+							<svg aria-hidden=""true"" viewBox=""0 0 512 512"" xmlns=""http://www.w3.org/2000/svg""><path d=""M504 256c0 136.967-111.033 248-248 248S8 392.967 8 256 119.033 8 256 8s248 111.033 248 248zM227.314 387.314l184-184c6.248-6.248 6.248-16.379 0-22.627l-22.627-22.627c-6.248-6.249-16.379-6.249-22.628 0L216 308.118l-70.059-70.059c-6.248-6.248-16.379-6.248-22.628 0l-22.627 22.627c-6.248 6.248-6.248 16.379 0 22.627l104 104c6.249 6.249 16.379 6.249 22.628.001z""></path></svg>						
+										Consider honesty as the key to a business’ trustworthiness and integrity.
+									</li>
+								<li>
+							<svg aria-hidden=""true"" viewBox=""0 0 512 512"" xmlns=""http://www.w3.org/2000/svg""><path d=""M504 256c0 136.967-111.033 248-248 248S8 392.967 8 256 119.033 8 256 8s248 111.033 248 248zM227.314 387.314l184-184c6.248-6.248 6.248-16.379 0-22.627l-22.627-22.627c-6.248-6.249-16.379-6.249-22.628 0L216 308.118l-70.059-70.059c-6.248-6.248-16.379-6.248-22.628 0l-22.627 22.627c-6.248 6.248-6.248 16.379 0 22.627l104 104c6.249 6.249 16.379 6.249 22.628.001z""></path></svg>						
+										Always do the right thing to solve the customer’s problem.
+									</li>
+								<li>
+							<svg aria-hidden=""true"" viewBox=""0 0 512 512"" xmlns=""http://www.w3.org/2000/svg""><path d=""M504 256c0 136.967-111.033 248-248 248S8 392.967 8 256 119.033 8 256 8s248 111.033 248 248zM227.314 387.314l184-184c6.248-6.248 6.248-16.379 0-22.627l-22.627-22.627c-6.248-6.249-16.379-6.249-22.628 0L216 308.118l-70.059-70.059c-6.248-6.248-16.379-6.248-22.628 0l-22.627 22.627c-6.248 6.248-6.248 16.379 0 22.627l104 104c6.249 6.249 16.379 6.249 22.628.001z""></path></svg>						
+										Perform all work with the highest level of excellence in mind.
+									</li>
+						</ul>
+			<h2>ONE COMMUNITY, ONE LEADER</h2>		
+		<p>Since the founder’s demise in 1908 we have been led by a series of Caliphs or spiritual leaders, the present being His Holiness Hazrat Mirza Masroor Ahmad; this form of global leadership is another distinctive feature of this community. He continues to relay the message of peace to the corners of the earth, a message that has been reflected in action by the community through humanitarian efforts by men, women and the youth of the community.</p>		
+															<img src=""http://jalsasalana.ng/wp-content/uploads/elementor/thumbs/Huzur-ijtema-qh1fjwsebkc0vkjtezasmg615vrmrezcx975aoulkw.jpeg"" title=""Huzur ijtema"" alt=""Huzur ijtema"" loading=""lazy"" />															
+			<style>/*! elementor - v3.18.0 - 08-12-2023 */
+@charset ""UTF-8"";.elementor-star-rating{color:#ccd6df;font-family:eicons;display:inline-block}.elementor-star-rating i{display:inline-block;position:relative;font-style:normal;cursor:default}.elementor-star-rating i:before{content:""e934"";display:block;font-size:inherit;font-family:inherit;position:absolute;overflow:hidden;color:#f0ad4e;top:0;left:0}.elementor-star-rating .elementor-star-empty:before{content:none}.elementor-star-rating .elementor-star-1:before{width:10%}.elementor-star-rating .elementor-star-2:before{width:20%}.elementor-star-rating .elementor-star-3:before{width:30%}.elementor-star-rating .elementor-star-4:before{width:40%}.elementor-star-rating .elementor-star-5:before{width:50%}.elementor-star-rating .elementor-star-6:before{width:60%}.elementor-star-rating .elementor-star-7:before{width:70%}.elementor-star-rating .elementor-star-8:before{width:80%}.elementor-star-rating .elementor-star-9:before{width:90%}.elementor-star-rating__wrapper{display:flex;align-items:center}.elementor-star-rating__title{margin-right:10px}.elementor-star-rating--align-right .elementor-star-rating__wrapper{text-align:right;justify-content:flex-end}.elementor-star-rating--align-left .elementor-star-rating__wrapper{text-align:left;justify-content:flex-start}.elementor-star-rating--align-center .elementor-star-rating__wrapper{text-align:center;justify-content:center}.elementor-star-rating--align-justify .elementor-star-rating__title{margin-right:auto}@media (max-width:1024px){.elementor-star-rating-tablet--align-right .elementor-star-rating__wrapper{text-align:right;justify-content:flex-end}.elementor-star-rating-tablet--align-left .elementor-star-rating__wrapper{text-align:left;justify-content:flex-start}.elementor-star-rating-tablet--align-center .elementor-star-rating__wrapper{text-align:center;justify-content:center}.elementor-star-rating-tablet--align-justify .elementor-star-rating__title{margin-right:auto}}@media (max-width:767px){.elementor-star-rating-mobile--align-right .elementor-star-rating__wrapper{text-align:right;justify-content:flex-end}.elementor-star-rating-mobile--align-left .elementor-star-rating__wrapper{text-align:left;justify-content:flex-start}.elementor-star-rating-mobile--align-center .elementor-star-rating__wrapper{text-align:center;justify-content:center}.elementor-star-rating-mobile--align-justify .elementor-star-rating__title{margin-right:auto}}.last-star{letter-spacing:0}.elementor--star-style-star_unicode .elementor-star-rating{font-family:Arial,Helvetica,sans-serif}.elementor--star-style-star_unicode .elementor-star-rating i:not(.elementor-star-empty):before{content:""★""}</style>
+						<i>&#xE934;</i><i>&#xE934;</i><i>&#xE934;</i><i>&#xE934;</i><i>&#xE934;</i> 5/5		
+			<style>/*! elementor - v3.18.0 - 08-12-2023 */
+.elementor-testimonial-wrapper{overflow:hidden;text-align:center}.elementor-testimonial-wrapper .elementor-testimonial-content{font-size:1.3em;margin-bottom:20px}.elementor-testimonial-wrapper .elementor-testimonial-name{line-height:1.5;display:block}.elementor-testimonial-wrapper .elementor-testimonial-job{font-size:.85em;display:block}.elementor-testimonial-wrapper .elementor-testimonial-meta{width:100%;line-height:1}.elementor-testimonial-wrapper .elementor-testimonial-meta-inner{display:inline-block}.elementor-testimonial-wrapper .elementor-testimonial-meta .elementor-testimonial-details,.elementor-testimonial-wrapper .elementor-testimonial-meta .elementor-testimonial-image{display:table-cell;vertical-align:middle}.elementor-testimonial-wrapper .elementor-testimonial-meta .elementor-testimonial-image img{width:60px;height:60px;border-radius:50%;-o-object-fit:cover;object-fit:cover;max-width:none}.elementor-testimonial-wrapper .elementor-testimonial-meta.elementor-testimonial-image-position-aside .elementor-testimonial-image{padding-right:15px}.elementor-testimonial-wrapper .elementor-testimonial-meta.elementor-testimonial-image-position-aside .elementor-testimonial-details{text-align:left}.elementor-testimonial-wrapper .elementor-testimonial-meta.elementor-testimonial-image-position-top .elementor-testimonial-details,.elementor-testimonial-wrapper .elementor-testimonial-meta.elementor-testimonial-image-position-top .elementor-testimonial-image{display:block}.elementor-testimonial-wrapper .elementor-testimonial-meta.elementor-testimonial-image-position-top .elementor-testimonial-image{margin-bottom:20px}</style>		
+							Sed ut pers piciatis unde omnis iste natus error sit volup tatem accus antium dolore mque laudan tium, totam rem aperiam, eaque ipsa quae ab illo inventore.
+							<img width=""150"" height=""150"" src=""http://jalsasalana.ng/wp-content/uploads/2021/04/customer-1-150x150.jpg"" alt="""" />						
+														Martin Foster
+						<i>&#xE934;</i><i>&#xE934;</i><i>&#xE934;</i><i>&#xE934;</i><i>&#xE934;</i> 5/5		
+							Sed ut pers piciatis unde omnis iste natus error sit volup tatem accus antium dolore mque laudan tium, totam rem aperiam, eaque ipsa quae ab illo inventore.
+							<img width=""150"" height=""150"" src=""http://jalsasalana.ng/wp-content/uploads/2021/06/customer-4-150x150.jpg"" alt="""" />						
+														Bryan Cirius
+						<i>&#xE934;</i><i>&#xE934;</i><i>&#xE934;</i><i>&#xE934;</i><i>&#xE934;</i> 5/5		
+							Sed ut pers piciatis unde omnis iste natus error sit volup tatem accus antium dolore mque laudan tium, totam rem aperiam, eaque ipsa quae ab illo inventore.
+							<img width=""150"" height=""150"" src=""http://jalsasalana.ng/wp-content/uploads/2021/04/customer-3-150x150.jpg"" alt="""" />						
+														Jane Dowser
+						<i>&#xE934;</i><i>&#xE934;</i><i>&#xE934;</i><i>&#xE934;</i><i>&#xE934;</i> 5/5		
+							Sed ut pers piciatis unde omnis iste natus error sit volup tatem accus antium dolore mque laudan tium, totam rem aperiam, eaque ipsa quae ab illo inventore.
+							<img width=""150"" height=""150"" src=""http://jalsasalana.ng/wp-content/uploads/2021/04/customer-1-150x150.jpg"" alt="""" />						
+														Martin Foster
+						<i>&#xE934;</i><i>&#xE934;</i><i>&#xE934;</i><i>&#xE934;</i><i>&#xE934;</i> 5/5		
+							Sed ut pers piciatis unde omnis iste natus error sit volup tatem accus antium dolore mque laudan tium, totam rem aperiam, eaque ipsa quae ab illo inventore.
+							<img width=""150"" height=""150"" src=""http://jalsasalana.ng/wp-content/uploads/2021/06/customer-4-150x150.jpg"" alt="""" />						
+														Bryan Cirius
+						<i>&#xE934;</i><i>&#xE934;</i><i>&#xE934;</i><i>&#xE934;</i><i>&#xE934;</i> 5/5		
+							Sed ut pers piciatis unde omnis iste natus error sit volup tatem accus antium dolore mque laudan tium, totam rem aperiam, eaque ipsa quae ab illo inventore.
+							<img width=""150"" height=""150"" src=""http://jalsasalana.ng/wp-content/uploads/2021/04/customer-3-150x150.jpg"" alt="""" />						
+														Jane Dowser
+															<img src=""http://jalsasalana.ng/wp-content/uploads/elementor/thumbs/322800179_549736330357432_5853203816526091244_n-qh1g3fvpjhuhcmgubh4xpwx68cygc25cqxd8sp5cxs.jpg"" title=""322800179_549736330357432_5853203816526091244_n"" alt=""322800179_549736330357432_5853203816526091244_n"" loading=""lazy"" />															
+			<h2>OPENNESS AND
+TRANSPARENCY</h2>		
+		<p>Our mosques remain open for all, to help breakdown barriers and build trust, integration and cohesion by enabling a better understanding of Islamic beliefs and their role in modern life.</p><p>We organise regular peace symposiums and run a free to view satellite channel MTA International (available on Sky 787) dedicated to spreading harmony among and between all people regardless of faith and background, further underlining our openness as a community that promotes integration based on mutual respect.</p>		
+			<a href=""#"">
+				<svg aria-hidden=""true"" viewBox=""0 0 448 512"" xmlns=""http://www.w3.org/2000/svg""><path d=""M190.5 66.9l22.2-22.2c9.4-9.4 24.6-9.4 33.9 0L441 239c9.4 9.4 9.4 24.6 0 33.9L246.6 467.3c-9.4 9.4-24.6 9.4-33.9 0l-22.2-22.2c-9.5-9.5-9.3-25 .4-34.3L311.4 296H24c-13.3 0-24-10.7-24-24v-32c0-13.3 10.7-24 24-24h287.4L190.9 101.2c-9.8-9.3-10-24.8-.4-34.3z""></path></svg>			
+						+234 802 376 5263
+					</a>"
+246,Services,"<h1>Services We Offer</h1><p>We offer a wide range of plumbing services right from repairs to replacements in domestic as well as commercial setups.</p>		
+			<h2>How can we help you?</h2>		
+															<img width=\"700\" height=\"500\" src=\"https://websitedemos.net/local-business-02/wp-content/uploads/sites/832/2021/04/drain-cleaning.jpg\" alt=\"\" loading=\"lazy\" srcset=\"https://websitedemos.net/local-business-02/wp-content/uploads/sites/832/2021/04/drain-cleaning.jpg 700w, https://websitedemos.net/local-business-02/wp-content/uploads/sites/832/2021/04/drain-cleaning-300x214.jpg 300w, https://websitedemos.net/local-business-02/wp-content/uploads/sites/832/2021/04/drain-cleaning-400x286.jpg 400w\" sizes=\"(max-width: 700px) 100vw, 700px\" />															
+			<h4>Drain Cleaning & Repairs</h4>		
+		Whether it is cleaning a clogged drain or replacing it, our men know what’s right and will offer you the best possible solution.		
+															<img width=\"700\" height=\"500\" src=\"https://websitedemos.net/local-business-02/wp-content/uploads/sites/832/2021/04/gas-pipeline.jpg\" alt=\"\" loading=\"lazy\" srcset=\"https://websitedemos.net/local-business-02/wp-content/uploads/sites/832/2021/04/gas-pipeline.jpg 700w, https://websitedemos.net/local-business-02/wp-content/uploads/sites/832/2021/04/gas-pipeline-300x214.jpg 300w, https://websitedemos.net/local-business-02/wp-content/uploads/sites/832/2021/04/gas-pipeline-400x286.jpg 400w\" sizes=\"(max-width: 700px) 100vw, 700px\" />															
+			<h4>Gas Line Services</h4>		
+		Whether you need an emergency repair or you are upgrading your home looking for new line installations, we can help.		
+															<img width=\"700\" height=\"500\" src=\"https://websitedemos.net/local-business-02/wp-content/uploads/sites/832/2021/04/commercial-plumbing.jpg\" alt=\"\" loading=\"lazy\" srcset=\"https://websitedemos.net/local-business-02/wp-content/uploads/sites/832/2021/04/commercial-plumbing.jpg 700w, https://websitedemos.net/local-business-02/wp-content/uploads/sites/832/2021/04/commercial-plumbing-300x214.jpg 300w, https://websitedemos.net/local-business-02/wp-content/uploads/sites/832/2021/04/commercial-plumbing-400x286.jpg 400w\" sizes=\"(max-width: 700px) 100vw, 700px\" />															
+			<h4>Commercial Plumbing</h4>		
+		From hotels to schools, we have the necessary equipment and training to provide top-quality services wherever you need them.		
+															<img width=\"700\" height=\"500\" src=\"https://websitedemos.net/local-business-02/wp-content/uploads/sites/832/2021/04/remodeling-services​.jpg\" alt=\"\" loading=\"lazy\" srcset=\"https://websitedemos.net/local-business-02/wp-content/uploads/sites/832/2021/04/remodeling-services​.jpg 700w, https://websitedemos.net/local-business-02/wp-content/uploads/sites/832/2021/04/remodeling-services​-300x214.jpg 300w, https://websitedemos.net/local-business-02/wp-content/uploads/sites/832/2021/04/remodeling-services​-400x286.jpg 400w\" sizes=\"(max-width: 700px) 100vw, 700px\" />															
+			<h4>Remodeling Services</h4>		
+		We are known for the best in town remodeling services that go hassle free with our trained professionals at work.		
+															<img width=\"700\" height=\"500\" src=\"https://websitedemos.net/local-business-02/wp-content/uploads/sites/832/2021/04/plumbing-services.jpg\" alt=\"\" loading=\"lazy\" srcset=\"https://websitedemos.net/local-business-02/wp-content/uploads/sites/832/2021/04/plumbing-services.jpg 700w, https://websitedemos.net/local-business-02/wp-content/uploads/sites/832/2021/04/plumbing-services-300x214.jpg 300w, https://websitedemos.net/local-business-02/wp-content/uploads/sites/832/2021/04/plumbing-services-400x286.jpg 400w\" sizes=\"(max-width: 700px) 100vw, 700px\" />															
+			<h4>Plumbing Services</h4>		
+		You can trust us with all your plumbing needs like repairs and installation of pipes, fixtures, sinks, Taps, Flush tank repair etc.		
+															<img width=\"700\" height=\"500\" src=\"https://websitedemos.net/local-business-02/wp-content/uploads/sites/832/2021/04/heating-and-cooling.jpg\" alt=\"\" loading=\"lazy\" srcset=\"https://websitedemos.net/local-business-02/wp-content/uploads/sites/832/2021/04/heating-and-cooling.jpg 700w, https://websitedemos.net/local-business-02/wp-content/uploads/sites/832/2021/04/heating-and-cooling-300x214.jpg 300w, https://websitedemos.net/local-business-02/wp-content/uploads/sites/832/2021/04/heating-and-cooling-400x286.jpg 400w\" sizes=\"(max-width: 700px) 100vw, 700px\" />															
+			<h4>Heating & Cooling</h4>		
+		We offer detailed HVAC repair and replacement services. Whether it is a periodic check-up or an annual maintenance, we can help.		
+			<a href=\"#\">
+						Book A Consultation
+					</a>
+															<img src=\"https://websitedemos.net/local-business-02/wp-content/uploads/sites/832/elementor/thumbs/emergency-p6fj1dvjr0y6g68d6x2m6mdowd49kr4gh2egt4vh1c.jpg\" title=\"emergency\" alt=\"emergency\" loading=\"lazy\" />															
+			<h2>We\'re here to help! Call Us Today!</h2>		
+			<a href=\"#\">
+						+1 234 567 890
+					</a>"
+247,Contact,"<style>/*! elementor - v3.18.0 - 08-12-2023 */
+.elementor-widget-image-box .elementor-image-box-content{width:100%}@media (min-width:768px){.elementor-widget-image-box.elementor-position-left .elementor-image-box-wrapper,.elementor-widget-image-box.elementor-position-right .elementor-image-box-wrapper{display:flex}.elementor-widget-image-box.elementor-position-right .elementor-image-box-wrapper{text-align:right;flex-direction:row-reverse}.elementor-widget-image-box.elementor-position-left .elementor-image-box-wrapper{text-align:left;flex-direction:row}.elementor-widget-image-box.elementor-position-top .elementor-image-box-img{margin:auto}.elementor-widget-image-box.elementor-vertical-align-top .elementor-image-box-wrapper{align-items:flex-start}.elementor-widget-image-box.elementor-vertical-align-middle .elementor-image-box-wrapper{align-items:center}.elementor-widget-image-box.elementor-vertical-align-bottom .elementor-image-box-wrapper{align-items:flex-end}}@media (max-width:767px){.elementor-widget-image-box .elementor-image-box-img{margin-left:auto!important;margin-right:auto!important;margin-bottom:15px}}.elementor-widget-image-box .elementor-image-box-img{display:inline-block}.elementor-widget-image-box .elementor-image-box-title a{color:inherit}.elementor-widget-image-box .elementor-image-box-wrapper{text-align:center}.elementor-widget-image-box .elementor-image-box-description{margin:0}</style><h1>Contact Us</h1>		
+			<style>/*! elementor - v3.18.0 - 08-12-2023 */
+.elementor-heading-title{padding:0;margin:0;line-height:1}.elementor-widget-heading .elementor-heading-title[class*=elementor-size-]>a{color:inherit;font-size:inherit;line-height:inherit}.elementor-widget-heading .elementor-heading-title.elementor-size-small{font-size:15px}.elementor-widget-heading .elementor-heading-title.elementor-size-medium{font-size:19px}.elementor-widget-heading .elementor-heading-title.elementor-size-large{font-size:29px}.elementor-widget-heading .elementor-heading-title.elementor-size-xl{font-size:39px}.elementor-widget-heading .elementor-heading-title.elementor-size-xxl{font-size:59px}</style><h5>CONTACT US</h5>		
+			<h2>Get in touch
+</h2>		
+		<p>We’re here to help. If you have any questions about the Jalsa or want to share impressions and experiences, you can contact us. We will also forward your request for volunteer work on the Jalsa Salana. We look forward to you!</p>		
+			<h3>Send Us A Message</h3>		
+		<form id=""wpforms-form-1192"" data-formid=""1192"" method=""post"" enctype=""multipart/form-data"" action=""/wp-admin/admin-ajax.php"" data-token=""5ca2c0408f633ca0d1dbfd0d5455f7c7""><noscript>Please enable JavaScript in your browser to complete this form.</noscript><label for=""wpforms-1192-field_0"">Name *</label><input type=""text"" id=""wpforms-1192-field_0"" name=""wpforms[fields][0][first]"" placeholder=""First Name"" required><label for=""wpforms-1192-field_0"">First</label><input type=""text"" id=""wpforms-1192-field_0-last"" name=""wpforms[fields][0][last]"" placeholder=""Last Name"" required><label for=""wpforms-1192-field_0-last"">Last</label><label for=""wpforms-1192-field_1"">Email *</label><input type=""email"" id=""wpforms-1192-field_1"" name=""wpforms[fields][1]"" placeholder=""Email Address"" spellcheck=""false"" required><label for=""wpforms-1192-field_2"">Comment or Message *</label><textarea id=""wpforms-1192-field_2"" name=""wpforms[fields][2]"" placeholder=""Your Message"" required></textarea><!-- .wpforms-field-container --><input type=""hidden"" name=""wpforms[id]"" value=""1192"">			<input
+				type=""hidden""
+				name=""wpforms[nonce]""
+				value=""5c4e16674b""
+			/>
+			<input type=""hidden"" name=""wpforms[author]"" value=""1""><button type=""submit"" name=""wpforms[submit]"" id=""wpforms-submit-1192"" data-alt-text=""Sending..."" data-submit-text=""Send Message"" aria-live=""assertive"" value=""wpforms-submit"">Send Message</button></form>  <!-- .wpforms-container -->		
+			<style>/*! elementor - v3.18.0 - 08-12-2023 */
+.elementor-widget-google_maps .elementor-widget-container{overflow:hidden}.elementor-widget-google_maps .elementor-custom-embed{line-height:0}.elementor-widget-google_maps iframe{height:300px}</style>		
+			<iframe loading=""lazy""
+					src=""https://maps.google.com/maps?q=Jamia%20Ahmadiyya%20Ilaro-Owode%20Road%2C%20%20Ilaro%2C%20Ogun%20State&#038;t=m&#038;z=10&#038;output=embed&#038;iwloc=near""
+					title=""Jamia Ahmadiyya Ilaro-Owode Road,  Ilaro, Ogun State""
+					aria-label=""Jamia Ahmadiyya Ilaro-Owode Road,  Ilaro, Ogun State""
+			></iframe>
+			<h2>Jamia Ahmadiyya Ilaro-Owode Road,  Ilaro, Ogun State</h2>		
+			<a href=""#"">
+				<svg aria-hidden=""true"" viewBox=""0 0 448 512"" xmlns=""http://www.w3.org/2000/svg""><path d=""M190.5 66.9l22.2-22.2c9.4-9.4 24.6-9.4 33.9 0L441 239c9.4 9.4 9.4 24.6 0 33.9L246.6 467.3c-9.4 9.4-24.6 9.4-33.9 0l-22.2-22.2c-9.5-9.5-9.3-25 .4-34.3L311.4 296H24c-13.3 0-24-10.7-24-24v-32c0-13.3 10.7-24 24-24h287.4L190.9 101.2c-9.8-9.3-10-24.8-.4-34.3z""></path></svg>			
+						+234 802 376 5263
+					</a>"
+1125,"Live feed",
+1195,Home,"<ul><li>Up Coming</li></ul>		
+					<h1>71st Jalsa Salana Nigeria</h1><p><b>71st Annual Convention</b>  |  
+19th – 21st December 2025. Ilaro, Ogun State</p>				
+					<a role=""button"">
+				<svg aria-hidden=""true"" viewBox=""0 0 448 512"" xmlns=""http://www.w3.org/2000/svg""><path d=""M190.5 66.9l22.2-22.2c9.4-9.4 24.6-9.4 33.9 0L441 239c9.4 9.4 9.4 24.6 0 33.9L246.6 467.3c-9.4 9.4-24.6 9.4-33.9 0l-22.2-22.2c-9.5-9.5-9.3-25 .4-34.3L311.4 296H24c-13.3 0-24-10.7-24-24v-32c0-13.3 10.7-24 24-24h287.4L190.9 101.2c-9.8-9.3-10-24.8-.4-34.3z""></path></svg>			
+									Programme of Event
+					</a>
+															<img width=""1280"" height=""1280"" src=""https://jalsasalana.ng/wp-content/uploads/2025/10/71st-jalsa-2025-green.jpg"" alt="""" srcset=""https://jalsasalana.ng/wp-content/uploads/2025/10/71st-jalsa-2025-green.jpg 1280w, https://jalsasalana.ng/wp-content/uploads/2025/10/71st-jalsa-2025-green-300x300.jpg 300w, https://jalsasalana.ng/wp-content/uploads/2025/10/71st-jalsa-2025-green-1024x1024.jpg 1024w, https://jalsasalana.ng/wp-content/uploads/2025/10/71st-jalsa-2025-green-150x150.jpg 150w, https://jalsasalana.ng/wp-content/uploads/2025/10/71st-jalsa-2025-green-768x768.jpg 768w"" sizes=""(max-width: 1280px) 100vw, 1280px"" />															
+					<h5>About the Jalsa Salana</h5>				
+					<h2>The Jalsa Salana is the annual 3-days general meeting of the Ahmadiyya Muslim Jamaat Nigeria.</h2>				
+		<p>With over 40,000 visitors, it is the largest regular gathering of Muslims in Nigeria. The history of the Jalsa Salana dates back to after 1891 when the founder of the reform movement, Hazrat Mirza Ghulam Ahmad Qadiani (as) first proclaimed the Jalsa Salana in Qadian (India). At that time, 75 members of the congregation attended. Since then, the Jalsa Salana has become firmly established in many countries around the world. For example, over 200,000 visitors attended the last Jalsa Salana in Pakistan, in 1983.</p>		
+					<a href=""https://jalsasalana.ng/ahmadiyya/"">
+				<svg aria-hidden=""true"" viewBox=""0 0 448 512"" xmlns=""http://www.w3.org/2000/svg""><path d=""M190.5 66.9l22.2-22.2c9.4-9.4 24.6-9.4 33.9 0L441 239c9.4 9.4 9.4 24.6 0 33.9L246.6 467.3c-9.4 9.4-24.6 9.4-33.9 0l-22.2-22.2c-9.5-9.5-9.3-25 .4-34.3L311.4 296H24c-13.3 0-24-10.7-24-24v-32c0-13.3 10.7-24 24-24h287.4L190.9 101.2c-9.8-9.3-10-24.8-.4-34.3z""></path></svg>			
+									Know More About Us
+					</a>
+					<h2>Objectives, Purpose &amp; <br>Blessings of Jalsa Salana</h2>				
+		<p>The primary purpose of this Convention is to enable every sincere individual to personally experience religious benefits; They may enhance their knowledge and – due to their being blessed and enabled by Allah, The Exalted – their perception [of Allah] may progress. Among its secondary benefits is that this congregational meeting together will promote mutual introduction among all brothers, and it will strengthen the fraternal ties within this Community.“</p>		
+					<a href=""#"">
+									Hadhrat Mirza Ghulam Ahmad Qadiani (as), (Ishtihar 7 Dec. 1892, Majmoo`ah Ishtiharat Vol. I, Page 340)
+					</a>
+															<img src=""https://jalsasalana.ng/wp-content/uploads/elementor/thumbs/321565323_5790593367670753_8475051458437577127_n-qh0hw8y1pofq3yudmaayrlnr19ck4gedh37h72nf60.jpg"" title=""321565323_5790593367670753_8475051458437577127_n"" alt=""321565323_5790593367670753_8475051458437577127_n"" loading=""lazy"" />															
+					<h2>Jalsa Salana 2025</h2>				
+																<a href=""https://jalsasalana.ng/news/"">
+							<img width=""1024"" height=""683"" src=""https://jalsasalana.ng/wp-content/uploads/2023/12/321338844_563381655232570_8212325114854241156_n-1024x683.jpg"" alt="""" srcset=""https://jalsasalana.ng/wp-content/uploads/2023/12/321338844_563381655232570_8212325114854241156_n-1024x683.jpg 1024w, https://jalsasalana.ng/wp-content/uploads/2023/12/321338844_563381655232570_8212325114854241156_n-300x200.jpg 300w, https://jalsasalana.ng/wp-content/uploads/2023/12/321338844_563381655232570_8212325114854241156_n-768x512.jpg 768w, https://jalsasalana.ng/wp-content/uploads/2023/12/321338844_563381655232570_8212325114854241156_n.jpg 1440w"" sizes=""(max-width: 1024px) 100vw, 1024px"" />								</a>
+					<h4><a href=""https://jalsasalana.ng/news/"">Information</a></h4>				
+		<p>Are you looking for information about the Jalsa? Follow this link.</p>		
+																<a href=""https://jalsasalana.ng/wp-content/uploads/2025/12/Jalsa-Salana-2025-Programe-of-Event.pdf"">
+							<img width=""1024"" height=""1024"" src=""https://jalsasalana.ng/wp-content/uploads/2025/10/71st-jalsa-2025-white-1024x1024.jpg"" alt="""" srcset=""https://jalsasalana.ng/wp-content/uploads/2025/10/71st-jalsa-2025-white-1024x1024.jpg 1024w, https://jalsasalana.ng/wp-content/uploads/2025/10/71st-jalsa-2025-white-300x300.jpg 300w, https://jalsasalana.ng/wp-content/uploads/2025/10/71st-jalsa-2025-white-150x150.jpg 150w, https://jalsasalana.ng/wp-content/uploads/2025/10/71st-jalsa-2025-white-768x768.jpg 768w, https://jalsasalana.ng/wp-content/uploads/2025/10/71st-jalsa-2025-white.jpg 1280w"" sizes=""(max-width: 1024px) 100vw, 1024px"" />								</a>
+					<h4><a href=""https://jalsasalana.ng/wp-content/uploads/2025/12/Jalsa-Salana-2025-Programe-of-Event.pdf"">Program of the Jalsa Salana 2025</a></h4>				
+		<p><a href=""https://jalsasalana.ng/wp-content/uploads/2025/12/Jalsa-Salana-2025-Programe-of-Event.pdf"">Click here</a> for details about the Jalsa Salana program.</p>		
+																<a href=""https://jalsasalana.ng/transportation/"">
+							<img src=""https://www.alhakam.org/wp-content/uploads/2021/07/IMG_20210713_131608_042.jpg"" title="""" alt="""" loading=""lazy"" />								</a>
+					<h4><a href=""https://jalsasalana.ng/transportation/"">Transportation</a></h4>				
+		<p>Need information about Transportation at Jalsa? Click here for more details.</p>		
+																<a href=""https://jalsasalana.ng/accommodation/"">
+							<img src=""https://jalsasalana.ng/wp-content/uploads/2023/12/cf446055-8c01-4541-9d43-a6f170f6db9b.jpeg"" title="""" alt="""" loading=""lazy"" />								</a>
+					<h4><a href=""https://jalsasalana.ng/accommodation/"">Accomodation</a></h4>				
+		<p>Several hotels around Jalsa Gah are providing a discounted hotel rate to Jalsa guests. Please click here for the full and updated hotel list.</p>		
+																<a href=""https://jalsasalana.ng/news/"">
+							<img width=""1024"" height=""682"" src=""https://jalsasalana.ng/wp-content/uploads/2023/12/18402a66-257e-4945-8d4f-d1245c47e563-1024x682.jpeg"" alt="""" srcset=""https://jalsasalana.ng/wp-content/uploads/2023/12/18402a66-257e-4945-8d4f-d1245c47e563-1024x682.jpeg 1024w, https://jalsasalana.ng/wp-content/uploads/2023/12/18402a66-257e-4945-8d4f-d1245c47e563-300x200.jpeg 300w, https://jalsasalana.ng/wp-content/uploads/2023/12/18402a66-257e-4945-8d4f-d1245c47e563-768x512.jpeg 768w, https://jalsasalana.ng/wp-content/uploads/2023/12/18402a66-257e-4945-8d4f-d1245c47e563.jpeg 1280w"" sizes=""(max-width: 1024px) 100vw, 1024px"" />								</a>
+					<h4><a href=""https://jalsasalana.ng/news/"">Special Events</a></h4>				
+		<p>More information for our international guests is at this link.</p>		
+																<a href=""https://jalsa.ahmadiyyanigeria.net"">
+							<img width=""1024"" height=""1024"" src=""https://jalsasalana.ng/wp-content/uploads/2025/10/71st-jalsa-2025-green-1024x1024.jpg"" alt="""" srcset=""https://jalsasalana.ng/wp-content/uploads/2025/10/71st-jalsa-2025-green-1024x1024.jpg 1024w, https://jalsasalana.ng/wp-content/uploads/2025/10/71st-jalsa-2025-green-300x300.jpg 300w, https://jalsasalana.ng/wp-content/uploads/2025/10/71st-jalsa-2025-green-150x150.jpg 150w, https://jalsasalana.ng/wp-content/uploads/2025/10/71st-jalsa-2025-green-768x768.jpg 768w, https://jalsasalana.ng/wp-content/uploads/2025/10/71st-jalsa-2025-green.jpg 1280w"" sizes=""(max-width: 1024px) 100vw, 1024px"" />								</a>
+					<h4><a href=""https://jalsa.ahmadiyyanigeria.net"">Registration</a></h4>				
+		<p>Click here for Registering for Jalsa Salana.</p>		
+					<a href=""#"">
+				<svg aria-hidden=""true"" viewBox=""0 0 448 512"" xmlns=""http://www.w3.org/2000/svg""><path d=""M190.5 66.9l22.2-22.2c9.4-9.4 24.6-9.4 33.9 0L441 239c9.4 9.4 9.4 24.6 0 33.9L246.6 467.3c-9.4 9.4-24.6 9.4-33.9 0l-22.2-22.2c-9.5-9.5-9.3-25 .4-34.3L311.4 296H24c-13.3 0-24-10.7-24-24v-32c0-13.3 10.7-24 24-24h287.4L190.9 101.2c-9.8-9.3-10-24.8-.4-34.3z""></path></svg>			
+									View All Services
+					</a>
+					<h2>What Our Customers Say About Us</h2>				
+				<i aria-hidden=""true"">&#xE934;</i><i aria-hidden=""true"">&#xE934;</i><i aria-hidden=""true"">&#xE934;</i><i aria-hidden=""true"">&#xE934;</i><i aria-hidden=""true"">&#xE934;</i>				Rated 5 out of 5
+							Sed ut pers piciatis unde omnis iste natus error sit volup tatem accus antium dolore mque laudan tium, totam rem aperiam, eaque ipsa quae ab illo inventore.
+							<img width=""150"" height=""150"" src=""https://jalsasalana.ng/wp-content/uploads/2021/04/customer-1-150x150.jpg"" alt="""" />						
+														Martin Foster
+				<i aria-hidden=""true"">&#xE934;</i><i aria-hidden=""true"">&#xE934;</i><i aria-hidden=""true"">&#xE934;</i><i aria-hidden=""true"">&#xE934;</i><i aria-hidden=""true"">&#xE934;</i>				Rated 5 out of 5
+							Sed ut pers piciatis unde omnis iste natus error sit volup tatem accus antium dolore mque laudan tium, totam rem aperiam, eaque ipsa quae ab illo inventore.
+							<img width=""150"" height=""150"" src=""https://jalsasalana.ng/wp-content/uploads/2021/06/customer-4-150x150.jpg"" alt="""" />						
+														Bryan Cirius
+				<i aria-hidden=""true"">&#xE934;</i><i aria-hidden=""true"">&#xE934;</i><i aria-hidden=""true"">&#xE934;</i><i aria-hidden=""true"">&#xE934;</i><i aria-hidden=""true"">&#xE934;</i>				Rated 5 out of 5
+							Sed ut pers piciatis unde omnis iste natus error sit volup tatem accus antium dolore mque laudan tium, totam rem aperiam, eaque ipsa quae ab illo inventore.
+							<img width=""150"" height=""150"" src=""https://jalsasalana.ng/wp-content/uploads/2021/04/customer-3-150x150.jpg"" alt="""" />						
+														Jane Dowser
+					<h2>Our Work</h2>				
+															<img width=""400"" height=""400"" src=""https://jalsasalana.ng/wp-content/uploads/2021/04/masnory-gallery-8.jpg"" alt="""" srcset=""https://jalsasalana.ng/wp-content/uploads/2021/04/masnory-gallery-8.jpg 400w, https://jalsasalana.ng/wp-content/uploads/2021/04/masnory-gallery-8-300x300.jpg 300w, https://jalsasalana.ng/wp-content/uploads/2021/04/masnory-gallery-8-150x150.jpg 150w"" sizes=""(max-width: 400px) 100vw, 400px"" />															
+															<img width=""300"" height=""450"" src=""https://jalsasalana.ng/wp-content/uploads/2021/04/masnory-gallery-4.jpg"" alt="""" srcset=""https://jalsasalana.ng/wp-content/uploads/2021/04/masnory-gallery-4.jpg 300w, https://jalsasalana.ng/wp-content/uploads/2021/04/masnory-gallery-4-200x300.jpg 200w"" sizes=""(max-width: 300px) 100vw, 300px"" />															
+															<img width=""300"" height=""450"" src=""https://jalsasalana.ng/wp-content/uploads/2021/04/masnory-gallery-5.jpg"" alt="""" srcset=""https://jalsasalana.ng/wp-content/uploads/2021/04/masnory-gallery-5.jpg 300w, https://jalsasalana.ng/wp-content/uploads/2021/04/masnory-gallery-5-200x300.jpg 200w"" sizes=""(max-width: 300px) 100vw, 300px"" />															
+															<img width=""500"" height=""350"" src=""https://jalsasalana.ng/wp-content/uploads/2021/04/masnory-gallery-2.jpg"" alt="""" srcset=""https://jalsasalana.ng/wp-content/uploads/2021/04/masnory-gallery-2.jpg 500w, https://jalsasalana.ng/wp-content/uploads/2021/04/masnory-gallery-2-300x210.jpg 300w"" sizes=""(max-width: 500px) 100vw, 500px"" />															
+															<img width=""500"" height=""350"" src=""https://jalsasalana.ng/wp-content/uploads/2021/04/masnory-gallery-1.jpg"" alt="""" srcset=""https://jalsasalana.ng/wp-content/uploads/2021/04/masnory-gallery-1.jpg 500w, https://jalsasalana.ng/wp-content/uploads/2021/04/masnory-gallery-1-300x210.jpg 300w"" sizes=""(max-width: 500px) 100vw, 500px"" />															
+															<img width=""600"" height=""742"" src=""https://jalsasalana.ng/wp-content/uploads/2021/04/about-img.jpg"" alt="""" srcset=""https://jalsasalana.ng/wp-content/uploads/2021/04/about-img.jpg 600w, https://jalsasalana.ng/wp-content/uploads/2021/04/about-img-243x300.jpg 243w"" sizes=""(max-width: 600px) 100vw, 600px"" />															
+															<img width=""300"" height=""450"" src=""https://jalsasalana.ng/wp-content/uploads/2021/04/masnory-gallery-6.jpg"" alt="""" srcset=""https://jalsasalana.ng/wp-content/uploads/2021/04/masnory-gallery-6.jpg 300w, https://jalsasalana.ng/wp-content/uploads/2021/04/masnory-gallery-6-200x300.jpg 200w"" sizes=""(max-width: 300px) 100vw, 300px"" />															
+															<img width=""960"" height=""640"" src=""https://jalsasalana.ng/wp-content/uploads/2021/04/plumbing-about.jpg"" alt="""" srcset=""https://jalsasalana.ng/wp-content/uploads/2021/04/plumbing-about.jpg 960w, https://jalsasalana.ng/wp-content/uploads/2021/04/plumbing-about-300x200.jpg 300w, https://jalsasalana.ng/wp-content/uploads/2021/04/plumbing-about-768x512.jpg 768w"" sizes=""(max-width: 960px) 100vw, 960px"" />															
+															<img width=""400"" height=""400"" src=""https://jalsasalana.ng/wp-content/uploads/2021/04/masnory-gallery-7.jpg"" alt="""" srcset=""https://jalsasalana.ng/wp-content/uploads/2021/04/masnory-gallery-7.jpg 400w, https://jalsasalana.ng/wp-content/uploads/2021/04/masnory-gallery-7-300x300.jpg 300w, https://jalsasalana.ng/wp-content/uploads/2021/04/masnory-gallery-7-150x150.jpg 150w"" sizes=""(max-width: 400px) 100vw, 400px"" />															
+															<img width=""500"" height=""350"" src=""https://jalsasalana.ng/wp-content/uploads/2021/04/masnory-gallery-3.jpg"" alt="""" srcset=""https://jalsasalana.ng/wp-content/uploads/2021/04/masnory-gallery-3.jpg 500w, https://jalsasalana.ng/wp-content/uploads/2021/04/masnory-gallery-3-300x210.jpg 300w"" sizes=""(max-width: 500px) 100vw, 500px"" />															
+															<img src=""https://jalsasalana.ng/wp-content/uploads/elementor/thumbs/321454093_481375850712496_6362493150715341000_n-1-qh0hvimkebfp2vwlvyxetsauegya4xhw1gxvrbqg08.jpg"" title=""321454093_481375850712496_6362493150715341000_n (1)"" alt=""321454093_481375850712496_6362493150715341000_n (1)"" loading=""lazy"" />															
+					<h2>Info-Hotline for the Jalsa Salana</h2>				
+		<p>With our team, we are always available by phone for inquiries regarding Jalsa Salana Nigeria</p>		
+					<a href=""#"">
+				<svg aria-hidden=""true"" viewBox=""0 0 448 512"" xmlns=""http://www.w3.org/2000/svg""><path d=""M190.5 66.9l22.2-22.2c9.4-9.4 24.6-9.4 33.9 0L441 239c9.4 9.4 9.4 24.6 0 33.9L246.6 467.3c-9.4 9.4-24.6 9.4-33.9 0l-22.2-22.2c-9.5-9.5-9.3-25 .4-34.3L311.4 296H24c-13.3 0-24-10.7-24-24v-32c0-13.3 10.7-24 24-24h287.4L190.9 101.2c-9.8-9.3-10-24.8-.4-34.3z""></path></svg>			
+									+234 802 376 5263
+					</a>"
+1581,Khilafat,"<style>/*! elementor - v3.18.0 - 08-12-2023 */
+.elementor-widget-image-box .elementor-image-box-content{width:100%}@media (min-width:768px){.elementor-widget-image-box.elementor-position-left .elementor-image-box-wrapper,.elementor-widget-image-box.elementor-position-right .elementor-image-box-wrapper{display:flex}.elementor-widget-image-box.elementor-position-right .elementor-image-box-wrapper{text-align:right;flex-direction:row-reverse}.elementor-widget-image-box.elementor-position-left .elementor-image-box-wrapper{text-align:left;flex-direction:row}.elementor-widget-image-box.elementor-position-top .elementor-image-box-img{margin:auto}.elementor-widget-image-box.elementor-vertical-align-top .elementor-image-box-wrapper{align-items:flex-start}.elementor-widget-image-box.elementor-vertical-align-middle .elementor-image-box-wrapper{align-items:center}.elementor-widget-image-box.elementor-vertical-align-bottom .elementor-image-box-wrapper{align-items:flex-end}}@media (max-width:767px){.elementor-widget-image-box .elementor-image-box-img{margin-left:auto!important;margin-right:auto!important;margin-bottom:15px}}.elementor-widget-image-box .elementor-image-box-img{display:inline-block}.elementor-widget-image-box .elementor-image-box-title a{color:inherit}.elementor-widget-image-box .elementor-image-box-wrapper{text-align:center}.elementor-widget-image-box .elementor-image-box-description{margin:0}</style><h1>About Khilafat</h1><p>The word Khilafat means succession, and the Khalifa is a successor to a Prophet of Allah whose goal is to carry to completion the tasks of reformation and moral training that were seeded by the Prophet. </p>		
+			<style>/*! elementor - v3.18.0 - 08-12-2023 */
+.elementor-widget-image{text-align:center}.elementor-widget-image a{display:inline-block}.elementor-widget-image a img[src$="".svg""]{width:48px}.elementor-widget-image img{vertical-align:middle;display:inline-block}</style>												<img width=""608"" height=""730"" src=""http://jalsasalana.ng/wp-content/uploads/2023/12/The-Promised-Messiah.webp"" alt="""" srcset=""http://jalsasalana.ng/wp-content/uploads/2023/12/The-Promised-Messiah.webp 608w, http://jalsasalana.ng/wp-content/uploads/2023/12/The-Promised-Messiah-250x300.webp 250w"" sizes=""(max-width: 608px) 100vw, 608px"" />															
+			<style>/*! elementor - v3.18.0 - 08-12-2023 */
+.elementor-heading-title{padding:0;margin:0;line-height:1}.elementor-widget-heading .elementor-heading-title[class*=elementor-size-]>a{color:inherit;font-size:inherit;line-height:inherit}.elementor-widget-heading .elementor-heading-title.elementor-size-small{font-size:15px}.elementor-widget-heading .elementor-heading-title.elementor-size-medium{font-size:19px}.elementor-widget-heading .elementor-heading-title.elementor-size-large{font-size:29px}.elementor-widget-heading .elementor-heading-title.elementor-size-xl{font-size:39px}.elementor-widget-heading .elementor-heading-title.elementor-size-xxl{font-size:59px}</style><h2>HAZRAT MIRZA GHULAM AHMAD (as)
+</h2>		
+			<h2>Imam Mahdi (The Promised Messiah)
+</h2>		
+			<h2>The community of followers of a Prophet of Allah continues to nurture its faith and practices under the blessing of the institution of Khilafat for as long as Allah wishes. Allah says in the Holy Quran:</h2>		
+		<p>Allah had promised to those among you who believe and do good works that He will surely make them Successors in the earth, as He made Successors from among those who were before them; and that He will surely establish for them their religion which He has chosen for them; and that He will surely give them in exchange security and peace after their fear: They will worship Me, and they will not associate anything with Me. Then whoso is ungrateful after that, they will be the rebellious. (Surah Al-Nur, Verse 56).</p>		
+			<h3>Hazrat Mirza Bashir Ahmad(ra) writes:</h3>		
+		<p>God Almighty does everything through wisdom and foresight, and there is always a good reason and logic behind it. According to nature’s physical laws, man has only a limited life span, but the task of reformation and training of society requires a much longer time. So, Allah has established the system of Khilafat after the system of Prophethood. The Khalifah continues and carries on the task of the Prophet. The seed sown by the Prophet is protected and nurtured by the Khalifah till it becomes a strong and sturdy tree. It shows that in fact Khilafat is an offshoot or branch of the system of Prophethood, that is why the Holy Prophet<sup>(sa)</sup> says that after every Prophet, the system of Khilafat is established. (taken from <em>Welcome to Ahmadiyyat</em>).</p><p>Just as Allah appoints a Prophet, it is He who appoints a Khalifa as well. He chooses the person who is most eligible to become a Khalifa, and guides a group of pious believers into manifesting His Will through a process of selection of the Khalifa. Thus, it may apparently seem that the Khalifa is chosen by a group of pious people, but it is in fact the Will of Allah that guides their faculties into choosing the Khalifa of His Choice. Once a Khalifa is selected, he remains a Khalifa for the rest of his life as a living testament to Divine Will.<br /><br />Khilafat establishes the authority of Allah on earth, and the Khalifa strives to uphold that authority within the community of followers. For the believers, Khilafat is an embodiment of Allah’s Unity, as they choose to take divine authority through the person of the Khalifa. The believers partake of the blessings of Khilafat by holding firm to their faith and practices, united under him.</p>		
+															<img width=""1752"" height=""928"" src=""http://jalsasalana.ng/wp-content/uploads/2023/12/153.jpg"" alt="""" srcset=""http://jalsasalana.ng/wp-content/uploads/2023/12/153.jpg 1752w, http://jalsasalana.ng/wp-content/uploads/2023/12/153-300x159.jpg 300w, http://jalsasalana.ng/wp-content/uploads/2023/12/153-1024x542.jpg 1024w, http://jalsasalana.ng/wp-content/uploads/2023/12/153-768x407.jpg 768w, http://jalsasalana.ng/wp-content/uploads/2023/12/153-1536x814.jpg 1536w"" sizes=""(max-width: 1752px) 100vw, 1752px"" />															
+			<h2>Info-Hotline for the Jalsa Salana</h2>		
+			<a href=""#"">
+				<svg aria-hidden=""true"" viewBox=""0 0 448 512"" xmlns=""http://www.w3.org/2000/svg""><path d=""M190.5 66.9l22.2-22.2c9.4-9.4 24.6-9.4 33.9 0L441 239c9.4 9.4 9.4 24.6 0 33.9L246.6 467.3c-9.4 9.4-24.6 9.4-33.9 0l-22.2-22.2c-9.5-9.5-9.3-25 .4-34.3L311.4 296H24c-13.3 0-24-10.7-24-24v-32c0-13.3 10.7-24 24-24h287.4L190.9 101.2c-9.8-9.3-10-24.8-.4-34.3z""></path></svg>			
+						+234 802 376 5263
+					</a>"
+1583,About,"<h1>About Us</h1><p>We are a team of 30 plumbing professionals with an experience of 20 years in domestic and commercial plumbing services.</p>		
+															<img src=""https://websitedemos.net/local-business-02/wp-content/uploads/sites/832/elementor/thumbs/why-choose-us-p6dpqrzat55gttaj9e4rjuc5rm6x4qczldnifi683g.jpg"" title=""why-choose-us"" alt=""why-choose-us"" loading=""lazy"" />															
+			<h2>We Solve Plumbing and Heating Problems with Most Efficiency</h2>		
+		We started off as a small 2 men army offering dedicated plumbing solutions in the neighborhood. This then expanded into a larger team offering a wider range of services at affordable prices. Whether it's repair or replacement, we make sure it’s done well.		
+			<h3>Our Mission</h3>		
+		We strive to provide the most reliable and efficient plumbing services, without compromising on quality or safety. We also aim to prove our quality skills, fair prices and customer care, so that we continue our business relationship for many years, beyond the first job we complete.		
+			<h3>Core Values</h3>		
+					<ul>
+							<li>
+										Consider honesty as the key to a business’ trustworthiness and integrity.
+									</li>
+								<li>
+										Always do the right thing to solve the customer’s problem.
+									</li>
+								<li>
+										Perform all work with the highest level of excellence in mind.
+									</li>
+						</ul>
+			<h2>Why Choose Us?</h2>		
+		We show you our appreciation by going above and beyond, ensuring a flawless experience. We can be your top choice today!		
+					<ul>
+							<li>
+										Highly qualified staff
+									</li>
+								<li>
+										Honest and flat-rate pricing
+									</li>
+								<li>
+										100% satisfaction guaranteed
+									</li>
+								<li>
+										Wide service area
+									</li>
+								<li>
+										On-demand emergency services
+									</li>
+						</ul>
+															<img src=""https://websitedemos.net/local-business-02/wp-content/uploads/sites/832/elementor/thumbs/plumbing-about-p6f4oydpn17ug438u4vhh1papz33wcaqnyuths3k5c.jpg"" title=""plumbing-about"" alt=""plumbing-about"" loading=""lazy"" />															
+						<i>&#xE934;</i><i>&#xE934;</i><i>&#xE934;</i><i>&#xE934;</i><i>&#xE934;</i> 5/5		
+							Sed ut pers piciatis unde omnis iste natus error sit volup tatem accus antium dolore mque laudan tium, totam rem aperiam, eaque ipsa quae ab illo inventore.
+							<img width=""150"" height=""150"" src=""https://websitedemos.net/local-business-02/wp-content/uploads/sites/832/2021/04/customer-1-150x150.jpg"" alt="""" loading=""lazy"" />						
+														Martin Foster
+						<i>&#xE934;</i><i>&#xE934;</i><i>&#xE934;</i><i>&#xE934;</i><i>&#xE934;</i> 5/5		
+							Sed ut pers piciatis unde omnis iste natus error sit volup tatem accus antium dolore mque laudan tium, totam rem aperiam, eaque ipsa quae ab illo inventore.
+							<img width=""150"" height=""150"" src=""https://websitedemos.net/local-business-02/wp-content/uploads/sites/832/2021/06/customer-4-150x150.jpg"" alt="""" loading=""lazy"" />						
+														Bryan Cirius
+						<i>&#xE934;</i><i>&#xE934;</i><i>&#xE934;</i><i>&#xE934;</i><i>&#xE934;</i> 5/5		
+							Sed ut pers piciatis unde omnis iste natus error sit volup tatem accus antium dolore mque laudan tium, totam rem aperiam, eaque ipsa quae ab illo inventore.
+							<img width=""150"" height=""150"" src=""https://websitedemos.net/local-business-02/wp-content/uploads/sites/832/2021/04/customer-3-150x150.jpg"" alt="""" loading=""lazy"" />						
+														Jane Dowser
+						<i>&#xE934;</i><i>&#xE934;</i><i>&#xE934;</i><i>&#xE934;</i><i>&#xE934;</i> 5/5		
+							Sed ut pers piciatis unde omnis iste natus error sit volup tatem accus antium dolore mque laudan tium, totam rem aperiam, eaque ipsa quae ab illo inventore.
+							<img width=""150"" height=""150"" src=""https://websitedemos.net/local-business-02/wp-content/uploads/sites/832/2021/04/customer-1-150x150.jpg"" alt="""" loading=""lazy"" />						
+														Martin Foster
+						<i>&#xE934;</i><i>&#xE934;</i><i>&#xE934;</i><i>&#xE934;</i><i>&#xE934;</i> 5/5		
+							Sed ut pers piciatis unde omnis iste natus error sit volup tatem accus antium dolore mque laudan tium, totam rem aperiam, eaque ipsa quae ab illo inventore.
+							<img width=""150"" height=""150"" src=""https://websitedemos.net/local-business-02/wp-content/uploads/sites/832/2021/06/customer-4-150x150.jpg"" alt="""" loading=""lazy"" />						
+														Bryan Cirius
+						<i>&#xE934;</i><i>&#xE934;</i><i>&#xE934;</i><i>&#xE934;</i><i>&#xE934;</i> 5/5		
+							Sed ut pers piciatis unde omnis iste natus error sit volup tatem accus antium dolore mque laudan tium, totam rem aperiam, eaque ipsa quae ab illo inventore.
+							<img width=""150"" height=""150"" src=""https://websitedemos.net/local-business-02/wp-content/uploads/sites/832/2021/04/customer-3-150x150.jpg"" alt="""" loading=""lazy"" />						
+														Jane Dowser
+															<img src=""https://websitedemos.net/local-business-02/wp-content/uploads/sites/832/elementor/thumbs/emergency-p6fj1dvjr0y6g68d6x2m6mdowd49kr4gh2egt4vh1c.jpg"" title=""emergency"" alt=""emergency"" loading=""lazy"" />															
+			<h2>We're here to help! Call Us Today!</h2>		
+			<a href=""#"">
+						+1 234 567 890
+					</a>"
+1587,Ahmadiyya,"<h1>About Ahmadiyya</h1><p>The Ahmadiyya Muslim Community are Muslims who believe in the Messiah, Mirza Ghulam Ahmad (peace be on him) (1835-1908) of Qadian.</p>		
+															<img src=""https://jalsasalana.ng/wp-content/uploads/elementor/thumbs/Friday-Sermon-qh1c8vi81q6wr8fb488rpldyg6tx6507w272z5nmfs.jpg"" title=""Friday-Sermon"" alt=""Friday-Sermon"" loading=""lazy"" />															
+			<h2>Ahmadiyya Muslim Community</h2>		
+		<p>The Ahmadiyya Muslim Community are Muslims who believe in the Messiah, Mirza Ghulam Ahmad (peace be on him) (1835-1908) of Qadian. Mirza Ghulam Ahmad founded the Ahmadiyya Muslim Community in 1889 as a revival movement within Islam, emphasizing its essential teachings of peace, love, justice, and sanctity of life. Today, the Ahmadiyya Muslim Community is the world’s largest Islamic community under one Divinely appointed leader, His Holiness, Mirza Masroor Ahmad (may Allah be his Helper) (b. 1950). The Ahmadiyya Muslim Community spans over 200 nations with membership exceeding tens of millions.</p>		
+			<h3>Our Mission</h3>		
+		We strive to provide the most reliable and efficient plumbing services, without compromising on quality or safety. We also aim to prove our quality skills, fair prices and customer care, so that we continue our business relationship for many years, beyond the first job we complete.		
+			<h3>Core Values</h3>		
+					<ul>
+							<li>
+							<svg aria-hidden=""true"" viewBox=""0 0 512 512"" xmlns=""http://www.w3.org/2000/svg""><path d=""M504 256c0 136.967-111.033 248-248 248S8 392.967 8 256 119.033 8 256 8s248 111.033 248 248zM227.314 387.314l184-184c6.248-6.248 6.248-16.379 0-22.627l-22.627-22.627c-6.248-6.249-16.379-6.249-22.628 0L216 308.118l-70.059-70.059c-6.248-6.248-16.379-6.248-22.628 0l-22.627 22.627c-6.248 6.248-6.248 16.379 0 22.627l104 104c6.249 6.249 16.379 6.249 22.628.001z""></path></svg>						
+										Consider honesty as the key to a business’ trustworthiness and integrity.
+									</li>
+								<li>
+							<svg aria-hidden=""true"" viewBox=""0 0 512 512"" xmlns=""http://www.w3.org/2000/svg""><path d=""M504 256c0 136.967-111.033 248-248 248S8 392.967 8 256 119.033 8 256 8s248 111.033 248 248zM227.314 387.314l184-184c6.248-6.248 6.248-16.379 0-22.627l-22.627-22.627c-6.248-6.249-16.379-6.249-22.628 0L216 308.118l-70.059-70.059c-6.248-6.248-16.379-6.248-22.628 0l-22.627 22.627c-6.248 6.248-6.248 16.379 0 22.627l104 104c6.249 6.249 16.379 6.249 22.628.001z""></path></svg>						
+										Always do the right thing to solve the customer’s problem.
+									</li>
+								<li>
+							<svg aria-hidden=""true"" viewBox=""0 0 512 512"" xmlns=""http://www.w3.org/2000/svg""><path d=""M504 256c0 136.967-111.033 248-248 248S8 392.967 8 256 119.033 8 256 8s248 111.033 248 248zM227.314 387.314l184-184c6.248-6.248 6.248-16.379 0-22.627l-22.627-22.627c-6.248-6.249-16.379-6.249-22.628 0L216 308.118l-70.059-70.059c-6.248-6.248-16.379-6.248-22.628 0l-22.627 22.627c-6.248 6.248-6.248 16.379 0 22.627l104 104c6.249 6.249 16.379 6.249 22.628.001z""></path></svg>						
+										Perform all work with the highest level of excellence in mind.
+									</li>
+						</ul>
+			<h2>The Promised Messiah – Hazrat Mirza Ghulam Ahmad (peace be on him)</h2>		
+		<p>On February 13<sup>th</sup>, 1835, in the small Indian village of Qadian, a man named Hazrat Mirza Ghulam Ahmad<sup>(as)</sup> was born. He belonged to a well-known and noble family.</p><p>All religions contain prophecies that foretell the advent of a special individual, who will come as a reformer in the latter days. In Islam, Muslims await a promised Mahdi and Messiah. The advent of the Promised Messiah<sup>(as)</sup> was prophesized by the Holy Prophet<sup>(sa)</sup> himself.</p>		
+															<img src=""https://jalsasalana.ng/wp-content/uploads/elementor/thumbs/The-Promised-Messiah-qh1bsw8zv4auxaam38wmsipuij531hlb3hg37c1pio.webp"" title=""The-Promised-Messiah"" alt=""The-Promised-Messiah"" loading=""lazy"" />															
+						<i>&#xE934;</i><i>&#xE934;</i><i>&#xE934;</i><i>&#xE934;</i><i>&#xE934;</i> 5/5		
+							Sed ut pers piciatis unde omnis iste natus error sit volup tatem accus antium dolore mque laudan tium, totam rem aperiam, eaque ipsa quae ab illo inventore.
+							<img width=""150"" height=""150"" src=""https://jalsasalana.ng/wp-content/uploads/2021/04/customer-1-150x150.jpg"" alt="""" />						
+														Martin Foster
+						<i>&#xE934;</i><i>&#xE934;</i><i>&#xE934;</i><i>&#xE934;</i><i>&#xE934;</i> 5/5		
+							Sed ut pers piciatis unde omnis iste natus error sit volup tatem accus antium dolore mque laudan tium, totam rem aperiam, eaque ipsa quae ab illo inventore.
+							<img width=""150"" height=""150"" src=""https://jalsasalana.ng/wp-content/uploads/2021/06/customer-4-150x150.jpg"" alt="""" />						
+														Bryan Cirius
+						<i>&#xE934;</i><i>&#xE934;</i><i>&#xE934;</i><i>&#xE934;</i><i>&#xE934;</i> 5/5		
+							Sed ut pers piciatis unde omnis iste natus error sit volup tatem accus antium dolore mque laudan tium, totam rem aperiam, eaque ipsa quae ab illo inventore.
+							<img width=""150"" height=""150"" src=""https://jalsasalana.ng/wp-content/uploads/2021/04/customer-3-150x150.jpg"" alt="""" />						
+														Jane Dowser
+						<i>&#xE934;</i><i>&#xE934;</i><i>&#xE934;</i><i>&#xE934;</i><i>&#xE934;</i> 5/5		
+							Sed ut pers piciatis unde omnis iste natus error sit volup tatem accus antium dolore mque laudan tium, totam rem aperiam, eaque ipsa quae ab illo inventore.
+							<img width=""150"" height=""150"" src=""https://jalsasalana.ng/wp-content/uploads/2021/04/customer-1-150x150.jpg"" alt="""" />						
+														Martin Foster
+						<i>&#xE934;</i><i>&#xE934;</i><i>&#xE934;</i><i>&#xE934;</i><i>&#xE934;</i> 5/5		
+							Sed ut pers piciatis unde omnis iste natus error sit volup tatem accus antium dolore mque laudan tium, totam rem aperiam, eaque ipsa quae ab illo inventore.
+							<img width=""150"" height=""150"" src=""https://jalsasalana.ng/wp-content/uploads/2021/06/customer-4-150x150.jpg"" alt="""" />						
+														Bryan Cirius
+						<i>&#xE934;</i><i>&#xE934;</i><i>&#xE934;</i><i>&#xE934;</i><i>&#xE934;</i> 5/5		
+							Sed ut pers piciatis unde omnis iste natus error sit volup tatem accus antium dolore mque laudan tium, totam rem aperiam, eaque ipsa quae ab illo inventore.
+							<img width=""150"" height=""150"" src=""https://jalsasalana.ng/wp-content/uploads/2021/04/customer-3-150x150.jpg"" alt="""" />						
+														Jane Dowser
+															<img src=""https://jalsasalana.ng/wp-content/uploads/elementor/thumbs/Masjid-Mubarak-Qadian-001-1-594x420-1-qh89um8tojf04xtav1fo8ey5fytowwcpvrqbo7g57s.jpg"" title=""Masjid-Mubarak-Qadian-001-1-594&#215;420"" alt=""Masjid-Mubarak-Qadian-001-1-594x420"" loading=""lazy"" />															
+			<h2>Ahmadiyya First
+Community Mosque</h2>		
+		<p>The mosque that was commonly used by the Promised Messiahas was <strong>Masjid Aqsa</strong> in <strong>Qadian.</strong> Since this mosque was already in place, <strong>Masjid Mubarak</strong> was the first mosque to be inaugurated, built and established by the Promised Messiahas. But first, let’s take a quick glance at Masjid Aqsa of Qadian.<br />Thus, was built the first ever mosque of the Ahmadiyya Muslim Jamaat. Every Ahmadi can bear witness – hand on heart – that this humble beginning of the Ahmadiyya building scheme has given such beautiful fruits in the form of hundreds of mosques in every part of the world.</p>		
+															<img src=""https://jalsasalana.ng/wp-content/uploads/elementor/thumbs/emergency-qh0f5lrshlefp64nmnag3hsarjjubysgkuj1s458u8.jpg"" title=""emergency"" alt=""emergency"" loading=""lazy"" />															
+			<h2>We're here to help! Call Us Today!</h2>		
+			<h2>We're here to help! Call Us Today!</h2>		
+			<a href=""#"">
+				<svg aria-hidden=""true"" viewBox=""0 0 448 512"" xmlns=""http://www.w3.org/2000/svg""><path d=""M190.5 66.9l22.2-22.2c9.4-9.4 24.6-9.4 33.9 0L441 239c9.4 9.4 9.4 24.6 0 33.9L246.6 467.3c-9.4 9.4-24.6 9.4-33.9 0l-22.2-22.2c-9.5-9.5-9.3-25 .4-34.3L311.4 296H24c-13.3 0-24-10.7-24-24v-32c0-13.3 10.7-24 24-24h287.4L190.9 101.2c-9.8-9.3-10-24.8-.4-34.3z""></path></svg>			
+						+1 234 567 890
+					</a>"
+1592,"Jalsa Salana","<style>/*! elementor - v3.18.0 - 08-12-2023 */
+.elementor-widget-image-box .elementor-image-box-content{width:100%}@media (min-width:768px){.elementor-widget-image-box.elementor-position-left .elementor-image-box-wrapper,.elementor-widget-image-box.elementor-position-right .elementor-image-box-wrapper{display:flex}.elementor-widget-image-box.elementor-position-right .elementor-image-box-wrapper{text-align:right;flex-direction:row-reverse}.elementor-widget-image-box.elementor-position-left .elementor-image-box-wrapper{text-align:left;flex-direction:row}.elementor-widget-image-box.elementor-position-top .elementor-image-box-img{margin:auto}.elementor-widget-image-box.elementor-vertical-align-top .elementor-image-box-wrapper{align-items:flex-start}.elementor-widget-image-box.elementor-vertical-align-middle .elementor-image-box-wrapper{align-items:center}.elementor-widget-image-box.elementor-vertical-align-bottom .elementor-image-box-wrapper{align-items:flex-end}}@media (max-width:767px){.elementor-widget-image-box .elementor-image-box-img{margin-left:auto!important;margin-right:auto!important;margin-bottom:15px}}.elementor-widget-image-box .elementor-image-box-img{display:inline-block}.elementor-widget-image-box .elementor-image-box-title a{color:inherit}.elementor-widget-image-box .elementor-image-box-wrapper{text-align:center}.elementor-widget-image-box .elementor-image-box-description{margin:0}</style><h1>Jalsa Salana</h1><p>Jalsa Salana (Urdu: جلسہ سالانہ‎) is the formal annual gathering of the Ahmadiyya Muslim Community initiated by Hazrat Mirza Ghulam Ahmad (May Allah be pleased with him).</p>		
+			<style>/*! elementor - v3.18.0 - 08-12-2023 */
+.elementor-widget-image{text-align:center}.elementor-widget-image a{display:inline-block}.elementor-widget-image a img[src$="".svg""]{width:48px}.elementor-widget-image img{vertical-align:middle;display:inline-block}</style>												<img src=""http://jalsasalana.ng/wp-content/uploads/elementor/thumbs/321507660_853732412603986_1166432563317598530_n-qh0hvyltmi1usjxjgp6arq6ooxzmeq8x2es1xic8l8.jpg"" title=""321507660_853732412603986_1166432563317598530_n"" alt=""321507660_853732412603986_1166432563317598530_n"" loading=""lazy"" />															
+			<style>/*! elementor - v3.18.0 - 08-12-2023 */
+.elementor-heading-title{padding:0;margin:0;line-height:1}.elementor-widget-heading .elementor-heading-title[class*=elementor-size-]>a{color:inherit;font-size:inherit;line-height:inherit}.elementor-widget-heading .elementor-heading-title.elementor-size-small{font-size:15px}.elementor-widget-heading .elementor-heading-title.elementor-size-medium{font-size:19px}.elementor-widget-heading .elementor-heading-title.elementor-size-large{font-size:29px}.elementor-widget-heading .elementor-heading-title.elementor-size-xl{font-size:39px}.elementor-widget-heading .elementor-heading-title.elementor-size-xxl{font-size:59px}</style><h2>WHAT IS JALSA SALANA?</h2>		
+		<p>Jalsa Salana (Urdu: جلسہ سالانہ‎) is the formal annual gathering of the Ahmadiyya Muslim Community initiated by Hazrat Mirza Ghulam Ahmad (May Allah be pleased with him).</p><p>Usually, the gathering spans over three days, beginning on Friday after the Friday Sermon. Typically, the flag hoisting ceremony is used to identify its commencement. Although there is a central, international Jalsa attended by Ahmadis from across the world, many of the countries hold their own national jalsas too, sometimes attended by the Hazrat Khalifatul Masih.</p>		
+			<h2>History of Jalsa Salana</h2>		
+		<p>From a mere attendance of 75 at the first ever Jalsa in Qadian to the unparalleled turnout of more than 30,000 in current years in the UK; the convention of Jalsa Salana has exceeded all expectations and achieved unbeatable milestones in the past 125 years. This tremendous progress is truly the product of the divine help from Allah the almighty and the bountiful blessings of Khilafat. Today many of us are accustomed to the various Jalsas that take place around the world but let us take a journey back to where it all began.</p><p>In May 1891 in a remote and unknown town in India called Qadian, under Divine inspiration Hazrat Mirza Ghulam Ahmad (as) announced that he was the Promised Messiah and Imam Mahdi awaited by all Muslims. Later on the same year the Promised Messiah (as) decided to hold the first Jalsa Salana and from then on the divine conventions of Jalsa Salana’s began. </p><p>After the partition, the community grew in size and number and Jalsa Salanas continued to be held in the town of Rabwah.</p><p>These steadily increased in size and influence as even more Ahmadi Muslims gathered with the shared purpose to enhance their spiritual knowledge and to reaffirm their dedication to their Khalifa. In 1984, Ordinance XX was introduced by the government of Pakistan which denied Ahmadi Muslims the right to practice their faith. Due to these circumstances, the fourth Khalifa Hazrat Mirza Tahir Ahmad (ra) left Pakistan and migrated to the United Kingdom, moving the headquarters to Fazl Mosque London. The last Jalsa Salana held in Rabwah, in 1983, saw nearly 250,000 faithful Ahmadi Muslims attending and seeing one last time the face of their Khalifa in Pakistan.</p><p>Meanwhile, under the guidance of Khilafat the community was spreading across the world. Countries such as Ghana, Nigeria, Germany, Switzerland, Canada, United States of America, Fiji, Bangladesh, Australia, Singapore and many more held their own separate Jalsas and are continuing to do so every year.</p>		
+															<img src=""http://jalsasalana.ng/wp-content/uploads/elementor/thumbs/2019-05-17-UK-Islamabad-Mosque-Inauguration-08-qh1h50hgq3a3fhw3x7t2vxlh1trn0ib3kw4ydvfudk.jpg"" title=""2019-05-17-UK-Islamabad-Mosque-Inauguration-08"" alt=""2019-05-17-UK-Islamabad-Mosque-Inauguration-08"" loading=""lazy"" />															
+		<p>“The primary purpose of this Convention is to enable every sincere individual to personally experience religious benefits; They may enhance their knowledge and – due to their being blessed and enabled by Allah, The Exalted – their perception [of Allah] may progress. Among its secondary benefits is that this congregational meeting together will promote mutual introduction among all brothers, and it will strengthen the fraternal ties within this Community.”</p><p><strong>Ishtihar 7 Dec. 1892, Majmoo`ah Ishtiharat Vol. I, Page 340</strong></p>		
+			<a href=""#"">
+				<svg aria-hidden=""true"" viewBox=""0 0 448 512"" xmlns=""http://www.w3.org/2000/svg""><path d=""M190.5 66.9l22.2-22.2c9.4-9.4 24.6-9.4 33.9 0L441 239c9.4 9.4 9.4 24.6 0 33.9L246.6 467.3c-9.4 9.4-24.6 9.4-33.9 0l-22.2-22.2c-9.5-9.5-9.3-25 .4-34.3L311.4 296H24c-13.3 0-24-10.7-24-24v-32c0-13.3 10.7-24 24-24h287.4L190.9 101.2c-9.8-9.3-10-24.8-.4-34.3z""></path></svg>			
+						+234 802 376 5263
+					</a>"
+1597,Security,"<h1>Security</h1>				
+															<img src=""https://jalsasalana.ng/wp-content/uploads/elementor/thumbs/IMG-20230613-WA0039-qh1kdzif7veyguni1tdxfyviiyg4jgo6alj5dz9lks.jpg"" title=""IMG-20230613-WA0039"" alt=""IMG-20230613-WA0039"" loading=""lazy"" />															
+					<h2>JALSA SALANA SECURITY</h2>				
+					<h2>JALSA SALANA SECURITY TIPS</h2>				
+		<p>1.            Members Must Humbly Submit to security checks.</p><p>2.           Obey and follow traffic/car parking instructions.</p><p>3.           No unnecessary loitering.</p><p>4.           Parents Should/Must take control of their Wards/Children (Atfal/Nasirat) at all times.</p><p>5.           Market Policies Must be strictly adhered to. No Hawking, no trading in OR around JALSA GAH as marketing shall be fully within the market premises and under market authority control.</p><p>6.           No male and female should be seen together at light out. (at night).</p><p>7.           Phones and other valuables should be properly kept by the owners as any lost is at owner’s risk.</p><p>8.          ‘Jama’at president of any culprit shall be invited for questioning and identification of such person. If possible, a member should have a code/number for identification.</p><p>9.           Parents and Jama’at presidents are expected to warn and guide their children/members on morals Before, during and after Jalsa Salana.<br />10.        No one should come to JALSA with any object that can cause harm or fear to individual or the JALSA ground. Bangers, knives, Cutlass, etc are not allowed.</p><p>11.           No gas cylinder will be allowed unless such person is authorized.</p><p>12.          Maintain the kitchen rules of services as no quarrelling/fighting shall be entertained.</p>		
+					<h3>Our Mission</h3>				
+		We strive to provide the most reliable and efficient plumbing services, without compromising on quality or safety. We also aim to prove our quality skills, fair prices and customer care, so that we continue our business relationship for many years, beyond the first job we complete.		
+					<h3>Core Values</h3>				
+							<ul>
+							<li>
+							<svg aria-hidden=""true"" viewBox=""0 0 512 512"" xmlns=""http://www.w3.org/2000/svg""><path d=""M504 256c0 136.967-111.033 248-248 248S8 392.967 8 256 119.033 8 256 8s248 111.033 248 248zM227.314 387.314l184-184c6.248-6.248 6.248-16.379 0-22.627l-22.627-22.627c-6.248-6.249-16.379-6.249-22.628 0L216 308.118l-70.059-70.059c-6.248-6.248-16.379-6.248-22.628 0l-22.627 22.627c-6.248 6.248-6.248 16.379 0 22.627l104 104c6.249 6.249 16.379 6.249 22.628.001z""></path></svg>						
+										Consider honesty as the key to a business’ trustworthiness and integrity.
+									</li>
+								<li>
+							<svg aria-hidden=""true"" viewBox=""0 0 512 512"" xmlns=""http://www.w3.org/2000/svg""><path d=""M504 256c0 136.967-111.033 248-248 248S8 392.967 8 256 119.033 8 256 8s248 111.033 248 248zM227.314 387.314l184-184c6.248-6.248 6.248-16.379 0-22.627l-22.627-22.627c-6.248-6.249-16.379-6.249-22.628 0L216 308.118l-70.059-70.059c-6.248-6.248-16.379-6.248-22.628 0l-22.627 22.627c-6.248 6.248-6.248 16.379 0 22.627l104 104c6.249 6.249 16.379 6.249 22.628.001z""></path></svg>						
+										Always do the right thing to solve the customer’s problem.
+									</li>
+								<li>
+							<svg aria-hidden=""true"" viewBox=""0 0 512 512"" xmlns=""http://www.w3.org/2000/svg""><path d=""M504 256c0 136.967-111.033 248-248 248S8 392.967 8 256 119.033 8 256 8s248 111.033 248 248zM227.314 387.314l184-184c6.248-6.248 6.248-16.379 0-22.627l-22.627-22.627c-6.248-6.249-16.379-6.249-22.628 0L216 308.118l-70.059-70.059c-6.248-6.248-16.379-6.248-22.628 0l-22.627 22.627c-6.248 6.248-6.248 16.379 0 22.627l104 104c6.249 6.249 16.379 6.249 22.628.001z""></path></svg>						
+										Perform all work with the highest level of excellence in mind.
+									</li>
+						</ul>
+					<h2>Why Choose Us?</h2>				
+		We show you our appreciation by going above and beyond, ensuring a flawless experience. We can be your top choice today!		
+							<ul>
+							<li>
+							<svg aria-hidden=""true"" viewBox=""0 0 512 512"" xmlns=""http://www.w3.org/2000/svg""><path d=""M504 256c0 136.967-111.033 248-248 248S8 392.967 8 256 119.033 8 256 8s248 111.033 248 248zM227.314 387.314l184-184c6.248-6.248 6.248-16.379 0-22.627l-22.627-22.627c-6.248-6.249-16.379-6.249-22.628 0L216 308.118l-70.059-70.059c-6.248-6.248-16.379-6.248-22.628 0l-22.627 22.627c-6.248 6.248-6.248 16.379 0 22.627l104 104c6.249 6.249 16.379 6.249 22.628.001z""></path></svg>						
+										Highly qualified staff
+									</li>
+								<li>
+							<svg aria-hidden=""true"" viewBox=""0 0 512 512"" xmlns=""http://www.w3.org/2000/svg""><path d=""M504 256c0 136.967-111.033 248-248 248S8 392.967 8 256 119.033 8 256 8s248 111.033 248 248zM227.314 387.314l184-184c6.248-6.248 6.248-16.379 0-22.627l-22.627-22.627c-6.248-6.249-16.379-6.249-22.628 0L216 308.118l-70.059-70.059c-6.248-6.248-16.379-6.248-22.628 0l-22.627 22.627c-6.248 6.248-6.248 16.379 0 22.627l104 104c6.249 6.249 16.379 6.249 22.628.001z""></path></svg>						
+										Honest and flat-rate pricing
+									</li>
+								<li>
+							<svg aria-hidden=""true"" viewBox=""0 0 512 512"" xmlns=""http://www.w3.org/2000/svg""><path d=""M504 256c0 136.967-111.033 248-248 248S8 392.967 8 256 119.033 8 256 8s248 111.033 248 248zM227.314 387.314l184-184c6.248-6.248 6.248-16.379 0-22.627l-22.627-22.627c-6.248-6.249-16.379-6.249-22.628 0L216 308.118l-70.059-70.059c-6.248-6.248-16.379-6.248-22.628 0l-22.627 22.627c-6.248 6.248-6.248 16.379 0 22.627l104 104c6.249 6.249 16.379 6.249 22.628.001z""></path></svg>						
+										100% satisfaction guaranteed
+									</li>
+								<li>
+							<svg aria-hidden=""true"" viewBox=""0 0 512 512"" xmlns=""http://www.w3.org/2000/svg""><path d=""M504 256c0 136.967-111.033 248-248 248S8 392.967 8 256 119.033 8 256 8s248 111.033 248 248zM227.314 387.314l184-184c6.248-6.248 6.248-16.379 0-22.627l-22.627-22.627c-6.248-6.249-16.379-6.249-22.628 0L216 308.118l-70.059-70.059c-6.248-6.248-16.379-6.248-22.628 0l-22.627 22.627c-6.248 6.248-6.248 16.379 0 22.627l104 104c6.249 6.249 16.379 6.249 22.628.001z""></path></svg>						
+										Wide service area
+									</li>
+								<li>
+							<svg aria-hidden=""true"" viewBox=""0 0 512 512"" xmlns=""http://www.w3.org/2000/svg""><path d=""M504 256c0 136.967-111.033 248-248 248S8 392.967 8 256 119.033 8 256 8s248 111.033 248 248zM227.314 387.314l184-184c6.248-6.248 6.248-16.379 0-22.627l-22.627-22.627c-6.248-6.249-16.379-6.249-22.628 0L216 308.118l-70.059-70.059c-6.248-6.248-16.379-6.248-22.628 0l-22.627 22.627c-6.248 6.248-6.248 16.379 0 22.627l104 104c6.249 6.249 16.379 6.249 22.628.001z""></path></svg>						
+										On-demand emergency services
+									</li>
+						</ul>
+															<img src=""https://jalsasalana.ng/wp-content/uploads/elementor/thumbs/plumbing-about-qh0f5ktx2wl64tvpu2ym8luhfw87h81yfpoo3doxj4.jpg"" title=""plumbing-about"" alt=""plumbing-about"" loading=""lazy"" />															
+						<i>&#xE934;</i><i>&#xE934;</i><i>&#xE934;</i><i>&#xE934;</i><i>&#xE934;</i> 5/5		
+							Sed ut pers piciatis unde omnis iste natus error sit volup tatem accus antium dolore mque laudan tium, totam rem aperiam, eaque ipsa quae ab illo inventore.
+							<img width=""150"" height=""150"" src=""https://jalsasalana.ng/wp-content/uploads/2021/04/customer-1-150x150.jpg"" alt="""" />						
+														Martin Foster
+						<i>&#xE934;</i><i>&#xE934;</i><i>&#xE934;</i><i>&#xE934;</i><i>&#xE934;</i> 5/5		
+							Sed ut pers piciatis unde omnis iste natus error sit volup tatem accus antium dolore mque laudan tium, totam rem aperiam, eaque ipsa quae ab illo inventore.
+							<img width=""150"" height=""150"" src=""https://jalsasalana.ng/wp-content/uploads/2021/06/customer-4-150x150.jpg"" alt="""" />						
+														Bryan Cirius
+						<i>&#xE934;</i><i>&#xE934;</i><i>&#xE934;</i><i>&#xE934;</i><i>&#xE934;</i> 5/5		
+							Sed ut pers piciatis unde omnis iste natus error sit volup tatem accus antium dolore mque laudan tium, totam rem aperiam, eaque ipsa quae ab illo inventore.
+							<img width=""150"" height=""150"" src=""https://jalsasalana.ng/wp-content/uploads/2021/04/customer-3-150x150.jpg"" alt="""" />						
+														Jane Dowser
+						<i>&#xE934;</i><i>&#xE934;</i><i>&#xE934;</i><i>&#xE934;</i><i>&#xE934;</i> 5/5		
+							Sed ut pers piciatis unde omnis iste natus error sit volup tatem accus antium dolore mque laudan tium, totam rem aperiam, eaque ipsa quae ab illo inventore.
+							<img width=""150"" height=""150"" src=""https://jalsasalana.ng/wp-content/uploads/2021/04/customer-1-150x150.jpg"" alt="""" />						
+														Martin Foster
+						<i>&#xE934;</i><i>&#xE934;</i><i>&#xE934;</i><i>&#xE934;</i><i>&#xE934;</i> 5/5		
+							Sed ut pers piciatis unde omnis iste natus error sit volup tatem accus antium dolore mque laudan tium, totam rem aperiam, eaque ipsa quae ab illo inventore.
+							<img width=""150"" height=""150"" src=""https://jalsasalana.ng/wp-content/uploads/2021/06/customer-4-150x150.jpg"" alt="""" />						
+														Bryan Cirius
+						<i>&#xE934;</i><i>&#xE934;</i><i>&#xE934;</i><i>&#xE934;</i><i>&#xE934;</i> 5/5		
+							Sed ut pers piciatis unde omnis iste natus error sit volup tatem accus antium dolore mque laudan tium, totam rem aperiam, eaque ipsa quae ab illo inventore.
+							<img width=""150"" height=""150"" src=""https://jalsasalana.ng/wp-content/uploads/2021/04/customer-3-150x150.jpg"" alt="""" />						
+														Jane Dowser
+															<img src=""https://jalsasalana.ng/wp-content/uploads/elementor/thumbs/emergency-qh0f5lrshlefp64nmnag3hsarjjubysgkuj1s458u8.jpg"" title=""emergency"" alt=""emergency"" loading=""lazy"" />															
+					<h2>We're here to help! Call Us Today!</h2>				
+					<a href=""#"">
+				<svg aria-hidden=""true"" viewBox=""0 0 448 512"" xmlns=""http://www.w3.org/2000/svg""><path d=""M190.5 66.9l22.2-22.2c9.4-9.4 24.6-9.4 33.9 0L441 239c9.4 9.4 9.4 24.6 0 33.9L246.6 467.3c-9.4 9.4-24.6 9.4-33.9 0l-22.2-22.2c-9.5-9.5-9.3-25 .4-34.3L311.4 296H24c-13.3 0-24-10.7-24-24v-32c0-13.3 10.7-24 24-24h287.4L190.9 101.2c-9.8-9.3-10-24.8-.4-34.3z""></path></svg>			
+									+1 234 567 890
+					</a>"
+1636,"Press Conference","<h1>Press Conference</h1><p>JALSA SALANA - PRESS CONFERENCE ADDRESS</p>		
+            <article data-id=""2204"">
+            <header><h2><a
+                        href=""https://jalsasalana.ng/press-conference-2024/""
+                        title=""Press Conference &#8211; 2024"">Press Conference &#8211; 2024</a></h2></header>
+                        <p>JALSA SALANA 2024 PRESS CONFERENCE ADDRESS Gentlemen of the press,...</p><a href=""https://jalsasalana.ng/press-conference-2024/"">Read More</a>
+    </article><article data-id=""1684"">
+            <header><h2><a
+                        href=""https://jalsasalana.ng/press-conference-2023/""
+                        title=""Press Conference &#8211; 2023"">Press Conference &#8211; 2023</a></h2></header>
+                        <p>JALSA SALANA 2023 PRESS CONFERENCE ADDRESS Gentlemen of the press,...</p><a href=""https://jalsasalana.ng/press-conference-2023/"">Read More</a>
+    </article><article data-id=""1644"">
+            <header><h2><a
+                        href=""https://jalsasalana.ng/press-conference-2022/""
+                        title=""Press Conference &#8211; 2022"">Press Conference &#8211; 2022</a></h2></header>
+                        <p>JALSA SALANA 2022 PRESS CONFERENCE ADDRESS It is a great...</p><a href=""https://jalsasalana.ng/press-conference-2022/"">Read More</a>
+    </article>
+													<img width=""1280"" height=""1029"" src=""https://jalsasalana.ng/wp-content/uploads/2024/12/IMG-20241204-WA0047.jpg"" alt="""" srcset=""https://jalsasalana.ng/wp-content/uploads/2024/12/IMG-20241204-WA0047.jpg 1280w, https://jalsasalana.ng/wp-content/uploads/2024/12/IMG-20241204-WA0047-300x241.jpg 300w, https://jalsasalana.ng/wp-content/uploads/2024/12/IMG-20241204-WA0047-1024x823.jpg 1024w, https://jalsasalana.ng/wp-content/uploads/2024/12/IMG-20241204-WA0047-768x617.jpg 768w"" sizes=""(max-width: 1280px) 100vw, 1280px"" />													
+			<h2>Info-Hotline for the Jalsa Salana</h2>		
+		<p>With our team, we are always available by phone for inquiries regarding Jalsa Salana Nigeria</p>		
+					<a href=""#"">
+				<svg aria-hidden=""true"" viewBox=""0 0 448 512"" xmlns=""http://www.w3.org/2000/svg""><path d=""M190.5 66.9l22.2-22.2c9.4-9.4 24.6-9.4 33.9 0L441 239c9.4 9.4 9.4 24.6 0 33.9L246.6 467.3c-9.4 9.4-24.6 9.4-33.9 0l-22.2-22.2c-9.5-9.5-9.3-25 .4-34.3L311.4 296H24c-13.3 0-24-10.7-24-24v-32c0-13.3 10.7-24 24-24h287.4L190.9 101.2c-9.8-9.3-10-24.8-.4-34.3z""></path></svg>			
+									+234 802 376 5263
+					</a>"
+1746,"Info & Emergencies","<h1>Info &amp; Emergencies</h1>				
+															<img width=""591"" height=""360"" src=""https://jalsasalana.ng/wp-content/uploads/2023/12/360_F_335870116_0ODNCQ3eRXwiIXCEFDQ6mKrKWCid8uay.jpg"" alt="""" srcset=""https://jalsasalana.ng/wp-content/uploads/2023/12/360_F_335870116_0ODNCQ3eRXwiIXCEFDQ6mKrKWCid8uay.jpg 591w, https://jalsasalana.ng/wp-content/uploads/2023/12/360_F_335870116_0ODNCQ3eRXwiIXCEFDQ6mKrKWCid8uay-300x183.jpg 300w"" sizes=""(max-width: 591px) 100vw, 591px"" />															
+					<h2>Health Tips for Jalsa Attendees</h2>				
+		<p>Drink plenty of water to prevent dehydration</p><p>It’s not safe for pregnant women in the first trimester and last trimesters to engage in long distances.</p><p>Ailing members, managing critical health cases are advised to to stay at home.</p><p>Do not expose children to cold. It is preferable to wear thick fabrics like cotton, wool, velvet, etc. It will interest you to know that thick fabrics absorb moisture and keep you warm.</p><p>Wash your eyes regularly to avoid red eyes which is common during harmattan</p><p>Cover your nose and mouth with a mask when it is dusty</p><p>Avoid dust to avoid dust inhalation of harmful particles coming from the wind</p><p>Go to the clinic if you have red, itchy, and watery eyes</p><p>Get medical help if you have a running, itchy, sneezing, and stuffy nose</p><p>Always use moisturizers to prevent dry skin and dry palms</p><p>Use lip balm to prevent cracked lips</p><p>This season can trigger asthma and allergies. Asthmatic patients should always keep the inhaler handy and avoid dust as much as possible. This dry cold dusty season triggers sickle cell disease (SCD) as well.</p>		
+					<h3>Our Mission</h3>				
+		We strive to provide the most reliable and efficient plumbing services, without compromising on quality or safety. We also aim to prove our quality skills, fair prices and customer care, so that we continue our business relationship for many years, beyond the first job we complete.		
+					<h3>Core Values</h3>				
+							<ul>
+							<li>
+							<svg aria-hidden=""true"" viewBox=""0 0 512 512"" xmlns=""http://www.w3.org/2000/svg""><path d=""M504 256c0 136.967-111.033 248-248 248S8 392.967 8 256 119.033 8 256 8s248 111.033 248 248zM227.314 387.314l184-184c6.248-6.248 6.248-16.379 0-22.627l-22.627-22.627c-6.248-6.249-16.379-6.249-22.628 0L216 308.118l-70.059-70.059c-6.248-6.248-16.379-6.248-22.628 0l-22.627 22.627c-6.248 6.248-6.248 16.379 0 22.627l104 104c6.249 6.249 16.379 6.249 22.628.001z""></path></svg>						
+										Consider honesty as the key to a business’ trustworthiness and integrity.
+									</li>
+								<li>
+							<svg aria-hidden=""true"" viewBox=""0 0 512 512"" xmlns=""http://www.w3.org/2000/svg""><path d=""M504 256c0 136.967-111.033 248-248 248S8 392.967 8 256 119.033 8 256 8s248 111.033 248 248zM227.314 387.314l184-184c6.248-6.248 6.248-16.379 0-22.627l-22.627-22.627c-6.248-6.249-16.379-6.249-22.628 0L216 308.118l-70.059-70.059c-6.248-6.248-16.379-6.248-22.628 0l-22.627 22.627c-6.248 6.248-6.248 16.379 0 22.627l104 104c6.249 6.249 16.379 6.249 22.628.001z""></path></svg>						
+										Always do the right thing to solve the customer’s problem.
+									</li>
+								<li>
+							<svg aria-hidden=""true"" viewBox=""0 0 512 512"" xmlns=""http://www.w3.org/2000/svg""><path d=""M504 256c0 136.967-111.033 248-248 248S8 392.967 8 256 119.033 8 256 8s248 111.033 248 248zM227.314 387.314l184-184c6.248-6.248 6.248-16.379 0-22.627l-22.627-22.627c-6.248-6.249-16.379-6.249-22.628 0L216 308.118l-70.059-70.059c-6.248-6.248-16.379-6.248-22.628 0l-22.627 22.627c-6.248 6.248-6.248 16.379 0 22.627l104 104c6.249 6.249 16.379 6.249 22.628.001z""></path></svg>						
+										Perform all work with the highest level of excellence in mind.
+									</li>
+						</ul>
+					<h2>JALSA SALANA 2024 WEATHER FORECAST FOR ILARO AND ADVICE</h2>				
+															<img src=""https://jalsasalana.ng/wp-content/uploads/elementor/thumbs/Weather-Update-qh1mnyzm3sv1nelv75x1dbzivnoan2iz4n1yrb6nsw.webp"" title=""Weather-Update"" alt=""Weather-Update"" loading=""lazy"" />															
+		<p>Friday 20 December 2024</p>– Sunrise: 6:29 AM– Sunset: 5:51 PM– Temperature– Day: 37°C– RealFeel®: 36°C– Night: 18°C– RealFeel®: 18°C <p>Saturday 21 December 2024 </p>– Sunrise: 6:29 AM– Sunset: 5:51 PM– Temperature– Day: 37°C– RealFeel®: 36°C– Night: 18°C– RealFeel®: 18°C <p>Sunday 22 December 2024</p>– Sunrise: 6:29 AM– Sunset: 5:51 PM– Temperature– Day: 37°C– RealFeel®: 36°C– Night: 19°C– RealFeel®: 19°CWeather Overview  Partly sunny for all three days at the Jalsa.– Cold at night and early morning for all three days.– Increased cloudiness expected on Saturday.– Sunday will be sunny, with the weather turning cloudy and very warm.<p>Advice for Jalsa Participants:</p><p>1. Bring sweaters for the cold weather.<br />2. Participants with allergies should be cautious of dust; consider wearing a nose mask.<br />3. Bring mosquito nets for protection against indoor and outdoor pests.<br />4. Consider bringing a blanket for added warmth during the cold nights.</p>		
+						<i>&#xE934;</i><i>&#xE934;</i><i>&#xE934;</i><i>&#xE934;</i><i>&#xE934;</i> 5/5		
+							Sed ut pers piciatis unde omnis iste natus error sit volup tatem accus antium dolore mque laudan tium, totam rem aperiam, eaque ipsa quae ab illo inventore.
+							<img width=""150"" height=""150"" src=""https://jalsasalana.ng/wp-content/uploads/2021/04/customer-1-150x150.jpg"" alt="""" />						
+														Martin Foster
+						<i>&#xE934;</i><i>&#xE934;</i><i>&#xE934;</i><i>&#xE934;</i><i>&#xE934;</i> 5/5		
+							Sed ut pers piciatis unde omnis iste natus error sit volup tatem accus antium dolore mque laudan tium, totam rem aperiam, eaque ipsa quae ab illo inventore.
+							<img width=""150"" height=""150"" src=""https://jalsasalana.ng/wp-content/uploads/2021/06/customer-4-150x150.jpg"" alt="""" />						
+														Bryan Cirius
+						<i>&#xE934;</i><i>&#xE934;</i><i>&#xE934;</i><i>&#xE934;</i><i>&#xE934;</i> 5/5		
+							Sed ut pers piciatis unde omnis iste natus error sit volup tatem accus antium dolore mque laudan tium, totam rem aperiam, eaque ipsa quae ab illo inventore.
+							<img width=""150"" height=""150"" src=""https://jalsasalana.ng/wp-content/uploads/2021/04/customer-3-150x150.jpg"" alt="""" />						
+														Jane Dowser
+						<i>&#xE934;</i><i>&#xE934;</i><i>&#xE934;</i><i>&#xE934;</i><i>&#xE934;</i> 5/5		
+							Sed ut pers piciatis unde omnis iste natus error sit volup tatem accus antium dolore mque laudan tium, totam rem aperiam, eaque ipsa quae ab illo inventore.
+							<img width=""150"" height=""150"" src=""https://jalsasalana.ng/wp-content/uploads/2021/04/customer-1-150x150.jpg"" alt="""" />						
+														Martin Foster
+						<i>&#xE934;</i><i>&#xE934;</i><i>&#xE934;</i><i>&#xE934;</i><i>&#xE934;</i> 5/5		
+							Sed ut pers piciatis unde omnis iste natus error sit volup tatem accus antium dolore mque laudan tium, totam rem aperiam, eaque ipsa quae ab illo inventore.
+							<img width=""150"" height=""150"" src=""https://jalsasalana.ng/wp-content/uploads/2021/06/customer-4-150x150.jpg"" alt="""" />						
+														Bryan Cirius
+						<i>&#xE934;</i><i>&#xE934;</i><i>&#xE934;</i><i>&#xE934;</i><i>&#xE934;</i> 5/5		
+							Sed ut pers piciatis unde omnis iste natus error sit volup tatem accus antium dolore mque laudan tium, totam rem aperiam, eaque ipsa quae ab illo inventore.
+							<img width=""150"" height=""150"" src=""https://jalsasalana.ng/wp-content/uploads/2021/04/customer-3-150x150.jpg"" alt="""" />						
+														Jane Dowser
+															<img src=""https://jalsasalana.ng/wp-content/uploads/2023/12/images.png"" title="""" alt="""" loading=""lazy"" />															
+					<h2>OPENNESS AND
+TRANSPARENCY</h2>				
+		<p>Our mosques remain open for all, to help breakdown barriers and build trust, integration and cohesion by enabling a better understanding of Islamic beliefs and their role in modern life.</p><p>We organise regular peace symposiums and run a free to view satellite channel MTA International (available on Sky 787) dedicated to spreading harmony among and between all people regardless of faith and background, further underlining our openness as a community that promotes integration based on mutual respect.</p>		
+					<a href=""#"">
+				<svg aria-hidden=""true"" viewBox=""0 0 448 512"" xmlns=""http://www.w3.org/2000/svg""><path d=""M190.5 66.9l22.2-22.2c9.4-9.4 24.6-9.4 33.9 0L441 239c9.4 9.4 9.4 24.6 0 33.9L246.6 467.3c-9.4 9.4-24.6 9.4-33.9 0l-22.2-22.2c-9.5-9.5-9.3-25 .4-34.3L311.4 296H24c-13.3 0-24-10.7-24-24v-32c0-13.3 10.7-24 24-24h287.4L190.9 101.2c-9.8-9.3-10-24.8-.4-34.3z""></path></svg>			
+									+234 802 376 5263
+					</a>"
+1791,"Programme of Events - Jalsa Salana Nigeria 2024","<h1>70th Jalsa Salana Nigeria</h1><p><b>70th Annual Convention - Platinum Jubilee</b>  |  
+20th – 22nd December 2024. Ilaro, Ogun State</p>		
+					<a href=""https://jalsasalana.ng/3d-flip-book/programme-of-event-jalsa-salana-nigeria-2024/"">
+				<svg aria-hidden=""true"" viewBox=""0 0 448 512"" xmlns=""http://www.w3.org/2000/svg""><path d=""M190.5 66.9l22.2-22.2c9.4-9.4 24.6-9.4 33.9 0L441 239c9.4 9.4 9.4 24.6 0 33.9L246.6 467.3c-9.4 9.4-24.6 9.4-33.9 0l-22.2-22.2c-9.5-9.5-9.3-25 .4-34.3L311.4 296H24c-13.3 0-24-10.7-24-24v-32c0-13.3 10.7-24 24-24h287.4L190.9 101.2c-9.8-9.3-10-24.8-.4-34.3z""></path></svg>			
+									Programme of Event
+					</a>
+													<img width=""887"" height=""766"" src=""https://jalsasalana.ng/wp-content/uploads/2024/11/jalsa24.png"" alt="""" srcset=""https://jalsasalana.ng/wp-content/uploads/2024/11/jalsa24.png 887w, https://jalsasalana.ng/wp-content/uploads/2024/11/jalsa24-300x259.png 300w, https://jalsasalana.ng/wp-content/uploads/2024/11/jalsa24-768x663.png 768w"" sizes=""(max-width: 887px) 100vw, 887px"" />													
+			<h5>About the Jalsa Salana</h5>		
+			<h2>The Jalsa Salana is the annual 3-days general meeting of the Ahmadiyya Muslim Jamaat Nigeria.</h2>		
+		<p>With over 40,000 visitors, it is the largest regular gathering of Muslims in Nigeria. The history of the Jalsa Salana dates back to after 1891 when the founder of the reform movement, Hazrat Mirza Ghulam Ahmad Qadiani (as) first proclaimed the Jalsa Salana in Qadian (India). At that time, 75 members of the congregation attended. Since then, the Jalsa Salana has become firmly established in many countries around the world. For example, over 200,000 visitors attended the last Jalsa Salana in Pakistan, in 1983.</p>		
+					<a href=""https://jalsasalana.ng/ahmadiyya/"">
+				<svg aria-hidden=""true"" viewBox=""0 0 448 512"" xmlns=""http://www.w3.org/2000/svg""><path d=""M190.5 66.9l22.2-22.2c9.4-9.4 24.6-9.4 33.9 0L441 239c9.4 9.4 9.4 24.6 0 33.9L246.6 467.3c-9.4 9.4-24.6 9.4-33.9 0l-22.2-22.2c-9.5-9.5-9.3-25 .4-34.3L311.4 296H24c-13.3 0-24-10.7-24-24v-32c0-13.3 10.7-24 24-24h287.4L190.9 101.2c-9.8-9.3-10-24.8-.4-34.3z""></path></svg>			
+									Know More About Us
+					</a>
+			<h2>Objectives, Purpose &amp; <br>Blessings of Jalsa Salana</h2>		
+		<p>The primary purpose of this Convention is to enable every sincere individual to personally experience religious benefits; They may enhance their knowledge and – due to their being blessed and enabled by Allah, The Exalted – their perception [of Allah] may progress. Among its secondary benefits is that this congregational meeting together will promote mutual introduction among all brothers, and it will strengthen the fraternal ties within this Community.“</p>		
+					<a href=""#"">
+									Hadhrat Mirza Ghulam Ahmad Qadiani (as), (Ishtihar 7 Dec. 1892, Majmoo`ah Ishtiharat Vol. I, Page 340)
+					</a>
+													<img src=""https://jalsasalana.ng/wp-content/uploads/elementor/thumbs/321565323_5790593367670753_8475051458437577127_n-qh0hw8y1pofq3yudmaayrlnr19ck4gedh37h72nf60.jpg"" title=""321565323_5790593367670753_8475051458437577127_n"" alt=""321565323_5790593367670753_8475051458437577127_n"" loading=""lazy"" />													
+		[3d-flip-book id=""2145"" ][/3d-flip-book]		
+			<h2>Jalsa Salana 2024</h2>		
+														<a href=""https://jalsasalana.ng/news/"">
+							<img width=""1024"" height=""683"" src=""https://jalsasalana.ng/wp-content/uploads/2023/12/321338844_563381655232570_8212325114854241156_n-1024x683.jpg"" alt="""" srcset=""https://jalsasalana.ng/wp-content/uploads/2023/12/321338844_563381655232570_8212325114854241156_n-1024x683.jpg 1024w, https://jalsasalana.ng/wp-content/uploads/2023/12/321338844_563381655232570_8212325114854241156_n-300x200.jpg 300w, https://jalsasalana.ng/wp-content/uploads/2023/12/321338844_563381655232570_8212325114854241156_n-768x512.jpg 768w, https://jalsasalana.ng/wp-content/uploads/2023/12/321338844_563381655232570_8212325114854241156_n.jpg 1440w"" sizes=""(max-width: 1024px) 100vw, 1024px"" />								</a>
+			<h4><a href=""https://jalsasalana.ng/news/"">Information</a></h4>		
+		<p>Are you looking for information about the Jalsa? Follow this link.</p>		
+														<a href=""https://jalsasalana.ng/wp-content/uploads/2023/12/JALSA-PROGRAMME-1.pdf"">
+							<img width=""887"" height=""766"" src=""https://jalsasalana.ng/wp-content/uploads/2024/11/jalsa24.png"" alt="""" srcset=""https://jalsasalana.ng/wp-content/uploads/2024/11/jalsa24.png 887w, https://jalsasalana.ng/wp-content/uploads/2024/11/jalsa24-300x259.png 300w, https://jalsasalana.ng/wp-content/uploads/2024/11/jalsa24-768x663.png 768w"" sizes=""(max-width: 887px) 100vw, 887px"" />								</a>
+			<h4><a href=""https://jalsasalana.ng/jalsa-salana-nigreria-platinum-jubilee"">Program of the Jalsa Salana 2024</a></h4>		
+		<p>Click here for details about the Jalsa Salana program.</p>		
+														<a href=""https://jalsasalana.ng/transportation/"">
+							<img src=""https://www.alhakam.org/wp-content/uploads/2021/07/IMG_20210713_131608_042.jpg"" title="""" alt="""" loading=""lazy"" />								</a>
+			<h4><a href=""https://jalsasalana.ng/transportation/"">Transportation</a></h4>		
+		<p>Need information about Transportation at Jalsa? Click here for more details.</p>		
+														<a href=""https://jalsasalana.ng/accommodation/"">
+							<img src=""https://jalsasalana.ng/wp-content/uploads/2023/12/cf446055-8c01-4541-9d43-a6f170f6db9b.jpeg"" title="""" alt="""" loading=""lazy"" />								</a>
+			<h4><a href=""https://jalsasalana.ng/accommodation/"">Accomodation</a></h4>		
+		<p>Several hotels around Jalsa Gah are providing a discounted hotel rate to Jalsa guests. Please click here for the full and updated hotel list.</p>		
+														<a href=""https://jalsasalana.ng/news/"">
+							<img width=""1024"" height=""682"" src=""https://jalsasalana.ng/wp-content/uploads/2023/12/18402a66-257e-4945-8d4f-d1245c47e563-1024x682.jpeg"" alt="""" srcset=""https://jalsasalana.ng/wp-content/uploads/2023/12/18402a66-257e-4945-8d4f-d1245c47e563-1024x682.jpeg 1024w, https://jalsasalana.ng/wp-content/uploads/2023/12/18402a66-257e-4945-8d4f-d1245c47e563-300x200.jpeg 300w, https://jalsasalana.ng/wp-content/uploads/2023/12/18402a66-257e-4945-8d4f-d1245c47e563-768x512.jpeg 768w, https://jalsasalana.ng/wp-content/uploads/2023/12/18402a66-257e-4945-8d4f-d1245c47e563.jpeg 1280w"" sizes=""(max-width: 1024px) 100vw, 1024px"" />								</a>
+			<h4><a href=""https://jalsasalana.ng/news/"">Special Events</a></h4>		
+		<p>More information for our international guests is at this link.</p>		
+														<a href=""https://jalsa.ahmadiyyanigeria.net"">
+							<img src=""https://jalsasalana.ng/wp-content/uploads/2024/11/WhatsApp-Image-2024-11-24-at-11.15.17.jpeg"" title="""" alt="""" loading=""lazy"" />								</a>
+			<h4><a href=""https://jalsa.ahmadiyyanigeria.net"">Registration</a></h4>		
+		<p>Click here for Registering for Jalsa Salana.</p>		
+					<a href=""#"">
+				<svg aria-hidden=""true"" viewBox=""0 0 448 512"" xmlns=""http://www.w3.org/2000/svg""><path d=""M190.5 66.9l22.2-22.2c9.4-9.4 24.6-9.4 33.9 0L441 239c9.4 9.4 9.4 24.6 0 33.9L246.6 467.3c-9.4 9.4-24.6 9.4-33.9 0l-22.2-22.2c-9.5-9.5-9.3-25 .4-34.3L311.4 296H24c-13.3 0-24-10.7-24-24v-32c0-13.3 10.7-24 24-24h287.4L190.9 101.2c-9.8-9.3-10-24.8-.4-34.3z""></path></svg>			
+									View All Services
+					</a>"
+1797,News,"<h1>Latest News</h1><p>JALSA SALANA - News</p>		
+            <article data-id=""2027"">
+            <a href=""https://jalsasalana.ng/jalsa-salana-2023-ahmadi-muslims-shine-bright-with-excellence/""></a>
+                <img width=""300"" height=""200"" src=""https://jalsasalana.ng/wp-content/uploads/2023/12/a00ad91e-61a8-4f2b-b4f1-cb0ad68140dc-300x200.jpeg"" alt="""" decoding=""async"" srcset=""https://jalsasalana.ng/wp-content/uploads/2023/12/a00ad91e-61a8-4f2b-b4f1-cb0ad68140dc-300x200.jpeg 300w, https://jalsasalana.ng/wp-content/uploads/2023/12/a00ad91e-61a8-4f2b-b4f1-cb0ad68140dc-1024x683.jpeg 1024w, https://jalsasalana.ng/wp-content/uploads/2023/12/a00ad91e-61a8-4f2b-b4f1-cb0ad68140dc-768x512.jpeg 768w, https://jalsasalana.ng/wp-content/uploads/2023/12/a00ad91e-61a8-4f2b-b4f1-cb0ad68140dc.jpeg 1280w"" sizes=""(max-width: 300px) 100vw, 300px"" />
+        <header><h4><a
+                        href=""https://jalsasalana.ng/jalsa-salana-2023-ahmadi-muslims-shine-bright-with-excellence/""
+                        title=""Jalsa Salana 2023: Ahmadi Muslims Shine Bright with Excellence"">Jalsa Salana 2023: Ahmadi Muslims Shine Bright with Excellence</a></h4></header>
+                        <p>By Abdulquadri Olanrewaju...</p><a
+                            href=""https://jalsasalana.ng/jalsa-salana-2023-ahmadi-muslims-shine-bright-with-excellence/""
+                           >Read More</a>
+                    <time datetime=""December 30, 2023"">December 30, 2023</time>
+    </article><article data-id=""2024"">
+            <a href=""https://jalsasalana.ng/jalsa-nigeria-2023-ahmadiyya-community-celebrates-mass-wedding-during-annual-convention/""></a>
+                <img width=""300"" height=""200"" src=""https://jalsasalana.ng/wp-content/uploads/2023/12/77055528-34e2-4caa-8c35-5c1260640bbb-300x200.jpeg"" alt="""" decoding=""async"" srcset=""https://jalsasalana.ng/wp-content/uploads/2023/12/77055528-34e2-4caa-8c35-5c1260640bbb-300x200.jpeg 300w, https://jalsasalana.ng/wp-content/uploads/2023/12/77055528-34e2-4caa-8c35-5c1260640bbb-1024x683.jpeg 1024w, https://jalsasalana.ng/wp-content/uploads/2023/12/77055528-34e2-4caa-8c35-5c1260640bbb-768x512.jpeg 768w, https://jalsasalana.ng/wp-content/uploads/2023/12/77055528-34e2-4caa-8c35-5c1260640bbb.jpeg 1280w"" sizes=""(max-width: 300px) 100vw, 300px"" />
+        <header><h4><a
+                        href=""https://jalsasalana.ng/jalsa-nigeria-2023-ahmadiyya-community-celebrates-mass-wedding-during-annual-convention/""
+                        title=""Jalsa Nigeria 2023: Ahmadiyya Community Celebrates Mass Wedding During Annual Convention"">Jalsa Nigeria 2023: Ahmadiyya Community Celebrates Mass Wedding During Annual Convention</a></h4></header>
+                        <p>By Abdulquadri Olanrewaju...</p><a
+                            href=""https://jalsasalana.ng/jalsa-nigeria-2023-ahmadiyya-community-celebrates-mass-wedding-during-annual-convention/""
+                           >Read More</a>
+                    <time datetime=""December 30, 2023"">December 30, 2023</time>
+    </article><article data-id=""2019"">
+            <a href=""https://jalsasalana.ng/communique/""></a>
+                <img width=""300"" height=""200"" src=""https://jalsasalana.ng/wp-content/uploads/2023/12/fc2cccf7-efcc-4103-a2c6-b02c7e674cf5-300x200.jpeg"" alt="""" decoding=""async"" srcset=""https://jalsasalana.ng/wp-content/uploads/2023/12/fc2cccf7-efcc-4103-a2c6-b02c7e674cf5-300x200.jpeg 300w, https://jalsasalana.ng/wp-content/uploads/2023/12/fc2cccf7-efcc-4103-a2c6-b02c7e674cf5-768x512.jpeg 768w, https://jalsasalana.ng/wp-content/uploads/2023/12/fc2cccf7-efcc-4103-a2c6-b02c7e674cf5.jpeg 800w"" sizes=""(max-width: 300px) 100vw, 300px"" />
+        <header><h4><a
+                        href=""https://jalsasalana.ng/communique/""
+                        title=""COMMUNIQUE"">COMMUNIQUE</a></h4></header>
+                        <p>After the end...</p><a
+                            href=""https://jalsasalana.ng/communique/""
+                           >Read More</a>
+                    <time datetime=""December 27, 2023"">December 27, 2023</time>
+    </article><article data-id=""2011"">
+            <a href=""https://jalsasalana.ng/amjn-holds-69th-annual-conference-advocates-for-world-peace/""></a>
+                <img width=""300"" height=""200"" src=""https://jalsasalana.ng/wp-content/uploads/2023/12/08ae7c6c-3f70-4f8e-bff5-90e64012aec3-300x200.jpeg"" alt="""" decoding=""async"" srcset=""https://jalsasalana.ng/wp-content/uploads/2023/12/08ae7c6c-3f70-4f8e-bff5-90e64012aec3-300x200.jpeg 300w, https://jalsasalana.ng/wp-content/uploads/2023/12/08ae7c6c-3f70-4f8e-bff5-90e64012aec3-1024x682.jpeg 1024w, https://jalsasalana.ng/wp-content/uploads/2023/12/08ae7c6c-3f70-4f8e-bff5-90e64012aec3-768x512.jpeg 768w, https://jalsasalana.ng/wp-content/uploads/2023/12/08ae7c6c-3f70-4f8e-bff5-90e64012aec3.jpeg 1280w"" sizes=""(max-width: 300px) 100vw, 300px"" />
+        <header><h4><a
+                        href=""https://jalsasalana.ng/amjn-holds-69th-annual-conference-advocates-for-world-peace/""
+                        title=""AMJN holds 69th Annual Conference, advocates for World Peace"">AMJN holds 69th Annual Conference, advocates for World Peace</a></h4></header>
+                        <p>By Abdulquadri Olanrewaju...</p><a
+                            href=""https://jalsasalana.ng/amjn-holds-69th-annual-conference-advocates-for-world-peace/""
+                           >Read More</a>
+                    <time datetime=""December 27, 2023"">December 27, 2023</time>
+    </article><article data-id=""2008"">
+            <a href=""https://jalsasalana.ng/two-pious-ladies-of-great-sacrifice-mukarram-abdur-raheem/""></a>
+                <img width=""300"" height=""200"" src=""https://jalsasalana.ng/wp-content/uploads/2023/12/7418e1fc-9d0e-4706-83ae-984196ebe3e6-300x200.jpeg"" alt="""" decoding=""async"" srcset=""https://jalsasalana.ng/wp-content/uploads/2023/12/7418e1fc-9d0e-4706-83ae-984196ebe3e6-300x200.jpeg 300w, https://jalsasalana.ng/wp-content/uploads/2023/12/7418e1fc-9d0e-4706-83ae-984196ebe3e6-1024x683.jpeg 1024w, https://jalsasalana.ng/wp-content/uploads/2023/12/7418e1fc-9d0e-4706-83ae-984196ebe3e6-768x512.jpeg 768w, https://jalsasalana.ng/wp-content/uploads/2023/12/7418e1fc-9d0e-4706-83ae-984196ebe3e6.jpeg 1280w"" sizes=""(max-width: 300px) 100vw, 300px"" />
+        <header><h4><a
+                        href=""https://jalsasalana.ng/two-pious-ladies-of-great-sacrifice-mukarram-abdur-raheem/""
+                        title=""Two Pious Ladies of Great Sacrifice &#8211; Mukarram Abdur Raheem"">Two Pious Ladies of Great Sacrifice &#8211; Mukarram Abdur Raheem</a></h4></header>
+                        <p>By Toheeb Okunade...</p><a
+                            href=""https://jalsasalana.ng/two-pious-ladies-of-great-sacrifice-mukarram-abdur-raheem/""
+                           >Read More</a>
+                    <time datetime=""December 27, 2023"">December 27, 2023</time>
+    </article><article data-id=""2002"">
+            <a href=""https://jalsasalana.ng/be-wary-of-social-media-evils-mr-akinyemi-warns-muslim-faithfuls/""></a>
+                <img width=""300"" height=""200"" src=""https://jalsasalana.ng/wp-content/uploads/2023/12/29a06e45-1344-442c-b461-ebde081c4d1c-300x200.jpeg"" alt="""" decoding=""async"" srcset=""https://jalsasalana.ng/wp-content/uploads/2023/12/29a06e45-1344-442c-b461-ebde081c4d1c-300x200.jpeg 300w, https://jalsasalana.ng/wp-content/uploads/2023/12/29a06e45-1344-442c-b461-ebde081c4d1c-1024x682.jpeg 1024w, https://jalsasalana.ng/wp-content/uploads/2023/12/29a06e45-1344-442c-b461-ebde081c4d1c-768x512.jpeg 768w, https://jalsasalana.ng/wp-content/uploads/2023/12/29a06e45-1344-442c-b461-ebde081c4d1c.jpeg 1280w"" sizes=""(max-width: 300px) 100vw, 300px"" />
+        <header><h4><a
+                        href=""https://jalsasalana.ng/be-wary-of-social-media-evils-mr-akinyemi-warns-muslim-faithfuls/""
+                        title=""Be wary of Social Media Evils, Mr. Akinyemi warns Muslim Faithful"">Be wary of Social Media Evils, Mr. Akinyemi warns Muslim Faithful</a></h4></header>
+                        <p>By Hafiz Ibraheem...</p><a
+                            href=""https://jalsasalana.ng/be-wary-of-social-media-evils-mr-akinyemi-warns-muslim-faithfuls/""
+                           >Read More</a>
+                    <time datetime=""December 27, 2023"">December 27, 2023</time>
+    </article><article data-id=""1995"">
+            <a href=""https://jalsasalana.ng/kings-shall-seek-blessings-from-thy-garments-a-fulfilled-prophecy/""></a>
+                <img width=""300"" height=""200"" src=""https://jalsasalana.ng/wp-content/uploads/2023/12/18402a66-257e-4945-8d4f-d1245c47e563-300x200.jpeg"" alt="""" decoding=""async"" srcset=""https://jalsasalana.ng/wp-content/uploads/2023/12/18402a66-257e-4945-8d4f-d1245c47e563-300x200.jpeg 300w, https://jalsasalana.ng/wp-content/uploads/2023/12/18402a66-257e-4945-8d4f-d1245c47e563-1024x682.jpeg 1024w, https://jalsasalana.ng/wp-content/uploads/2023/12/18402a66-257e-4945-8d4f-d1245c47e563-768x512.jpeg 768w, https://jalsasalana.ng/wp-content/uploads/2023/12/18402a66-257e-4945-8d4f-d1245c47e563.jpeg 1280w"" sizes=""(max-width: 300px) 100vw, 300px"" />
+        <header><h4><a
+                        href=""https://jalsasalana.ng/kings-shall-seek-blessings-from-thy-garments-a-fulfilled-prophecy/""
+                        title=""Kings shall seek Blessings from thy Garments &#8211; A fulfilled Prophecy"">Kings shall seek Blessings from thy Garments &#8211; A fulfilled Prophecy</a></h4></header>
+                        <p>By Abdul Basit...</p><a
+                            href=""https://jalsasalana.ng/kings-shall-seek-blessings-from-thy-garments-a-fulfilled-prophecy/""
+                           >Read More</a>
+                    <time datetime=""December 27, 2023"">December 27, 2023</time>
+    </article><article data-id=""1980"">
+            <a href=""https://jalsasalana.ng/no-woman-can-to-birth-a-hero-like-khalid-mukarram-syed-recounts-dedication-of-a-great-sahaba/""></a>
+                <img width=""300"" height=""200"" src=""https://jalsasalana.ng/wp-content/uploads/2023/12/Athar-300x200.jpeg"" alt="""" decoding=""async"" srcset=""https://jalsasalana.ng/wp-content/uploads/2023/12/Athar-300x200.jpeg 300w, https://jalsasalana.ng/wp-content/uploads/2023/12/Athar-1024x683.jpeg 1024w, https://jalsasalana.ng/wp-content/uploads/2023/12/Athar-768x512.jpeg 768w, https://jalsasalana.ng/wp-content/uploads/2023/12/Athar.jpeg 1280w"" sizes=""(max-width: 300px) 100vw, 300px"" />
+        <header><h4><a
+                        href=""https://jalsasalana.ng/no-woman-can-to-birth-a-hero-like-khalid-mukarram-syed-recounts-dedication-of-a-great-sahaba/""
+                        title=""&#8220;No Woman can Birth a Hero like Khalid,&#8221; Mukarram Syed recounts Dedication of a Great Sahaba"">&#8220;No Woman can Birth a Hero like Khalid,&#8221; Mukarram Syed recounts Dedication of a Great Sahaba</a></h4></header>
+                        <p>By Sulaiman Abdulqudus...</p><a
+                            href=""https://jalsasalana.ng/no-woman-can-to-birth-a-hero-like-khalid-mukarram-syed-recounts-dedication-of-a-great-sahaba/""
+                           >Read More</a>
+                    <time datetime=""December 23, 2023"">December 23, 2023</time>
+    </article><article data-id=""1975"">
+            <a href=""https://jalsasalana.ng/leader-who-closes-doors-to-others-the-heavens-become-closed-for-their-needs/""></a>
+                <img width=""300"" height=""200"" src=""https://jalsasalana.ng/wp-content/uploads/2023/12/Khalil-300x200.jpeg"" alt="""" decoding=""async"" srcset=""https://jalsasalana.ng/wp-content/uploads/2023/12/Khalil-300x200.jpeg 300w, https://jalsasalana.ng/wp-content/uploads/2023/12/Khalil-1024x683.jpeg 1024w, https://jalsasalana.ng/wp-content/uploads/2023/12/Khalil-768x512.jpeg 768w, https://jalsasalana.ng/wp-content/uploads/2023/12/Khalil.jpeg 1280w"" sizes=""(max-width: 300px) 100vw, 300px"" />
+        <header><h4><a
+                        href=""https://jalsasalana.ng/leader-who-closes-doors-to-others-the-heavens-become-closed-for-their-needs/""
+                        title=""Leader who closes doors to others, the heavens become closed for their needs – Muballigh KhalilRahmon"">Leader who closes doors to others, the heavens become closed for their needs – Muballigh KhalilRahmon</a></h4></header>
+                        <p>By Hafiz Ibraheem...</p><a
+                            href=""https://jalsasalana.ng/leader-who-closes-doors-to-others-the-heavens-become-closed-for-their-needs/""
+                           >Read More</a>
+                    <time datetime=""December 23, 2023"">December 23, 2023</time>
+    </article><article data-id=""1972"">
+            <a href=""https://jalsasalana.ng/taqwa-a-guiding-light-through-the-journey-of-justice-and-peace/""></a>
+                <img width=""300"" height=""200"" src=""https://jalsasalana.ng/wp-content/uploads/2023/12/olowonmi-300x200.jpeg"" alt="""" decoding=""async"" srcset=""https://jalsasalana.ng/wp-content/uploads/2023/12/olowonmi-300x200.jpeg 300w, https://jalsasalana.ng/wp-content/uploads/2023/12/olowonmi-1024x683.jpeg 1024w, https://jalsasalana.ng/wp-content/uploads/2023/12/olowonmi-768x512.jpeg 768w, https://jalsasalana.ng/wp-content/uploads/2023/12/olowonmi.jpeg 1280w"" sizes=""(max-width: 300px) 100vw, 300px"" />
+        <header><h4><a
+                        href=""https://jalsasalana.ng/taqwa-a-guiding-light-through-the-journey-of-justice-and-peace/""
+                        title=""Taqwa: A Guiding Light Through The Journey Of Justice and Peace &#8211; Mukarram AbdulQahar Olowonmi"">Taqwa: A Guiding Light Through The Journey Of Justice and Peace &#8211; Mukarram AbdulQahar Olowonmi</a></h4></header>
+                        <p>By Sheriffdeen Saula...</p><a
+                            href=""https://jalsasalana.ng/taqwa-a-guiding-light-through-the-journey-of-justice-and-peace/""
+                           >Read More</a>
+                    <time datetime=""December 23, 2023"">December 23, 2023</time>
+    </article><article data-id=""1919"">
+            <a href=""https://jalsasalana.ng/there-can-be-no-peace-without-justice/""></a>
+                <img width=""300"" height=""200"" src=""https://jalsasalana.ng/wp-content/uploads/2023/12/1a5e30ec-9845-4784-85c9-1b2aa7a4f792-300x200.jpeg"" alt="""" decoding=""async"" srcset=""https://jalsasalana.ng/wp-content/uploads/2023/12/1a5e30ec-9845-4784-85c9-1b2aa7a4f792-300x200.jpeg 300w, https://jalsasalana.ng/wp-content/uploads/2023/12/1a5e30ec-9845-4784-85c9-1b2aa7a4f792-1024x682.jpeg 1024w, https://jalsasalana.ng/wp-content/uploads/2023/12/1a5e30ec-9845-4784-85c9-1b2aa7a4f792-768x512.jpeg 768w, https://jalsasalana.ng/wp-content/uploads/2023/12/1a5e30ec-9845-4784-85c9-1b2aa7a4f792.jpeg 1280w"" sizes=""(max-width: 300px) 100vw, 300px"" />
+        <header><h4><a
+                        href=""https://jalsasalana.ng/there-can-be-no-peace-without-justice/""
+                        title=""There can be no Peace without Justice &#8211; Mukarram Apooyin."">There can be no Peace without Justice &#8211; Mukarram Apooyin.</a></h4></header>
+                        <p>By Sulaiman Abdulqudus...</p><a
+                            href=""https://jalsasalana.ng/there-can-be-no-peace-without-justice/""
+                           >Read More</a>
+                    <time datetime=""December 23, 2023"">December 23, 2023</time>
+    </article><article data-id=""1908"">
+            <a href=""https://jalsasalana.ng/amir-meets-missionaries-calls-for-exemplary-tabligh-tarbiyya/""></a>
+                <img width=""300"" height=""200"" src=""https://jalsasalana.ng/wp-content/uploads/2023/12/ff38a4e5-c656-484a-b208-8d69f4c75b50-300x200.jpeg"" alt="""" decoding=""async"" srcset=""https://jalsasalana.ng/wp-content/uploads/2023/12/ff38a4e5-c656-484a-b208-8d69f4c75b50-300x200.jpeg 300w, https://jalsasalana.ng/wp-content/uploads/2023/12/ff38a4e5-c656-484a-b208-8d69f4c75b50-768x512.jpeg 768w, https://jalsasalana.ng/wp-content/uploads/2023/12/ff38a4e5-c656-484a-b208-8d69f4c75b50-e1703266529919.jpeg 750w"" sizes=""(max-width: 300px) 100vw, 300px"" />
+        <header><h4><a
+                        href=""https://jalsasalana.ng/amir-meets-missionaries-calls-for-exemplary-tabligh-tarbiyya/""
+                        title=""Jalsa Nigeria 2023: Amir meets Missionaries, calls for exemplary Tabligh, Tarbiyya"">Jalsa Nigeria 2023: Amir meets Missionaries, calls for exemplary Tabligh, Tarbiyya</a></h4></header>
+                        <p>By Hafiz Abdulqudus...</p><a
+                            href=""https://jalsasalana.ng/amir-meets-missionaries-calls-for-exemplary-tabligh-tarbiyya/""
+                           >Read More</a>
+                    <time datetime=""December 22, 2023"">December 22, 2023</time>
+    </article><article data-id=""1887"">
+            <a href=""https://jalsasalana.ng/fear-of-allah-righteousness-key-to-answered-prayers/""></a>
+                <img width=""300"" height=""264"" src=""https://jalsasalana.ng/wp-content/uploads/2023/12/DSC_4204-300x264.jpg"" alt="""" decoding=""async"" srcset=""https://jalsasalana.ng/wp-content/uploads/2023/12/DSC_4204-300x264.jpg 300w, https://jalsasalana.ng/wp-content/uploads/2023/12/DSC_4204-1024x900.jpg 1024w, https://jalsasalana.ng/wp-content/uploads/2023/12/DSC_4204-768x675.jpg 768w, https://jalsasalana.ng/wp-content/uploads/2023/12/DSC_4204-1536x1349.jpg 1536w, https://jalsasalana.ng/wp-content/uploads/2023/12/DSC_4204-2048x1799.jpg 2048w"" sizes=""(max-width: 300px) 100vw, 300px"" />
+        <header><h4><a
+                        href=""https://jalsasalana.ng/fear-of-allah-righteousness-key-to-answered-prayers/""
+                        title=""Fear of Allah, righteousness key to answered prayers – Mukarram Atoki"">Fear of Allah, righteousness key to answered prayers – Mukarram Atoki</a></h4></header>
+                        <p>By Saheed Aribisala...</p><a
+                            href=""https://jalsasalana.ng/fear-of-allah-righteousness-key-to-answered-prayers/""
+                           >Read More</a>
+                    <time datetime=""December 22, 2023"">December 22, 2023</time>
+    </article><article data-id=""1868"">
+            <a href=""https://jalsasalana.ng/discharge-your-duties-with-smile/""></a>
+                <img width=""300"" height=""200"" src=""https://jalsasalana.ng/wp-content/uploads/2023/12/DSC_6731-300x200.jpg"" alt="""" decoding=""async"" srcset=""https://jalsasalana.ng/wp-content/uploads/2023/12/DSC_6731-300x200.jpg 300w, https://jalsasalana.ng/wp-content/uploads/2023/12/DSC_6731-1024x683.jpg 1024w, https://jalsasalana.ng/wp-content/uploads/2023/12/DSC_6731-768x512.jpg 768w, https://jalsasalana.ng/wp-content/uploads/2023/12/DSC_6731-1536x1024.jpg 1536w, https://jalsasalana.ng/wp-content/uploads/2023/12/DSC_6731-2048x1365.jpg 2048w"" sizes=""(max-width: 300px) 100vw, 300px"" />
+        <header><h4><a
+                        href=""https://jalsasalana.ng/discharge-your-duties-with-smile/""
+                        title=""Discharge your duties with smile — Amir to Jalsa Volunteers"">Discharge your duties with smile — Amir to Jalsa Volunteers</a></h4></header>
+                        <p>By Sheriffdeen Saula...</p><a
+                            href=""https://jalsasalana.ng/discharge-your-duties-with-smile/""
+                           >Read More</a>
+                    <time datetime=""December 22, 2023"">December 22, 2023</time>
+    </article><article data-id=""1806"">
+            <a href=""https://jalsasalana.ng/taqwa-a-recipe-for-social-justice-peace/""></a>
+                <img width=""300"" height=""204"" src=""https://jalsasalana.ng/wp-content/uploads/2023/12/Jalaa-Salana-33-300x204.jpg"" alt="""" decoding=""async"" srcset=""https://jalsasalana.ng/wp-content/uploads/2023/12/Jalaa-Salana-33-300x204.jpg 300w, https://jalsasalana.ng/wp-content/uploads/2023/12/Jalaa-Salana-33-1024x695.jpg 1024w, https://jalsasalana.ng/wp-content/uploads/2023/12/Jalaa-Salana-33-768x521.jpg 768w, https://jalsasalana.ng/wp-content/uploads/2023/12/Jalaa-Salana-33.jpg 1280w"" sizes=""(max-width: 300px) 100vw, 300px"" />
+        <header><h4><a
+                        href=""https://jalsasalana.ng/taqwa-a-recipe-for-social-justice-peace/""
+                        title=""TAQWA, a recipe for Social Justice, Peace &#8211; Amir Ahmadiyya tells Nigerians"">TAQWA, a recipe for Social Justice, Peace &#8211; Amir Ahmadiyya tells Nigerians</a></h4></header>
+                        <p>By Abdulquadri Olanrewaju-...</p><a
+                            href=""https://jalsasalana.ng/taqwa-a-recipe-for-social-justice-peace/""
+                           >Read More</a>
+                    <time datetime=""December 21, 2023"">December 21, 2023</time>
+    </article><article data-id=""1801"">
+            <a href=""https://jalsasalana.ng/what-to-expect/""></a>
+                <img width=""300"" height=""195"" src=""https://jalsasalana.ng/wp-content/uploads/2023/12/Jalaa-Salana-1A-300x195.jpg"" alt="""" decoding=""async"" srcset=""https://jalsasalana.ng/wp-content/uploads/2023/12/Jalaa-Salana-1A-300x195.jpg 300w, https://jalsasalana.ng/wp-content/uploads/2023/12/Jalaa-Salana-1A-1024x665.jpg 1024w, https://jalsasalana.ng/wp-content/uploads/2023/12/Jalaa-Salana-1A-768x499.jpg 768w, https://jalsasalana.ng/wp-content/uploads/2023/12/Jalaa-Salana-1A.jpg 1280w"" sizes=""(max-width: 300px) 100vw, 300px"" />
+        <header><h4><a
+                        href=""https://jalsasalana.ng/what-to-expect/""
+                        title=""What to expect at Nigeria Jalsa 2023 &#8211; Amir Ahmadiyya"">What to expect at Nigeria Jalsa 2023 &#8211; Amir Ahmadiyya</a></h4></header>
+                        <p>By Abdulquadri Olanrewaju-...</p><a
+                            href=""https://jalsasalana.ng/what-to-expect/""
+                           >Read More</a>
+                    <time datetime=""December 21, 2023"">December 21, 2023</time>
+    </article>
+													<img width=""1250"" height=""1000"" src=""https://jalsasalana.ng/wp-content/uploads/2023/12/WhatsApp-Image-2023-12-08-at-09.39.01.jpeg"" alt="""" srcset=""https://jalsasalana.ng/wp-content/uploads/2023/12/WhatsApp-Image-2023-12-08-at-09.39.01.jpeg 1250w, https://jalsasalana.ng/wp-content/uploads/2023/12/WhatsApp-Image-2023-12-08-at-09.39.01-300x240.jpeg 300w, https://jalsasalana.ng/wp-content/uploads/2023/12/WhatsApp-Image-2023-12-08-at-09.39.01-1024x819.jpeg 1024w, https://jalsasalana.ng/wp-content/uploads/2023/12/WhatsApp-Image-2023-12-08-at-09.39.01-768x614.jpeg 768w"" sizes=""(max-width: 1250px) 100vw, 1250px"" />													
+			<h2>Info-Hotline for the Jalsa Salana</h2>		
+		<p>With our team, we are always available by phone for inquiries regarding Jalsa Salana Nigeria</p>		
+			<a href=""#"">
+				<svg aria-hidden=""true"" viewBox=""0 0 448 512"" xmlns=""http://www.w3.org/2000/svg""><path d=""M190.5 66.9l22.2-22.2c9.4-9.4 24.6-9.4 33.9 0L441 239c9.4 9.4 9.4 24.6 0 33.9L246.6 467.3c-9.4 9.4-24.6 9.4-33.9 0l-22.2-22.2c-9.5-9.5-9.3-25 .4-34.3L311.4 296H24c-13.3 0-24-10.7-24-24v-32c0-13.3 10.7-24 24-24h287.4L190.9 101.2c-9.8-9.3-10-24.8-.4-34.3z""></path></svg>			
+									+234 802 376 5263
+					</a>"
+1932,Accommodation,"The accommodation department plays a crucial role in ensuring a seamless and comfortable experience for attendees. This department is responsible for managing lodging arrangements and addressing the diverse needs of participants. Thus, it serves as a central point of contact for attendees, and managing check-in of guests.
+
+The department is responsible for coordinating with designated lodging facilities within and outside the main venue to secure a sufficient number of rooms for all attendees. It also ensures that all lodging facilities cater to specific important requirements like prayer spaces, convenience units and special lodging for the elderly, in order to enhance the overall experiences and specific needs of all categories of attendees. This attention to detail reflects the community's commitment to providing a supportive environment for its members.
+
+Moreover, the team collaborates with other departments to synchronize schedules, aligning accommodation logistics with the overall event programme. This coordination helps prevent scheduling conflicts and ensures that participants can seamlessly transition between accommodation and convention activities.
+
+In essence, the accommodation department plays a pivotal role in creating a hospitable environment, where the practical needs of attendees are met, allowing them to focus on the spiritual and communal aspects of the convention."
+1940,Transportation,"The transportation department is instrumental in facilitating the smooth movement of attendees, ensuring efficient travel to and from the event venue. This department undertakes several key functions to optimize transportation logistics and providing travel guide.
+
+First and foremost, the transportation team handles the various transportation facilities of the community and effectively manages vehicular movements to ensure free flow of traffic and ease mobility in and outside the venue. It plans routes, schedule pick-up and drop-off points, and manage transportation resources to accommodate the diverse needs of participants.
+
+The transportation team works closely with the accommodation department to synchronize schedules, aligning pick-up and drop-off times with check-in and check-out processes, especially for guests.. This collaborative effort aims to minimize wait times, streamline logistics, and create a seamless experience for convention participants.
+
+Additionally, the department plays a vital role in managing traffic flow and parking logistics around the event venue. By implementing well-thought-out plans, they contribute to a hassle-free arrival and departure experience, minimizing congestion and ensuring the safety of all attendees.
+
+In summary, the transportation department is integral to the overall success of the convention. Their meticulous planning and coordination efforts enable attendees to focus on the purpose of the event, fostering a sense of unity and shared experience among all participants."
