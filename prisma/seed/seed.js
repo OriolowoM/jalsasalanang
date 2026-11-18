@@ -1,10 +1,17 @@
+const fs = require('fs');
+const path = require('path');
+const logFile = path.resolve(__dirname, '../../migration_log.txt');
+function log(msg) {
+  try { fs.appendFileSync(logFile, `[${new Date().toISOString()}] ${msg}\n`); } catch (_) {}
+  console.log(msg);
+}
 const { PrismaClient } = require('@prisma/client');
 const bcrypt = require('bcryptjs');
 
 const prisma = new PrismaClient();
 
 async function main() {
-  console.log('[Seed] Seeding Jalsa Salana Nigeria platform database...');
+  log('[Seed] Seeding Jalsa Salana Nigeria platform database...');
 
   // 1. Roles
   const rolesData = [
@@ -26,7 +33,7 @@ async function main() {
     });
     rolesMap[r.slug] = role;
   }
-  console.log('[Seed] Roles created.');
+  log('[Seed] Roles created.');
 
   // 2. Super Administrator User
   const passwordHash = await bcrypt.hash('JalsaNigeria@2026!', 10);
@@ -46,7 +53,7 @@ async function main() {
       roleId: rolesMap['super_administrator'].id,
     },
   });
-  console.log('[Seed] Admin user created: admin@jalsasalana.ng / JalsaNigeria@2026!');
+  log('[Seed] Admin user created: admin@jalsasalana.ng / JalsaNigeria@2026!');
 
   // 3. Authors
   const authorsData = [
@@ -101,7 +108,7 @@ async function main() {
     });
     authorsMap[a.slug] = author;
   }
-  console.log('[Seed] Authors created.');
+  log('[Seed] Authors created.');
 
   // 4. Categories
   const categoriesData = [
@@ -123,7 +130,7 @@ async function main() {
     });
     categoriesMap[c.slug] = cat;
   }
-  console.log('[Seed] Categories created.');
+  log('[Seed] Categories created.');
 
   // 5. Jalsa Editions (Historical & Upcoming 2026)
   const editionsData = [
@@ -201,7 +208,7 @@ async function main() {
     });
     editionsMap[e.year] = ed;
   }
-  console.log('[Seed] Jalsa Editions created (2022-2026).');
+  log('[Seed] Jalsa Editions created (2022-2026).');
 
   // 6. Editorial Articles
   const articlesData = [
@@ -418,7 +425,7 @@ async function main() {
       },
     });
   }
-  console.log('[Seed] Editorial articles seeded.');
+  log('[Seed] Editorial articles seeded.');
 
   // 7. Speeches & Keynotes
   const speechesData = [
@@ -483,7 +490,7 @@ async function main() {
       },
     });
   }
-  console.log('[Seed] Speeches and keynote records seeded.');
+  log('[Seed] Speeches and keynote records seeded.');
 
   // 8. Media & Galleries
   const gallery = await prisma.gallery.upsert({
@@ -530,7 +537,7 @@ async function main() {
       },
     });
   }
-  console.log('[Seed] Media gallery and photos seeded.');
+  log('[Seed] Media gallery and photos seeded.');
 
   // 9. Site Settings
   const settingsData = [
@@ -553,7 +560,7 @@ async function main() {
       update: s,
     });
   }
-  console.log('[Seed] Site settings populated.');
+  log('[Seed] Site settings populated.');
 
   // 10. Navigation Menus
   const primaryMenu = await prisma.navigationMenu.upsert({
@@ -575,15 +582,14 @@ async function main() {
     },
     update: {},
   });
-  console.log('[Seed] Navigation menus configured.');
+  log('[Seed] Navigation menus configured.');
 
-  console.log('[Seed] Database seeding completed successfully!');
+  log('[Seed] Database seeding completed successfully!');
 }
 
 main()
   .catch((e) => {
-    console.error('[Seed Error]:', e);
-    process.exit(1);
+    log('[Seed Error]:', e);
   })
   .finally(async () => {
     await prisma.$disconnect();

@@ -7,7 +7,35 @@ require('dotenv').config();
 // Allow internal loopback Node HTTPS fetches without leaf certificate errors
 process.env.NODE_TLS_REJECT_UNAUTHORIZED = '0';
 
-// Clean up any stale/broken engine in /tmp (which causes 'failed to map segment from shared object' due to noexec)
+// Auto-extract deploy.tar.gz if uploaded by CI/CD
+const deployArchive = path.resolve(__dirname, 'deploy.tar.gz');
+if (fs.existsSync(deployArchive)) {
+  try {
+    const size = fs.statSync(deployArchive).size;
+    console.log(`[Jalsa Unified Server] deploy.tar.gz detected (${size} bytes). Auto-extracting...`);
+    const { execSync } = require('child_process');
+    try {
+      execSync('tar -xzf deploy.tar.gz', { cwd: __dirname });
+    } catch (_) {
+      try {
+        execSync('/bin/tar -xzf deploy.tar.gz', { cwd: __dirname });
+      } catch (_) {
+        execSync('/usr/bin/tar -xzf deploy.tar.gz', { cwd: __dirname });
+      }
+    }
+    fs.unlinkSync(deployArchive);
+    console.log('[Jalsa Unified Server] deploy.tar.gz successfully extracted and removed.');
+  } catch (err) {
+    console.error('[Jalsa Unified Server] deploy.tar.gz extraction error:', err.message);
+  }
+}
+
+// Discard any /tmp/prisma-engines engine path (causes 'failed to map segment from shared object' due to cPanel noexec)
+if (process.env.PRISMA_QUERY_ENGINE_LIBRARY && process.env.PRISMA_QUERY_ENGINE_LIBRARY.startsWith('/tmp')) {
+  delete process.env.PRISMA_QUERY_ENGINE_LIBRARY;
+}
+
+// Clean up any stale/broken engine in /tmp
 if (process.platform === 'linux') {
   try {
     const tmpDir = '/tmp/prisma-engines';
@@ -16,6 +44,7 @@ if (process.platform === 'linux') {
       for (const f of files) {
         try { fs.unlinkSync(path.join(tmpDir, f)); } catch (_) {}
       }
+      try { fs.rmdirSync(tmpDir); } catch (_) {}
     }
   } catch (_) {}
 }
@@ -65,10 +94,10 @@ if (process.platform === 'linux') {
   let verifiedEnginePath = null;
   for (const name of engineNames) {
     const locations = [
+      path.join(venvClientDir, name),
       path.join(enginesDir, name),
       path.join(clientDir, name),
       path.resolve(__dirname, 'prisma', name),
-      path.join(venvClientDir, name),
     ];
     for (const loc of locations) {
       if (fs.existsSync(loc)) {
@@ -80,23 +109,29 @@ if (process.platform === 'linux') {
           console.log(`[Jalsa Unified Server] Successfully validated Prisma engine: ${loc}`);
           break;
         } catch (loadErr) {
-          console.log(`[Jalsa Unified Server] Candidate ${name} not suitable: ${loadErr.message}`);
+          console.log(`[Jalsa Unified Server] Candidate ${name} at ${loc} not suitable: ${loadErr.message}`);
         }
       }
     }
     if (verifiedEnginePath) break;
   }
 
-  // If require() dry-run threw, fallback to the first existing file in prisma/engines
+  // If require() dry-run threw, fallback to the first existing file in virtualenv or engines
   if (!verifiedEnginePath) {
     for (const name of engineNames) {
-      const fallbackLoc = path.join(enginesDir, name);
-      if (fs.existsSync(fallbackLoc)) {
-        try { fs.chmodSync(fallbackLoc, 0o755); } catch (_) {}
-        verifiedEnginePath = fallbackLoc;
-        console.log(`[Jalsa Unified Server] Using fallback engine in application directory: ${fallbackLoc}`);
-        break;
+      const fallbackLocs = [
+        path.join(venvClientDir, name),
+        path.join(enginesDir, name),
+      ];
+      for (const loc of fallbackLocs) {
+        if (fs.existsSync(loc)) {
+          try { fs.chmodSync(loc, 0o755); } catch (_) {}
+          verifiedEnginePath = loc;
+          console.log(`[Jalsa Unified Server] Using fallback engine: ${loc}`);
+          break;
+        }
       }
+      if (verifiedEnginePath) break;
     }
   }
 
@@ -146,40 +181,38 @@ process.on('unhandledRejection', (reason) => {
 const dev = process.env.NODE_ENV === 'development';
 const port = parseInt(process.env.PORT || '3000', 10);
 
-// Set internal API loopback URL for Next.js SSR requests
-if (!process.env.INTERNAL_API_URL) {
-  if (process.env.PORT && !isNaN(Number(process.env.PORT))) {
-    process.env.INTERNAL_API_URL = `http://127.0.0.1:${process.env.PORT}/api/v1`;
-  } else {
-    process.env.INTERNAL_API_URL = 'https://jalsasalana.ng/api/v1';
-  }
-}
+// Set internal API URL for Next.js SSR requests
+process.env.INTERNAL_API_URL = 'https://jalsasalana.ng/api/v1';
 
-// Background auto-seeding if database has zero articles
+// Background auto-migration and seeding if database tables or articles are missing
 function autoSeedDatabaseIfEmpty() {
   setTimeout(async () => {
     try {
       const { prisma } = require('./apps/api/dist/lib/prisma');
-      const articleCount = await prisma.article.count();
-      console.log(`[Jalsa Unified Server] Database verified: ${articleCount} articles present.`);
-      if (articleCount === 0) {
-        console.log('[Jalsa Unified Server] Zero articles found. Automatically running database seed...');
-        const { fork } = require('child_process');
-        const seedScript = path.resolve(__dirname, 'prisma/seed/seed.js');
-        if (fs.existsSync(seedScript)) {
-          const child = fork(seedScript, [], {
-            env: { ...process.env },
-            stdio: 'inherit',
-          });
-          child.on('exit', (code) => {
-            console.log(`[Jalsa Unified Server] Database seed completed with status ${code}`);
-          });
+      let articleCount = 0;
+      let needsMigration = false;
+      try {
+        articleCount = await prisma.article.count();
+        console.log(`[Jalsa Unified Server] Database verified: ${articleCount} articles present.`);
+      } catch (checkErr) {
+        console.log('[Jalsa Unified Server] Database tables missing or inaccessible:', checkErr.message);
+        needsMigration = true;
+      }
+
+      if (needsMigration || articleCount === 0) {
+        console.log('[Jalsa Unified Server] Running automatic database migration and seeding routine...');
+        try {
+          const { runMigration } = require('./prisma/migrate');
+          await runMigration();
+          console.log('[Jalsa Unified Server] Database migration and seed completed.');
+        } catch (migErr) {
+          console.error('[Jalsa Unified Server] Migration routine error:', migErr.message);
         }
       }
     } catch (err) {
-      console.warn('[Jalsa Unified Server] Auto-seed check warning (non-fatal):', err.message);
+      console.warn('[Jalsa Unified Server] Auto-migration check warning (non-fatal):', err.message);
     }
-  }, 2500);
+  }, 1500);
 }
 
 // Initialize Next.js app located at apps/web
@@ -217,7 +250,10 @@ async function start() {
     server.listen(port, () => {
       console.log(`[Jalsa Unified Server] Running on port ${port} (mode: ${dev ? 'development' : 'production'})`);
       try {
-        fs.writeFileSync(path.resolve(__dirname, 'startup_status.txt'), `Running successfully on port ${port} at ${new Date().toISOString()}`);
+        fs.writeFileSync(
+          path.resolve(__dirname, 'startup_status.txt'),
+          `Running successfully on port ${port} at ${new Date().toISOString()}\nPrisma Engine: ${process.env.PRISMA_QUERY_ENGINE_LIBRARY || 'none'}`
+        );
       } catch (_) {}
       // Check database seed in background
       autoSeedDatabaseIfEmpty();

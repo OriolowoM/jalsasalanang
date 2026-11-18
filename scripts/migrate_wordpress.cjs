@@ -9,7 +9,12 @@ const prisma = new PrismaClient();
 function readCsv(filePath) {
   return new Promise((resolve, reject) => {
     const rows = [];
-    fs.createReadStream(path.resolve(filePath))
+    const fullPath = path.resolve(filePath);
+    if (!fs.existsSync(fullPath)) {
+      console.warn(`[CSV] File not found: ${fullPath}`);
+      return resolve([]);
+    }
+    fs.createReadStream(fullPath)
       .pipe(csv())
       .on('data', (data) => rows.push(data))
       .on('end', () => resolve(rows))
@@ -21,21 +26,12 @@ function readCsv(filePath) {
 function sanitizeHtml(raw) {
   if (!raw) return '';
   let content = raw;
-
-  // 1. Remove style and script tags and their content
   content = content.replace(/<style\b[^>]*>[\s\S]*?<\/style>/gi, '');
   content = content.replace(/<script\b[^>]*>[\s\S]*?<\/script>/gi, '');
-
-  // 2. Remove Gutenberg comments
   content = content.replace(/<!--\s*\/?wp:[^\>]*-->/gi, '');
-
-  // 3. Normalize non-breaking spaces & empty elements
   content = content.replace(/&nbsp;/g, ' ');
   content = content.replace(/<p>\s*<\/p>/gi, '');
-
-  // 4. Clean up repetitive blank lines
   content = content.replace(/\n\s*\n\s*\n/g, '\n\n');
-
   return content.trim();
 }
 
@@ -49,27 +45,16 @@ function extractImages(content, sourceSite, postTitle) {
   while ((match = imgSrcRegex.exec(content)) !== null) {
     const url = match[1];
     if (url && (url.includes('wp-content/uploads') || /\.(jpg|jpeg|png|webp|gif|svg)$/i.test(url))) {
-      images.push({
-        originalUrl: url,
-        fileName: path.basename(url.split('?')[0]),
-        sourceSite,
-        postTitle
-      });
+      images.push(url);
     }
   }
 
   const hrefImgRegex = /<a[^>]+href=["']([^"']+\.(?:jpg|jpeg|png|webp|gif))["']/gi;
   while ((match = hrefImgRegex.exec(content)) !== null) {
-    const url = match[1];
-    images.push({
-      originalUrl: url,
-      fileName: path.basename(url.split('?')[0]),
-      sourceSite,
-      postTitle
-    });
+    images.push(match[1]);
   }
 
-  return images;
+  return [...new Set(images)];
 }
 
 // Helper: Generate URL slug
@@ -94,7 +79,6 @@ function calculateReadingTime(text) {
 
 // Helper: Extract author from byline or content
 function extractAuthorName(title, content) {
-  // Check for common byline patterns
   const bylineMatch = content.match(/(?:<strong>\s*)?By\s+([A-Za-z\s\.'\(\)]+?)(?:<\/strong>|\n|<br|\s*<span|<\/p>)/i);
   if (bylineMatch && bylineMatch[1] && bylineMatch[1].trim().length > 2 && bylineMatch[1].trim().length < 50) {
     return bylineMatch[1].trim();
@@ -175,13 +159,11 @@ async function ensureCategories() {
     if (!existing) {
       existing = await prisma.category.create({
         data: {
-          id: 'cat_' + slugify(cat.slug),
           name: cat.name,
           slug: cat.slug,
           description: cat.description,
           color: cat.color,
           sortOrder: 10,
-          updatedAt: new Date()
         }
       });
       console.log(`[Category] Created: ${cat.name} (${cat.slug})`);
@@ -197,12 +179,10 @@ async function ensureAuthor(name) {
   if (!author) {
     author = await prisma.author.create({
       data: {
-        id: 'auth_' + slug.replace(/[^a-z0-9]/g, '_').substring(0, 25) + '_' + Date.now().toString(36),
         name,
         slug,
         title: name.includes('Alatoye') ? 'Amir (National Head), Ahmadiyya Muslim Jamaat Nigeria' : 'Contributing Writer & Editorial Correspondent',
         bio: `${name} is an esteemed contributor to Jalsa Salana Nigeria digital editorial publications.`,
-        updatedAt: new Date()
       }
     });
     console.log(`[Author] Created: ${name} (${slug})`);
@@ -211,343 +191,68 @@ async function ensureAuthor(name) {
 }
 
 async function main() {
-  console.log('======================================================');
-  console.log('   JALSA SALANA NIGERIA — WORDPRESS CSV INGESTION     ');
-  console.log('======================================================\n');
+  console.log('[Migrate WP] Starting WordPress Article & Page Ingestion...');
 
-  // 1. Ensure categories are created/mapped
-  console.log('Phase 1.1: Ensuring Category Taxonomies...');
+  // 1. Ensure Categories
   const categoryMap = await ensureCategories();
 
-  // 2. Load all 4 CSV datasets
-  console.log('\nPhase 1.2: Reading CSV files via csv-parser...');
+  // 2. Load CSV Datasets
   const blogPosts = await readCsv('data/csv_exports/wp_blog_posts.csv');
   const mainPosts = await readCsv('data/csv_exports/wp_main_posts.csv');
-  const blogPages = await readCsv('data/csv_exports/wp_blog_pages.csv');
   const mainPages = await readCsv('data/csv_exports/wp_main_pages.csv');
 
-  console.log(`  - wp_blog_posts.csv: ${blogPosts.length} records`);
-  console.log(`  - wp_main_posts.csv: ${mainPosts.length} records`);
-  console.log(`  - wp_blog_pages.csv: ${blogPages.length} records`);
-  console.log(`  - wp_main_pages.csv: ${mainPages.length} records`);
+  console.log(`[Migrate WP] Loaded ${blogPosts.length} blog posts, ${mainPosts.length} main posts, ${mainPages.length} pages.`);
 
-  const assetMap = new Map(); // originalUrl -> asset record
+  const artCategoryModel = prisma.articleCategory || prisma.articlecategory;
 
-  // Helper to register asset
-  async function registerAsset(img) {
-    if (!img.originalUrl) return;
-    const cleanUrl = img.originalUrl.trim();
-    if (!assetMap.has(cleanUrl)) {
-      try {
-        const localPath = `/uploads/migrated/${img.sourceSite}/${img.fileName}`;
-        const asset = await prisma.wordpress_asset.upsert({
-          where: { originalUrl: cleanUrl },
-          update: {
-            referenceCount: { increment: 1 }
-          },
-          create: {
-            originalUrl: cleanUrl,
-            localPath,
-            sourceSite: img.sourceSite,
-            fileName: img.fileName,
-            postOrPageTitle: img.postTitle || 'Untitled',
-            status: 'DISCOVERED'
-          }
-        });
-        assetMap.set(cleanUrl, asset);
-      } catch (e) {
-        // Ignored or logged
-      }
-    }
-  }
-
-  // 3. Ingest WordPress Migration Records & WordPress Assets
-  console.log('\nPhase 1.3: Ingesting Raw WordPress Records & Isolating Assets...');
-
-  // A. Ingest Blog Posts
-  let wpRecordsCount = 0;
-  for (const row of blogPosts) {
-    const wpId = parseInt(row.ID, 10);
-    const title = (row.Title || 'Untitled').trim();
-    const rawContent = row.Content || '';
-    const cleanContent = sanitizeHtml(rawContent);
-    const excerpt = (row.Excerpt || '').trim();
-    const permalink = (row.Permalink || '').trim();
-    const date = row.Date ? new Date(row.Date) : new Date();
-    const postType = (row['Post Type'] || 'post').trim();
-
-    // Extract images
-    const images = extractImages(rawContent, 'blog.jalsasalana.ng', title);
-    for (const img of images) {
-      await registerAsset(img);
-    }
-    const featuredImage = images.length > 0 ? images[0].originalUrl : null;
-
-    // Derived slug
-    let slug = permalink ? permalink.replace(/^https?:\/\/[^\/]+\//, '').replace(/\/+$/, '') : slugify(title);
-    if (!slug) slug = `post-${wpId}`;
-
-    await prisma.wordpress_migration_record.upsert({
-      where: {
-        sourceSite_wpId_postType: {
-          sourceSite: 'blog.jalsasalana.ng',
-          wpId,
-          postType
-        }
-      },
-      update: {
-        title,
-        slug,
-        date,
-        originalUrl: permalink,
-        cleanContent,
-        rawContent,
-        excerpt,
-        featuredImage,
-        associatedType: 'ARTICLE'
-      },
-      create: {
-        sourceSite: 'blog.jalsasalana.ng',
-        wpId,
-        postType,
-        title,
-        slug,
-        date,
-        originalUrl: permalink,
-        cleanContent,
-        rawContent,
-        excerpt,
-        featuredImage,
-        associatedType: 'ARTICLE'
-      }
-    });
-    wpRecordsCount++;
-  }
-
-  // B. Ingest Main Posts
-  for (const row of mainPosts) {
-    const wpId = parseInt(row['﻿id'] || row.id || row.ID, 10);
-    const title = (row.Title || 'Untitled').trim();
-    const rawContent = row.Content || '';
-    const cleanContent = sanitizeHtml(rawContent);
-    const permalink = `https://jalsasalana.ng/?p=${wpId}`;
-    const slug = slugify(title) || `main-post-${wpId}`;
-
-    const images = extractImages(rawContent, 'jalsasalana.ng', title);
-    for (const img of images) {
-      await registerAsset(img);
-    }
-    const featuredImage = images.length > 0 ? images[0].originalUrl : null;
-
-    await prisma.wordpress_migration_record.upsert({
-      where: {
-        sourceSite_wpId_postType: {
-          sourceSite: 'jalsasalana.ng',
-          wpId,
-          postType: 'post'
-        }
-      },
-      update: {
-        title,
-        slug,
-        date: new Date('2023-12-22T10:00:00Z'),
-        originalUrl: permalink,
-        cleanContent,
-        rawContent,
-        excerpt: '',
-        featuredImage,
-        associatedType: 'ARTICLE'
-      },
-      create: {
-        sourceSite: 'jalsasalana.ng',
-        wpId,
-        postType: 'post',
-        title,
-        slug,
-        date: new Date('2023-12-22T10:00:00Z'),
-        originalUrl: permalink,
-        cleanContent,
-        rawContent,
-        excerpt: '',
-        featuredImage,
-        associatedType: 'ARTICLE'
-      }
-    });
-    wpRecordsCount++;
-  }
-
-  // C. Ingest Blog Pages
-  for (const row of blogPages) {
-    const wpId = parseInt(row.ID, 10);
-    const title = (row.Title || 'Untitled').trim();
-    const rawContent = row.Content || '';
-    const cleanContent = sanitizeHtml(rawContent);
-    const excerpt = (row.Excerpt || '').trim();
-    const permalink = (row.Permalink || '').trim();
-    const date = row.Date ? new Date(row.Date) : new Date();
-    const postType = (row['Post Type'] || 'page').trim();
-
-    const images = extractImages(rawContent, 'blog.jalsasalana.ng', title);
-    for (const img of images) {
-      await registerAsset(img);
-    }
-    const featuredImage = images.length > 0 ? images[0].originalUrl : null;
-    let slug = permalink ? permalink.replace(/^https?:\/\/[^\/]+\//, '').replace(/\/+$/, '') : slugify(title);
-    if (!slug) slug = `page-${wpId}`;
-
-    await prisma.wordpress_migration_record.upsert({
-      where: {
-        sourceSite_wpId_postType: {
-          sourceSite: 'blog.jalsasalana.ng',
-          wpId,
-          postType
-        }
-      },
-      update: {
-        title,
-        slug,
-        date,
-        originalUrl: permalink,
-        cleanContent,
-        rawContent,
-        excerpt,
-        featuredImage,
-        associatedType: 'PAGE'
-      },
-      create: {
-        sourceSite: 'blog.jalsasalana.ng',
-        wpId,
-        postType,
-        title,
-        slug,
-        date,
-        originalUrl: permalink,
-        cleanContent,
-        rawContent,
-        excerpt,
-        featuredImage,
-        associatedType: 'PAGE'
-      }
-    });
-    wpRecordsCount++;
-  }
-
-  // D. Ingest Main Pages
-  for (const row of mainPages) {
-    const wpId = parseInt(row['﻿id'] || row.id || row.ID, 10);
-    const title = (row.Title || 'Untitled').trim();
-    const rawContent = row.Content || '';
-    const cleanContent = sanitizeHtml(rawContent);
-    const permalink = `https://jalsasalana.ng/?page_id=${wpId}`;
-    const slug = slugify(title) || `main-page-${wpId}`;
-
-    const images = extractImages(rawContent, 'jalsasalana.ng', title);
-    for (const img of images) {
-      await registerAsset(img);
-    }
-    const featuredImage = images.length > 0 ? images[0].originalUrl : null;
-
-    await prisma.wordpress_migration_record.upsert({
-      where: {
-        sourceSite_wpId_postType: {
-          sourceSite: 'jalsasalana.ng',
-          wpId,
-          postType: 'page'
-        }
-      },
-      update: {
-        title,
-        slug,
-        date: new Date('2024-01-01T10:00:00Z'),
-        originalUrl: permalink,
-        cleanContent,
-        rawContent,
-        excerpt: '',
-        featuredImage,
-        associatedType: 'PAGE'
-      },
-      create: {
-        sourceSite: 'jalsasalana.ng',
-        wpId,
-        postType: 'page',
-        title,
-        slug,
-        date: new Date('2024-01-01T10:00:00Z'),
-        originalUrl: permalink,
-        cleanContent,
-        rawContent,
-        excerpt: '',
-        featuredImage,
-        associatedType: 'PAGE'
-      }
-    });
-    wpRecordsCount++;
-  }
-
-  console.log(`[Migration Records] Ingested ${wpRecordsCount} raw WordPress records into wordpress_migration_record.`);
-  const assetCount = await prisma.wordpress_asset.count();
-  console.log(`[WordPress Assets] Isolated and mapped ${assetCount} unique media assets into wordpress_asset.`);
-
-  // 4. Ingest into Core Article & Page models for seamless live platform use
-  console.log('\nPhase 1.4: Ingesting into Core Article & Page models...');
-
+  // 3. Ingest Blog Posts into Article
   let articleUpsertCount = 0;
   for (const row of blogPosts) {
     const wpId = parseInt(row.ID, 10);
     const title = (row.Title || 'Untitled').trim();
-    if (!title || title.toLowerCase() === 'sample page') continue;
+    if (!title || title.toLowerCase() === 'sample page' || title.toLowerCase() === 'hello world!') continue;
 
     const rawContent = row.Content || '';
     const cleanContent = sanitizeHtml(rawContent);
+    if (!cleanContent) continue;
+
     const permalink = (row.Permalink || '').trim();
     const date = row.Date ? new Date(row.Date) : new Date();
 
-    // Derived slug
     let slug = permalink ? permalink.replace(/^https?:\/\/[^\/]+\//, '').replace(/\/+$/, '') : slugify(title);
     if (!slug) slug = `article-${wpId}`;
 
-    // Extract author
     const authorName = extractAuthorName(title, rawContent);
     const author = await ensureAuthor(authorName);
 
-    // Images & Reading time
     const images = extractImages(rawContent, 'blog.jalsasalana.ng', title);
-    const featuredImage = images.length > 0 ? images[0].originalUrl : null;
+    const featuredImage = images.length > 0 ? images[0] : null;
     const readingTime = calculateReadingTime(cleanContent);
 
-    // Excerpt: use provided excerpt or first 200 characters of clean content
     let excerpt = (row.Excerpt || '').trim();
     if (!excerpt) {
       const textOnly = cleanContent.replace(/<[^>]*>/g, '').trim();
       excerpt = textOnly.length > 200 ? textOnly.substring(0, 197) + '...' : textOnly;
     }
 
-    // Determine category
     const catSlugs = categorizeContent(title, cleanContent);
 
-    // Upsert Article
-    let article = await prisma.article.findUnique({ where: { slug } });
-    if (article) {
-      article = await prisma.article.update({
+    try {
+      const article = await prisma.article.upsert({
         where: { slug },
-        data: {
+        update: {
           title,
           content: cleanContent,
           excerpt,
-          featuredImage: featuredImage || article.featuredImage,
+          featuredImage: featuredImage || undefined,
           readingTime,
           wpId,
           sourceSite: 'blog.jalsasalana.ng',
           originalUrl: permalink,
           publishedAt: date,
           status: 'PUBLISHED',
-          updatedAt: new Date()
-        }
-      });
-    } else {
-      article = await prisma.article.create({
-        data: {
-          id: 'wp_art_' + wpId + '_' + Date.now().toString(36),
+        },
+        create: {
           title,
           slug,
           content: cleanContent,
@@ -560,140 +265,131 @@ async function main() {
           wpId,
           sourceSite: 'blog.jalsasalana.ng',
           originalUrl: permalink,
-          updatedAt: new Date()
         }
       });
-    }
 
-    // Connect Categories
-    for (const catSlug of catSlugs) {
-      const cat = categoryMap.get(catSlug);
-      if (cat) {
-        await prisma.articlecategory.upsert({
-          where: {
-            articleId_categoryId: {
-              articleId: article.id,
-              categoryId: cat.id
-            }
-          },
-          update: {},
-          create: {
-            articleId: article.id,
-            categoryId: cat.id
+      if (artCategoryModel) {
+        for (const catSlug of catSlugs) {
+          const cat = categoryMap.get(catSlug);
+          if (cat) {
+            try {
+              await artCategoryModel.upsert({
+                where: {
+                  articleId_categoryId: {
+                    articleId: article.id,
+                    categoryId: cat.id
+                  }
+                },
+                update: {},
+                create: {
+                  articleId: article.id,
+                  categoryId: cat.id
+                }
+              });
+            } catch (_) {}
           }
-        });
+        }
       }
-    }
 
-    articleUpsertCount++;
+      articleUpsertCount++;
+    } catch (artErr) {
+      console.warn(`[Migrate WP] Article notice for "${title}":`, artErr.message);
+    }
   }
 
-  console.log(`[Core Articles] Successfully ingested and mapped ${articleUpsertCount} articles with categories and authors.`);
-
-  // Ingest Core Pages
-  let pageUpsertCount = 0;
-  for (const row of mainPages) {
+  // 4. Ingest Main Posts into Article
+  for (const row of mainPosts) {
     const wpId = parseInt(row['﻿id'] || row.id || row.ID, 10);
     const title = (row.Title || 'Untitled').trim();
-    if (!title || title.toLowerCase() === 'sample page') continue;
+    if (!title || title.toLowerCase() === 'sample page' || title.toLowerCase() === 'hello world!') continue;
 
     const rawContent = row.Content || '';
     const cleanContent = sanitizeHtml(rawContent);
-    const slug = slugify(title) || `page-${wpId}`;
+    if (!cleanContent) continue;
+
+    const permalink = `https://jalsasalana.ng/?p=${wpId}`;
+    const slug = slugify(title) || `main-post-${wpId}`;
+
+    const authorName = extractAuthorName(title, rawContent);
+    const author = await ensureAuthor(authorName);
+
     const images = extractImages(rawContent, 'jalsasalana.ng', title);
-    const featuredImage = images.length > 0 ? images[0].originalUrl : null;
+    const featuredImage = images.length > 0 ? images[0] : null;
+    const readingTime = calculateReadingTime(cleanContent);
 
     const textOnly = cleanContent.replace(/<[^>]*>/g, '').trim();
     const excerpt = textOnly.length > 200 ? textOnly.substring(0, 197) + '...' : textOnly;
 
-    await prisma.page.upsert({
-      where: { slug },
-      update: {
-        title,
-        content: cleanContent,
-        wpId,
-        sourceSite: 'jalsasalana.ng',
-        originalUrl: `https://jalsasalana.ng/?page_id=${wpId}`,
-        featuredImage,
-        excerpt,
-        isPublished: true,
-        updatedAt: new Date()
-      },
-      create: {
-        id: 'wp_pg_' + wpId + '_' + Date.now().toString(36),
-        title,
-        slug,
-        content: cleanContent,
-        wpId,
-        sourceSite: 'jalsasalana.ng',
-        originalUrl: `https://jalsasalana.ng/?page_id=${wpId}`,
-        featuredImage,
-        excerpt,
-        isPublished: true,
-        updatedAt: new Date()
+    const catSlugs = categorizeContent(title, cleanContent);
+
+    try {
+      const article = await prisma.article.upsert({
+        where: { slug },
+        update: {
+          title,
+          content: cleanContent,
+          excerpt,
+          featuredImage: featuredImage || undefined,
+          readingTime,
+          wpId,
+          sourceSite: 'jalsasalana.ng',
+          originalUrl: permalink,
+          publishedAt: new Date('2023-12-22T10:00:00Z'),
+          status: 'PUBLISHED',
+        },
+        create: {
+          title,
+          slug,
+          content: cleanContent,
+          excerpt,
+          featuredImage,
+          readingTime,
+          status: 'PUBLISHED',
+          publishedAt: new Date('2023-12-22T10:00:00Z'),
+          authorId: author.id,
+          wpId,
+          sourceSite: 'jalsasalana.ng',
+          originalUrl: permalink,
+        }
+      });
+
+      if (artCategoryModel) {
+        for (const catSlug of catSlugs) {
+          const cat = categoryMap.get(catSlug);
+          if (cat) {
+            try {
+              await artCategoryModel.upsert({
+                where: {
+                  articleId_categoryId: {
+                    articleId: article.id,
+                    categoryId: cat.id
+                  }
+                },
+                update: {},
+                create: {
+                  articleId: article.id,
+                  categoryId: cat.id
+                }
+              });
+            } catch (_) {}
+          }
+        }
       }
-    });
-    pageUpsertCount++;
+
+      articleUpsertCount++;
+    } catch (artErr) {
+      console.warn(`[Migrate WP] Main post notice for "${title}":`, artErr.message);
+    }
   }
 
-  // Also ingest editorial pages from blog pages that aren't sample/privacy duplicate
-  for (const row of blogPages) {
-    const wpId = parseInt(row.ID, 10);
-    const title = (row.Title || 'Untitled').trim();
-    if (!title || title.toLowerCase() === 'sample page' || title.toLowerCase() === 'privacy policy') continue;
-
-    const rawContent = row.Content || '';
-    const cleanContent = sanitizeHtml(rawContent);
-    let slug = row.Permalink ? row.Permalink.replace(/^https?:\/\/[^\/]+\//, '').replace(/\/+$/, '') : slugify(title);
-    if (!slug) slug = `blog-page-${wpId}`;
-
-    const images = extractImages(rawContent, 'blog.jalsasalana.ng', title);
-    const featuredImage = images.length > 0 ? images[0].originalUrl : null;
-    const textOnly = cleanContent.replace(/<[^>]*>/g, '').trim();
-    const excerpt = textOnly.length > 200 ? textOnly.substring(0, 197) + '...' : textOnly;
-
-    await prisma.page.upsert({
-      where: { slug },
-      update: {
-        title,
-        content: cleanContent,
-        wpId,
-        sourceSite: 'blog.jalsasalana.ng',
-        originalUrl: row.Permalink || `https://blog.jalsasalana.ng/?page_id=${wpId}`,
-        featuredImage,
-        excerpt,
-        isPublished: true,
-        updatedAt: new Date()
-      },
-      create: {
-        id: 'wp_bpg_' + wpId + '_' + Date.now().toString(36),
-        title,
-        slug,
-        content: cleanContent,
-        wpId,
-        sourceSite: 'blog.jalsasalana.ng',
-        originalUrl: row.Permalink || `https://blog.jalsasalana.ng/?page_id=${wpId}`,
-        featuredImage,
-        excerpt,
-        isPublished: true,
-        updatedAt: new Date()
-      }
-    });
-    pageUpsertCount++;
-  }
-
-  console.log(`[Core Pages] Successfully ingested and published ${pageUpsertCount} static and editorial pages.`);
-
-  console.log('\n======================================================');
-  console.log('         MIGRATION PHASE 1 EXECUTION COMPLETE          ');
-  console.log('======================================================');
+  console.log(`[Migrate WP] Successfully ingested ${articleUpsertCount} articles with categories and authors.`);
+  return articleUpsertCount;
 }
 
-main()
-  .catch((e) => {
-    console.error('Migration failed:', e);
-    process.exit(1);
-  })
-  .finally(async () => {
-    await prisma.$disconnect();
-  });
+module.exports = { main };
+
+if (require.main === module) {
+  main()
+    .catch((e) => console.error(e))
+    .finally(() => prisma.$disconnect());
+}

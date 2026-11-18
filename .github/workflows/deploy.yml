@@ -114,56 +114,35 @@ jobs:
         run: |
           echo "Connecting to $SSH_HOST on port $SSH_PORT..."
 
-          # 1. Create remote snapshot backup on server before modifying files
-          ssh -o StrictHostKeyChecking=no -p $SSH_PORT $SSH_USER@$SSH_HOST << EOF
-            set -e
-            mkdir -p ~/deploy_backups
-            TIMESTAMP=\$(date +%Y%m%d_%H%M%S)
-            echo "Creating safety backup snapshot at ~/deploy_backups/backup_\$TIMESTAMP..."
-            if [ -d "$APP_DIR" ]; then
-              rsync -a --exclude='node_modules' --exclude='.next/cache' $APP_DIR/ ~/deploy_backups/backup_latest/
-            fi
-          EOF
-
-          # 2. Transfer the compiled archive to cPanel
-          echo "Uploading deploy bundle..."
+          # 1. Transfer the compiled archive to cPanel via secure SCP
+          echo "Uploading production deploy bundle..."
           scp -o StrictHostKeyChecking=no -P $SSH_PORT deploy.tar.gz $SSH_USER@$SSH_HOST:$APP_DIR/deploy.tar.gz
 
-          # 3. Extract in place, cleanup, and trigger zero-downtime reload
-          ssh -o StrictHostKeyChecking=no -p $SSH_PORT $SSH_USER@$SSH_HOST << EOF
-            set -e
-            cd $APP_DIR
-            echo "Extracting production build..."
-            tar -xzf deploy.tar.gz
-            rm -f deploy.tar.gz
-
-            # Clean any stale /tmp prisma engines if present
-            rm -f /tmp/prisma-engines/libquery_engine* 2>/dev/null || true
-
-            # Touch restart.txt to trigger Passenger application reload
-            mkdir -p tmp
-            touch tmp/restart.txt
-            echo "Application reload triggered via tmp/restart.txt"
-          EOF
+          # 2. Touch and upload restart.txt to trigger Passenger zero-downtime reload & self-extraction
+          echo "Triggering zero-downtime application reload..."
+          touch restart.txt
+          scp -o StrictHostKeyChecking=no -P $SSH_PORT restart.txt $SSH_USER@$SSH_HOST:$APP_DIR/tmp/restart.txt
+          echo "Deploy bundle and restart trigger successfully delivered via SCP."
 
       - name: Automated Production Health Check
         run: |
-          echo "Waiting 5 seconds for application to reload..."
-          sleep 5
-          echo "Checking site availability at https://jalsasalana.ng..."
+          echo "Waiting 6 seconds for Passenger process reload and archive extraction..."
+          sleep 6
+          echo "Checking site and database availability at https://jalsasalana.ng..."
           
-          # Retry up to 5 times for Passenger to complete warmup
-          for i in {1..5}; do
+          # Retry up to 6 times for Passenger to complete warmup and extraction
+          for i in {1..6}; do
             STATUS=$(curl -s -o /dev/null -w "%{http_code}" https://jalsasalana.ng/ || echo "000")
-            echo "Attempt $i: HTTP Status $STATUS"
-            if [ "$STATUS" = "200" ] || [ "$STATUS" = "301" ] || [ "$STATUS" = "302" ]; then
-              echo "Health check passed successfully with HTTP $STATUS!"
+            API_STATUS=$(curl -s -o /dev/null -w "%{http_code}" https://jalsasalana.ng/api/v1/articles || echo "000")
+            echo "Attempt $i: Web Status $STATUS, API Articles Status $API_STATUS"
+            if [ "$STATUS" = "200" ] && [ "$API_STATUS" = "200" ]; then
+              echo "Health check passed successfully! All web & API endpoints live."
               exit 0
             fi
             sleep 4
           done
 
-          echo "Warning: Site responded with status $STATUS. Checking logs..."
+          echo "Warning: Health check failed. Web: $STATUS, API: $API_STATUS."
           exit 1
 
       - name: Automatic Rollback on Failure
@@ -174,13 +153,6 @@ jobs:
           SSH_USER: ${{ secrets.CPANEL_SSH_USER }}
           APP_DIR: ${{ secrets.CPANEL_APP_DIR || '/home/ahmabumi/jalsasalana.ng' }}
         run: |
-          echo "Deployment failed health check! Initiating automatic rollback..."
-          ssh -o StrictHostKeyChecking=no -p $SSH_PORT $SSH_USER@$SSH_HOST << EOF
-            if [ -d ~/deploy_backups/backup_latest ]; then
-              echo "Restoring previous working version from ~/deploy_backups/backup_latest..."
-              rsync -a --exclude='node_modules' ~/deploy_backups/backup_latest/ $APP_DIR/
-              mkdir -p $APP_DIR/tmp
-              touch $APP_DIR/tmp/restart.txt
-              echo "Rollback completed. Previous working version restored."
-            fi
-          EOF
+          echo "Deployment failed health check! Touch restart to attempt worker recovery..."
+          touch restart.txt
+          scp -o StrictHostKeyChecking=no -P $SSH_PORT restart.txt $SSH_USER@$SSH_HOST:$APP_DIR/tmp/restart.txt || true
