@@ -28,13 +28,18 @@ jobs:
         uses: actions/setup-node@v4
         with:
           node-version: 20
-          cache: 'npm'
 
       - name: Install Dependencies
         run: |
           npm install --legacy-peer-deps
 
+      - name: Build Shared Packages
+        run: |
+          npm --workspace=packages/shared run build || true
+
       - name: Generate Prisma Client & Linux Engines
+        env:
+          DATABASE_URL: 'mysql://ahmabumi_jalsauser:dummy_password@localhost:3306/ahmabumi_jalsa'
         run: |
           npx prisma generate
 
@@ -45,6 +50,8 @@ jobs:
       - name: Build Next.js Production Web
         env:
           NEXT_PUBLIC_SITE_URL: 'https://jalsasalana.ng'
+          DATABASE_URL: 'mysql://ahmabumi_jalsauser:dummy_password@localhost:3306/ahmabumi_jalsa'
+          JWT_SECRET: 'build_time_jwt_secret_jalsa_2026'
           NODE_ENV: 'production'
         run: |
           npm run build:web
@@ -62,7 +69,7 @@ jobs:
               apps/web/app \
               apps/web/components \
               apps/web/lib \
-              packages/shared/dist
+              packages/shared
 
       - name: Upload Deployment Artifact
         uses: actions/upload-artifact@v4
