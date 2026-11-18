@@ -33,9 +33,9 @@ jobs:
         run: |
           npm install --legacy-peer-deps
 
-      - name: Build Shared Packages
+      - name: Build Shared Package
         run: |
-          npm --workspace=packages/shared run build || true
+          npx tsc -p packages/shared/tsconfig.json
 
       - name: Generate Prisma Client & Linux Engines
         env:

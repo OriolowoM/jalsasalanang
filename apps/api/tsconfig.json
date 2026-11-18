@@ -11,7 +11,7 @@
     "forceConsistentCasingInFileNames": true,
     "baseUrl": ".",
     "paths": {
-      "@jalsa/shared": ["../../packages/shared/src/index.ts", "../../packages/shared/dist/index.d.ts"]
+      "@jalsa/shared": ["../../packages/shared/dist/index.d.ts"]
     }
   },
   "include": ["src/**/*"]
