@@ -99,3 +99,4 @@ exports.siteSettingSchema = zod_1.z.object({
     description: zod_1.z.string().optional(),
 });
 __exportStar(require("./programme-2026"), exports);
+__exportStar(require("./jingles-2026"), exports);

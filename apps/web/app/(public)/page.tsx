@@ -3,6 +3,7 @@ import { getArticles, getEditions, getCurrentEdition, getSpeeches, getGalleries 
 import HeroSection from '@/components/public/HeroSection';
 import CountdownSection from '@/components/public/CountdownSection';
 import RegistrationShowcase from '@/components/public/RegistrationShowcase';
+import SoundOfJalsaCard from '@/components/public/audio/SoundOfJalsaCard';
 import EventAttendeeHub from '@/components/public/EventAttendeeHub';
 import EditorialCategoryTabs from '@/components/public/EditorialCategoryTabs';
 import EditorialGrid from '@/components/public/EditorialGrid';
@@ -59,7 +60,10 @@ export default async function HomePage() {
       {/* 3. Prominent Jalsa 2026 Registration Showcase Section */}
       <RegistrationShowcase />
 
-      {/* 4. Event Attendee Services & Logistics Hub (Programme, Accommodation, Transportation, Security) */}
+      {/* 4. Sound of Jalsa 2026 — 4-Language Official Jingles Audio Experience */}
+      <SoundOfJalsaCard />
+
+      {/* 5. Event Attendee Services & Logistics Hub (Programme, Accommodation, Transportation, Security) */}
       <EventAttendeeHub />
 
       {/* 5. Migrated Digital Magazine Dispatches by Thematic Category Tabs */}

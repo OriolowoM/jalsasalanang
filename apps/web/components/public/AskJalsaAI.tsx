@@ -1,6 +1,6 @@
 'use client';
 
-import React, { useState, useRef, useEffect } from 'react';
+import React, { useState, useRef, useEffect, useContext } from 'react';
 import Link from 'next/link';
 import {
   Sparkles,
@@ -18,8 +18,10 @@ import {
   ShieldCheck,
   PhoneCall,
   MapPin,
+  Music,
 } from 'lucide-react';
 import { motion, AnimatePresence } from 'framer-motion';
+import { AudioPlayerContext } from '@/context/AudioPlayerContext';
 
 interface Message {
   id: string;
@@ -30,14 +32,17 @@ interface Message {
 }
 
 const SUGGESTED_QUESTIONS = [
+  'Play the Yoruba or Hausa Jalsa jingle',
   'What is the theme of 72nd Jalsa 2026?',
   'What is the Friday 18 Dec schedule & Opening time?',
   'What are the recommended travel routes to Ilaro?',
   'How much is a stall at Jalsa Market 2026?',
-  'How do I register my household online?',
 ];
 
 export default function AskJalsaAI() {
+  const audioContext = useContext(AudioPlayerContext);
+  const isMiniPlayerActive = audioContext?.isMiniPlayerActive ?? false;
+
   const [isOpen, setIsOpen] = useState(false);
   const [query, setQuery] = useState('');
   const [loading, setLoading] = useState(false);
@@ -181,6 +186,42 @@ export default function AskJalsaAI() {
       if (q.includes('theme') || q.includes('topic')) {
         fallbackText = 'The official theme of the **72nd Jalsa Salana Nigeria 2026** is:\n\n**“Observing Justice and Human Rights: The foundation for true Global Peace”**\n\nConvening from Friday, 18th to Sunday, 20th December 2026 at Jamia Ahmadiyya Ilaro, Ogun State.';
         fallbackSources = ['Official 2026 Convention Theme', '/programme-of-events-jalsa-salana-nigeria-2026'];
+      } else if (
+        q.includes('jingle') ||
+        q.includes('sound of jalsa') ||
+        q.includes('audio') ||
+        q.includes('song') ||
+        q.includes('radio pack') ||
+        q.includes('anthem')
+      ) {
+        let selectedLang: 'en' | 'yo' | 'ha' | 'ar' = 'en';
+        let langName = 'English';
+        if (q.includes('yoruba') || q.includes('yo')) {
+          selectedLang = 'yo';
+          langName = 'Yoruba';
+        } else if (q.includes('hausa') || q.includes('ha')) {
+          selectedLang = 'ha';
+          langName = 'Hausa';
+        } else if (q.includes('arabic') || q.includes('ar')) {
+          selectedLang = 'ar';
+          langName = 'Arabic';
+        }
+
+        // Trigger playback in audio context
+        if (typeof window !== 'undefined') {
+          window.dispatchEvent(
+            new CustomEvent('jalsa-audio:play', {
+              detail: { language: selectedLang, autoPlay: true },
+            })
+          );
+        }
+
+        fallbackText = `Assalamu Alaikum! Now playing the official **${langName} Jingle** for the **72nd Jalsa Salana Nigeria 2026**! 🎵\n\n` +
+          `• **Theme:** “Observing Justice and Human Rights: The foundation for true Global Peace”\n` +
+          `• **Direct Link:** [Listen to ${langName} Jingle](/#jingle-${selectedLang})\n` +
+          `• **Download MP3:** [/audio/jalsa-2026-${selectedLang}.mp3](/audio/jalsa-2026-${selectedLang}.mp3)\n\n` +
+          `You can also download the complete 4-language radio pack here: [Download All 4 Jingles ZIP (10.6 MB)](/audio/jalsa-2026-jingles-pack.zip).`;
+        fallbackSources = ['Sound of Jalsa 2026', `/#jingle-${selectedLang}`];
       } else if (q.includes('market') || q.includes('stall') || q.includes('vendor') || q.includes('trader')) {
         fallbackText = 'For the **Jalsa Salana 2026 Market**:\n- **Standard Stall:** ₦16,000\n- **Open Space:** ₦11,000\n- **Form Fee:** ₦1,000 non-refundable\n- **Submission Deadline:** 1st December 2026\n- **Operating Hours:** 7:00 AM – 10:00 PM (strictly closed during Jalsa sessions & prayers).\n- **Strict Prohibitions:** No alcohol, no media/books, no firewood/charcoal, and only Liman brand water is allowed.\n\nVisit the complete **[Jalsa Market Booking Page](/market)** for bank account details and WhatsApp contacts.';
         fallbackSources = ['Official Market Guidelines 2026', '/market'];
@@ -270,8 +311,12 @@ export default function AskJalsaAI() {
 
   return (
     <>
-      {/* ── Floating Trigger Button: Impeccable Contrast on Both Light & Dark Backgrounds ── */}
-      <div className="fixed bottom-6 right-6 z-40">
+      {/* ── Floating Trigger Button: Impeccable Contrast, dynamically offset if mini-player is active on mobile ── */}
+      <div
+        className={`fixed right-4 sm:right-6 z-40 transition-all duration-300 ${
+          isMiniPlayerActive ? 'bottom-22 sm:bottom-6' : 'bottom-6'
+        }`}
+      >
         <button
           onClick={() => setIsOpen(true)}
           className="group relative flex items-center gap-3 px-5 py-3.5 bg-[#003333] hover:bg-[#002626] text-white rounded-full shadow-2xl transition-all duration-300 hover:scale-105 active:scale-95 border-2 border-gold/70 ring-2 ring-forest/20"

@@ -10,6 +10,8 @@ cookies.txt
 apps/api/uploads/*
 !apps/api/uploads/.gitkeep
 deploy_key*
+/audio/
 *.zip
+!apps/web/public/audio/*.zip
 *.tar.gz
 libquery_engine.so.node.gz

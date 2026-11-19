@@ -15,7 +15,9 @@ import {
   ArrowLeft,
   Share2,
   Check,
+  Music,
 } from "lucide-react";
+import SoundOfJalsaCard from "@/components/public/audio/SoundOfJalsaCard";
 import {
   JALSA_2026_META,
   PROGRAMME_DAYS,
@@ -218,6 +220,14 @@ export default function ProgrammeOfEvents2026Page() {
                 Guide
               </span>
             </button>
+
+            <a
+              href="#sound-of-jalsa"
+              className="inline-flex items-center gap-2 rounded-full border border-white/25 hover:bg-white/10 text-white px-5 py-3 text-sm font-medium transition"
+            >
+              <Music className="w-4 h-4 text-[#b0e892]" />
+              Sound of Jalsa
+            </a>
 
             <button
               type="button"
@@ -426,6 +436,11 @@ export default function ProgrammeOfEvents2026Page() {
             ))}
           </div>
         )}
+
+        {/* Sound of Jalsa 2026 — 4-Language Audio Experience */}
+        <div className="mt-14 -mx-4 sm:mx-0">
+          <SoundOfJalsaCard />
+        </div>
 
         {/* Closing Benediction Banner */}
         <div className="mt-12 rounded-2xl bg-[#003333] border-2 border-[#c5a049] px-6 py-8 text-center text-white shadow-xl">

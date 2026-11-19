@@ -286,6 +286,44 @@ Vendors must choose EXACTLY ONE category. Mixing categories in one space is stri
 - Ibadan: Contact main WhatsApp numbers (08122715410 / 07063374914 / 08067493314) for details.
 `;
 
+// Dedicated Official Sound of Jalsa 2026 Audio & Jingles Knowledge Base
+const JALSA_AUDIO_JINGLES_2026_KNOWLEDGE_BASE = `
+# SOUND OF JALSA 2026 – OFFICIAL 4-LANGUAGE AUDIO JINGLES KNOWLEDGE BASE
+Event: 72nd Jalsa Salana Nigeria (18th–20th December 2026)
+Venue: Jamia Ahmadiyya Ilaro, Ogun State, Nigeria
+Official Theme: "Observing Justice and Human Rights: The foundation for true Global Peace"
+
+1. OFFICIAL TRACK CATALOG:
+- English Track (id: 'en'):
+  * Native Label: English
+  * Title: Sound of Jalsa 2026 (English Broadcast)
+  * Audio URL: /audio/jalsa-2026-en.mp3
+  * Web Deep-Link: https://jalsasalana.ng/#jingle-en
+- Yoruba Track (id: 'yo'):
+  * Native Label: Èdè Yorùbá
+  * Title: Ohun Jalsa 2026 (Yoruba Broadcast)
+  * Audio URL: /audio/jalsa-2026-yo.mp3
+  * Web Deep-Link: https://jalsasalana.ng/#jingle-yo
+- Hausa Track (id: 'ha'):
+  * Native Label: Harshen Hausa
+  * Title: Sautin Jalsa 2026 (Hausa Broadcast)
+  * Audio URL: /audio/jalsa-2026-ha.mp3
+  * Web Deep-Link: https://jalsasalana.ng/#jingle-ha
+- Arabic Track (id: 'ar', RTL):
+  * Native Label: العربية
+  * Title: صوت جلسة سالانة ٢٠٢٦ (Arabic Broadcast)
+  * Audio URL: /audio/jalsa-2026-ar.mp3
+  * Web Deep-Link: https://jalsasalana.ng/#jingle-ar
+
+2. CIRCUIT COORDINATORS & RADIO BROADCAST PACK:
+- Full Promo ZIP: /audio/jalsa-2026-jingles-pack.zip (10.6 MB)
+- Contains all 4 broadcast-quality MP3 tracks for local mosque announcements, regional circuits, and radio broadcast stations.
+
+3. INTERACTIVE AUDIO CONTROLS:
+- Built into the homepage and 2026 Programme page.
+- Seamless multi-language tab switching, interactive 40-bar gold waveform scrubber, WhatsApp instant sharing, lyrics drawer, and persistent background mini-player.
+`;
+
 // Direct HTTP helper for Google Gemini API
 async function callGemini(contents: any[], systemInstruction?: string, maxTokens: number = 1000): Promise<string | null> {
   const rawKey = process.env.GEMINI_API_KEY || '';
@@ -467,10 +505,23 @@ Accuracy and limitations:
 - If the visitor is departing from a location not covered by these three recommended routes, explain that the official travel advisory does not provide a specific route for that location. Do not manufacture directions.
 - Always remain courteous, helpful and welcoming.
 
+### 4. SOUND OF JALSA 2026 AUDIO & JINGLES RESPONSE PROTOCOL:
+When users ask about the official 72nd Jalsa Salana jingles, theme songs, anthems, or audio broadcasts:
+1. Inform them that the official jingles are available in 4 languages: English, Yoruba (Èdè Yorùbá), Hausa (Harshen Hausa), and Arabic (العربية).
+2. For specific language requests, provide direct deep links:
+   - English: https://jalsasalana.ng/#jingle-en (MP3: /audio/jalsa-2026-en.mp3)
+   - Yoruba: https://jalsasalana.ng/#jingle-yo (MP3: /audio/jalsa-2026-yo.mp3)
+   - Hausa: https://jalsasalana.ng/#jingle-ha (MP3: /audio/jalsa-2026-ha.mp3)
+   - Arabic: https://jalsasalana.ng/#jingle-ar (MP3: /audio/jalsa-2026-ar.mp3)
+3. For Circuit Coordinators, mosque announcements, or radio stations, provide the link to download the complete 4-track package: /audio/jalsa-2026-jingles-pack.zip (10.6 MB).
+4. Reiterate the official convention theme: "Observing Justice and Human Rights: The foundation for true Global Peace" (18th–20th December 2026).
+
 Official Knowledge Bases:
 ${JALSA_PROGRAMME_2026_KNOWLEDGE_BASE}
 
 ${JALSA_MARKET_2026_KNOWLEDGE_BASE}
+
+${JALSA_AUDIO_JINGLES_2026_KNOWLEDGE_BASE}
 
 ${JALSA_TRAVEL_ADVISORY_KNOWLEDGE_BASE}
 
@@ -691,6 +742,51 @@ Which city or location will you be travelling from? We look forward to welcoming
         `Send payment evidence via WhatsApp to **08122715410**, **07063374914**, or **08067493314**.\n\n` +
         `Detailed booking info and collection centres are available on the **[Jalsa Market Page](https://jalsasalana.ng/market)**.`;
       sources = ['Official Market Guidelines 2026', '/market'];
+    } else if (
+      q.includes('jingle') ||
+      q.includes('sound of jalsa') ||
+      q.includes('audio') ||
+      q.includes('song') ||
+      q.includes('anthem') ||
+      q.includes('radio pack') ||
+      q.includes('promo pack')
+    ) {
+      let selectedLang = 'English';
+      let langCode = 'en';
+      let directLink = 'https://jalsasalana.ng/#jingle-en';
+      let downloadLink = '/audio/jalsa-2026-en.mp3';
+
+      if (q.includes('yoruba') || q.includes('yo')) {
+        selectedLang = 'Yoruba (Èdè Yorùbá)';
+        langCode = 'yo';
+        directLink = 'https://jalsasalana.ng/#jingle-yo';
+        downloadLink = '/audio/jalsa-2026-yo.mp3';
+      } else if (q.includes('hausa') || q.includes('ha')) {
+        selectedLang = 'Hausa (Harshen Hausa)';
+        langCode = 'ha';
+        directLink = 'https://jalsasalana.ng/#jingle-ha';
+        downloadLink = '/audio/jalsa-2026-ha.mp3';
+      } else if (q.includes('arabic') || q.includes('ar')) {
+        selectedLang = 'Arabic (العربية)';
+        langCode = 'ar';
+        directLink = 'https://jalsasalana.ng/#jingle-ar';
+        downloadLink = '/audio/jalsa-2026-ar.mp3';
+      }
+
+      answer = `Assalamu Alaikum! Here is the official **Sound of Jalsa 2026** audio information:\n\n` +
+        `🎵 **Selected Broadcast:** **${selectedLang}**\n` +
+        `• **Official Theme:** *“Observing Justice and Human Rights: The foundation for true Global Peace”*\n` +
+        `• **Convention Dates:** 18th – 20th December 2026 at Jamia Ahmadiyya Ilaro\n` +
+        `• **Listen Online (Interactive Waveform):** [Listen to ${selectedLang} Jingle](${directLink})\n` +
+        `• **Direct MP3 Download:** [Download ${selectedLang} MP3](${downloadLink})\n\n` +
+        `**All 4 Official Languages:**\n` +
+        `- 🇬🇧 English: [Listen / Download](https://jalsasalana.ng/#jingle-en)\n` +
+        `- 🇳🇬 Yoruba: [Listen / Download](https://jalsasalana.ng/#jingle-yo)\n` +
+        `- 🇳🇬 Hausa: [Listen / Download](https://jalsasalana.ng/#jingle-ha)\n` +
+        `- 🇸🇦 Arabic: [Listen / Download](https://jalsasalana.ng/#jingle-ar)\n\n` +
+        `📻 **For Circuit Coordinators & Radio Stations:**\n` +
+        `Download the complete broadcast bundle: **[Download All 4 Jingles Radio Pack ZIP (10.6 MB)](/audio/jalsa-2026-jingles-pack.zip)**.`;
+      sources = ['Sound of Jalsa 2026 Official Audio', directLink];
     } else if (q.includes('theme') || q.includes('topic')) {
       answer = `The official theme of the **72nd Jalsa Salana Nigeria 2026** is:\n\n**“Observing Justice and Human Rights: The foundation for true Global Peace”**\n\nConvening from Friday, December 18 to Sunday, December 20, 2026 at Jamia Ahmadiyya Ilaro, Ogun State.`;
       sources = ['Official 2026 Convention Theme', '/programme-of-events-jalsa-salana-nigeria-2026'];
