@@ -16,7 +16,7 @@ export default function QuranCitationCard({
   verseNumber = 91,
   surahName = 'Surah An-Nahl (The Bee)',
   englishText = 'Verily, Allah enjoins justice, and the doing of good to others; and giving like kindred; and forbids indecency, and evil, and rebellion. He admonishes you that you may take heed.',
-  contextNote = 'Official Quranic foundation for the 72nd Jalsa Salana Nigeria 2026 Theme: "Justice and Equality: Indispensable Prerequisites for Global Peace and National Harmony".',
+  contextNote = 'Official Quranic foundation for the 72nd Jalsa Salana Nigeria 2026 Theme: "Observing Justice and Human Rights: The foundation for true Global Peace".',
   alislamUrl = 'https://www.alislam.org/quran/16:91',
 }: Props) {
   return (

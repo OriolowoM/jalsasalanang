@@ -24,7 +24,7 @@ export default function AddToCalendarButton({ className = '' }: Props) {
   const googleCalendarUrl = `https://calendar.google.com/calendar/render?action=TEMPLATE&text=${encodeURIComponent(
     '72nd Jalsa Salana Nigeria 2026'
   )}&dates=20261218/20261221&details=${encodeURIComponent(
-    'Theme: Justice and Equality: Indispensable Prerequisites for Global Peace and National Harmony.\nVenue: Jamia Ahmadiyya Ilaro, Ogun State, Nigeria.\nOfficial Website: https://jalsasalana.ng/editions/2026'
+    'Theme: Observing Justice and Human Rights: The foundation for true Global Peace.\nVenue: Jamia Ahmadiyya Ilaro, Ogun State, Nigeria.\nOfficial Website: https://jalsasalana.ng/programme-of-events-jalsa-salana-nigeria-2026'
   )}&location=${encodeURIComponent('Jamia Ahmadiyya Ilaro, Ogun State, Nigeria')}`;
 
   return (

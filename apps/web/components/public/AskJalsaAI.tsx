@@ -30,11 +30,11 @@ interface Message {
 }
 
 const SUGGESTED_QUESTIONS = [
-  'What are the recommended travel routes to Ilaro?',
-  'How do I travel to Jalsa from Lagos or Ibadan?',
   'What is the theme of 72nd Jalsa 2026?',
+  'What is the Friday 18 Dec schedule & Opening time?',
+  'What are the recommended travel routes to Ilaro?',
+  'How much is a stall at Jalsa Market 2026?',
   'How do I register my household online?',
-  'What are the dining marquee hours?',
 ];
 
 export default function AskJalsaAI() {
@@ -56,19 +56,24 @@ export default function AskJalsaAI() {
   const messagesEndRef = useRef<HTMLDivElement>(null);
   const recognitionRef = useRef<any>(null);
 
-  // Listen for external trigger events (e.g. from HeroCompanionBar)
+  // Listen for external trigger events (e.g. from Programme page or HeroCompanionBar)
   useEffect(() => {
     const handleExternalOpen = (event: any) => {
       setIsOpen(true);
-      if (event?.detail?.query) {
+      const text = event?.detail?.query || event?.detail?.prompt;
+      if (text) {
         setTimeout(() => {
-          handleSend(event.detail.query);
+          handleSend(text);
         }, 300);
       }
     };
 
     window.addEventListener('open-jalsa-ai', handleExternalOpen);
-    return () => window.removeEventListener('open-jalsa-ai', handleExternalOpen);
+    window.addEventListener('jalsa-ai:ask', handleExternalOpen);
+    return () => {
+      window.removeEventListener('open-jalsa-ai', handleExternalOpen);
+      window.removeEventListener('jalsa-ai:ask', handleExternalOpen);
+    };
   }, []);
 
   // Initialize Speech Recognition if supported
@@ -174,8 +179,14 @@ export default function AskJalsaAI() {
       let fallbackSources = ['Jalsa Salana Nigeria Secretariat'];
 
       if (q.includes('theme') || q.includes('topic')) {
-        fallbackText = 'The theme of the **72nd Jalsa Salana Nigeria 2026** is: **"Justice and Equality: Indispensable Prerequisites for Global Peace and National Harmony"** (derived from the Holy Quran, Surah An-Nahl 16:91).';
-        fallbackSources = ['Official 2026 Convention Communique', '/editions/2026'];
+        fallbackText = 'The official theme of the **72nd Jalsa Salana Nigeria 2026** is:\n\n**“Observing Justice and Human Rights: The foundation for true Global Peace”**\n\nConvening from Friday, 18th to Sunday, 20th December 2026 at Jamia Ahmadiyya Ilaro, Ogun State.';
+        fallbackSources = ['Official 2026 Convention Theme', '/programme-of-events-jalsa-salana-nigeria-2026'];
+      } else if (q.includes('market') || q.includes('stall') || q.includes('vendor') || q.includes('trader')) {
+        fallbackText = 'For the **Jalsa Salana 2026 Market**:\n- **Standard Stall:** ₦16,000\n- **Open Space:** ₦11,000\n- **Form Fee:** ₦1,000 non-refundable\n- **Submission Deadline:** 1st December 2026\n- **Operating Hours:** 7:00 AM – 10:00 PM (strictly closed during Jalsa sessions & prayers).\n- **Strict Prohibitions:** No alcohol, no media/books, no firewood/charcoal, and only Liman brand water is allowed.\n\nVisit the complete **[Jalsa Market Booking Page](/market)** for bank account details and WhatsApp contacts.';
+        fallbackSources = ['Official Market Guidelines 2026', '/market'];
+      } else if (q.includes('programme') || q.includes('schedule') || q.includes('flag') || q.includes('hoisting') || q.includes('opening session')) {
+        fallbackText = 'The official **72nd Jalsa Salana Nigeria 2026 Programme of Events**:\n- **Opening Ceremony & Flag Hoisting:** Friday 18 Dec at **5:00 PM** (Liwa-i-Ahmadiyya & Nigeria National Flag).\n- **First Session:** Friday at **5:10 PM**, including Lecture One with message from Hazrat Khalifatul Masih V (aba).\n- **Keynote Theme Lecture:** Saturday 19 Dec at 10:40 AM.\n- **Concluding Address:** Sunday 20 Dec at 6:30 AM.\n\nExplore the interactive schedule and download the official PDF on the **[Programme of Events Page](/programme-of-events-jalsa-salana-nigeria-2026)**.';
+        fallbackSources = ['Official 2026 Programme of Events', '/programme-of-events-jalsa-salana-nigeria-2026'];
       } else if (q.includes('date') || q.includes('when') || q.includes('time') || q.includes('2026') || q.includes('72')) {
         fallbackText = 'The **72nd Jalsa Salana Nigeria** will be held from **Friday, December 18 to Sunday, December 20, 2026** at **Jamia Ahmadiyya Ilaro, Ogun State, Nigeria** under the spiritual direction of Hazrat Mirza Masroor Ahmad (aba).';
         fallbackSources = ['Convention Schedule', '/editions/2026'];

@@ -51,7 +51,7 @@ const HIGHLIGHT_POINTS = [
 
 const SINGLE_FEATURED_FLYER = {
   title: 'Official 72nd Jalsa Salana Registration Poster',
-  desc: 'Justice and Equality: Indispensable Prerequisites for Global Peace and National Harmony — Official publicity design for the 72nd Annual Convention.',
+  desc: 'Observing Justice and Human Rights: The foundation for true Global Peace — Official publicity design for the 72nd Annual Convention.',
   flyerFeed: '/images/registration/jalsa2026-flyer-01-the-arch_feed.webp',
   flyerStatus: '/images/registration/jalsa2026-flyer-01-the-arch_status.webp',
 };

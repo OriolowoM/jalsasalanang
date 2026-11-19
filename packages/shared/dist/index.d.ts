@@ -284,3 +284,4 @@ export declare const siteSettingSchema: z.ZodObject<{
     group?: string | undefined;
 }>;
 export type SiteSettingInput = z.infer<typeof siteSettingSchema>;
+export * from './programme-2026';

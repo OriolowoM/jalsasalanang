@@ -11,8 +11,8 @@ JALSA SALANA NIGERIA OFFICIAL CONVENTION & LOGISTICS KNOWLEDGE BASE:
 - 72nd Jalsa Salana Nigeria (Upcoming Milestone):
   * Dates: Friday, December 18 to Sunday, December 20, 2026.
   * Venue: Jamia Ahmadiyya Ilaro, Ogun State, Nigeria (GPS: 6.8872° N, 3.0142° E).
-  * Theme: "Justice and Equality: Indispensable Prerequisites for Global Peace and National Harmony".
-  * Quranic Foundation: "Justice and Equality: Indispensable Prerequisites for Global Peace and National Harmony" (Surah An-Nahl 16:91).
+  * Theme: "Observing Justice and Human Rights: The foundation for true Global Peace".
+  * Quranic Foundation: Surah An-Nahl (16:91) and Surah An-Nisa (4:136).
   * Expected Attendance: 45,000+ delegates from all 36 Nigerian states and international delegations (Ghana, Benin, UK, Canada).
   * National Amir: Alhaji Barrister Alatoye Folorunso Azeez (National Amir, Ahmadiyya Muslim Jama'at Nigeria).
 - Logistics, Facilities & Ground Layout at Jamia Ilaro:
@@ -160,6 +160,132 @@ Q12. Are there accommodation facilities in Abeokuta?
 A: The travel advisory recommends finding a place to sleep in Abeokuta when arriving by 7 p.m. However, it does not provide a list of approved hotels or accommodation facilities. Contact Dr. Nasir Bello on +234 803 207 4441 for assistance.
 `;
 
+// Dedicated Official 72nd Jalsa Salana Nigeria 2026 Programme of Events Knowledge Base
+const JALSA_PROGRAMME_2026_KNOWLEDGE_BASE = `
+# 72ND JALSA SALANA NIGERIA 2026 – OFFICIAL PROGRAMME OF EVENTS KNOWLEDGE BASE
+Dates: Friday 18th, Saturday 19th & Sunday 20th December 2026
+Venue: Jamia Ahmadiyya Ilaro, Ogun State, Nigeria
+Official Theme: "Observing Justice and Human Rights: The foundation for true Global Peace"
+Full Programme Page: https://jalsasalana.ng/programme-of-events-jalsa-salana-nigeria-2026
+Download PDF: https://jalsasalana.ng/downloads/72nd-jalsa-salana-nigeria-2026-programme.pdf
+Closing Benediction: "FI ‘AMANILLAH; MAY ALLAH THE ALMIGHTY GRANT EVERYBODY HIS JOURNEY MERCIES"
+
+DAY 1: FRIDAY 18TH DECEMBER 2026
+- 4:30 AM – 5:25 AM: Salatul Tahajjud (Imam: Respected Hafiz AbdutTawwab Bello sahib, Ilaro)
+- 5:30 AM: Salatul Fajr Adhan (Respected Mustapha Ibrahim Aya Sahib)
+- 5:45 AM: Salatul Fajr (Imam: To be announced by Officer Sahib Jalsa Gah)
+- 6:00 AM – 6:15 AM: Morning Dars: "Love for All, Hatred for None: Championing Universal Human Rights and Dignity" (Respected Nabeel-Ahmad Oyekola Sahib, Muballigh Silsila, Ilaro)
+- 8:00 AM: Breakfast
+- 10:00 AM – 12:00 PM: Tabligh Seminar
+- 12:30 PM: Preparation for Salatul Jumu’ah & First Adhan (Respected Hafiz Rufai Saleem Ahmad Sahib)
+- 1:00 PM: Second Adhan (Respected Hafiz Rufai Saleem Ahmad Sahib)
+- 1:05 PM – 1:50 PM: Jumu’at Services and Asr Prayer
+- 2:00 PM: Live Huzur’s Sermon (MTA Broadcast - Naazim Sahib Audio Visual Department)
+- 3:00 PM: Lunch
+- 5:00 PM: Hoisting of Flags with Silent Prayers (Liwa-i-Ahmadiyya & Nigeria National Flag) (Officials: To be announced by Officer Sahib Jalsa Gah)
+- 5:10 PM: First Session - Introduction of Guests (Officer Sahib Jalsa Gah)
+- 5:20 PM – 5:30 PM: Recitation from the Holy Qur’an with Translation (Respected Hafiz Sharafadeen Adeleke Sahib)
+- 5:30 PM – 5:40 PM: Arabic Qaseedah with Translation (Respected Hafiz AbdurRoqeeb Alaka Sahib)
+- 5:40 PM – 6:20 PM: Lecture One: Message from Hazrat Khalifatul Masih V (ايده الله تعلى بنصره العزيز) / Inaugural Address (Delivered by Respected Amir Sahib Alhaji Alatoye Folorunso Azeez Sahib)
+- 6:20 PM – 6:35 PM: Yoruba Translation
+- 6:35 PM – 6:50 PM: Hausa Translation
+- 6:50 PM: Announcements (Officer Sahib Jalsa Gah)
+- 7:00 PM: Adhan for Maghrib and Ishaa Prayers (Respected Hafiz Makinde Hussain Sahib)
+- 7:10 PM: Maghrib and Ishaa Prayers
+- 7:30 PM: Dinner
+
+DAY 2: SATURDAY 19TH DECEMBER 2026
+- 4:30 AM: Salatul Tahajjud (Imam: Respected Hafiz Faruq Ademoye Sahib, Ilorin Circuit)
+- 5:30 AM: Adhan (Respected Hafiz Hasbiyallah Gbadegeshin Sahib)
+- 5:45 AM: Salatul Fajr (Imam: To be announced by Officer Sahib Jalsa Gah)
+- 6:00 AM – 6:15 AM: Morning Dars: "The True Nature of Divine Justice and Brotherhood" (Maulvi Ahmad-Tahir Adam Sahib)
+- 8:00 AM: Breakfast
+- 10:00 AM – 10:20 AM: Second Session - Recitation & Qaseedah; Announcements by Officer Sahib Jalsa Gah
+- 10:20 AM – 10:30 AM: Opening Address by Session Chairman
+- 10:30 AM – 10:40 AM: Interval
+- 10:40 AM – 11:30 AM: Lecture Two (Keynote): "Observing Justice and Human Rights: The foundation for true Global Peace" (Respected Hafiz Yunus Omotayo Sahib)
+- 11:30 AM – 11:35 AM: Yoruba Translation
+- 11:35 AM – 11:45 AM: Urdu Poem
+- 11:45 AM – 12:25 PM: Lecture Three: "The Role of Prayer and Devotion in World Reform" (Maulvi Qasim Oyekola Sahib)
+- 12:25 PM – 12:35 PM: Yoruba Translation
+- 12:35 PM – 1:00 PM: Annual Progress Report (Respected Amir Sahib Alhaji Alatoye Folorunso Azeez Sahib)
+- 1:00 PM – 1:15 PM: Islamic Nikaah Announcements
+- 1:15 PM: Adhan for Salatuz Zuhr and Asr (Respected Hafiz Ismail Akindele Sahib)
+- 1:25 PM: Salatuz Zuhr and Asr Prayers
+- 1:45 PM: Lunch
+- 4:30 PM – 6:30 PM: Third Session - Dignitary Addresses & Jama'at Academic Merit Awards
+- 7:00 PM: Adhan (Respected Hafiz Ismail Adedokun Sahib)
+- 7:10 PM: Maghrib and Ishaa Prayers
+- 7:30 PM: Dinner
+- 8:30 PM – 10:00 PM: General Q&A / Faith & Science Symposium
+
+DAY 3: SUNDAY 20TH DECEMBER 2026
+- 4:30 AM: Salatul Tahajjud (Imam: Respected Hafiz Luqman Popoola Sahib)
+- 5:30 AM: Adhan (Respected Hafiz AbdulGhafar Adekunle Sahib)
+- 5:45 AM: Salatul Fajr (Imam: To be announced by Officer Sahib Jalsa Gah)
+- 6:00 AM – 6:15 AM: Morning Dars: "Sacrifice and Financial Devotion in the Cause of Allah" (Dr. Sa'eed Olurode Sahib)
+- 6:30 AM – 7:40 AM: Fourth & Concluding Session:
+  * 6:30 AM: Tilawat with translation (Respected Hafiz Muslihudeen Ajani Sahib)
+  * 6:35 AM: Urdu Poem with translation (Respected Musbaudeen Adeleke Sahib)
+  * 6:40 AM – 7:10 AM: Lecture Five: "“...And when you judge between mankind, judge with justice...”" (Respected Dr. AbdulHakeem Babatunde Sahib)
+  * 7:10 AM – 7:15 AM: Yoruba Translation
+  * 7:15 AM – 7:20 AM: Hausa Translation
+  * 7:20 AM – 7:40 AM: Concluding Address & Silent Prayers (The Respected Amir Sahib, Alhaji Alatoye Folorunso Azeez Sahib)
+- 7:40 AM – 9:00 AM: Breakfast and General Cleaning / Departure
+
+STRICT RULE ON UNANNOUNCED OFFICIALS:
+If a user asks who the Fajr Imam or Flag Hoisting official is for Friday, Saturday, or Sunday, ALWAYS answer:
+"The assigned official has not been announced in the current programme yet; please check announcements from Officer Sahib Jalsa Gah." Never invent or guess names!
+`;
+
+// Dedicated Official Jalsa Salana 2026 Market Booking & Vendor Knowledge Base
+const JALSA_MARKET_2026_KNOWLEDGE_BASE = `
+# JALSA SALANA 2026 MARKET BOOKING & VENDOR KNOWLEDGE BASE
+Page URL: https://jalsasalana.ng/market
+
+1. KEY DATES & TIMINGS:
+- Form Return Deadline: December 1, 2026. All completed forms and payment evidence must be submitted on or before Dec 1, 2026 (first-come, first-served).
+- Mandatory Vendor Briefing: Nazim Market will conduct a compulsory briefing on rules and safety 5 days before Jalsa Salana starts.
+- Operating Hours: 7:00 AM to 10:00 PM daily.
+- CRITICAL RESTRICTION: The market is strictly closed during all Jalsa programmes, keynote lectures, and congregational prayers.
+
+2. PRICING & FEES:
+- Standard Stall: ₦16,000 (Constructed covered space).
+- Open Space: ₦11,000 (Open boundary plot).
+- Form Fee: ₦1,000 (Non-refundable fee required to obtain the physical form and study market ethics).
+
+3. PAYMENT ACCOUNTS (OFFICIAL):
+- OPay: 6102498777 (Account Name: AOG 001 ENT.)
+- OPay: 7063374914 (Account Name: Mahmoud Alaka)
+- Access Bank: 0088449365 (Account Name: Ajayi Muizz Adeniyi)
+- WhatsApp Payment Verification: Send receipt via WhatsApp to 08122715410, 07063374914, or 08067493314.
+
+4. APPROVED SALES CATEGORIES (STRICT SINGLE-CATEGORY RULE):
+Vendors must choose EXACTLY ONE category. Mixing categories in one space is strictly prohibited:
+- Category A: Real / Solid Meals (Rice, swallow, cooked dishes)
+- Category B: Soft Drinks, Snacks, Pap / Akara / Moimoi
+- Category C: Clothes / Textile / Gift Items (Islamic Men, Islamic Women, Islamic Mix, Other Clothes)
+- Category D: Fruit / Assorted Varieties
+- Category E: Herbs & Traditional Remedies
+- Category F: Pepper Grinder (Elero)
+- Category G: Provisions & Toiletries
+- Category H: Phone Charging & Calls
+
+5. STRICT PROHIBITIONS & PENALTIES:
+- NO ALCOHOL: All alcoholic beverages in any form are 100% prohibited.
+- NO BOOKS OR MEDIA: Religious literature, books, CDs, and audio/video media are reserved solely for Jama'at Departments.
+- NO FIREWOOD / CHARCOAL: Firewood or charcoal cooking is disallowed on safety grounds.
+- WATER RESTRICTION: The ONLY brand of pure/sachet water permitted for sale is LIMAN BRAND.
+- Defaulters Penalty: Immediate expulsion without compensation and a permanent ban from Jalsa Market now and in the future.
+- Non-Members: Must provide an official guarantor from the Jama'at.
+
+6. COLLECTION & RETURNING CENTRES:
+- Ilaro: Jamia Ilaro | Bro. Alaka Mahmud | 07063374914
+- Lagos: Amu Ojokoro | Bro. Olawale Utman | 08083127892
+- Abeokuta: Bro. Muiz Ajayi | 08067493314
+- Ibadan: Contact main WhatsApp numbers (08122715410 / 07063374914 / 08067493314) for details.
+`;
+
 // Direct HTTP helper for Google Gemini API
 async function callGemini(contents: any[], systemInstruction?: string, maxTokens: number = 1000): Promise<string | null> {
   const rawKey = process.env.GEMINI_API_KEY || '';
@@ -282,14 +408,41 @@ export async function askJalsaAI(
   const articlesContext = contextArticles.map((a) => `- Article: "${a.title}" (/articles/${a.slug}): ${a.excerpt}`).join('\n');
 
   const systemInstruction = `You are "Jalsa Companion", the official AI Smart Concierge for Jalsa Salana Nigeria (the annual convention of Ahmadiyya Muslim Jama'at Nigeria).
-Your role: Provide immediate, polite, respectful, and accurate assistance regarding convention dates, schedules, prayer times, registration, lodging, gates, dining, site layout, and official travel advisories to Jamia Ahmadiyya Ilaro.
+Your role: Provide immediate, polite, respectful, and accurate assistance regarding convention dates, schedules, prayer times, registration, lodging, gates, dining, site layout, official travel advisories, and market vendor guidelines for Jamia Ahmadiyya Ilaro.
+
+OFFICIAL THEME (Strict & Authoritative):
+"Observing Justice and Human Rights: The foundation for true Global Peace"
 
 Islamic Etiquette:
 - Maintain Islamic decorum. Use honorifics: (as) after Promised Messiah, (aba) after Hazrat Mirza Masroor Ahmad, (saw) after Prophet Muhammad, (ra) after companions.
 - Universal Ahmadiyya motto: "Love for All, Hatred for None".
 - Scope boundary: If a question is outside Jalsa Salana logistics, convention history, Ahmadiyya teachings, or attendee care, politely inform the attendee and provide the official Info-Hotline (+234-803-JALSA-NG / info@jalsasalana.ng).
 
-### TRAVEL ADVISORY RESPONSE PROTOCOL:
+### 1. 2026 PROGRAMME OF EVENTS RESPONSE PROTOCOL:
+1. Always answer using the verified 2026 Programme of Events data. Never guess times, Imams, or speakers.
+2. Confirm that Flag Hoisting and the Opening First Session begin at 5:00 PM on Friday 18th December 2026 (Liwa-i-Ahmadiyya & Nigeria National Flag).
+3. Friday Lecture One (5:40 PM – 6:20 PM) is: "Message from Hazrat Khalifatul Masih V (aba) / Inaugural Address" delivered by Respected Amir Sahib Alhaji Alatoye Folorunso Azeez Sahib, followed by Yoruba and Hausa translations.
+4. Saturday Keynote Lecture Two (10:40 AM – 11:30 AM) is on the Official Convention Theme: "Observing Justice and Human Rights: The foundation for true Global Peace" by Respected Hafiz Yunus Omotayo Sahib.
+5. Sunday Concluding Address (7:20 AM – 7:40 AM) is delivered by Amir Sahib Alhaji Alatoye Folorunso Azeez Sahib.
+6. STRICT RULE FOR UNANNOUNCED OFFICIALS: If asked who the Fajr Imam or Flag Hoisting official is for Friday, Saturday, or Sunday, or about the Saturday 10:30–10:40 AM interval, state clearly: "The assigned official has not been announced in the current programme yet; please check announcements from Officer Sahib Jalsa Gah." NEVER GUESS OR INVENT NAMES.
+7. Translations: Every major lecture/address is followed immediately by Yoruba and Hausa translations.
+8. Point users to the full programme page (https://jalsasalana.ng/programme-of-events-jalsa-salana-nigeria-2026) and downloadable PDF.
+
+### 2. JALSA MARKET 2026 VENDOR RESPONSE PROTOCOL:
+1. Stalls & Pricing: Standard Stall is ₦16,000; Open Space is ₦11,000; Form fee is ₦1,000 (non-refundable).
+2. Deadline: Completed forms and payment evidence must be submitted on or before December 1, 2026 (first-come, first-served).
+3. Operating Hours: 7:00 AM to 10:00 PM daily. The market is strictly closed during all Jalsa programmes, keynote lectures, and congregational prayers.
+4. Strict Single Category Rule: Traders must select EXACTLY ONE category from A to H. Mixing categories in one stall is strictly prohibited.
+5. Strict Prohibitions: No alcohol, no media/books/cassettes/CDs (reserved for Jama'at departments), no firewood or charcoal cooking, and ONLY LIMAN BRAND sachet/pure water is permitted for sale.
+6. Non-Members: Must provide an official guarantor from the Jama'at.
+7. Payment Accounts:
+   - OPay: 6102498777 (AOG 001 ENT.)
+   - OPay: 7063374914 (Mahmoud Alaka)
+   - Access Bank: 0088449365 (Ajayi Muizz Adeniyi)
+   Send payment proof via WhatsApp to 08122715410, 07063374914, or 08067493314.
+8. Collection Centres: Ilaro (Bro. Alaka Mahmud 07063374914), Lagos (Bro. Olawale Utman 08083127892), Abeokuta (Bro. Muiz Ajayi 08067493314), Ibadan (contact main WhatsApp). Point users to https://jalsasalana.ng/market.
+
+### 3. TRAVEL ADVISORY RESPONSE PROTOCOL:
 When answering questions about travelling to the Jalsa venue in Ilaro, you MUST prioritise the official Jalsa Salana 2026 Travel Advisory Knowledge Base.
 Your primary responsibility is to help visitors identify the appropriate recommended route based on their departure location.
 
@@ -315,6 +468,10 @@ Accuracy and limitations:
 - Always remain courteous, helpful and welcoming.
 
 Official Knowledge Bases:
+${JALSA_PROGRAMME_2026_KNOWLEDGE_BASE}
+
+${JALSA_MARKET_2026_KNOWLEDGE_BASE}
+
 ${JALSA_TRAVEL_ADVISORY_KNOWLEDGE_BASE}
 
 ${JALSA_KNOWLEDGE_BASE}
@@ -464,9 +621,82 @@ Ibadan → Abeokuta → Ita-Oshin → Ijoga-Orile → Imasayi → Ibese → Ilar
 Which city or location will you be travelling from? We look forward to welcoming you! JazakAllah Khairan.`;
         sources = ['Official Jalsa 2026 Travel Advisory', 'Jamia Ilaro Grounds Management'];
       }
+    } else if (
+      q.includes('fajr imam') ||
+      q.includes('who is the imam for fajr') ||
+      q.includes('flag hoisting official') ||
+      q.includes('who will hoist the flag') ||
+      q.includes('who will raise the flag') ||
+      (q.includes('fajr') && (q.includes('imam') || q.includes('lead')))
+    ) {
+      answer = `Assalamu Alaikum!\n\nThe assigned official for this session has **not been announced in the current programme yet**.\n\nPlease check official announcements from **Officer Sahib Jalsa Gah** upon arrival at the convention grounds.`;
+      sources = ['Officer Sahib Jalsa Gah', '/programme-of-events-jalsa-salana-nigeria-2026'];
+    } else if (
+      q.includes('programme') ||
+      q.includes('program') ||
+      q.includes('schedule') ||
+      q.includes('timetable') ||
+      q.includes('flag hoisting') ||
+      q.includes('opening session') ||
+      q.includes('lecture') ||
+      q.includes('friday') ||
+      q.includes('saturday') ||
+      q.includes('sunday')
+    ) {
+      answer = `Assalamu Alaikum! Here is the confirmed schedule overview for the **72nd Jalsa Salana Nigeria 2026** (Theme: *“Observing Justice and Human Rights: The foundation for true Global Peace”*):\n\n` +
+        `**• Friday, 18th December 2026:**\n` +
+        `- 1:05 PM – 1:50 PM: Jumu’at Services and Asr Prayer\n` +
+        `- 2:00 PM: Live Huzur’s Sermon (MTA Broadcast)\n` +
+        `- **5:00 PM: Hoisting of Flags with Silent Prayers** (Liwa-i-Ahmadiyya & Nigeria National Flag)\n` +
+        `- **5:10 PM: First Session & Opening Address** by Amir Sahib Alhaji Alatoye Folorunso Azeez\n` +
+        `- 5:40 PM – 6:20 PM: Lecture One: Message from Hazrat Khalifatul Masih V (aba) / Inaugural Address (followed by Yoruba & Hausa translations)\n` +
+        `- 7:10 PM: Maghrib and Ishaa Prayers; 7:30 PM: Dinner\n\n` +
+        `**• Saturday, 19th December 2026:**\n` +
+        `- 4:30 AM: Tahajjud & 5:45 AM: Fajr\n` +
+        `- 10:40 AM – 11:30 AM: **Keynote Lecture Two:** *“Observing Justice and Human Rights: The foundation for true Global Peace”* by Hafiz Yunus Omotayo Sahib\n` +
+        `- 11:45 AM – 12:25 PM: Lecture Three: *“The Role of Prayer and Devotion in World Reform”* by Maulvi Qasim Oyekola Sahib\n` +
+        `- 12:35 PM: Annual Progress Report; 1:00 PM: Nikaah Announcements\n` +
+        `- 4:30 PM – 6:30 PM: Speeches to Dignitaries & Academic Merit Awards\n` +
+        `- 8:30 PM: Special Q&A / Faith & Science Symposium\n\n` +
+        `**• Sunday, 20th December 2026:**\n` +
+        `- 6:30 AM – 7:40 AM: **Fourth & Concluding Session:** Tilawat, Poem, Lecture Five by Dr. AbdulHakeem Babatunde Sahib, Concluding Address & Silent Prayers by Amir Sahib\n` +
+        `- 7:40 AM – 9:00 AM: Breakfast and General Cleaning / Safe Departure\n\n` +
+        `📄 View the complete interactive timetable and download the official PDF at: **[72nd Jalsa Programme of Events](https://jalsasalana.ng/programme-of-events-jalsa-salana-nigeria-2026)**.`;
+      sources = ['Official 2026 Programme of Events', '/programme-of-events-jalsa-salana-nigeria-2026'];
+    } else if (
+      q.includes('market') ||
+      q.includes('stall') ||
+      q.includes('vendor') ||
+      q.includes('trader') ||
+      q.includes('open space') ||
+      q.includes('booking') ||
+      q.includes('liman')
+    ) {
+      answer = `Assalamu Alaikum! Here are the official details for the **Jalsa Salana 2026 Market**:\n\n` +
+        `**1. Space Pricing & Fees:**\n` +
+        `- Standard Stall: **₦16,000**\n` +
+        `- Open Space: **₦11,000**\n` +
+        `- Non-refundable Form Fee: **₦1,000**\n\n` +
+        `**2. Important Dates & Rules:**\n` +
+        `- Form Return Deadline: **1st December 2026** (First-come, first-served).\n` +
+        `- Mandatory Briefing: Exactly 5 days before Jalsa begins.\n` +
+        `- Operating Hours: **7:00 AM to 10:00 PM daily** *(strictly closed during all Jalsa programmes & prayers)*.\n` +
+        `- Single Category Rule: Traders must choose **EXACTLY ONE** category (A to H). Mixing categories is strictly prohibited.\n` +
+        `- Strict Prohibitions: No alcohol, no media/books/cassettes, no firewood or charcoal cooking, and **ONLY LIMAN BRAND** pure water is allowed for sale.\n` +
+        `- Non-Members: Must provide an official Jama’at guarantor.\n\n` +
+        `**3. Official Payment Accounts:**\n` +
+        `- OPay: **6102498777** (AOG 001 ENT.)\n` +
+        `- OPay: **7063374914** (Mahmoud Alaka)\n` +
+        `- Access Bank: **0088449365** (Ajayi Muizz Adeniyi)\n` +
+        `Send payment evidence via WhatsApp to **08122715410**, **07063374914**, or **08067493314**.\n\n` +
+        `Detailed booking info and collection centres are available on the **[Jalsa Market Page](https://jalsasalana.ng/market)**.`;
+      sources = ['Official Market Guidelines 2026', '/market'];
+    } else if (q.includes('theme') || q.includes('topic')) {
+      answer = `The official theme of the **72nd Jalsa Salana Nigeria 2026** is:\n\n**“Observing Justice and Human Rights: The foundation for true Global Peace”**\n\nConvening from Friday, December 18 to Sunday, December 20, 2026 at Jamia Ahmadiyya Ilaro, Ogun State.`;
+      sources = ['Official 2026 Convention Theme', '/programme-of-events-jalsa-salana-nigeria-2026'];
     } else if (q.includes('date') || q.includes('when') || q.includes('2026') || q.includes('72')) {
-      answer = `The **72nd Jalsa Salana Nigeria** will be held from **Friday, December 18 to Sunday, December 20, 2026** at **Jamia Ahmadiyya Ilaro, Ogun State, Nigeria**.\n\nThe convention theme is *"Justice and Equality: Indispensable Prerequisites for Global Peace and National Harmony"*. Over 45,000 delegates are expected.`;
-      sources = ['Official 2026 Communique', '/editions/2026'];
+      answer = `The **72nd Jalsa Salana Nigeria** will be held from **Friday, December 18 to Sunday, December 20, 2026** at **Jamia Ahmadiyya Ilaro, Ogun State, Nigeria**.\n\nThe convention theme is **“Observing Justice and Human Rights: The foundation for true Global Peace”**. Over 45,000 delegates are expected.`;
+      sources = ['Official 2026 Communique', '/programme-of-events-jalsa-salana-nigeria-2026'];
     } else if (q.includes('register') || q.includes('badge') || q.includes('tag') || q.includes('portal')) {
       answer = `Registration is open online at **[jalsa.ahmadiyyanigeria.net](https://jalsa.ahmadiyyanigeria.net)**. You can register your entire household, obtain your digital wallet tag, and bypass physical queues at Gate 2 (West Registration Hub).`;
       sources = ['Registration Portal Hub', '/registration'];
@@ -558,38 +788,45 @@ Category: ${attendee.category || 'Member'}`;
     itinerary: [
       {
         day: 'Day 1 (Friday, Dec 18)',
-        time: '13:00 - 15:00',
-        session: "Jumu'ah Prayers & Flag Hoisting Ceremony",
-        location: 'Main Convention Grounds',
-        highlight: 'Official flag hoisting and opening address by National Amir Alhaji Barr. Alatoye Folorunso Azeez.',
+        time: '1:05 PM – 1:50 PM',
+        session: "Jumu'at Services and Asr Prayer",
+        location: 'Main Convention Arena',
+        highlight: 'Congregational Jumu’ah followed by Live Huzur’s Sermon broadcast at 2:00 PM.',
       },
       {
         day: 'Day 1 (Friday, Dec 18)',
-        time: '16:30 - 19:00',
-        session: 'Opening Session & Keynote Speeches',
-        location: 'Main Prayer Marquee / Lajna Pavilion',
-        highlight: 'Scholarly discourse on "Justice and Equality: Prerequisites for Global Peace".',
+        time: '5:00 PM',
+        session: 'Hoisting of Flags & Opening First Session',
+        location: 'Main Convention Grounds',
+        highlight: 'Official flag hoisting (Liwa-i-Ahmadiyya & Nigeria National Flag) followed by Inaugural Address and Lecture One.',
+      },
+      {
+        day: 'Day 1 (Friday, Dec 18)',
+        time: '5:40 PM – 6:20 PM',
+        session: 'Lecture One: Message from Hazrat Khalifatul Masih V (aba)',
+        location: 'Main Convention Marquee',
+        highlight: 'Inaugural Address delivered by Amir Sahib Alhaji Alatoye Folorunso Azeez with Yoruba & Hausa translations.',
       },
       {
         day: 'Day 2 (Saturday, Dec 19)',
-        time: '10:00 - 13:00',
-        session: 'Academic Awards & Parallel Auxiliary Sessions',
-        location: 'Main Hall / Lajna Auditorium',
-        highlight: 'Recognition of academic excellence and distinguished Jamaat service.',
+        time: '10:40 AM – 11:30 AM',
+        session: 'Lecture Two: Official Convention Theme',
+        location: 'Main Convention Arena',
+        highlight: '“Observing Justice and Human Rights: The foundation for true Global Peace” by Hafiz Yunus Omotayo Sahib.',
       },
       {
         day: 'Day 2 (Saturday, Dec 19)',
-        time: '16:00 - 18:30',
-        session: 'Speeches to Dignitaries & Inter-Faith Guests',
-        location: 'Main Marquee',
-        highlight: 'Addresses by royal fathers, community elders, and foreign guest speakers.',
+        time: '4:30 PM – 6:30 PM',
+        session: 'Third Session: Speeches to Dignitaries & Academic Awards',
+        location: 'Main Convention Marquee',
+        highlight: 'Addresses by royal fathers, special guest dignitaries, and Jama’at academic merit awards.',
       },
       {
         day: 'Day 3 (Sunday, Dec 20)',
-        time: '10:00 - 13:30',
-        session: 'Concluding Session & Global Live Telecast',
+        time: '6:30 AM – 7:40 AM',
+        session: 'Closing Session & Final Concluding Address',
         location: 'Main Convention Arena',
-        highlight: 'Special address, concluding prayers, and worldwide MTA broadcast.',
+        highlight: 'Concluding address and silent prayers led by Amir Sahib, followed by breakfast and safe departure.',
       },
     ],
     practicalTips: [

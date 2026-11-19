@@ -8,9 +8,10 @@ export default function HeroCompanionBar() {
   const [mounted, setMounted] = useState(false);
   const samplePrompts = [
     'What is the theme of 72nd Jalsa 2026?',
+    'What is the Friday opening schedule and Flag Hoisting time?',
+    'What are the recommended travel routes to Ilaro?',
+    'How do I book a stall at Jalsa Market 2026?',
     'How do I register my family online?',
-    'What are the dates for the Ilaro convention?',
-    'Where are the dining halls and prayer marquees located?',
   ];
   const [activePromptIndex, setActivePromptIndex] = useState(0);
 

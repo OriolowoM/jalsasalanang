@@ -103,3 +103,6 @@ export const siteSettingSchema = z.object({
   description: z.string().optional(),
 });
 export type SiteSettingInput = z.infer<typeof siteSettingSchema>;
+
+export * from './programme-2026';
+

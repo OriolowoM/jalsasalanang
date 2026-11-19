@@ -19,7 +19,7 @@ externalRouter.get('/calendar/jalsa-2026.ics', (_req: Request, res: Response) =>
     'DTSTART;VALUE=DATE:20261218',
     'DTEND;VALUE=DATE:20261221',
     'SUMMARY:72nd Jalsa Salana Nigeria 2026 (Annual Convention)',
-    'DESCRIPTION:Theme: Justice and Equality: Indispensable Prerequisites for Global Peace and National Harmony.\\n\\nVenue: Jamia Ahmadiyya Ilaro\\, Ogun State\\, Nigeria.\\n\\nLive broadcasts on MTA International and YouTube.\\nWebsite: https://jalsasalana.ng/editions/2026',
+    'DESCRIPTION:Theme: Observing Justice and Human Rights: The foundation for true Global Peace.\\n\\nVenue: Jamia Ahmadiyya Ilaro\\, Ogun State\\, Nigeria.\\n\\nLive broadcasts on MTA International and YouTube.\\nWebsite: https://jalsasalana.ng/programme-of-events-jalsa-salana-nigeria-2026',
     'LOCATION:Jamia Ahmadiyya Ilaro\\, Ogun State\\, Nigeria',
     'GEO:6.8872;3.0142',
     'STATUS:CONFIRMED',

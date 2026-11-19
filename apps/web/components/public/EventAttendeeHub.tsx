@@ -17,7 +17,7 @@ export default function EventAttendeeHub() {
       title: 'Programme of Events',
       subtitle: 'Daily Convention Timetable',
       desc: 'Complete schedule of opening sessions, keynote addresses, parallel symposiums, sports, and concluding prayers.',
-      link: '/programme-of-events-jalsa-salana-nigeria-2024',
+      link: '/programme-of-events-jalsa-salana-nigeria-2026',
       icon: FileText,
       badge: 'Official Schedule',
       badgeColor: 'bg-teal-50 text-teal border-teal-200',
@@ -164,7 +164,7 @@ export default function EventAttendeeHub() {
               Register for Jalsa 2026 &rarr;
             </Link>
             <Link
-              href="/programme-of-events-jalsa-salana-nigeria-2024"
+              href="/programme-of-events-jalsa-salana-nigeria-2026"
               className="w-full sm:w-auto text-center px-5 py-3.5 rounded-2xl bg-white/10 hover:bg-white/15 text-white font-semibold text-xs uppercase tracking-wider transition-colors border border-white/15"
             >
               Session Timetable

@@ -98,7 +98,7 @@ export default function CountdownSection() {
 
             {/* Theme */}
             <p className="text-white/70 text-xs sm:text-base leading-relaxed max-w-2xl font-sans">
-              Official Theme: <strong className="text-white">Justice and Equality: Indispensable Prerequisites for Global Peace and National Harmony</strong>. Convening tens of thousands of delegates, international dignitaries, and academic researchers under the guidance of Khilafat-e-Ahmadiyya.
+              Official Theme: <strong className="text-white">Observing Justice and Human Rights: The foundation for true Global Peace</strong>. Convening tens of thousands of delegates, international dignitaries, and academic researchers under the guidance of Khilafat-e-Ahmadiyya.
             </p>
 
             {/* Meta chips */}

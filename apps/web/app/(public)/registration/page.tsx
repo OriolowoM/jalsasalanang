@@ -319,7 +319,7 @@ export default function RegistrationPage() {
                     id: 'F00',
                     name: '72nd Jalsa Salana Nigeria — The Arch Announcement',
                     flyer: '/images/registration/jalsa2026-flyer-01-the-arch_feed.webp',
-                    desc: 'Official 72nd Convention Theme: Justice and Equality: Indispensable Prerequisites for Global Peace and National Harmony.',
+                    desc: 'Official 72nd Convention Theme: Observing Justice and Human Rights: The foundation for true Global Peace.',
                   });
                   setModalFormat('feed');
                 }}
@@ -340,7 +340,7 @@ export default function RegistrationPage() {
                     72nd Jalsa Salana Nigeria — The Arch Announcement
                   </p>
                   <p className="text-xs text-gray-300 mt-1 font-serif">
-                    Theme: Justice and Equality: Indispensable Prerequisites for Global Peace and National Harmony
+                    Theme: Observing Justice and Human Rights: The foundation for true Global Peace
                   </p>
                   <div className="mt-3 flex items-center gap-1.5 text-xs font-bold text-gold">
                     <Maximize2 className="w-3.5 h-3.5" />

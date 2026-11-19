@@ -103,7 +103,7 @@ def create_og_image():
     
     # Theme Header
     draw.text((95, theme_box_y + 20), "CONVENTION THEME:", font=font_theme_bold, fill=(212, 175, 55))
-    theme_quote = '"Justice and Equality: Indispensable Prerequisites for Global Peace and National Harmony"'
+    theme_quote = '"Observing Justice and Human Rights: The foundation for true Global Peace"'
     draw.text((95, theme_box_y + 55), theme_quote, font=font_theme, fill=(245, 245, 245))
     
     # Quranic Reference tag

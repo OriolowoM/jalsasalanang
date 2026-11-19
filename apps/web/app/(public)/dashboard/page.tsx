@@ -25,6 +25,7 @@ import {
   Printer,
 } from 'lucide-react';
 import { motion, AnimatePresence } from 'framer-motion';
+import SyncedJalsaSchedule from '@/components/dashboard/SyncedJalsaSchedule';
 
 interface ItinerarySession {
   day: string;
@@ -67,38 +68,45 @@ export default function AttendeeDashboardPage() {
     itinerary: [
       {
         day: 'Day 1 (Friday, Dec 18)',
-        time: '13:00 - 15:00',
-        session: "Jumu'ah Prayers & Flag Hoisting Ceremony",
-        location: 'Main Convention Grounds',
-        highlight: 'Official flag hoisting and opening address by National Amir Alhaji Barr. Alatoye Folorunso Azeez.',
+        time: '1:05 PM – 1:50 PM',
+        session: "Jumu'at Services and Asr Prayer",
+        location: 'Main Convention Arena',
+        highlight: 'Congregational Jumu’ah followed by Live Huzur’s Sermon broadcast at 2:00 PM.',
       },
       {
         day: 'Day 1 (Friday, Dec 18)',
-        time: '16:30 - 19:00',
-        session: 'Opening Session & Keynote Speeches',
-        location: 'Main Prayer Marquee / Lajna Pavilion',
-        highlight: 'Scholarly discourse on "Justice and Equality: Prerequisites for Global Peace".',
+        time: '5:00 PM',
+        session: 'Hoisting of Flags & Opening First Session',
+        location: 'Main Convention Grounds',
+        highlight: 'Official flag hoisting (Liwa-i-Ahmadiyya & Nigeria National Flag) followed by Inaugural Address and Lecture One.',
+      },
+      {
+        day: 'Day 1 (Friday, Dec 18)',
+        time: '5:40 PM – 6:20 PM',
+        session: 'Lecture One: Message from Hazrat Khalifatul Masih V (aba)',
+        location: 'Main Convention Marquee',
+        highlight: 'Inaugural Address delivered by Amir Sahib Alhaji Alatoye Folorunso Azeez with Yoruba & Hausa translations.',
       },
       {
         day: 'Day 2 (Saturday, Dec 19)',
-        time: '10:00 - 13:00',
-        session: 'Academic Awards & Parallel Auxiliary Sessions',
-        location: 'Main Hall / Lajna Auditorium',
-        highlight: 'Recognition of academic excellence and distinguished Jamaat service.',
+        time: '10:40 AM – 11:30 AM',
+        session: 'Lecture Two: Official Convention Theme',
+        location: 'Main Convention Arena',
+        highlight: '“Observing Justice and Human Rights: The foundation for true Global Peace” by Hafiz Yunus Omotayo Sahib.',
       },
       {
         day: 'Day 2 (Saturday, Dec 19)',
-        time: '16:00 - 18:30',
-        session: 'Speeches to Dignitaries & Inter-Faith Guests',
-        location: 'Main Marquee',
-        highlight: 'Addresses by royal fathers, community elders, and foreign guest speakers.',
+        time: '4:30 PM – 6:30 PM',
+        session: 'Third Session: Speeches to Dignitaries & Academic Awards',
+        location: 'Main Convention Marquee',
+        highlight: 'Addresses by royal fathers, special guest dignitaries, and Jama’at academic merit awards.',
       },
       {
         day: 'Day 3 (Sunday, Dec 20)',
-        time: '10:00 - 13:30',
-        session: 'Concluding Session & Global Live Telecast',
+        time: '6:30 AM – 7:40 AM',
+        session: 'Closing Session & Final Concluding Address',
         location: 'Main Convention Arena',
-        highlight: 'Special address, concluding prayers, and worldwide MTA broadcast.',
+        highlight: 'Concluding address and silent prayers led by Amir Sahib, followed by breakfast and safe departure.',
       },
     ],
     practicalTips: [
@@ -626,6 +634,11 @@ export default function AttendeeDashboardPage() {
               <Sparkles className="w-3.5 h-3.5 text-teal" /> Ask Jalsa Companion
             </button>
           </motion.div>
+        </div>
+
+        {/* ── Synced Jalsa Salana 2026 Programme Schedule (Single Source of Truth) ── */}
+        <div className="mt-8">
+          <SyncedJalsaSchedule />
         </div>
       </div>
     </div>

@@ -21,7 +21,7 @@ export const metadata: Metadata = {
     'Alatoye Folorunso Azeez',
     'Islamic Convention Nigeria',
     'Love for All Hatred for None',
-    'Justice and Equality',
+    'Observing Justice and Human Rights',
   ],
   authors: [{ name: "Ahmadiyya Muslim Jama'at Nigeria", url: SITE_URL }],
   creator: "Ahmadiyya Muslim Jama'at Nigeria",
@@ -119,7 +119,7 @@ const structuredData = {
       '@id': `${SITE_URL}/#event-2026`,
       name: '72nd Jalsa Salana Nigeria 2026',
       description:
-        'The 72nd Annual National Convention of Ahmadiyya Muslim Jama\'at Nigeria convening under the theme: "Justice and Equality: Indispensable Prerequisites for Global Peace and National Harmony".',
+        'The 72nd Annual National Convention of Ahmadiyya Muslim Jama\'at Nigeria convening under the theme: "Observing Justice and Human Rights: The foundation for true Global Peace".',
       startDate: '2026-12-18T09:00:00+01:00',
       endDate: '2026-12-20T17:00:00+01:00',
       eventAttendanceMode: 'https://schema.org/OfflineEventAttendanceMode',

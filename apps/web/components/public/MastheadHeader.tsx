@@ -284,14 +284,25 @@ export default function MastheadHeader() {
                       Delegate Logistics &amp; Guidelines
                     </div>
                     <Link
-                      href="/programme-of-events-jalsa-salana-nigeria-2024"
+                      href="/programme-of-events-jalsa-salana-nigeria-2026"
                       onClick={() => setActiveDropdown(null)}
                       className="flex items-center gap-3 p-2.5 rounded-xl hover:bg-surface-bg text-ink hover:text-teal transition-colors"
                     >
                       <FileText className="w-4 h-4 text-teal" />
                       <div>
-                        <div className="font-semibold normal-case">Programme of Events</div>
+                        <div className="font-semibold normal-case">Programme of Events 2026</div>
                         <div className="text-[11px] text-ink-muted font-sans normal-case">Daily session timetable &amp; schedule</div>
+                      </div>
+                    </Link>
+                    <Link
+                      href="/market"
+                      onClick={() => setActiveDropdown(null)}
+                      className="flex items-center gap-3 p-2.5 rounded-xl hover:bg-surface-bg text-ink hover:text-teal transition-colors"
+                    >
+                      <span className="w-4 h-4 text-gold font-bold text-center">₦</span>
+                      <div>
+                        <div className="font-semibold normal-case">Jalsa Market Booking</div>
+                        <div className="text-[11px] text-ink-muted font-sans normal-case">Stalls, open spaces &amp; vendor guidelines</div>
                       </div>
                     </Link>
                     <Link
@@ -502,11 +513,18 @@ export default function MastheadHeader() {
                 </div>
                 <div className="pl-2 space-y-1">
                   <Link
-                    href="/programme-of-events-jalsa-salana-nigeria-2024"
+                    href="/programme-of-events-jalsa-salana-nigeria-2026"
                     onClick={() => setIsMobileMenuOpen(false)}
                     className="block py-2 px-3 rounded-lg hover:bg-surface-muted text-xs font-medium"
                   >
-                    Programme of Events
+                    Programme of Events 2026
+                  </Link>
+                  <Link
+                    href="/market"
+                    onClick={() => setIsMobileMenuOpen(false)}
+                    className="block py-2 px-3 rounded-lg hover:bg-surface-muted text-xs font-medium text-gold-dark font-semibold"
+                  >
+                    Jalsa Market Booking 2026
                   </Link>
                   <Link
                     href="/accommodation"

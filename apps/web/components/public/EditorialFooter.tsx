@@ -127,9 +127,15 @@ export default function EditorialFooter() {
             </h4>
             <ul className="space-y-2.5 text-xs text-white/70">
               <li>
-                <Link href="/programme-of-events-jalsa-salana-nigeria-2024" className="hover:text-lime transition-colors flex items-center gap-2">
+                <Link href="/programme-of-events-jalsa-salana-nigeria-2026" className="hover:text-lime transition-colors flex items-center gap-2">
                   <FileText className="w-3.5 h-3.5 text-teal-400" />
-                  <span>Programme timetable</span>
+                  <span>Programme timetable 2026</span>
+                </Link>
+              </li>
+              <li>
+                <Link href="/market" className="hover:text-lime transition-colors flex items-center gap-2">
+                  <span className="w-3.5 h-3.5 text-gold font-bold text-[10px]">₦</span>
+                  <span>Jalsa Market Booking</span>
                 </Link>
               </li>
               <li>

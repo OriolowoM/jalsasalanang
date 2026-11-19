@@ -88,7 +88,8 @@ export default async function DynamicSlugPage({ params }: PageProps) {
   // Related event pages for attendee sidebar
   const eventLinks = [
     { title: 'Registration Hub 2026', slug: '/registration', icon: Calendar, highlight: true },
-    { title: 'Programme of Events', slug: '/programme-of-events-jalsa-salana-nigeria-2024', icon: FileText },
+    { title: 'Programme of Events 2026', slug: '/programme-of-events-jalsa-salana-nigeria-2026', icon: FileText, highlight: true },
+    { title: 'Jalsa Market Booking', slug: '/market', icon: FileText },
     { title: 'Accommodation Arrangements', slug: '/accommodation', icon: HomeIcon },
     { title: 'Transportation & Routes', slug: '/transportation', icon: Truck },
     { title: 'Security & Protocol Guidelines', slug: '/security', icon: Shield },
