@@ -11,6 +11,7 @@ apps/api/uploads/*
 !apps/api/uploads/.gitkeep
 deploy_key*
 /audio/
+/images/
 *.zip
 !apps/web/public/audio/*.zip
 *.tar.gz

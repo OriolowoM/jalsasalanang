@@ -4,6 +4,7 @@ import Image from 'next/image';
 import { notFound } from 'next/navigation';
 import { getCategoryBySlug, getArticles } from '@/lib/api';
 import { Clock, Calendar, User, ChevronRight, BookOpen, ArrowRight } from 'lucide-react';
+import { getArticleFeaturedImage } from '@/lib/article-images';
 
 interface CategoryPageProps {
   params: Promise<{ slug: string }>;
@@ -84,8 +85,9 @@ export default async function CategoryDetailPage({ params }: CategoryPageProps) 
           </div>
         ) : (
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
-            {articles.map((article: any) => {
+            {articles.map((article: any, idx: number) => {
               const readTime = article.readingTime || 4;
+              const featuredImg = getArticleFeaturedImage(article, idx);
 
               return (
                 <article
@@ -94,23 +96,12 @@ export default async function CategoryDetailPage({ params }: CategoryPageProps) 
                 >
                   <div>
                     <Link href={`/articles/${article.slug}`} className="block relative aspect-[16/10] bg-gray-100 overflow-hidden">
-                      {article.featuredImage ? (
-                        <Image
-                          src={article.featuredImage}
-                          alt={article.title}
-                          fill
-                          className="object-cover group-hover:scale-105 transition-transform duration-500"
-                        />
-                      ) : (
-                        <div className="w-full h-full bg-gradient-to-br from-forest via-teal to-forest-950 flex flex-col items-center justify-center text-white p-4 text-center">
-                          <span className="text-xs font-display font-extrabold uppercase tracking-widest text-lime mb-1">
-                            Jalsa Salana Nigeria
-                          </span>
-                          <span className="text-[10px] font-sans uppercase tracking-wider text-white/70">
-                            Official Archive
-                          </span>
-                        </div>
-                      )}
+                      <Image
+                        src={featuredImg}
+                        alt={article.title}
+                        fill
+                        className="object-cover group-hover:scale-105 transition-transform duration-500"
+                      />
                     </Link>
 
                     <div className="p-5 sm:p-6">

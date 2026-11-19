@@ -4,6 +4,7 @@ import Image from 'next/image';
 import { notFound } from 'next/navigation';
 import { getEditionByYear } from '@/lib/api';
 import { Calendar, MapPin, Users, Mic, Camera, FileText, ChevronRight, Video } from 'lucide-react';
+import { getArticleFeaturedImage } from '@/lib/article-images';
 import AddToCalendarButton from '@/components/public/AddToCalendarButton';
 import VenueMapSection from '@/components/public/VenueMapSection';
 import QuranCitationCard from '@/components/public/QuranCitationCard';
@@ -171,11 +172,11 @@ export default async function EditionDetailPage({ params }: EditionDetailPagePro
             </div>
 
             <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-              {edition.articles.map((art: any) => (
+              {edition.articles.map((art: any, idx: number) => (
                 <article key={art.id} className="bg-white rounded-xl overflow-hidden border border-gray-200 shadow-sm flex flex-col justify-between group">
                   <Link href={`/articles/${art.slug}`} className="block relative aspect-[16/10] bg-gray-100">
                     <Image
-                      src={art.featuredImage || '/images/jalsa_gallery/jalsa-crowd-marquee-gathering.jpg'}
+                      src={getArticleFeaturedImage(art, idx)}
                       alt={art.title}
                       fill
                       className="object-cover group-hover:scale-105 transition-transform duration-300"

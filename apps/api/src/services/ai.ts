@@ -254,11 +254,14 @@ Page URL: https://jalsasalana.ng/market
 - Open Space: ₦11,000 (Open boundary plot).
 - Form Fee: ₦1,000 (Non-refundable fee required to obtain the physical form and study market ethics).
 
-3. PAYMENT ACCOUNTS (OFFICIAL):
-- OPay: 6102498777 (Account Name: AOG 001 ENT.)
-- OPay: 7063374914 (Account Name: Mahmoud Alaka)
-- Access Bank: 0088449365 (Account Name: Ajayi Muizz Adeniyi)
-- WhatsApp Payment Verification: Send receipt via WhatsApp to 08122715410, 07063374914, or 08067493314.
+3. OFFICIAL MARKET LIAISON DESK & PAYMENT VERIFICATION:
+- Official payment guidelines and verified Jama'at accounts are provided directly through the designated liaison officers below upon reviewing the vendor's goods category.
+- Never transfer money to unverified personal accounts.
+- Liaison Officers:
+  * Ilaro & Ground Operations: Bro. Alaka Mahmud (Phone / WhatsApp: 07063374914)
+  * Lagos State: Bro. Olawale Utman (Phone / WhatsApp: 08083127892)
+  * Abeokuta & Ogun Circuits: Bro. Muiz Ajayi (Phone / WhatsApp: 08067493314)
+  * Central WhatsApp Enquiries: 08122715410
 
 4. APPROVED SALES CATEGORIES (STRICT SINGLE-CATEGORY RULE):
 Vendors must choose EXACTLY ONE category. Mixing categories in one space is strictly prohibited:
@@ -473,12 +476,13 @@ Islamic Etiquette:
 4. Strict Single Category Rule: Traders must select EXACTLY ONE category from A to H. Mixing categories in one stall is strictly prohibited.
 5. Strict Prohibitions: No alcohol, no media/books/cassettes/CDs (reserved for Jama'at departments), no firewood or charcoal cooking, and ONLY LIMAN BRAND sachet/pure water is permitted for sale.
 6. Non-Members: Must provide an official guarantor from the Jama'at.
-7. Payment Accounts:
-   - OPay: 6102498777 (AOG 001 ENT.)
-   - OPay: 7063374914 (Mahmoud Alaka)
-   - Access Bank: 0088449365 (Ajayi Muizz Adeniyi)
-   Send payment proof via WhatsApp to 08122715410, 07063374914, or 08067493314.
-8. Collection Centres: Ilaro (Bro. Alaka Mahmud 07063374914), Lagos (Bro. Olawale Utman 08083127892), Abeokuta (Bro. Muiz Ajayi 08067493314), Ibadan (contact main WhatsApp). Point users to https://jalsasalana.ng/market.
+7. Official Payment & Booking Verification:
+   Do NOT give out raw bank account numbers. Instead, direct vendors to contact the designated liaison officers to receive official verified Jama'at payment guidelines and form collection:
+   - Ilaro / Central Operations: Bro. Alaka Mahmud (07063374914)
+   - Lagos State: Bro. Olawale Utman (08083127892)
+   - Abeokuta & Ogun Circuits: Bro. Muiz Ajayi (08067493314)
+   - Central WhatsApp Enquiries: 08122715410 / 07063374914
+8. Collection Centres & Booking Page: Direct users to https://jalsasalana.ng/market.
 
 ### 3. TRAVEL ADVISORY RESPONSE PROTOCOL:
 When answering questions about travelling to the Jalsa venue in Ilaro, you MUST prioritise the official Jalsa Salana 2026 Travel Advisory Knowledge Base.
@@ -735,12 +739,13 @@ Which city or location will you be travelling from? We look forward to welcoming
         `- Single Category Rule: Traders must choose **EXACTLY ONE** category (A to H). Mixing categories is strictly prohibited.\n` +
         `- Strict Prohibitions: No alcohol, no media/books/cassettes, no firewood or charcoal cooking, and **ONLY LIMAN BRAND** pure water is allowed for sale.\n` +
         `- Non-Members: Must provide an official Jama’at guarantor.\n\n` +
-        `**3. Official Payment Accounts:**\n` +
-        `- OPay: **6102498777** (AOG 001 ENT.)\n` +
-        `- OPay: **7063374914** (Mahmoud Alaka)\n` +
-        `- Access Bank: **0088449365** (Ajayi Muizz Adeniyi)\n` +
-        `Send payment evidence via WhatsApp to **08122715410**, **07063374914**, or **08067493314**.\n\n` +
-        `Detailed booking info and collection centres are available on the **[Jalsa Market Page](https://jalsasalana.ng/market)**.`;
+        `**3. Official Market Liaison Desk & Verification:**\n` +
+        `To obtain forms and receive authorized Jama'at payment guidelines, contact your regional liaison officer:\n` +
+        `- **Ilaro / Central Operations:** Bro. Alaka Mahmud (**+234 706 337 4914**)\n` +
+        `- **Lagos State:** Bro. Olawale Utman (**+234 808 312 7892**)\n` +
+        `- **Abeokuta & Ogun Circuits:** Bro. Muiz Ajayi (**+234 806 749 3314**)\n` +
+        `- **Central WhatsApp Desk:** **08122715410**\n\n` +
+        `Detailed booking info and guidelines are available on the **[Jalsa Market Page](https://jalsasalana.ng/market)**.`;
       sources = ['Official Market Guidelines 2026', '/market'];
     } else if (
       q.includes('jingle') ||

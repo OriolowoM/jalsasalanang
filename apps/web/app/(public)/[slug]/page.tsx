@@ -3,6 +3,7 @@ import { notFound, redirect } from 'next/navigation';
 import Link from 'next/link';
 import Image from 'next/image';
 import type { Metadata } from 'next';
+import { getArticleFeaturedImage } from '@/lib/article-images';
 import { getPageBySlug, getArticleBySlug } from '@/lib/api';
 import { 
   Calendar, 
@@ -158,17 +159,16 @@ export default async function DynamicSlugPage({ params }: PageProps) {
               </div>
             </div>
 
-            {/* Optional Featured Image */}
-            {pageData.featuredImage && (
-              <div className="relative w-full h-64 sm:h-96 rounded-2xl overflow-hidden mb-10 shadow-soft border border-surface-border/40">
-                <Image
-                  src={pageData.featuredImage}
-                  alt={pageData.title}
-                  fill
-                  className="object-cover"
-                />
-              </div>
-            )}
+            {/* Featured Image */}
+            <div className="relative w-full h-64 sm:h-96 rounded-2xl overflow-hidden mb-10 shadow-soft border border-surface-border/40">
+              <Image
+                src={getArticleFeaturedImage(pageData)}
+                alt={pageData.title}
+                fill
+                className="object-cover"
+                priority
+              />
+            </div>
 
             {/* Content Body with Enhanced Typography */}
             <div 

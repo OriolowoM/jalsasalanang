@@ -9,6 +9,7 @@ import {
   ArrowRight, 
   ChevronRight
 } from 'lucide-react';
+import { getArticleFeaturedImage } from '@/lib/article-images';
 
 interface ArticleItem {
   id: string;
@@ -131,23 +132,13 @@ export default function EditorialCategoryTabs({ articles }: EditorialCategoryTab
                   <div>
                     {/* Thumbnail Image */}
                     <div className="relative w-full h-52 bg-surface-muted overflow-hidden">
-                      {article.featuredImage ? (
-                        <Image
-                          src={article.featuredImage}
-                          alt={article.title}
-                          fill
-                          className="object-cover group-hover:scale-105 transition-transform duration-500"
-                        />
-                      ) : (
-                        <div className="w-full h-full bg-forest flex flex-col items-center justify-center text-white p-4 text-center">
-                          <span className="text-xs font-display font-extrabold uppercase tracking-widest text-lime mb-1">
-                            Jalsa Salana Nigeria
-                          </span>
-                          <span className="text-[10px] font-sans uppercase tracking-wider text-white/60">
-                            Digital Dispatch
-                          </span>
-                        </div>
-                      )}
+                      <Image
+                        src={getArticleFeaturedImage(article, idx)}
+                        alt={article.title}
+                        fill
+                        className="object-cover group-hover:scale-105 transition-transform duration-500"
+                        sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                      />
                       <div className="absolute top-3 left-3">
                         <span className="px-3 py-1 rounded-full text-[10px] font-bold uppercase tracking-wider bg-white/95 text-forest shadow-sm backdrop-blur-sm">
                           {primaryCategory}

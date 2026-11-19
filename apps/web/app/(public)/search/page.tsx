@@ -1,6 +1,7 @@
 import React from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
+import { getArticleFeaturedImage } from '@/lib/article-images';
 import { semanticSearch } from '@/lib/api';
 import {
   Search,
@@ -175,7 +176,7 @@ export default async function SearchResultsPage({
                     </h3>
 
                     <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-                      {articles.map((art: any) => (
+                      {articles.map((art: any, idx: number) => (
                         <article
                           key={art.id}
                           className="rounded-3xl bg-white border border-surface-border overflow-hidden hover:border-teal/40 transition-all hover:shadow-soft flex flex-col justify-between group"
@@ -184,7 +185,7 @@ export default async function SearchResultsPage({
                             {/* Card Image */}
                             <Link href={`/blog/${art.slug}`} className="block relative aspect-[16/10] bg-surface-muted overflow-hidden">
                               <Image
-                                src={art.featuredImage || '/images/jalsa_gallery/jalsa-main-stage-keynote-podium.jpg'}
+                                src={getArticleFeaturedImage(art, idx)}
                                 alt={art.title}
                                 fill
                                 className="object-cover group-hover:scale-105 transition-transform duration-500"

@@ -90,24 +90,36 @@ export default function JalsaMarketPage() {
     },
   ];
 
-  const bankAccounts = [
+  const liaisonOfficers = [
     {
-      id: "opay-1",
-      bank: "OPay",
-      accountNumber: "6102498777",
-      accountName: "AOG 001 ENT.",
+      id: "ilaro-officer",
+      name: "Bro. Alaka Mahmud",
+      role: "Central Market Officer & Ground Allocation",
+      region: "Ilaro & Western Hub",
+      location: "Jamia Ahmadiyya Ilaro Grounds",
+      phone: "07063374914",
+      telLink: "tel:+2347063374914",
+      whatsappLink: "https://wa.me/2347063374914?text=Assalamu%20Alaikum%20Bro.%20Mahmud,%20I%20would%20like%20to%20register%20for%20a%20stall%20at%20Jalsa%20Salana%202026%20Market.",
     },
     {
-      id: "opay-2",
-      bank: "OPay",
-      accountNumber: "7063374914",
-      accountName: "Mahmoud Alaka",
+      id: "lagos-officer",
+      name: "Bro. Olawale Utman",
+      role: "Regional Liaison Officer",
+      region: "Lagos State Operations",
+      location: "Amu Ojokoro Circuit Centre",
+      phone: "08083127892",
+      telLink: "tel:+2348083127892",
+      whatsappLink: "https://wa.me/2348083127892?text=Assalamu%20Alaikum%20Bro.%20Utman,%20I%20am%20in%20Lagos%20and%20need%20a%20Jalsa%202026%20Market%20form.",
     },
     {
-      id: "access",
-      bank: "Access Bank",
-      accountNumber: "0088449365",
-      accountName: "Ajayi Muizz Adeniyi",
+      id: "abeokuta-officer",
+      name: "Bro. Muiz Ajayi",
+      role: "Regional Liaison Officer",
+      region: "Abeokuta & Ogun Circuits",
+      location: "Abeokuta Circuit Secretariat",
+      phone: "08067493314",
+      telLink: "tel:+2348067493314",
+      whatsappLink: "https://wa.me/2348067493314?text=Assalamu%20Alaikum%20Bro.%20Ajayi,%20I%20would%20like%20to%20register%20for%20Jalsa%202026%20Market%20in%20Abeokuta.",
     },
   ];
 
@@ -217,9 +229,9 @@ export default function JalsaMarketPage() {
       </section>
 
       {/* Critical Notice & Timeline Banner */}
-      <section className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 -mt-6">
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
-          <div className="bg-white rounded-2xl p-5 border-2 border-[#c5a049]/40 shadow-soft">
+      <section className="relative z-20 max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 -mt-8 sm:-mt-10">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-5">
+          <div className="bg-white rounded-2xl p-6 border-2 border-[#c5a049] shadow-xl">
             <div className="flex items-center gap-2.5 text-xs font-bold uppercase tracking-wider text-[#027c68] mb-1">
               <Calendar className="w-4 h-4 text-[#c5a049]" />
               Deadline for Form Submission
@@ -227,12 +239,12 @@ export default function JalsaMarketPage() {
             <div className="text-xl font-extrabold text-[#003333]">
               1st December 2026
             </div>
-            <p className="text-xs text-ink-muted mt-1">
+            <p className="text-xs text-ink-muted mt-1.5 leading-relaxed">
               All completed forms and proof of payment must be returned on or before this date. First-come, first-served.
             </p>
           </div>
 
-          <div className="bg-white rounded-2xl p-5 border border-surface-border shadow-soft">
+          <div className="bg-white rounded-2xl p-6 border border-surface-border shadow-xl">
             <div className="flex items-center gap-2.5 text-xs font-bold uppercase tracking-wider text-[#027c68] mb-1">
               <Clock className="w-4 h-4 text-[#027c68]" />
               Operating Hours
@@ -240,12 +252,12 @@ export default function JalsaMarketPage() {
             <div className="text-xl font-extrabold text-[#003333]">
               7:00 AM – 10:00 PM Daily
             </div>
-            <p className="text-xs text-amber-700 font-semibold mt-1">
+            <p className="text-xs text-amber-700 font-semibold mt-1.5 leading-relaxed">
               ⚠️ Strictly closed during all Jalsa sessions, speeches, and congregational prayers.
             </p>
           </div>
 
-          <div className="bg-white rounded-2xl p-5 border border-surface-border shadow-soft">
+          <div className="bg-white rounded-2xl p-6 border border-surface-border shadow-xl">
             <div className="flex items-center gap-2.5 text-xs font-bold uppercase tracking-wider text-[#027c68] mb-1">
               <ShieldAlert className="w-4 h-4 text-[#c5a049]" />
               Mandatory Briefing
@@ -253,7 +265,7 @@ export default function JalsaMarketPage() {
             <div className="text-xl font-extrabold text-[#003333]">
               5 Days Before Jalsa
             </div>
-            <p className="text-xs text-ink-muted mt-1">
+            <p className="text-xs text-ink-muted mt-1.5 leading-relaxed">
               Nazim Market conducts a compulsory orientation on market ethics and grounds safety for all approved traders.
             </p>
           </div>
@@ -317,10 +329,10 @@ export default function JalsaMarketPage() {
 
             <div className="mt-8 pt-6 border-t border-surface-border">
               <a
-                href="#payment-accounts"
+                href="#liaison-desk"
                 className="w-full py-3 rounded-xl bg-[#003333] hover:bg-[#024542] text-white font-bold text-xs uppercase tracking-wider text-center block transition"
               >
-                Proceed to Payment Details
+                Connect with Liaison Officer
               </a>
             </div>
           </div>
@@ -364,82 +376,87 @@ export default function JalsaMarketPage() {
 
             <div className="mt-8 pt-6 border-t border-surface-border">
               <a
-                href="#payment-accounts"
+                href="#liaison-desk"
                 className="w-full py-3 rounded-xl border-2 border-[#003333] hover:bg-[#eef4f1] text-[#003333] font-bold text-xs uppercase tracking-wider text-center block transition"
               >
-                Proceed to Payment Details
+                Connect with Liaison Officer
               </a>
             </div>
           </div>
         </div>
       </section>
 
-      {/* Official Payment Accounts Section */}
-      <section id="payment-accounts" className="bg-[#002d2d] text-white py-14 border-y border-[#024542]">
+      {/* Official Market Liaison & Booking Verification Desk */}
+      <section id="liaison-desk" className="bg-[#002d2d] text-white py-16 border-y border-[#024542]">
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center max-w-2xl mx-auto mb-10">
+          <div className="text-center max-w-3xl mx-auto mb-12">
             <span className="text-xs font-bold uppercase tracking-widest text-[#b0e892]">
-              Verified Banking Channels
+              Direct Coordination Desk
             </span>
-            <h2 className="font-display font-extrabold text-2xl sm:text-3xl text-white mt-1">
-              Official Payment Accounts
+            <h2 className="font-display font-extrabold text-2xl sm:text-4xl text-white mt-1">
+              Official Market Liaison Officers
             </h2>
-            <p className="text-xs sm:text-sm text-[#c8ded6] mt-2">
-              Transfer the exact fee to any of the authorized accounts below. Send proof of payment via WhatsApp immediately after transfer.
+            <p className="text-xs sm:text-sm text-[#c8ded6] mt-3 leading-relaxed">
+              To ensure authentic space allocation and transparent verification, please connect directly with the designated Jama’at liaison officer for your region. Our officers coordinate physical form issuance, category verification, and payment processing.
             </p>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-            {bankAccounts.map((acc) => (
+            {liaisonOfficers.map((officer) => (
               <div
-                key={acc.id}
-                className="rounded-2xl bg-[#003838] border border-[#c5a049]/40 p-6 flex flex-col justify-between"
+                key={officer.id}
+                className="rounded-2xl bg-[#003838] border-2 border-[#c5a049]/40 p-6 flex flex-col justify-between shadow-lg hover:border-[#b0e892] transition-colors"
               >
                 <div>
-                  <div className="flex items-center justify-between text-xs text-[#b0e892] font-semibold mb-2">
-                    <span>{acc.bank}</span>
-                    <span className="text-[10px] uppercase tracking-wider bg-white/10 px-2 py-0.5 rounded-full">
-                      Official
+                  <div className="flex items-center justify-between text-xs text-[#b0e892] font-semibold mb-3">
+                    <span className="inline-block px-2.5 py-0.5 rounded-full bg-white/10 text-[10px] uppercase tracking-wider">
+                      {officer.region}
+                    </span>
+                    <span className="text-[10px] font-bold text-[#e6c97a] uppercase tracking-wider flex items-center gap-1">
+                      <CheckCircle2 className="w-3.5 h-3.5 text-[#b0e892]" /> Verified Desk
                     </span>
                   </div>
-                  <div className="font-mono text-2xl font-bold text-white tracking-wider">
-                    {acc.accountNumber}
+
+                  <h3 className="font-display font-extrabold text-xl text-white">
+                    {officer.name}
+                  </h3>
+                  <div className="text-xs font-medium text-[#b0e892] mt-0.5">
+                    {officer.role}
                   </div>
-                  <div className="text-sm font-semibold text-[#f0dfb2] mt-1">
-                    {acc.accountName}
+
+                  <div className="mt-4 pt-3 border-t border-white/10 flex items-center gap-2 text-xs text-[#c8ded6]">
+                    <MapPin className="w-3.5 h-3.5 text-[#c5a049] shrink-0" />
+                    <span>{officer.location}</span>
+                  </div>
+
+                  <div className="mt-3 flex items-center gap-2 text-sm font-mono font-bold text-white">
+                    <Phone className="w-3.5 h-3.5 text-[#b0e892] shrink-0" />
+                    <span>{officer.phone}</span>
                   </div>
                 </div>
 
-                <div className="mt-6 pt-4 border-t border-white/10 flex items-center justify-between">
-                  <button
-                    onClick={() => copyToClipboard(acc.accountNumber, acc.id)}
-                    className="text-xs font-bold text-[#b0e892] hover:text-white flex items-center gap-1.5 transition"
-                  >
-                    {copiedAccount === acc.id ? (
-                      <>
-                        <Check className="w-3.5 h-3.5" /> Copied Number
-                      </>
-                    ) : (
-                      <>
-                        <Copy className="w-3.5 h-3.5" /> Copy Account No
-                      </>
-                    )}
-                  </button>
+                <div className="mt-6 pt-4 border-t border-white/10 grid grid-cols-2 gap-2">
                   <a
-                    href={`https://wa.me/2347063374914?text=Assalamu%20Alaikum,%20I%20have%20paid%20to%20${acc.bank}%20(${acc.accountNumber}).%20Here%20is%20my%20payment%20evidence.`}
+                    href={officer.telLink}
+                    className="py-2.5 px-3 rounded-xl bg-white/10 hover:bg-white/20 text-white font-bold text-xs flex items-center justify-center gap-1.5 transition text-center"
+                  >
+                    <Phone className="w-3.5 h-3.5 text-[#b0e892]" /> Call
+                  </a>
+                  <a
+                    href={officer.whatsappLink}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="text-xs font-bold text-[#e6c97a] hover:text-white flex items-center gap-1"
+                    className="py-2.5 px-3 rounded-xl bg-[#027c68] hover:bg-[#039880] text-white font-bold text-xs flex items-center justify-center gap-1.5 transition text-center shadow-sm"
                   >
-                    <MessageCircle className="w-3.5 h-3.5" /> Send Receipt
+                    <MessageCircle className="w-3.5 h-3.5 text-[#b0e892]" /> WhatsApp
                   </a>
                 </div>
               </div>
             ))}
           </div>
 
-          <div className="mt-8 text-center text-xs text-[#a0c5b8] max-w-xl mx-auto">
-            ⚠️ <strong>Verification Notice:</strong> After transferring, send evidence via WhatsApp to <strong>08122715410</strong>, <strong>07063374914</strong>, or <strong>08067493314</strong> along with your name, phone number, and chosen goods category.
+          <div className="mt-10 rounded-2xl bg-[#002626] border border-[#c5a049]/30 p-5 text-center text-xs text-[#c8ded6] max-w-2xl mx-auto leading-relaxed">
+            🛡️ <strong>Security &amp; Ethical Trading Notice:</strong> Official Jama’at banking details are provided directly by the verified liaison officers above upon review of your application and chosen goods category. Never transfer funds to personal or unverified third-party accounts.
           </div>
         </div>
       </section>

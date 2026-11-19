@@ -239,7 +239,7 @@ async function main() {
 
 <p>As thousands prepare their journey towards Ilaro in December 2026, the convention calls upon all citizens to evaluate their personal accountability before the Creator.</p>
       `,
-      featuredImage: '/images/jalsa-convention-c.jpg',
+      featuredImage: '/images/jalsa_gallery/jalsa-main-stage-keynote-podium.jpg',
       imageCredit: 'Photo: Jalsa Media Nigeria / Jamia Ilaro Grounds',
       readingTime: 6,
       featuredType: 'HERO',
@@ -265,7 +265,7 @@ async function main() {
 
 <p>When an official recognizes that every hidden penny and every abuse of public trust is under the scrutiny of the Omniscient Creator, external enforcement mechanisms become secondary to internal moral conviction.</p>
       `,
-      featuredImage: '/images/jalsa-scholars.jpg',
+      featuredImage: '/images/jalsa_gallery/jalsa-congregation-listening.jpg',
       imageCredit: 'Photo: Central Tarbiyya Department',
       readingTime: 5,
       featuredType: 'SECONDARY',
@@ -287,7 +287,7 @@ async function main() {
 
 <p>Over these seven decades, the Jama'at in Nigeria has established hundreds of primary and secondary schools, hospitals, and rural healthcare dispensaries serving millions of Nigerians regardless of creed or ethnicity.</p>
       `,
-      featuredImage: '/images/70th-jalsa-hero.jpg',
+      featuredImage: '/images/jalsa_gallery/jalsa-delegates-overview-marquee.jpg',
       imageCredit: 'Archive: Ahmadiyya Historical Society Nigeria',
       readingTime: 8,
       featuredType: 'SECONDARY',
@@ -307,7 +307,7 @@ async function main() {
 <h2>The Moral Duty of Leadership</h2>
 <p>In his press conference address in Lagos, Amir Alatoye Folorunso urged Nigerian political dignitaries and public office holders to lead by personal example, cautioning that ostentatious displays of affluence alienate citizens and fuel social unrest.</p>
       `,
-      featuredImage: '/images/guest-aregbesola.jpg',
+      featuredImage: '/images/jalsa_gallery/jalsa-governor-abiodun-amir-handshake.jpg',
       imageCredit: 'Photo: Jalsa Press Unit',
       readingTime: 4,
       featuredType: 'SECONDARY',
@@ -327,7 +327,7 @@ async function main() {
 <h2>The Divine Fortress of the Believers</h2>
 <p>The Holy Prophet Muhammad (sa) prophesied that following a period of trial and monarchical tyranny, there would return <em>"Khilafat on the precept of Prophethood."</em> Today, Khilafat-e-Ahmadiyya represents the only spiritual leadership actively convening international peace symposiums and warning global superpowers of the catastrophe of nuclear war.</p>
       `,
-      featuredImage: '/images/jalsa-international.jpg',
+      featuredImage: '/images/jalsa_gallery/jalsa-amir-stage-address.jpg',
       imageCredit: 'Photo: Makhzan-e-Tasaweer International',
       readingTime: 9,
       featuredType: 'EDITORS_PICK',
@@ -348,7 +348,7 @@ async function main() {
 <p>No historical narrative of religious revival is complete without recognizing the indispensable devotion of pious women. Hadhrat Khadijatul Kubra (ra) stood by the Holy Prophet (sa) during the terrifying moments of the first revelation, placing her entire fortune at the service of Islam.</p>
 <p>Centuries later, Hadhrat Nusrat Jahan Begum, affectionately known as Amma Jan (ra), mirrored this sublime sacrifice during the renaissance of Islam under the Promised Messiah (as).</p>
       `,
-      featuredImage: '/images/jalsa-audience.jpg',
+      featuredImage: '/images/jalsa_gallery/jalsa-female-dignitary-reception.jpg',
       imageCredit: 'Photo: Lajna Imaillah Media Wing',
       readingTime: 7,
       featuredType: 'EDITORS_PICK',
@@ -367,7 +367,7 @@ async function main() {
       content: `
 <p>Addressing thousands of Khuddam (youth) and Ansar (elders) assembled on the Ilaro grounds days before the commencement of Jalsa, Amir Alatoye reminded the volunteers that the attendees of Jalsa Salana are not ordinary guests; they are the guests of God and His Prophet.</p>
       `,
-      featuredImage: '/images/jalsa-convention-b.jpg',
+      featuredImage: '/images/jalsa_gallery/jalsa-khuddam-security-discipline.jpg',
       imageCredit: 'Photo: Majlis Khuddamul Ahmadiyya Nigeria',
       readingTime: 4,
       featuredType: 'NONE',

@@ -45,10 +45,10 @@ export declare const createArticleSchema: z.ZodObject<{
     authorId: string;
     categoryIds: string[];
     tagNames: string[];
+    featuredImage?: string | undefined;
     slug?: string | undefined;
     subtitle?: string | undefined;
     excerpt?: string | undefined;
-    featuredImage?: string | undefined;
     imageCredit?: string | undefined;
     publishedAt?: string | null | undefined;
     scheduledAt?: string | null | undefined;
@@ -61,11 +61,11 @@ export declare const createArticleSchema: z.ZodObject<{
     title: string;
     content: string;
     authorId: string;
-    status?: "DRAFT" | "PENDING_REVIEW" | "APPROVED" | "SCHEDULED" | "PUBLISHED" | "ARCHIVED" | undefined;
+    featuredImage?: string | undefined;
     slug?: string | undefined;
+    status?: "DRAFT" | "PENDING_REVIEW" | "APPROVED" | "SCHEDULED" | "PUBLISHED" | "ARCHIVED" | undefined;
     subtitle?: string | undefined;
     excerpt?: string | undefined;
-    featuredImage?: string | undefined;
     imageCredit?: string | undefined;
     readingTime?: number | undefined;
     featuredType?: "NONE" | "HERO" | "SECONDARY" | "EDITORS_PICK" | undefined;
@@ -102,13 +102,13 @@ export declare const updateArticleSchema: z.ZodObject<{
     canonicalUrl: z.ZodOptional<z.ZodUnion<[z.ZodOptional<z.ZodString>, z.ZodLiteral<"">]>>;
     ogImage: z.ZodOptional<z.ZodOptional<z.ZodString>>;
 }, "strip", z.ZodTypeAny, {
+    featuredImage?: string | undefined;
+    slug?: string | undefined;
     status?: "DRAFT" | "PENDING_REVIEW" | "APPROVED" | "SCHEDULED" | "PUBLISHED" | "ARCHIVED" | undefined;
     title?: string | undefined;
-    slug?: string | undefined;
     subtitle?: string | undefined;
     excerpt?: string | undefined;
     content?: string | undefined;
-    featuredImage?: string | undefined;
     imageCredit?: string | undefined;
     readingTime?: number | undefined;
     featuredType?: "NONE" | "HERO" | "SECONDARY" | "EDITORS_PICK" | undefined;
@@ -123,13 +123,13 @@ export declare const updateArticleSchema: z.ZodObject<{
     canonicalUrl?: string | undefined;
     ogImage?: string | undefined;
 }, {
+    featuredImage?: string | undefined;
+    slug?: string | undefined;
     status?: "DRAFT" | "PENDING_REVIEW" | "APPROVED" | "SCHEDULED" | "PUBLISHED" | "ARCHIVED" | undefined;
     title?: string | undefined;
-    slug?: string | undefined;
     subtitle?: string | undefined;
     excerpt?: string | undefined;
     content?: string | undefined;
-    featuredImage?: string | undefined;
     imageCredit?: string | undefined;
     readingTime?: number | undefined;
     featuredType?: "NONE" | "HERO" | "SECONDARY" | "EDITORS_PICK" | undefined;
@@ -286,3 +286,4 @@ export declare const siteSettingSchema: z.ZodObject<{
 export type SiteSettingInput = z.infer<typeof siteSettingSchema>;
 export * from './programme-2026';
 export * from './jingles-2026';
+export * from './article-images';

@@ -223,7 +223,7 @@ export default function AskJalsaAI() {
           `You can also download the complete 4-language radio pack here: [Download All 4 Jingles ZIP (10.6 MB)](/audio/jalsa-2026-jingles-pack.zip).`;
         fallbackSources = ['Sound of Jalsa 2026', `/#jingle-${selectedLang}`];
       } else if (q.includes('market') || q.includes('stall') || q.includes('vendor') || q.includes('trader')) {
-        fallbackText = 'For the **Jalsa Salana 2026 Market**:\n- **Standard Stall:** ₦16,000\n- **Open Space:** ₦11,000\n- **Form Fee:** ₦1,000 non-refundable\n- **Submission Deadline:** 1st December 2026\n- **Operating Hours:** 7:00 AM – 10:00 PM (strictly closed during Jalsa sessions & prayers).\n- **Strict Prohibitions:** No alcohol, no media/books, no firewood/charcoal, and only Liman brand water is allowed.\n\nVisit the complete **[Jalsa Market Booking Page](/market)** for bank account details and WhatsApp contacts.';
+        fallbackText = 'For the **Jalsa Salana 2026 Market**:\n- **Standard Stall:** ₦16,000\n- **Open Space:** ₦11,000\n- **Form Fee:** ₦1,000 non-refundable\n- **Submission Deadline:** 1st December 2026\n- **Operating Hours:** 7:00 AM – 10:00 PM (strictly closed during Jalsa sessions & prayers).\n- **Strict Prohibitions:** No alcohol, no media/books, no firewood/charcoal, and only Liman brand water is allowed.\n\n**Official Market Liaison Officers (Contact for Booking & Payment):**\n- **Ilaro / Central Operations:** Bro. Alaka Mahmud (+234 706 337 4914)\n- **Lagos State:** Bro. Olawale Utman (+234 808 312 7892)\n- **Abeokuta / Ogun:** Bro. Muiz Ajayi (+234 806 749 3314)\n\nVisit the official **[Jalsa Market Page](/market)** to connect directly with the liaison desk.';
         fallbackSources = ['Official Market Guidelines 2026', '/market'];
       } else if (q.includes('programme') || q.includes('schedule') || q.includes('flag') || q.includes('hoisting') || q.includes('opening session')) {
         fallbackText = 'The official **72nd Jalsa Salana Nigeria 2026 Programme of Events**:\n- **Opening Ceremony & Flag Hoisting:** Friday 18 Dec at **5:00 PM** (Liwa-i-Ahmadiyya & Nigeria National Flag).\n- **First Session:** Friday at **5:10 PM**, including Lecture One with message from Hazrat Khalifatul Masih V (aba).\n- **Keynote Theme Lecture:** Saturday 19 Dec at 10:40 AM.\n- **Concluding Address:** Sunday 20 Dec at 6:30 AM.\n\nExplore the interactive schedule and download the official PDF on the **[Programme of Events Page](/programme-of-events-jalsa-salana-nigeria-2026)**.';
@@ -514,17 +514,17 @@ export default function AskJalsaAI() {
               </div>
 
               {/* Suggested Questions Pills */}
-              <div className="px-4 py-2.5 bg-surface-muted/60 border-t border-surface-border/60 overflow-x-auto no-scrollbar">
-                <div className="flex items-center gap-2 whitespace-nowrap">
-                  <span className="text-[10px] font-bold text-ink-muted uppercase tracking-wider flex-shrink-0">
-                    Suggested:
+              <div className="flex-shrink-0 px-4 py-3 bg-[#f8faf8] border-t border-surface-border overflow-x-auto no-scrollbar">
+                <div className="flex items-center gap-2 whitespace-nowrap min-h-[34px]">
+                  <span className="text-[10px] font-bold text-forest uppercase tracking-wider flex-shrink-0 bg-lime/40 text-forest-950 px-2 py-0.5 rounded">
+                    Suggested
                   </span>
                   {SUGGESTED_QUESTIONS.map((q, idx) => (
                     <button
                       key={idx}
                       onClick={() => handleSend(q)}
                       disabled={loading}
-                      className="text-[11px] px-3 py-1 bg-white hover:bg-teal hover:text-white text-ink-body font-medium rounded-full border border-surface-border shadow-xs transition-colors flex-shrink-0 disabled:opacity-50"
+                      className="text-xs px-3.5 py-1.5 bg-white hover:bg-forest hover:text-white text-ink-body font-medium rounded-full border border-surface-border shadow-xs transition-all flex-shrink-0 disabled:opacity-50 active:scale-95"
                     >
                       {q}
                     </button>
@@ -533,7 +533,7 @@ export default function AskJalsaAI() {
               </div>
 
               {/* Input Footer */}
-              <div className="p-3 sm:p-4 bg-white border-t border-surface-border">
+              <div className="flex-shrink-0 p-3 sm:p-4 bg-white border-t border-surface-border">
                 <form
                   onSubmit={(e) => {
                     e.preventDefault();

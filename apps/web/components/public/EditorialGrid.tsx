@@ -2,6 +2,7 @@ import React from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
 import { Clock, ArrowRight, Bookmark } from 'lucide-react';
+import { getArticleFeaturedImage } from '@/lib/article-images';
 
 interface Props {
   editorsPicks: any[];
@@ -38,7 +39,7 @@ export default function EditorialGrid({ editorsPicks = [], latestArticles = [] }
                   <div>
                     <Link href={`/blog/${article.slug}`} className="block relative aspect-[16/10] bg-surface-muted overflow-hidden">
                       <Image
-                        src={article.featuredImage || '/images/jalsa_gallery/jalsa-crowd-marquee-gathering.jpg'}
+                        src={getArticleFeaturedImage(article, idx)}
                         alt={article.title}
                         fill
                         className="object-cover group-hover:scale-105 transition-transform duration-700 ease-out"

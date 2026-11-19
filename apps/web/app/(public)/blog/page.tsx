@@ -3,6 +3,7 @@ import Link from 'next/link';
 import Image from 'next/image';
 import { getArticles, getCategories } from '@/lib/api';
 import { Clock, Filter, ArrowRight, BookOpen, Search, Calendar, User } from 'lucide-react';
+import { getArticleFeaturedImage } from '@/lib/article-images';
 
 export const metadata = {
   title: 'Blog — Jalsa Salana Nigeria Official Blog & Dispatches',
@@ -102,7 +103,7 @@ export default async function BlogPage(props: BlogPageProps) {
             {articles.map((article: any, idx: number) => {
               const primaryCategory = article.categories?.[0]?.name || 'Editorial';
               const readTime = article.readingTime || 4;
-              const featuredImage = article.featuredImage || '/images/jalsa_gallery/jalsa-crowd-marquee-gathering.jpg';
+              const featuredImage = getArticleFeaturedImage(article, idx);
 
               return (
                 <article

@@ -2,7 +2,7 @@ import { Router, Request, Response, NextFunction } from 'express';
 import slugify from 'slugify';
 import { prisma } from '../lib/prisma';
 import { authenticate, requirePermission } from '../middleware/auth';
-import { createArticleSchema, updateArticleSchema } from '@jalsa/shared';
+import { createArticleSchema, updateArticleSchema, getArticleFeaturedImage } from '@jalsa/shared';
 
 export const articlesRouter = Router();
 
@@ -111,8 +111,9 @@ articlesRouter.get('/', async (req: Request, res: Response, next: NextFunction):
 
     res.json({
       success: true,
-      data: articles.map((a) => ({
+      data: articles.map((a, idx) => ({
         ...a,
+        featuredImage: getArticleFeaturedImage(a, idx),
         categories: a.categories.map((c) => c.category),
         tags: a.tags.map((t) => t.tag),
       })),
@@ -221,12 +222,18 @@ articlesRouter.get('/:slugOrId', async (req: Request, res: Response, next: NextF
       success: true,
       data: {
         ...article,
+        featuredImage: getArticleFeaturedImage(article),
         categories: article.categories.map((c) => c.category),
         tags: article.tags.map((t) => t.tag),
-        previousArticle,
-        nextArticle,
-        relatedArticles: relatedArticles.map((r) => ({
+        previousArticle: previousArticle
+          ? { ...previousArticle, featuredImage: getArticleFeaturedImage(previousArticle) }
+          : null,
+        nextArticle: nextArticle
+          ? { ...nextArticle, featuredImage: getArticleFeaturedImage(nextArticle) }
+          : null,
+        relatedArticles: relatedArticles.map((r, rIdx) => ({
           ...r,
+          featuredImage: getArticleFeaturedImage(r, rIdx),
           categories: r.categories.map((c) => c.category),
         })),
       },

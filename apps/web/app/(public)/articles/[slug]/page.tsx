@@ -9,6 +9,7 @@ import SocialShareButtons from '@/components/public/SocialShareButtons';
 import ArticleAudioPlayer from '@/components/public/ArticleAudioPlayer';
 import ReadingProgressBar from '@/components/public/ReadingProgressBar';
 import LocalizedArticleContent from '@/components/public/LocalizedArticleContent';
+import { getArticleFeaturedImage } from '@/lib/article-images';
 
 interface ArticleDetailPageProps {
   params: Promise<{ slug: string }>;
@@ -50,13 +51,15 @@ export default async function ArticleDetailPage({ params }: ArticleDetailPagePro
 
   if (!article) notFound();
 
+  const featuredHeroImage = getArticleFeaturedImage(article);
+
   // JSON-LD Schema.org Structured Data
   const jsonLd = {
     '@context': 'https://schema.org',
     '@type': 'NewsArticle',
     headline: article.title,
     description: article.subtitle || article.excerpt,
-    image: article.featuredImage ? [`https://jalsasalana.ng${article.featuredImage}`] : [],
+    image: [`https://jalsasalana.ng${featuredHeroImage}`],
     datePublished: article.publishedAt,
     dateModified: article.updatedAt,
     author: [{
@@ -166,24 +169,20 @@ export default async function ArticleDetailPage({ params }: ArticleDetailPagePro
         </header>
 
         {/* Featured Image */}
-        {article.featuredImage && (
-          <div className="mb-12">
-            <div className="relative aspect-[16/9] rounded-3xl overflow-hidden bg-surface-muted shadow-soft ring-1 ring-black/5">
-              <Image
-                src={article.featuredImage}
-                alt={article.title}
-                fill
-                className="object-cover"
-                priority
-              />
-            </div>
-            {article.imageCredit && (
-              <div className="text-xs text-ink-muted mt-2 text-right italic font-sans">
-                Photo Credit: {article.imageCredit}
-              </div>
-            )}
+        <div className="mb-12">
+          <div className="relative aspect-[16/9] rounded-3xl overflow-hidden bg-surface-muted shadow-soft ring-1 ring-black/5">
+            <Image
+              src={featuredHeroImage}
+              alt={article.title}
+              fill
+              className="object-cover"
+              priority
+            />
           </div>
-        )}
+          <div className="text-xs text-ink-muted mt-2 text-right italic font-sans">
+            Photo Credit: {article.imageCredit || 'Jalsa Salana Nigeria Photographic Archives'}
+          </div>
+        </div>
 
         {/* AI Voice Speech Audio Player */}
         <ArticleAudioPlayer title={article.title} content={article.content} />

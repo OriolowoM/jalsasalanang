@@ -106,4 +106,5 @@ export type SiteSettingInput = z.infer<typeof siteSettingSchema>;
 
 export * from './programme-2026';
 export * from './jingles-2026';
+export * from './article-images';
 
