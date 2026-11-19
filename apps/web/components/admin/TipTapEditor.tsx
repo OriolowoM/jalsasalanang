@@ -1,12 +1,13 @@
 'use client';
 
-import React from 'react';
+import React, { useState } from 'react';
 import { useEditor, EditorContent } from '@tiptap/react';
 import StarterKit from '@tiptap/starter-kit';
 import LinkExtension from '@tiptap/extension-link';
 import ImageExtension from '@tiptap/extension-image';
 import Placeholder from '@tiptap/extension-placeholder';
 import YoutubeExtension from '@tiptap/extension-youtube';
+import MediaPickerModal, { SelectedMediaItem } from '@/components/admin/MediaPickerModal';
 import {
   Bold,
   Italic,
@@ -21,6 +22,8 @@ import {
   Minus,
   Undo,
   Redo,
+  Plus,
+  Music,
 } from 'lucide-react';
 
 interface Props {
@@ -30,6 +33,8 @@ interface Props {
 }
 
 export default function TipTapEditor({ content, onChange, placeholder = 'Write rich editorial content here...' }: Props) {
+  const [isMediaModalOpen, setIsMediaModalOpen] = useState(false);
+
   const editor = useEditor({
     extensions: [
       StarterKit.configure({
@@ -70,11 +75,30 @@ export default function TipTapEditor({ content, onChange, placeholder = 'Write r
     return <div className="h-64 bg-gray-50 border border-gray-200 rounded-lg animate-pulse" />;
   }
 
-  const addImage = () => {
-    const url = window.prompt('Enter image URL (e.g. /images/jalsa-convention-a.jpg or https://...):');
-    if (url) {
-      editor.chain().focus().setImage({ src: url }).run();
+  const handleInsertMedia = (item: SelectedMediaItem) => {
+    const isAudio =
+      item.mimeType?.startsWith('audio/') ||
+      item.url.match(/\.(mp3|wav|ogg|m4a|aac)$/i);
+
+    if (isAudio) {
+      editor
+        .chain()
+        .focus()
+        .insertContent(
+          `<div class="my-6 p-4 rounded-xl bg-gray-50 border border-gray-200"><p class="text-xs font-bold text-gray-800 mb-2">🎵 ${item.title || 'Audio Recording'}</p><audio controls class="w-full" src="${item.url}"></audio></div><p></p>`
+        )
+        .run();
+    } else {
+      editor
+        .chain()
+        .focus()
+        .setImage({ src: item.url, alt: item.title || '' })
+        .run();
     }
+  };
+
+  const addImage = () => {
+    setIsMediaModalOpen(true);
   };
 
   const addYoutube = () => {
@@ -104,6 +128,19 @@ export default function TipTapEditor({ content, onChange, placeholder = 'Write r
     <div className="border border-gray-200 rounded-xl overflow-hidden bg-white shadow-sm focus-within:border-primary transition-colors">
       {/* Formatting Toolbar */}
       <div className="bg-gray-50 border-b border-gray-200 p-2 flex flex-wrap items-center gap-1 text-gray-700">
+        {/* WordPress-style Add Media Button */}
+        <button
+          type="button"
+          onClick={() => setIsMediaModalOpen(true)}
+          className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-emerald-50 hover:bg-emerald-100 text-primary border border-primary/20 text-xs font-bold transition-colors mr-2 shadow-sm"
+          title="Add media files from library or upload new"
+        >
+          <ImageIcon className="w-3.5 h-3.5 text-primary" />
+          <span>Add Media</span>
+        </button>
+
+        <span className="w-px h-5 bg-gray-300 mx-1 mr-2" />
+
         <button
           type="button"
           onClick={() => editor.chain().focus().toggleBold().run()}
@@ -248,6 +285,15 @@ export default function TipTapEditor({ content, onChange, placeholder = 'Write r
           HTML format saved automatically on submission
         </div>
       </div>
+
+      {/* WordPress-style Media Modal */}
+      <MediaPickerModal
+        isOpen={isMediaModalOpen}
+        onClose={() => setIsMediaModalOpen(false)}
+        onSelect={handleInsertMedia}
+        mode="editorMedia"
+        allowedTypes="all"
+      />
     </div>
   );
 }

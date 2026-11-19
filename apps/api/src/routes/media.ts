@@ -25,14 +25,14 @@ const storage = multer.diskStorage({
 
 const upload = multer({
   storage,
-  limits: { fileSize: 20 * 1024 * 1024 }, // 20 MB max
+  limits: { fileSize: 50 * 1024 * 1024 }, // 50 MB max
   fileFilter: (_req, file, cb) => {
-    const allowed = /jpeg|jpg|png|webp|avif|mp4|pdf/;
+    const allowed = /jpeg|jpg|png|webp|avif|gif|svg|mp4|pdf|mp3|wav|ogg|m4a|aac/;
     const ext = path.extname(file.originalname).toLowerCase().replace('.', '');
     if (allowed.test(ext)) {
       cb(null, true);
     } else {
-      cb(new Error('Unsupported file format. Please upload JPEG, PNG, WebP, MP4 or PDF.'));
+      cb(new Error('Unsupported file format. Please upload JPEG, PNG, WebP, GIF, SVG, MP4, PDF, or Audio (MP3, WAV, OGG, M4A).'));
     }
   },
 });
@@ -41,17 +41,38 @@ const upload = multer({
 mediaRouter.get('/', async (req: Request, res: Response, next: NextFunction): Promise<void> => {
   try {
     const page = Math.max(1, parseInt((req.query.page as string) || '1', 10));
-    const limit = Math.min(100, Math.max(1, parseInt((req.query.limit as string) || '24', 10)));
+    const limit = Math.min(200, Math.max(1, parseInt((req.query.limit as string) || '24', 10)));
     const skip = (page - 1) * limit;
+    const search = ((req.query.search as string) || '').trim();
+    const type = ((req.query.type as string) || '').trim();
+
+    const where: any = {};
+    if (search) {
+      where.OR = [
+        { title: { contains: search, mode: 'insensitive' } },
+        { caption: { contains: search, mode: 'insensitive' } },
+        { fileUrl: { contains: search, mode: 'insensitive' } },
+      ];
+    }
+    if (type === 'image') {
+      where.mimeType = { startsWith: 'image/' };
+    } else if (type === 'audio') {
+      where.mimeType = { startsWith: 'audio/' };
+    } else if (type === 'video') {
+      where.mimeType = { startsWith: 'video/' };
+    } else if (type === 'document') {
+      where.mimeType = { contains: 'pdf' };
+    }
 
     const [items, total] = await Promise.all([
       prisma.media.findMany({
+        where,
         skip,
         take: limit,
         orderBy: { createdAt: 'desc' },
         include: { edition: { select: { year: true, editionNumber: true } } },
       }),
-      prisma.media.count(),
+      prisma.media.count({ where }),
     ]);
 
     res.json({
@@ -100,6 +121,51 @@ mediaRouter.post(
         success: true,
         message: 'File uploaded successfully',
         data: media,
+      });
+    } catch (err) {
+      next(err);
+    }
+  }
+);
+
+// POST /api/v1/media/upload-multiple (WordPress-style bulk media upload)
+mediaRouter.post(
+  '/upload-multiple',
+  authenticate,
+  upload.array('files', 50),
+  async (req: Request, res: Response, next: NextFunction): Promise<void> => {
+    try {
+      const files = req.files as Express.Multer.File[];
+      if (!files || files.length === 0) {
+        res.status(400).json({ success: false, message: 'No files uploaded.' });
+        return;
+      }
+
+      const { credit, editionId } = req.body;
+      const createdMedia = [];
+
+      for (const file of files) {
+        const fileUrl = `/uploads/${file.filename}`;
+        const cleanTitle = path.basename(file.originalname, path.extname(file.originalname));
+
+        const item = await prisma.media.create({
+          data: {
+            title: cleanTitle || file.originalname,
+            caption: null,
+            credit: credit || 'Official Jalsa Media',
+            fileUrl,
+            mimeType: file.mimetype,
+            fileSize: file.size,
+            editionId: editionId || null,
+          },
+        });
+        createdMedia.push(item);
+      }
+
+      res.status(201).json({
+        success: true,
+        message: `${createdMedia.length} files uploaded successfully.`,
+        data: createdMedia,
       });
     } catch (err) {
       next(err);

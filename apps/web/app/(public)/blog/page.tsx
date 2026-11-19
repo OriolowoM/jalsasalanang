@@ -7,7 +7,38 @@ import { getArticleFeaturedImage } from '@/lib/article-images';
 
 export const metadata = {
   title: 'Blog — Jalsa Salana Nigeria Official Blog & Dispatches',
-  description: 'Official blog of Jalsa Salana Nigeria featuring thought-provoking articles, keynote convention lectures, Amir’s Corner, spiritual treatises, and press releases.',
+  description:
+    'Official blog of Jalsa Salana Nigeria featuring thought-provoking articles, keynote convention lectures, Amir’s Corner, spiritual treatises, and press releases.',
+  alternates: {
+    canonical: 'https://jalsasalana.ng/blog',
+  },
+  openGraph: {
+    title: 'Dispatches & Articles — Jalsa Salana Nigeria Official Blog',
+    description:
+      'Explore official articles, keynote convention speeches, spiritual discourses, and event reports from Jalsa Salana Nigeria.',
+    url: 'https://jalsasalana.ng/blog',
+    siteName: 'Jalsa Salana Nigeria',
+    images: [
+      {
+        url: 'https://jalsasalana.ng/images/og-share-jalsa.jpg',
+        secureUrl: 'https://jalsasalana.ng/images/og-share-jalsa.jpg',
+        width: 1200,
+        height: 630,
+        type: 'image/jpeg',
+        alt: 'Jalsa Salana Nigeria Official Blog & Dispatches',
+      },
+    ],
+    type: 'website',
+  },
+  twitter: {
+    card: 'summary_large_image',
+    site: '@Ahmadiyya_NG',
+    creator: '@Ahmadiyya_NG',
+    title: 'Dispatches & Articles — Jalsa Salana Nigeria Official Blog',
+    description:
+      'Explore official articles, keynote convention speeches, and spiritual discourses from Jalsa Salana Nigeria.',
+    images: ['https://jalsasalana.ng/images/og-share-jalsa.jpg'],
+  },
 };
 
 interface BlogPageProps {

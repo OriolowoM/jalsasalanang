@@ -159,6 +159,8 @@ usersRouter.post('/', authenticate, requireRole('super_administrator'), async (r
         lastName: true,
         roleId: true,
         status: true,
+        role: { select: { id: true, name: true, slug: true } },
+        createdAt: true,
       },
     });
 
@@ -182,7 +184,16 @@ usersRouter.put('/:id', authenticate, requireRole('super_administrator'), async 
     const updated = await prisma.user.update({
       where: { id },
       data,
-      select: { id: true, email: true, firstName: true, lastName: true, status: true, roleId: true },
+      select: {
+        id: true,
+        email: true,
+        firstName: true,
+        lastName: true,
+        status: true,
+        roleId: true,
+        role: { select: { id: true, name: true, slug: true } },
+        createdAt: true,
+      },
     });
 
     res.json({ success: true, data: updated });

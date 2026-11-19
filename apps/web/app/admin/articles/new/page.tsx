@@ -3,8 +3,9 @@
 import React, { useState, useEffect } from 'react';
 import { useRouter } from 'next/navigation';
 import Link from 'next/link';
-import { ArrowLeft, Save, Send, AlertCircle, Loader2, Sparkles, Check, Info } from 'lucide-react';
+import { ArrowLeft, Save, Send, AlertCircle, Loader2, Sparkles, Check, Info, Upload, Image as ImageIcon, Trash2 } from 'lucide-react';
 import TipTapEditor from '@/components/admin/TipTapEditor';
+import MediaPickerModal from '@/components/admin/MediaPickerModal';
 
 export default function NewArticlePage() {
   const router = useRouter();
@@ -12,6 +13,7 @@ export default function NewArticlePage() {
   const [error, setError] = useState('');
   const [aiLoading, setAiLoading] = useState(false);
   const [aiReport, setAiReport] = useState<{ score: number; suggestions: string[] } | null>(null);
+  const [isFeaturedMediaModalOpen, setIsFeaturedMediaModalOpen] = useState(false);
 
   const [authors, setAuthors] = useState<any[]>([]);
   const [editions, setEditions] = useState<any[]>([]);
@@ -440,27 +442,101 @@ export default function NewArticlePage() {
             </div>
           </div>
 
-          {/* Featured Image & Credit */}
+          {/* Featured Image & Credit (WordPress Style) */}
           <div className="bg-white p-5 rounded-xl border border-gray-200 shadow-sm space-y-4">
-            <h3 className="font-serif font-bold text-sm text-charcoal pb-2 border-b border-gray-100">
-              Featured Media
-            </h3>
+            <div className="flex items-center justify-between pb-2 border-b border-gray-100">
+              <h3 className="font-serif font-bold text-sm text-charcoal">
+                Featured Image
+              </h3>
+              {featuredImage && (
+                <button
+                  type="button"
+                  onClick={() => setIsFeaturedMediaModalOpen(true)}
+                  className="text-xs text-primary font-bold hover:underline"
+                >
+                  Change
+                </button>
+              )}
+            </div>
+
+            {featuredImage ? (
+              <div className="space-y-3">
+                <div className="relative aspect-video rounded-xl overflow-hidden border border-gray-200 bg-gray-50 group">
+                  <img
+                    src={featuredImage}
+                    alt="Featured article header"
+                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+                  />
+                  <div className="absolute inset-0 bg-black/60 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center gap-2 p-2">
+                    <button
+                      type="button"
+                      onClick={() => setIsFeaturedMediaModalOpen(true)}
+                      className="px-3 py-1.5 rounded-lg bg-white hover:bg-gray-100 text-charcoal text-xs font-bold shadow"
+                    >
+                      Replace Image
+                    </button>
+                    <button
+                      type="button"
+                      onClick={() => setFeaturedImage('')}
+                      className="px-3 py-1.5 rounded-lg bg-red-600 hover:bg-red-700 text-white text-xs font-bold shadow"
+                    >
+                      Remove
+                    </button>
+                  </div>
+                </div>
+
+                <div className="flex items-center justify-between gap-2">
+                  <button
+                    type="button"
+                    onClick={() => setIsFeaturedMediaModalOpen(true)}
+                    className="w-full py-1.5 px-3 rounded-lg border border-gray-200 text-xs font-bold text-charcoal hover:bg-gray-50 flex items-center justify-center gap-1.5"
+                  >
+                    <ImageIcon className="w-3.5 h-3.5 text-primary" />
+                    <span>Replace from Library</span>
+                  </button>
+                  <button
+                    type="button"
+                    onClick={() => setFeaturedImage('')}
+                    className="p-1.5 text-gray-400 hover:text-red-600 rounded-lg border border-gray-200 hover:border-red-200 hover:bg-red-50 transition-colors"
+                    title="Remove featured image"
+                  >
+                    <Trash2 className="w-4 h-4" />
+                  </button>
+                </div>
+              </div>
+            ) : (
+              <button
+                type="button"
+                onClick={() => setIsFeaturedMediaModalOpen(true)}
+                className="w-full py-8 border-2 border-dashed border-gray-300 hover:border-primary rounded-xl flex flex-col items-center justify-center text-gray-500 hover:text-primary transition-all bg-gray-50/50 hover:bg-emerald-50/20 group"
+              >
+                <div className="w-10 h-10 rounded-full bg-emerald-50 text-primary flex items-center justify-center mb-2 group-hover:scale-110 transition-transform">
+                  <Upload className="w-5 h-5" />
+                </div>
+                <span className="text-xs font-bold text-charcoal group-hover:text-primary">
+                  Set Featured Image
+                </span>
+                <span className="text-[10px] text-gray-400 mt-0.5">
+                  Upload new or select from library
+                </span>
+              </button>
+            )}
 
             <div>
-              <label className="block text-xs font-bold uppercase tracking-wider text-charcoal mb-1">
-                Featured Image URL / Path
+              <label className="block text-[11px] font-bold uppercase tracking-wider text-charcoal mb-1">
+                Image URL / Direct Path
               </label>
               <input
                 type="text"
                 value={featuredImage}
                 onChange={(e) => setFeaturedImage(e.target.value)}
                 placeholder="/images/70th-jalsa-hero.jpg"
-                className="w-full px-3 py-2 rounded-lg border border-gray-200 text-xs outline-none focus:border-primary text-charcoal"
+                className="w-full px-3 py-1.5 rounded-lg border border-gray-200 text-xs outline-none focus:border-primary text-charcoal"
               />
             </div>
 
             <div>
-              <label className="block text-xs font-bold uppercase tracking-wider text-charcoal mb-1">
+              <label className="block text-[11px] font-bold uppercase tracking-wider text-charcoal mb-1">
                 Photographer / Image Credit
               </label>
               <input
@@ -468,7 +544,7 @@ export default function NewArticlePage() {
                 value={imageCredit}
                 onChange={(e) => setImageCredit(e.target.value)}
                 placeholder="e.g. Photo: Jalsa Media Nigeria"
-                className="w-full px-3 py-2 rounded-lg border border-gray-200 text-xs outline-none focus:border-primary text-charcoal"
+                className="w-full px-3 py-1.5 rounded-lg border border-gray-200 text-xs outline-none focus:border-primary text-charcoal"
               />
             </div>
           </div>
@@ -513,6 +589,18 @@ export default function NewArticlePage() {
           </div>
         </div>
       </div>
+
+      {/* Featured Media Modal */}
+      <MediaPickerModal
+        isOpen={isFeaturedMediaModalOpen}
+        onClose={() => setIsFeaturedMediaModalOpen(false)}
+        onSelect={(item) => {
+          setFeaturedImage(item.url);
+          if (item.caption && !imageCredit) setImageCredit(item.caption);
+        }}
+        mode="featuredImage"
+        allowedTypes="image"
+      />
     </div>
   );
 }
