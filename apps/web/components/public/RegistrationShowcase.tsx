@@ -203,7 +203,7 @@ export default function RegistrationShowcase() {
             <span className="text-xs text-white/60 mt-0.5 block">Zero registration fees</span>
           </div>
           <div className="bg-white/5 border border-white/10 rounded-2xl p-4 backdrop-blur-sm">
-            <span className="text-lime font-display font-bold text-xs uppercase tracking-wider block">Langar Meals</span>
+            <span className="text-lime font-display font-bold text-xs uppercase tracking-wider block">Communal Meals</span>
             <span className="text-xs text-white/60 mt-0.5 block">Breakfast, lunch &amp; dinner</span>
           </div>
           <div className="bg-white/5 border border-white/10 rounded-2xl p-4 backdrop-blur-sm">
