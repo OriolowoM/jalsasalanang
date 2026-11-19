@@ -30,11 +30,11 @@ interface Message {
 }
 
 const SUGGESTED_QUESTIONS = [
+  'What are the recommended travel routes to Ilaro?',
+  'How do I travel to Jalsa from Lagos or Ibadan?',
   'What is the theme of 72nd Jalsa 2026?',
-  'Where is Jamia Ilaro and how do I get there?',
-  'What are the dining marquee hours?',
   'How do I register my household online?',
-  'Where is the emergency medical clinic?',
+  'What are the dining marquee hours?',
 ];
 
 export default function AskJalsaAI() {

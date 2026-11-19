@@ -584,6 +584,115 @@ async function main() {
   });
   log('[Seed] Navigation menus configured.');
 
+  // 11. Official Travel Advisory Page
+  try {
+    await prisma.page.upsert({
+      where: { slug: 'travel-advisory' },
+      create: {
+        title: 'Official Travel Advisory — 72nd Jalsa Salana Nigeria 2026',
+        slug: 'travel-advisory',
+        content: `<h2>Alternative Routes to Avoid Possible Congestion on Papalanto Road</h2>
+<p>Attendees travelling to Ilaro for the <strong>72nd Jalsa Salana Nigeria 2026</strong> (December 18–20, 2026 at Jamia Ahmadiyya, Ilaro, Ogun State) are strongly advised to consider the recommended alternative routes outlined below to avoid possible congestion on Papalanto Road.</p>
+
+<h3>Route A: Lagos to Ilaro</h3>
+<p><strong>Route Sequence:</strong> LAGOS → MERAN / KOLA ROAD → OTA ROAD → ATAN-OWODE → OWODE → ILARO</p>
+<ol>
+  <li>Follow Meran Road or Kola Road.</li>
+  <li>Connect to Ota Road.</li>
+  <li>Proceed through Atan-Owode.</li>
+  <li>Link to Owode.</li>
+  <li>Continue towards Ilaro.</li>
+</ol>
+
+<h3>Route B: Ibadan to Ilaro (Through Itori)</h3>
+<p><strong>Route Sequence:</strong> IBADAN → ABEOKUTA → ITORI → IBESE → ILARO</p>
+<ol>
+  <li>Travel towards Abeokuta.</li>
+  <li>From Abeokuta, proceed through Itori.</li>
+  <li>Connect to Ibese Road.</li>
+  <li>Follow the route through Ibese towards Ilaro.</li>
+</ol>
+
+<h3>Route C: Alternative Route from Ibadan (Through Ita-Oshin)</h3>
+<p><strong>Route Sequence:</strong> IBADAN → ABEOKUTA → ITA-OSHIN → IJOGA-ORILE → IMASAYI → IBESE → ILARO</p>
+<ol>
+  <li>Travel from Ibadan towards Abeokuta.</li>
+  <li>Proceed through Abeokuta towards Ita-Oshin.</li>
+  <li><strong>At Ita-Oshin, take a right turn.</strong></li>
+  <li>Continue through Ijoga-Orile.</li>
+  <li>Proceed through Imasayi.</li>
+  <li>Connect to Ibese Road.</li>
+  <li>Continue towards Ilaro.</li>
+</ol>
+
+<hr/>
+
+<h3>Important Travel Safety Advisory</h3>
+<div style="background:#fef3c7;padding:16px;border-radius:12px;border:1px solid #f59e0b;margin-bottom:16px;">
+  <p><strong>1. Avoid Night Travel:</strong> All attendees are advised to avoid travelling at night. Please plan your journey to arrive during daylight hours.</p>
+  <p><strong>2. Special Overnight Advisory for Abeokuta:</strong> <em>"If you reach Abeokuta by 7:00 p.m., please find a place to sleep until the following morning before continuing your journey to Ilaro."</em></p>
+  <p><strong>3. Travel Assistance in Abeokuta:</strong> Contact <strong>Dr. Nasir Bello</strong> (Abeokuta Circuit President) on <strong>+234 803 207 4441</strong>.</p>
+</div>
+
+<p>📍 <strong>Live Navigation:</strong> Open directions to <a href="https://www.google.com/maps/dir/?api=1&destination=6.8872,3.0142" target="_blank" rel="noopener noreferrer">Jamia Ahmadiyya Ilaro on Google Maps</a>.</p>`,
+        excerpt: 'Official travel advisory and alternative travel routes from Lagos and Ibadan to Jamia Ahmadiyya Ilaro for the 72nd Jalsa Salana Nigeria 2026.',
+        isPublished: true,
+      },
+      update: {
+        title: 'Official Travel Advisory — 72nd Jalsa Salana Nigeria 2026',
+        content: `<h2>Alternative Routes to Avoid Possible Congestion on Papalanto Road</h2>
+<p>Attendees travelling to Ilaro for the <strong>72nd Jalsa Salana Nigeria 2026</strong> (December 18–20, 2026 at Jamia Ahmadiyya, Ilaro, Ogun State) are strongly advised to consider the recommended alternative routes outlined below to avoid possible congestion on Papalanto Road.</p>
+
+<h3>Route A: Lagos to Ilaro</h3>
+<p><strong>Route Sequence:</strong> LAGOS → MERAN / KOLA ROAD → OTA ROAD → ATAN-OWODE → OWODE → ILARO</p>
+<ol>
+  <li>Follow Meran Road or Kola Road.</li>
+  <li>Connect to Ota Road.</li>
+  <li>Proceed through Atan-Owode.</li>
+  <li>Link to Owode.</li>
+  <li>Continue towards Ilaro.</li>
+</ol>
+
+<h3>Route B: Ibadan to Ilaro (Through Itori)</h3>
+<p><strong>Route Sequence:</strong> IBADAN → ABEOKUTA → ITORI → IBESE → ILARO</p>
+<ol>
+  <li>Travel towards Abeokuta.</li>
+  <li>From Abeokuta, proceed through Itori.</li>
+  <li>Connect to Ibese Road.</li>
+  <li>Follow the route through Ibese towards Ilaro.</li>
+</ol>
+
+<h3>Route C: Alternative Route from Ibadan (Through Ita-Oshin)</h3>
+<p><strong>Route Sequence:</strong> IBADAN → ABEOKUTA → ITA-OSHIN → IJOGA-ORILE → IMASAYI → IBESE → ILARO</p>
+<ol>
+  <li>Travel from Ibadan towards Abeokuta.</li>
+  <li>Proceed through Abeokuta towards Ita-Oshin.</li>
+  <li><strong>At Ita-Oshin, take a right turn.</strong></li>
+  <li>Continue through Ijoga-Orile.</li>
+  <li>Proceed through Imasayi.</li>
+  <li>Connect to Ibese Road.</li>
+  <li>Continue towards Ilaro.</li>
+</ol>
+
+<hr/>
+
+<h3>Important Travel Safety Advisory</h3>
+<div style="background:#fef3c7;padding:16px;border-radius:12px;border:1px solid #f59e0b;margin-bottom:16px;">
+  <p><strong>1. Avoid Night Travel:</strong> All attendees are advised to avoid travelling at night. Please plan your journey to arrive during daylight hours.</p>
+  <p><strong>2. Special Overnight Advisory for Abeokuta:</strong> <em>"If you reach Abeokuta by 7:00 p.m., please find a place to sleep until the following morning before continuing your journey to Ilaro."</em></p>
+  <p><strong>3. Travel Assistance in Abeokuta:</strong> Contact <strong>Dr. Nasir Bello</strong> (Abeokuta Circuit President) on <strong>+234 803 207 4441</strong>.</p>
+</div>
+
+<p>📍 <strong>Live Navigation:</strong> Open directions to <a href="https://www.google.com/maps/dir/?api=1&destination=6.8872,3.0142" target="_blank" rel="noopener noreferrer">Jamia Ahmadiyya Ilaro on Google Maps</a>.</p>`,
+        excerpt: 'Official travel advisory and alternative travel routes from Lagos and Ibadan to Jamia Ahmadiyya Ilaro for the 72nd Jalsa Salana Nigeria 2026.',
+        isPublished: true,
+      },
+    });
+    log('[Seed] Official Travel Advisory page seeded.');
+  } catch (pageErr) {
+    log(`[Seed Notice]: Page seed: ${pageErr.message}`);
+  }
+
   log('[Seed] Database seeding completed successfully!');
 }
 
