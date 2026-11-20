@@ -10,6 +10,7 @@ import ArticleAudioPlayer from '@/components/public/ArticleAudioPlayer';
 import ReadingProgressBar from '@/components/public/ReadingProgressBar';
 import LocalizedArticleContent from '@/components/public/LocalizedArticleContent';
 import { getArticleFeaturedImage } from '@/lib/article-images';
+import { constructMetadata } from '@/lib/seo';
 
 interface ArticleDetailPageProps {
   params: Promise<{ slug: string }>;
@@ -27,40 +28,15 @@ export async function generateMetadata({ params }: ArticleDetailPageProps) {
       ? rawImage
       : `https://jalsasalana.ng${rawImage.startsWith('/') ? '' : '/'}${rawImage}`;
 
-    return {
+    return constructMetadata({
       title: article.metaTitle || article.title,
-      description: article.metaDescription || article.subtitle || article.excerpt,
-      alternates: {
-        canonical: `https://jalsasalana.ng/articles/${slug}`,
-      },
-      openGraph: {
-        title: article.title,
-        description: article.subtitle || article.excerpt,
-        url: `https://jalsasalana.ng/articles/${slug}`,
-        siteName: 'Jalsa Salana Nigeria',
-        images: [
-          {
-            url: absoluteImageUrl,
-            secureUrl: absoluteImageUrl,
-            width: 1200,
-            height: 630,
-            type: 'image/jpeg',
-            alt: article.title,
-          },
-        ],
-        type: 'article',
-        publishedTime: article.publishedAt,
-        authors: [article.author?.name || "Ahmadiyya Muslim Jama'at Nigeria"],
-      },
-      twitter: {
-        card: 'summary_large_image',
-        site: '@Ahmadiyya_NG',
-        creator: '@Ahmadiyya_NG',
-        title: article.title,
-        description: article.subtitle || article.excerpt,
-        images: [absoluteImageUrl],
-      },
-    };
+      description: article.metaDescription || article.subtitle || article.excerpt || '',
+      path: `/articles/${slug}`,
+      image: absoluteImageUrl,
+      type: 'article',
+      publishedTime: article.publishedAt,
+      author: article.author?.name || "Ahmadiyya Muslim Jama'at Nigeria",
+    });
   } catch {
     return {};
   }

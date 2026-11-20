@@ -161,15 +161,6 @@ export default function RootLayout({
   return (
     <html lang="en">
       <head>
-        {/* WhatsApp & Social Media Preview Tag Fallbacks */}
-        <meta property="og:image" content={OG_IMAGE_URL} />
-        <meta property="og:image:secure_url" content={OG_IMAGE_URL} />
-        <meta property="og:image:type" content="image/jpeg" />
-        <meta property="og:image:width" content="1200" />
-        <meta property="og:image:height" content="630" />
-        <meta property="og:image:alt" content="72nd Jalsa Salana Nigeria Official Platform" />
-        <meta name="twitter:image" content={OG_IMAGE_URL} />
-        <meta name="twitter:card" content="summary_large_image" />
         <link rel="image_src" href={OG_IMAGE_URL} />
         <script
           type="application/ld+json"

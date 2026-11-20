@@ -8,6 +8,7 @@ import { getArticleFeaturedImage } from '@/lib/article-images';
 import AddToCalendarButton from '@/components/public/AddToCalendarButton';
 import VenueMapSection from '@/components/public/VenueMapSection';
 import QuranCitationCard from '@/components/public/QuranCitationCard';
+import { constructMetadata } from '@/lib/seo';
 
 interface EditionDetailPageProps {
   params: Promise<{ year: string }>;
@@ -20,10 +21,11 @@ export async function generateMetadata({ params }: EditionDetailPageProps) {
     const edition = res.data;
     if (!edition) return {};
 
-    return {
-      title: `${edition.year} — ${edition.editionNumber} Archive`,
-      description: `${edition.themeEnglish} — Official historical records, speeches, photographs, and reports from Jalsa Salana Nigeria ${edition.year}.`,
-    };
+    return constructMetadata({
+      title: `${edition.year} — ${edition.editionNumber} Archive — Jalsa Salana Nigeria`,
+      description: `${edition.themeEnglish || 'Official historical records, speeches, photographs, and reports'} from Jalsa Salana Nigeria ${edition.year}.`,
+      path: `/editions/${year}`,
+    });
   } catch {
     return {};
   }

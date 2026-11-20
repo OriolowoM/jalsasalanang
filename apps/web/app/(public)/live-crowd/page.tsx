@@ -1,14 +1,15 @@
 import React from 'react';
-import { Metadata } from 'next';
 import CrowdTrafficMap from '@/components/public/CrowdTrafficMap';
 import { MapPin, Navigation, Shield, Compass, PhoneCall } from 'lucide-react';
 import Link from 'next/link';
+import { constructMetadata } from '@/lib/seo';
 
-export const metadata: Metadata = {
-  title: 'Live Crowd & Venue Traffic Routing | Jalsa Salana Nigeria 2026',
+export const metadata = constructMetadata({
+  title: 'Live Crowd Density & Traffic Routing — Jalsa Salana Nigeria 2026',
   description:
     'Real-time venue capacity tracking, live crowd density monitor, and smart traffic routing for Jamia Ahmadiyya Ilaro during the 72nd Jalsa Salana convention.',
-};
+  path: '/live-crowd',
+});
 
 export default function LiveCrowdPage() {
   return (

@@ -16,12 +16,14 @@ import {
   Compass,
   CheckCircle2,
 } from 'lucide-react';
+import { constructMetadata } from '@/lib/seo';
 
-export const metadata = {
-  title: 'Thematic Semantic Search | Jalsa Salana Nigeria Archives',
+export const metadata = constructMetadata({
+  title: 'Search Jalsa Salana Nigeria Archives',
   description:
     'Intent-based semantic search across seven decades of scholarly articles, keynote speeches, conventions, and theological discourses.',
-};
+  path: '/search',
+});
 
 export default async function SearchResultsPage({
   searchParams,

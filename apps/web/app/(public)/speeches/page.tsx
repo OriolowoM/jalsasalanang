@@ -2,11 +2,14 @@ import React from 'react';
 import Link from 'next/link';
 import { getSpeeches } from '@/lib/api';
 import { Mic, Video, FileText, Calendar, ArrowRight, User } from 'lucide-react';
+import { constructMetadata } from '@/lib/seo';
 
-export const metadata = {
-  title: 'Speeches, Addresses & Friday Sermons',
-  description: 'Authoritative archive of caliphal addresses, presidential speeches, and theological discourses from Jalsa Salana Nigeria.',
-};
+export const metadata = constructMetadata({
+  title: 'Speeches, Addresses & Friday Sermons — Jalsa Salana Nigeria',
+  description:
+    'Authoritative archive of caliphal addresses, presidential speeches, and theological discourses from Jalsa Salana Nigeria.',
+  path: '/speeches',
+});
 
 export default async function SpeechesListingPage() {
   const res = await getSpeeches().catch(() => ({ data: [] }));

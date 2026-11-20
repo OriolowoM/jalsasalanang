@@ -1,11 +1,14 @@
 import React from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
+import { constructMetadata } from '@/lib/seo';
 
-export const metadata = {
-  title: 'About Jalsa Salana Nigeria',
-  description: 'Learn about the history, spiritual mission, and institutional objectives of Jalsa Salana Nigeria.',
-};
+export const metadata = constructMetadata({
+  title: 'About Jalsa Salana Nigeria — Mission, History & Spiritual Heritage',
+  description:
+    'Learn about the history, spiritual mission, and institutional objectives of Jalsa Salana Nigeria, convening since 1951.',
+  path: '/about',
+});
 
 export default function AboutPage() {
   return (

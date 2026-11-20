@@ -5,6 +5,7 @@ import { notFound } from 'next/navigation';
 import { getCategoryBySlug, getArticles } from '@/lib/api';
 import { Clock, Calendar, User, ChevronRight, BookOpen, ArrowRight } from 'lucide-react';
 import { getArticleFeaturedImage } from '@/lib/article-images';
+import { constructMetadata } from '@/lib/seo';
 
 interface CategoryPageProps {
   params: Promise<{ slug: string }>;
@@ -15,14 +16,15 @@ export async function generateMetadata({ params }: CategoryPageProps) {
   try {
     const res = await getCategoryBySlug(slug);
     const cat = res.data;
-    if (!cat) return { title: 'Category Not Found — Jalsa Salana Nigeria' };
+    if (!cat) return constructMetadata({ title: 'Category Not Found', description: '', path: `/categories/${slug}` });
 
-    return {
+    return constructMetadata({
       title: `${cat.name} — Editorial Category — Jalsa Salana Nigeria`,
       description: cat.description || `Articles and essays on ${cat.name} from Jalsa Salana Nigeria.`,
-    };
+      path: `/categories/${slug}`,
+    });
   } catch {
-    return { title: 'Category — Jalsa Salana Nigeria' };
+    return constructMetadata({ title: 'Category', description: '', path: `/categories/${slug}` });
   }
 }
 

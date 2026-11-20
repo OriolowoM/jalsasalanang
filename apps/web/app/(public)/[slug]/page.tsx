@@ -5,6 +5,7 @@ import Image from 'next/image';
 import type { Metadata } from 'next';
 import { getArticleFeaturedImage } from '@/lib/article-images';
 import { getPageBySlug, getArticleBySlug } from '@/lib/api';
+import { constructMetadata } from '@/lib/seo';
 import { 
   Calendar, 
   Shield, 
@@ -26,29 +27,29 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
     const res = await getPageBySlug(slug);
     const page = res.data;
     if (page) {
-      return {
+      return constructMetadata({
         title: `${page.title} — Jalsa Salana Nigeria`,
         description: page.metaDescription || page.excerpt || `${page.title} - Official information from Jalsa Salana Nigeria.`,
-        openGraph: {
-          title: `${page.title} — Jalsa Salana Nigeria`,
-          description: page.metaDescription || page.excerpt || `${page.title} - Official documentation from Jalsa Salana Nigeria.`,
-          images: page.featuredImage ? [page.featuredImage] : ['/images/jalsa72-official-logo.jpg'],
-        },
-      };
+        path: `/${slug}`,
+        image: page.featuredImage || undefined,
+      });
     }
   } catch {
     // Check if article slug exists for fallback
     try {
       const artRes = await getArticleBySlug(slug);
       if (artRes?.data) {
-        return {
+        return constructMetadata({
           title: `${artRes.data.title} — Jalsa Salana Nigeria`,
           description: artRes.data.subtitle || artRes.data.excerpt || '',
-        };
+          path: `/${slug}`,
+          image: artRes.data.featuredImage || undefined,
+          type: 'article',
+        });
       }
     } catch {}
   }
-  return { title: 'Page Not Found — Jalsa Salana Nigeria' };
+  return constructMetadata({ title: 'Page Not Found', description: '', path: `/${slug}`, noIndex: true });
 }
 
 export default async function DynamicSlugPage({ params }: PageProps) {

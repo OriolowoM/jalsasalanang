@@ -4,6 +4,7 @@ import { notFound } from 'next/navigation';
 import { getSpeechBySlug } from '@/lib/api';
 import { Mic, Video, FileText, Download, Calendar, User, ChevronRight, Share2 } from 'lucide-react';
 import SocialShareButtons from '@/components/public/SocialShareButtons';
+import { constructMetadata } from '@/lib/seo';
 
 interface SpeechDetailPageProps {
   params: Promise<{ slug: string }>;
@@ -16,10 +17,12 @@ export async function generateMetadata({ params }: SpeechDetailPageProps) {
     const speech = res.data;
     if (!speech) return {};
 
-    return {
+    return constructMetadata({
       title: `${speech.title} — ${speech.speakerName}`,
       description: speech.summary || `Full address delivered by ${speech.speakerName} at Jalsa Salana Nigeria.`,
-    };
+      path: `/speeches/${slug}`,
+      author: speech.speakerName,
+    });
   } catch {
     return {};
   }

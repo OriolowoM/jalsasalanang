@@ -1,9 +1,12 @@
 import React from 'react';
+import { constructMetadata } from '@/lib/seo';
 
-export const metadata = {
-  title: 'Editorial Policy & Verification Standards',
-  description: 'Our commitment to journalistic integrity, historical accuracy, theological verification, and copyright attribution.',
-};
+export const metadata = constructMetadata({
+  title: 'Editorial Policy & Verification Standards — Jalsa Salana Nigeria',
+  description:
+    'Our commitment to journalistic integrity, historical accuracy, theological verification, and copyright attribution.',
+  path: '/editorial-policy',
+});
 
 export default function EditorialPolicyPage() {
   return (

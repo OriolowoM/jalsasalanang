@@ -3,11 +3,14 @@ import Link from 'next/link';
 import Image from 'next/image';
 import { getEditions } from '@/lib/api';
 import { Calendar, MapPin, Users, ArrowRight, ShieldCheck } from 'lucide-react';
+import { constructMetadata } from '@/lib/seo';
 
-export const metadata = {
-  title: 'Historical Jalsa Editions & Conventions Archive',
-  description: 'Chronological timeline and permanent archive of Jalsa Salana Nigeria conventions from the 1950s to the upcoming 72nd convention in 2026.',
-};
+export const metadata = constructMetadata({
+  title: 'Historical Jalsa Editions & Conventions Archive — Jalsa Salana Nigeria',
+  description:
+    'Chronological timeline and permanent archive of Jalsa Salana Nigeria conventions from the 1950s to the upcoming 72nd convention in 2026.',
+  path: '/editions',
+});
 
 export default async function EditionsArchivePage() {
   const res = await getEditions().catch(() => ({ data: [] }));

@@ -3,11 +3,14 @@ import Link from 'next/link';
 import Image from 'next/image';
 import { getGalleries } from '@/lib/api';
 import { Camera, Calendar, ArrowRight, User } from 'lucide-react';
+import { constructMetadata } from '@/lib/seo';
 
-export const metadata = {
-  title: 'Photography & Video Archives',
-  description: 'Visual chronicles and photo albums capturing seven decades of Jalsa Salana Nigeria spiritual assemblies.',
-};
+export const metadata = constructMetadata({
+  title: 'Photography & Historical Archives — Jalsa Salana Nigeria',
+  description:
+    'Visual chronicles and photo albums capturing seven decades of Jalsa Salana Nigeria spiritual assemblies.',
+  path: '/galleries',
+});
 
 export default async function GalleriesListingPage() {
   const res = await getGalleries().catch(() => ({ data: [] }));
