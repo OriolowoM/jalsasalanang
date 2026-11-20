@@ -1,7 +1,7 @@
 "use client";
 
 import React from "react";
-import { Play, Pause, X, Music } from "lucide-react";
+import { Play, Pause, X, Music, Radio, Tv, ExternalLink } from "lucide-react";
 import { useAudioPlayer } from "@/context/AudioPlayerContext";
 import { JALSA_JINGLES_2026, type JingleLanguageId } from "@/lib/jingles-2026";
 
@@ -80,7 +80,7 @@ export default function JalsaMiniPlayer() {
             </div>
           </div>
 
-          {/* Language Switcher Mini Pills */}
+          {/* Language Switcher Mini Pills & MTA Live Toggle */}
           <div className="hidden xs:flex items-center gap-1 bg-black/30 p-1 rounded-xl border border-white/10">
             {JALSA_JINGLES_2026.tracks.map((track) => (
               <button
@@ -97,6 +97,18 @@ export default function JalsaMiniPlayer() {
                 {track.id.toUpperCase()}
               </button>
             ))}
+
+            <a
+              href="https://www.mta.tv/live"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="flex items-center gap-1 px-2 py-0.5 rounded-lg bg-rose-600/90 hover:bg-rose-600 text-white text-[10px] font-bold shadow-xs transition active:scale-95"
+              title="Watch MTA International Live Broadcast Stream"
+            >
+              <span className="w-1.5 h-1.5 rounded-full bg-white animate-ping" />
+              <span>MTA LIVE</span>
+              <ExternalLink className="w-2.5 h-2.5 opacity-70" />
+            </a>
           </div>
 
           {/* Time & Play/Pause Controls */}

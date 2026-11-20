@@ -10,16 +10,17 @@ JALSA SALANA NIGERIA OFFICIAL CONVENTION & LOGISTICS KNOWLEDGE BASE:
 - Global Head & Khilafat: Under the spiritual direction of Hazrat Mirza Masroor Ahmad (aba), the Fifth Caliph and worldwide Head of the Ahmadiyya Muslim Community. MTA International broadcasts the convention live worldwide.
 - 72nd Jalsa Salana Nigeria (Upcoming Milestone):
   * Dates: Friday, December 18 to Sunday, December 20, 2026.
-  * Venue: Jamia Ahmadiyya Ilaro, Ogun State, Nigeria (GPS: 6.8872° N, 3.0142° E).
+  * Venue: Jamia Ahmadiyya Ilaro, Ogun State, Nigeria (GPS: 6.8619744° N, 3.0122307° E).
+  * Google Maps Navigation: https://www.google.com/maps/place/Jalsa+Salana+Convention/@6.8613071,3.0148361,215m/data=!3m1!1e3!4m6!3m5!1s0x103b0f00606a77ef:0x742b31c844fa0745!8m2!3d6.8619744!4d3.0122307!16s%2Fg%2F11y2fqwp_k?entry=ttu
   * Theme: "Observing Justice and Human Rights: The foundation for true Global Peace".
   * Quranic Foundation: Surah An-Nahl (16:91) and Surah An-Nisa (4:136).
   * Expected Attendance: 45,000+ delegates from all 36 Nigerian states and international delegations (Ghana, Benin, UK, Canada).
   * National Amir: Alhaji Barrister Alatoye Folorunso Azeez (National Amir, Ahmadiyya Muslim Jama'at Nigeria).
 - Logistics, Facilities & Ground Layout at Jamia Ilaro:
+  * Male Jalsa Gah (Left Sector): Main Men's Marquee (capacity 15,000 delegates), Keynote stage, Tahajjud prayer lawn, ablution complex.
+  * Female Jalsa Gah (Right Sector): Lajna Prayer Pavilion (capacity 12,000 delegates) with dedicated crèche, nursing suites, mother-and-child facilities, and private dining hall.
   * Gate 1 (North Expressway Gate): Primary vehicle drop-off and express VIP/conveyance entrance.
   * Gate 2 (West Registration Hub): Biometric badge scan, household registration support, digital tag verification.
-  * Main Prayer Marquee (Men): Capacity 15,000 delegates. High-definition audio and MTA video screens.
-  * Lajna Prayer Pavilion (Women): Capacity 12,000 delegates with dedicated creche and mother-care facilities.
   * Main Dining Hall (Men) & Auxiliary Dining B: Traditional convention meals served 3 times daily without cost to delegates.
   * Lajna Main Dining & Annex: Dedicated dining marquees for female delegates and children.
   * Central Ahmadiyya Medical Clinic: 24/7 volunteer doctors, paramedical staff, emergency ambulance service.
@@ -36,8 +37,8 @@ const JALSA_TRAVEL_ADVISORY_KNOWLEDGE_BASE = `
 ### 1. GENERAL TRAVEL INFORMATION
 - Event: 72nd Jalsa Salana Nigeria 2026
 - Dates: Friday, 18th – Sunday, 20th December 2026
-- Destination: Jalsa Salana Conference Ground, Jamia Ahmadiyya, Ilaro, Ogun State, Nigeria (GPS: 6.8872° N, 3.0142° E).
-- Google Maps Navigation Link: https://www.google.com/maps/dir/?api=1&destination=6.8872,3.0142
+- Destination: Jalsa Salana Conference Ground, Jamia Ahmadiyya, Ilaro, Ogun State, Nigeria (GPS: 6.8619744° N, 3.0122307° E).
+- Google Maps Navigation Link: https://www.google.com/maps/place/Jalsa+Salana+Convention/@6.8613071,3.0148361,215m/data=!3m1!1e3!4m6!3m5!1s0x103b0f00606a77ef:0x742b31c844fa0745!8m2!3d6.8619744!4d3.0122307!16s%2Fg%2F11y2fqwp_k?entry=ttu
 - Travel Advisory Title: Alternative Routes to Avoid Possible Congestion on Papalanto Road.
 - Notice: Attendees travelling to Ilaro for Jalsa Salana Nigeria 2026 are advised to consider the alternative routes outlined below to avoid possible congestion on Papalanto Road.
 - Three Recommended Travel Routes by Departure Location:

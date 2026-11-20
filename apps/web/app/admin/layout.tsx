@@ -23,6 +23,7 @@ import {
   Menu,
   X,
   ChevronRight,
+  Share2,
 } from 'lucide-react';
 
 export default function AdminLayout({ children }: { children: React.ReactNode }) {
@@ -66,6 +67,7 @@ export default function AdminLayout({ children }: { children: React.ReactNode })
 
   const navItems = [
     { label: 'Editorial Dashboard', href: '/admin', icon: LayoutDashboard },
+    { label: 'WhatsApp Broadcasts', href: '/admin/broadcasts', icon: Share2 },
     { label: 'Articles & Content', href: '/admin/articles', icon: FileText },
     { label: 'Write New Article', href: '/admin/articles/new', icon: PlusCircle },
     { label: 'Topics & Categories', href: '/admin/categories', icon: FolderTree },

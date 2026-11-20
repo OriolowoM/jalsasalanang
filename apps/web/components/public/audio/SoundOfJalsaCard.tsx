@@ -167,8 +167,8 @@ export default function SoundOfJalsaCard() {
             </div>
           </div>
 
-          {/* 4 Tactile Language Tabs */}
-          <div className="mt-6 flex flex-wrap gap-2 sm:gap-3" role="tablist">
+          {/* 4 Tactile Language Tabs + MTA Live Stream */}
+          <div className="mt-6 flex flex-wrap items-center gap-2 sm:gap-3" role="tablist">
             {JALSA_JINGLES_2026.tracks.map((track) => {
               const isActive = currentTrack.id === track.id;
               return (
@@ -202,6 +202,41 @@ export default function SoundOfJalsaCard() {
                 </button>
               );
             })}
+
+            {/* MTA Live Video & Radio Link */}
+            <a
+              href="https://www.mta.tv/live"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="flex items-center gap-2 px-4 sm:px-5 py-2.5 rounded-2xl text-xs sm:text-sm font-bold bg-rose-600/90 hover:bg-rose-600 text-white shadow-md border border-rose-400/40 transition-all duration-300 min-h-[44px] active:scale-95 group"
+              title="Tune in to MTA International worldwide live broadcast & Huzur's Sermon"
+            >
+              <span className="w-2 h-2 rounded-full bg-white animate-ping" />
+              <span>🔴 MTA Live Broadcast</span>
+              <ExternalLink className="w-3.5 h-3.5 opacity-80 group-hover:translate-x-0.5 transition-transform" />
+            </a>
+          </div>
+
+          {/* Convention Live Audio/Video Broadcast Strip */}
+          <div className="mt-4 p-3 rounded-2xl bg-black/30 border border-white/10 flex flex-col sm:flex-row sm:items-center justify-between gap-3 text-xs text-[#b0e892]">
+            <div className="flex items-center gap-2">
+              <span className="w-2 h-2 rounded-full bg-rose-500 animate-pulse shrink-0" />
+              <span className="font-bold text-white">MTA Live Audio &amp; Video Relay:</span>
+              <span className="text-white/80 line-clamp-1">
+                Live international broadcast of Huzur&apos;s Friday Sermon, MTA Africa feeds &amp; Nigeria proceedings.
+              </span>
+            </div>
+            <div className="flex items-center gap-2 shrink-0">
+              <a
+                href="https://www.mta.tv/live"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-xl bg-white text-[#003333] hover:bg-[#b0e892] font-bold text-xs transition-colors shadow-xs"
+              >
+                <span>Watch on MTA.tv</span>
+                <ExternalLink className="w-3 h-3" />
+              </a>
+            </div>
           </div>
         </div>
 

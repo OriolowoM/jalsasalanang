@@ -1,6 +1,6 @@
 'use client';
 
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useMemo } from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
 import {
@@ -26,6 +26,14 @@ import {
 } from 'lucide-react';
 import { motion, AnimatePresence } from 'framer-motion';
 import SyncedJalsaSchedule from '@/components/dashboard/SyncedJalsaSchedule';
+import { PROGRAMME_DAYS, ProgrammeItem, JALSA_2026_META } from '@/lib/programme-2026';
+import {
+  generateICalendar,
+  downloadICalendarFile,
+  getGoogleCalendarUrl,
+  parseSessionTimes,
+} from '@/lib/programme-calendar';
+import { Star, Plus } from 'lucide-react';
 
 interface ItinerarySession {
   day: string;
@@ -55,6 +63,58 @@ export default function AttendeeDashboardPage() {
       }
     } catch (_) {}
   }, []);
+
+  // Starred sessions state synced with localStorage
+  const [starredIds, setStarredIds] = useState<string[]>([]);
+  const [itineraryTab, setItineraryTab] = useState<'starred' | 'role'>('starred');
+
+  useEffect(() => {
+    try {
+      const saved = localStorage.getItem('jalsa_2026_starred_ids');
+      if (saved) {
+        const parsed = JSON.parse(saved);
+        if (Array.isArray(parsed)) setStarredIds(parsed);
+      }
+    } catch (_) {}
+  }, []);
+
+  const toggleStar = (id: string) => {
+    setStarredIds((prev) => {
+      const next = prev.includes(id) ? prev.filter((item) => item !== id) : [...prev, id];
+      try {
+        localStorage.setItem('jalsa_2026_starred_ids', JSON.stringify(next));
+      } catch (_) {}
+      return next;
+    });
+  };
+
+  const starRecommendedKeynotes = () => {
+    const recommended = ['f07', 'f09', 'f11', 's05', 's06', 's09', 'u03', 'u08'];
+    setStarredIds(recommended);
+    try {
+      localStorage.setItem('jalsa_2026_starred_ids', JSON.stringify(recommended));
+    } catch (_) {}
+  };
+
+  // Resolve starred sessions with their respective day dateISO and day label
+  const starredSessionList = useMemo(() => {
+    const list: { item: ProgrammeItem; dayLabel: string; dateISO: string }[] = [];
+    for (const day of PROGRAMME_DAYS) {
+      for (const item of day.items) {
+        if (starredIds.includes(item.id)) {
+          list.push({ item, dayLabel: day.shortLabel, dateISO: day.dateISO });
+        }
+      }
+    }
+    return list;
+  }, [starredIds]);
+
+  const handleExportICS = () => {
+    const itemsToExport = starredSessionList.map((s) => ({ item: s.item, dateISO: s.dateISO }));
+    if (itemsToExport.length === 0) return;
+    const icsContent = generateICalendar(itemsToExport);
+    downloadICalendarFile('My-Jalsa-2026-Schedule.ics', icsContent);
+  };
 
   const [itineraryData, setItineraryData] = useState<{
     recommendedGate: string;
@@ -363,7 +423,7 @@ export default function AttendeeDashboardPage() {
             </div>
           </motion.div>
 
-          {/* ── BENTO CARD 2: Personalized Schedule & Timeline [8 cols] ── */}
+          {/* ── BENTO CARD 2: Personalized Schedule & Starred Timeline [8 cols] ── */}
           <motion.div
             initial={{ opacity: 0, y: 15 }}
             animate={{ opacity: 1, y: 0 }}
@@ -371,97 +431,272 @@ export default function AttendeeDashboardPage() {
             className="lg:col-span-8 rounded-3xl bg-white p-6 sm:p-7 border border-surface-border shadow-soft flex flex-col justify-between"
           >
             <div>
-              {/* Header with Day Selector */}
+              {/* Top Selector: Starred Schedule vs Role Tailored */}
               <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 mb-6 pb-4 border-b border-surface-border">
                 <div>
                   <div className="flex items-center gap-2">
                     <h2 className="font-display font-extrabold text-xl text-forest">
-                      Personalized 3-Day Itinerary
+                      {itineraryTab === 'starred'
+                        ? 'My Jalsa Starred Itinerary'
+                        : 'Role-Tailored Convention Guide'}
                     </h2>
                     {loadingItinerary && (
                       <RefreshCw className="w-4 h-4 text-teal animate-spin" />
                     )}
                   </div>
                   <p className="text-xs text-ink-muted mt-0.5">
-                    Tailored for your role: <strong>{attendeeRole}</strong> from <strong>{travelOrigin}</strong>
+                    {itineraryTab === 'starred'
+                      ? `${starredIds.length} personal session${starredIds.length === 1 ? '' : 's'} saved to your digital checklist.`
+                      : `Guidance tailored for: ${attendeeRole} from ${travelOrigin}`}
                   </p>
                 </div>
 
-                {/* Day Switcher Tabs */}
-                <div className="flex items-center gap-1.5 bg-surface-muted p-1 rounded-2xl border border-surface-border">
-                  {['Day 1', 'Day 2', 'Day 3'].map((day) => (
-                    <button
-                      key={day}
-                      onClick={() => setSelectedDay(day)}
-                      className={`px-3 py-1.5 rounded-xl text-xs font-bold transition-all ${
-                        selectedDay === day
-                          ? 'bg-forest text-white shadow-xs'
-                          : 'text-ink-muted hover:text-forest'
-                      }`}
-                    >
-                      {day}
-                    </button>
-                  ))}
+                {/* Primary Mode Tabs */}
+                <div className="flex items-center gap-1.5 bg-surface-muted p-1 rounded-2xl border border-surface-border shrink-0">
+                  <button
+                    type="button"
+                    onClick={() => setItineraryTab('starred')}
+                    className={`flex items-center gap-1.5 px-3 py-1.5 rounded-xl text-xs font-bold transition-all ${
+                      itineraryTab === 'starred'
+                        ? 'bg-[#003333] text-white shadow-xs'
+                        : 'text-ink-muted hover:text-forest'
+                    }`}
+                  >
+                    <Star className={`w-3.5 h-3.5 ${starredIds.length > 0 ? 'fill-[#c5a049] text-[#c5a049]' : ''}`} />
+                    <span>My Starred ({starredIds.length})</span>
+                  </button>
+
+                  <button
+                    type="button"
+                    onClick={() => setItineraryTab('role')}
+                    className={`flex items-center gap-1.5 px-3 py-1.5 rounded-xl text-xs font-bold transition-all ${
+                      itineraryTab === 'role'
+                        ? 'bg-[#003333] text-white shadow-xs'
+                        : 'text-ink-muted hover:text-forest'
+                    }`}
+                  >
+                    <Compass className="w-3.5 h-3.5 text-[#b0e892]" />
+                    <span>Role Guide</span>
+                  </button>
                 </div>
               </div>
 
-              {/* Welcome Message Card */}
-              <div className="p-4 rounded-2xl bg-teal-50/60 border border-teal-200/60 mb-6 flex items-start gap-3">
-                <Sparkles className="w-5 h-5 text-teal flex-shrink-0 mt-0.5" />
-                <p className="text-xs text-forest leading-relaxed font-medium">
-                  {itineraryData.welcomeMessage}
-                </p>
-              </div>
-
-              {/* Timeline Session Cards */}
-              <div className="space-y-3.5">
-                {filteredSessions.map((session, idx) => (
-                  <div
-                    key={idx}
-                    className="p-4 rounded-2xl border border-surface-border hover:border-teal/40 transition-all hover:shadow-soft bg-surface-bg/40 flex flex-col sm:flex-row sm:items-start justify-between gap-3"
-                  >
-                    <div className="flex items-start gap-3">
-                      <div className="w-8 h-8 rounded-xl bg-forest text-white flex items-center justify-center font-display font-bold text-xs flex-shrink-0 mt-0.5">
-                        {idx + 1}
-                      </div>
-                      <div>
-                        <div className="flex items-center gap-2 mb-1">
-                          <span className="font-display font-bold text-sm text-forest">
-                            {session.session}
+              {itineraryTab === 'starred' ? (
+                /* ── TAB 1: ATTENDEE'S STARRED SESSIONS ── */
+                <div>
+                  {starredSessionList.length > 0 ? (
+                    <div>
+                      {/* Action Header for Starred List */}
+                      <div className="flex flex-wrap items-center justify-between gap-3 p-3.5 bg-gradient-to-r from-emerald-50 to-teal-50/50 rounded-2xl border border-emerald-200/60 mb-5">
+                        <div className="flex items-center gap-2">
+                          <span className="w-2 h-2 rounded-full bg-emerald-500 animate-pulse" />
+                          <span className="text-xs font-bold text-forest">
+                            {starredSessionList.length} Sessions on Your Checklist
                           </span>
                         </div>
-                        <p className="text-xs text-ink-muted leading-relaxed">
-                          {session.highlight}
-                        </p>
+
+                        <div className="flex flex-wrap items-center gap-2">
+                          <button
+                            type="button"
+                            onClick={handleExportICS}
+                            className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-xl bg-[#003333] hover:bg-[#024542] text-white text-xs font-bold transition-colors shadow-xs"
+                            title="Export all starred events into your phone's calendar with 15-minute sound alarms"
+                          >
+                            <Download className="w-3.5 h-3.5 text-[#b0e892]" />
+                            <span>Export Calendar (.ics)</span>
+                          </button>
+
+                          <Link
+                            href="/programme-of-events-jalsa-salana-nigeria-2026"
+                            className="inline-flex items-center gap-1 px-3 py-1.5 rounded-xl bg-white hover:bg-surface-muted text-[#003333] border border-surface-border text-xs font-bold transition-colors"
+                          >
+                            <span>Browse Programme</span>
+                            <ArrowRight className="w-3 h-3" />
+                          </Link>
+                        </div>
+                      </div>
+
+                      {/* Starred Session Rows */}
+                      <div className="space-y-3">
+                        {starredSessionList.map(({ item, dayLabel, dateISO }) => {
+                          const gcalUrl = getGoogleCalendarUrl(item, dateISO);
+                          return (
+                            <div
+                              key={item.id}
+                              className="p-4 rounded-2xl border border-surface-border hover:border-[#c5a049]/50 transition-all hover:shadow-soft bg-surface-bg/40 flex flex-col sm:flex-row sm:items-center justify-between gap-3"
+                            >
+                              <div className="flex items-start gap-3 min-w-0">
+                                <span className="px-2.5 py-1 rounded-xl bg-[#003333] text-white font-display font-bold text-[11px] shrink-0 mt-0.5">
+                                  {dayLabel}
+                                </span>
+                                <div className="min-w-0">
+                                  <h4 className="font-display font-bold text-sm text-forest truncate">
+                                    {item.title}
+                                    {item.titleSuffix && ` ${item.titleSuffix}`}
+                                  </h4>
+                                  {item.topic && (
+                                    <p className="text-xs text-ink-muted italic line-clamp-1 mt-0.5">
+                                      “{item.topic}”
+                                    </p>
+                                  )}
+                                  {item.facilitator && (
+                                    <p className="text-[11px] text-teal-700 font-medium line-clamp-1 mt-0.5">
+                                      {item.facilitator}
+                                    </p>
+                                  )}
+                                </div>
+                              </div>
+
+                              <div className="flex items-center justify-between sm:justify-end gap-3 shrink-0 pt-2 sm:pt-0 border-t sm:border-t-0 border-surface-border">
+                                <span className="font-bold text-xs text-teal flex items-center gap-1">
+                                  <Clock className="w-3.5 h-3.5" /> {item.time}
+                                </span>
+
+                                <div className="flex items-center gap-1.5">
+                                  <a
+                                    href={gcalUrl}
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                    className="p-2 rounded-xl bg-white hover:bg-surface-muted text-[#003333] border border-surface-border text-xs transition-colors"
+                                    title="Add to Google Calendar"
+                                  >
+                                    <Calendar className="w-3.5 h-3.5" />
+                                  </a>
+
+                                  <button
+                                    type="button"
+                                    onClick={() => toggleStar(item.id)}
+                                    className="p-2 rounded-xl bg-amber-50 hover:bg-amber-100 text-[#c5a049] border border-amber-200 text-xs transition-colors"
+                                    title="Remove from My Jalsa starred schedule"
+                                  >
+                                    <Star className="w-3.5 h-3.5 fill-[#c5a049]" />
+                                  </button>
+                                </div>
+                              </div>
+                            </div>
+                          );
+                        })}
                       </div>
                     </div>
+                  ) : (
+                    /* Empty Starred State with 1-Click Auto-Star Recommendation */
+                    <div className="p-6 sm:p-8 rounded-2xl bg-gradient-to-br from-amber-50/50 via-teal-50/30 to-white border border-amber-200/60 text-center space-y-4">
+                      <div className="w-12 h-12 rounded-2xl bg-[#c5a049]/20 text-[#c5a049] flex items-center justify-center mx-auto">
+                        <Star className="w-6 h-6 fill-[#c5a049]" />
+                      </div>
+                      <div className="max-w-md mx-auto">
+                        <h3 className="font-display font-extrabold text-base text-forest">
+                          No Starred Sessions Yet
+                        </h3>
+                        <p className="text-xs text-ink-muted mt-1 leading-relaxed">
+                          Build your personal Jalsa schedule so you receive 15-minute reminders for keynote lectures, Friday Jumu’ah, Huzur’s sermon, and the Nikaah ceremony.
+                        </p>
+                      </div>
 
-                    <div className="flex sm:flex-col sm:items-end justify-between text-xs text-ink-muted flex-shrink-0 border-t sm:border-t-0 pt-2 sm:pt-0 border-surface-border">
-                      <span className="font-bold text-teal flex items-center gap-1">
-                        <Clock className="w-3.5 h-3.5" /> {session.time}
-                      </span>
-                      <span className="text-[11px] text-ink-light flex items-center gap-1 mt-0.5">
-                        <MapPin className="w-3 h-3" /> {session.location}
-                      </span>
+                      <div className="flex flex-wrap items-center justify-center gap-3 pt-2">
+                        <button
+                          type="button"
+                          onClick={starRecommendedKeynotes}
+                          className="inline-flex items-center gap-2 px-4 py-2.5 rounded-xl bg-[#003333] hover:bg-[#024542] text-white text-xs font-bold transition-all shadow-sm active:scale-95"
+                        >
+                          <Sparkles className="w-4 h-4 text-[#b0e892]" />
+                          <span>★ Auto-Star 8 Convention Keynotes</span>
+                        </button>
+
+                        <Link
+                          href="/programme-of-events-jalsa-salana-nigeria-2026"
+                          className="inline-flex items-center gap-1.5 px-4 py-2.5 rounded-xl bg-white hover:bg-surface-muted text-forest border border-surface-border text-xs font-bold transition-colors"
+                        >
+                          <span>Explore Full 3-Day Programme</span>
+                          <ArrowRight className="w-3.5 h-3.5" />
+                        </Link>
+                      </div>
+                    </div>
+                  )}
+                </div>
+              ) : (
+                /* ── TAB 2: ROLE-TAILORED ITINERARY ── */
+                <div>
+                  <div className="flex items-center justify-between mb-4">
+                    <span className="text-xs font-bold text-ink-muted uppercase tracking-wider">
+                      Select Convention Day:
+                    </span>
+                    <div className="flex items-center gap-1.5 bg-surface-muted p-1 rounded-2xl border border-surface-border">
+                      {['Day 1', 'Day 2', 'Day 3'].map((day) => (
+                        <button
+                          key={day}
+                          onClick={() => setSelectedDay(day)}
+                          className={`px-3 py-1.5 rounded-xl text-xs font-bold transition-all ${
+                            selectedDay === day
+                              ? 'bg-forest text-white shadow-xs'
+                              : 'text-ink-muted hover:text-forest'
+                          }`}
+                        >
+                          {day}
+                        </button>
+                      ))}
                     </div>
                   </div>
-                ))}
-              </div>
-            </div>
 
-            {/* Practical Advice from AI */}
-            <div className="mt-6 pt-4 border-t border-surface-border">
-              <div className="text-[11px] font-bold uppercase tracking-wider text-teal mb-2 flex items-center gap-1.5">
-                <Shield className="w-3.5 h-3.5" /> Attendee Logistical Advisory
-              </div>
-              <ul className="grid grid-cols-1 sm:grid-cols-2 gap-2 text-xs text-ink-muted">
-                {itineraryData.practicalTips.map((tip, idx) => (
-                  <li key={idx} className="flex items-start gap-1.5">
-                    <span className="text-lime text-base leading-none">•</span>
-                    <span>{tip}</span>
-                  </li>
-                ))}
-              </ul>
+                  {/* Welcome Message Card */}
+                  <div className="p-4 rounded-2xl bg-teal-50/60 border border-teal-200/60 mb-5 flex items-start gap-3">
+                    <Sparkles className="w-5 h-5 text-teal flex-shrink-0 mt-0.5" />
+                    <p className="text-xs text-forest leading-relaxed font-medium">
+                      {itineraryData.welcomeMessage}
+                    </p>
+                  </div>
+
+                  {/* Timeline Session Cards */}
+                  <div className="space-y-3.5">
+                    {filteredSessions.map((session, idx) => (
+                      <div
+                        key={idx}
+                        className="p-4 rounded-2xl border border-surface-border hover:border-teal/40 transition-all hover:shadow-soft bg-surface-bg/40 flex flex-col sm:flex-row sm:items-start justify-between gap-3"
+                      >
+                        <div className="flex items-start gap-3">
+                          <div className="w-8 h-8 rounded-xl bg-forest text-white flex items-center justify-center font-display font-bold text-xs flex-shrink-0 mt-0.5">
+                            {idx + 1}
+                          </div>
+                          <div>
+                            <div className="flex items-center gap-2 mb-1">
+                              <span className="font-display font-bold text-sm text-forest">
+                                {session.session}
+                              </span>
+                            </div>
+                            <p className="text-xs text-ink-muted leading-relaxed">
+                              {session.highlight}
+                            </p>
+                          </div>
+                        </div>
+
+                        <div className="flex sm:flex-col sm:items-end justify-between text-xs text-ink-muted flex-shrink-0 border-t sm:border-t-0 pt-2 sm:pt-0 border-surface-border">
+                          <span className="font-bold text-teal flex items-center gap-1">
+                            <Clock className="w-3.5 h-3.5" /> {session.time}
+                          </span>
+                          <span className="text-[11px] text-ink-light flex items-center gap-1 mt-0.5">
+                            <MapPin className="w-3 h-3" /> {session.location}
+                          </span>
+                        </div>
+                      </div>
+                    ))}
+                  </div>
+
+                  {/* Practical Advice from AI */}
+                  <div className="mt-6 pt-4 border-t border-surface-border">
+                    <div className="text-[11px] font-bold uppercase tracking-wider text-teal mb-2 flex items-center gap-1.5">
+                      <Shield className="w-3.5 h-3.5" /> Attendee Logistical Advisory
+                    </div>
+                    <ul className="grid grid-cols-1 sm:grid-cols-2 gap-2 text-xs text-ink-muted">
+                      {itineraryData.practicalTips.map((tip, idx) => (
+                        <li key={idx} className="flex items-start gap-1.5">
+                          <span className="text-lime text-base leading-none">•</span>
+                          <span>{tip}</span>
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+                </div>
+              )}
             </div>
           </motion.div>
 
