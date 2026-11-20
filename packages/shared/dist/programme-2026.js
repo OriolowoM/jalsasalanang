@@ -228,7 +228,7 @@ exports.PROGRAMME_DAYS = [
                 time: "5:55 AM – 6:10 AM",
                 session: "Morning Worship",
                 category: "Lecture",
-                title: "Proposed Dars Topic",
+                title: "Dars Topic",
                 topic: "“Characteristics of a True Believer: Address of Hazrat Khalifatul Masih V (aba) to the Ijtema, Lajna Imaillah UK 2026”",
                 facilitator: "Respected Jubril Akintunde Sahib, Muallim Silsila, Nasarawa",
             },
