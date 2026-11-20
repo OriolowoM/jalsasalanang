@@ -121,6 +121,11 @@ jobs:
           echo "Uploading production deploy bundle..."
           scp -o StrictHostKeyChecking=no -P $SSH_PORT deploy.tar.gz $SSH_USER@$SSH_HOST:$APP_DIR/deploy.tar.gz
 
+          # Direct sync of official PDF documents to ensure instant availability
+          echo "Directly syncing official PDF documents to public directories..."
+          scp -o StrictHostKeyChecking=no -P $SSH_PORT apps/web/public/programme-of-events-jalsa-salana-nigeria-2026.pdf $SSH_USER@$SSH_HOST:$APP_DIR/apps/web/public/programme-of-events-jalsa-salana-nigeria-2026.pdf || true
+          scp -o StrictHostKeyChecking=no -P $SSH_PORT apps/web/public/downloads/72nd-jalsa-salana-nigeria-2026-programme.pdf $SSH_USER@$SSH_HOST:$APP_DIR/apps/web/public/downloads/72nd-jalsa-salana-nigeria-2026-programme.pdf || true
+
           # 2. Touch and upload restart.txt to trigger Passenger zero-downtime reload & self-extraction
           echo "Triggering zero-downtime application reload..."
           touch restart.txt
