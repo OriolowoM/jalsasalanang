@@ -520,6 +520,22 @@ When users ask about the official 72nd Jalsa Salana jingles, theme songs, anthem
 3. For Circuit Coordinators, mosque announcements, or radio stations, provide the link to download the complete 4-track package: /audio/jalsa-2026-jingles-pack.zip (10.6 MB).
 4. Reiterate the official convention theme: "Observing Justice and Human Rights: The foundation for true Global Peace" (18th–20th December 2026).
 
+### 5. MULTILINGUAL & NIGERIAN DIALECT PROTOCOL (Yorùbá, Hausa, Nigerian Pidgin):
+1. **Yorùbá Attendees:**
+   When an attendee asks or speaks in Yorùbá (e.g., "Nígbà wo ni oúnjẹ àárọ̀?", "Ọ̀nà wo ló dára láti Èkó sí Ilaro?", "Ta ló máa sọ̀rọ̀ nípa ètò náà?"):
+   - Respond fluently, warmly, and politely in proper Yorùbá.
+   - Use Islamic greetings ("Ẹ kú àtìbọ̀ sí Jalsa Salana Nigeria 2026 / Às-Salāmu ‘Alaykum").
+   - Maintain 100% accuracy with official timings, speakers, and the Papalanto detour (Meran/Kola → Ota → Atan-Owode → Owode → Ilaro).
+2. **Hausa Attendees:**
+   When an attendee asks or speaks in Hausa (e.g., "Yaushe za a fara karin kumallo?", "Wace hanya ce daga Ibadan zuwa Ilaro?", "Ina ne asibitin jalsa?"):
+   - Respond fluently, respectfully, and clearly in Hausa.
+   - Greet courteously ("Barka da zuwa Jalsa Salana Nigeria 2026 / Assalamu Alaikum").
+   - Communicate the official route (Ibadan → Abeokuta → Itori/Ita-Oshin → Ibese → Ilaro) and lodging advisory for Abeokuta before 7:00 PM.
+3. **Nigerian Pidgin:**
+   When an attendee speaks in Nigerian Pidgin (e.g., "How I fit reach Ilaro from Lagos?", "Which time food dey ready?", "How much be market shop?"):
+   - Respond in friendly, respectful, and standard Nigerian Pidgin ("Assalamu Alaikum brother/sister! Welcome to Jalsa Salana Nigeria 2026...").
+   - Clearly relay prices (₦16,000 for standard stall, ₦11,000 for open space, ₦1,000 form fee) and safety instructions.
+
 Official Knowledge Bases:
 ${JALSA_PROGRAMME_2026_KNOWLEDGE_BASE}
 
@@ -798,12 +814,105 @@ Which city or location will you be travelling from? We look forward to welcoming
     } else if (q.includes('date') || q.includes('when') || q.includes('2026') || q.includes('72')) {
       answer = `The **72nd Jalsa Salana Nigeria** will be held from **Friday, December 18 to Sunday, December 20, 2026** at **Jamia Ahmadiyya Ilaro, Ogun State, Nigeria**.\n\nThe convention theme is **“Observing Justice and Human Rights: The foundation for true Global Peace”**. Over 45,000 delegates are expected.`;
       sources = ['Official 2026 Communique', '/programme-of-events-jalsa-salana-nigeria-2026'];
+    } else if (
+      q.includes('yoruba') ||
+      q.includes('ounje') ||
+      q.includes('aaro') ||
+      q.includes('eko') ||
+      q.includes('bawo') ||
+      q.includes('nigba wo') ||
+      q.includes('adire') ||
+      q.includes('dars') && (q.includes('eko') || q.includes('ilaro'))
+    ) {
+      answer = `Às-Salāmu ‘Alaykum wa Rahmatullāh! Ẹ kú àtìbọ̀ sí **Jalsa Salana Nigeria 2026** (Ọjọ́ Kejìdínlógún sí Ogún oṣù Kejìlá, 2026 ní Jamia Ahmadiyya Ilaro).\n\n` +
+        `**• Àkókò Oúnjẹ & Ètò:**\n` +
+        `- Oúnjẹ Àárọ̀ (Breakfast): Agogo mẹ́jọ àárọ̀ (8:00 AM lẹ́hìn Dars)\n` +
+        `- Oúnjẹ Ọ̀sán (Lunch): Agogo mẹ́ta ọ̀sán (3:00 PM Jímọ̀) / Agogo méjì kọjá ìṣẹ́jú mẹ́ẹ̀dọ́gbọ̀n (1:45 PM Àbámẹ́ta)\n` +
+        `- Oúnjẹ Alẹ́ (Dinner): Agogo méje kọjá ìṣẹ́jú ọgbọ̀n (7:30 PM lẹ́hìn Maghrib & Ishaa)\n\n` +
+        `**• Ọ̀nà tí ó dára láti Èkó sí Ilaro:**\n` +
+        `Láti yẹra fún súnkẹrẹ-fàkẹrẹ ọkọ̀ lójú ọ̀nà Papalanto, tẹ̀lé: Èkó → Ojú ọ̀nà Meran tàbí Kola → Ojú ọ̀nà Ota → Atan-Owode → Owode → Ilaro.\n\n` +
+        `⚠️ **Ìkìlọ̀ Ààbò:** Ẹ jọ̀wọ́ ẹ yẹra fún ìrìn-àjò lálẹ́. Tí ẹ bá dé Abẹ́òkúta ní agogo méje alẹ́ (7:00 PM), ẹ wá ibi sùn títí di àárọ̀ ọjọ́ kejì. Ẹ lè pe Dr. Nasir Bello lórí **0803 207 4441**.\n\n` +
+        `Kí Ọlọ́hun sọ gbogbo wa ní àwọn ìrìn-àjò wa. Àmín!`;
+      sources = ['Official Yoruba Jalsa Guide', '/programme-of-events-jalsa-salana-nigeria-2026'];
+    } else if (
+      q.includes('hausa') ||
+      q.includes('karin kumallo') ||
+      q.includes('hanya') ||
+      q.includes('yaushe') ||
+      q.includes('abinci') ||
+      q.includes('zuwa ilaro')
+    ) {
+      answer = `Assalamu Alaikum wa Rahmatullah! Barka da zuwa **Jalsa Salana Nigeria 2026** (18–20 ga Disamba, 2026 a Jamia Ahmadiyya Ilaro).\n\n` +
+        `**• Lokutan Abinci:**\n` +
+        `- Karin Kumallo (Breakfast): Karfe 8:00 na safe (bayan Dars)\n` +
+        `- Abincin Rana (Lunch): Karfe 3:00 na rana (Juma'a) / Karfe 1:45 na rana (Asabar)\n` +
+        `- Abincin Dare (Dinner): Karfe 7:30 na dare (bayan Magriba da Isha'i)\n\n` +
+        `**• Hanyar Tafiya daga Ibadan zuwa Ilaro:**\n` +
+        `Domin kauce wa cunkoso a hanyar Papalanto:\n` +
+        `1. Ibadan → Abeokuta → Itori → Ibese → Ilaro.\n` +
+        `2. Wata hanya kuma: Ibadan → Abeokuta → Ita-Oshin (a karkata dama) → Ijoga-Orile → Imasayi → Ibese → Ilaro.\n\n` +
+        `⚠️ **Shawarar Tsaro:** A guji tafiyar dare. Idan ka isa Abeokuta da misalin karfe 7:00 na yamma, a nemi wurin kwana har wayewar gari. Lambar Dr. Nasir Bello: **0803 207 4441**.\n\n` +
+        `Allah Ya kiyaye hanya ya kuma kawo kowa lafiya. Amin!`;
+      sources = ['Official Hausa Jalsa Guide', '/programme-of-events-jalsa-salana-nigeria-2026'];
+    } else if (
+      q.includes('how i fit') ||
+      q.includes('which time') ||
+      q.includes('food dey') ||
+      q.includes('wetin be') ||
+      q.includes('abeg')
+    ) {
+      answer = `Assalamu Alaikum! Welcome to **Jalsa Salana Nigeria 2026** (18–20 Dec 2026 for Jamia Ahmadiyya Ilaro).\n\n` +
+        `**• Food & Meal Times:**\n` +
+        `- Breakfast: 8:00 AM sharp after morning dars\n` +
+        `- Lunch: 3:00 PM on Friday / 1:45 PM on Saturday\n` +
+        `- Dinner: 7:30 PM in the evening after Maghrib and Ishaa prayers\n` +
+        `*(All food dey free of charge for every delegate)*\n\n` +
+        `**• How to reach Ilaro safely:**\n` +
+        `- **From Lagos:** Follow Meran or Kola road enter Ota road → Atan-Owode → Owode → Ilaro. Abeg avoid Papalanto road because of go-slow.\n` +
+        `- **From Ibadan:** Ibadan → Abeokuta → Itori (or Ita-Oshin branch right) → Ibese → Ilaro.\n\n` +
+        `⚠️ **Safety Rule:** Make person no travel for night o! If you reach Abeokuta by 7:00 PM, find where to sleep till morning. You fit call Dr. Nasir Bello on **0803 207 4441** for help.\n\n` +
+        `Safe journey and Allah bless your travel!`;
+      sources = ['Jalsa Concierge Pidgin Guide', '/programme-of-events-jalsa-salana-nigeria-2026'];
+    } else if (
+      q.includes('dining') ||
+      q.includes('food') ||
+      q.includes('meal') ||
+      q.includes('breakfast') ||
+      q.includes('lunch') ||
+      q.includes('dinner')
+    ) {
+      answer = `Assalamu Alaikum! In the blessed tradition of hospitality instituted by the Promised Messiah (as), all communal meals at Jalsa Salana Nigeria are served **free of charge** to all registered delegates.\n\n` +
+        `**• Official Daily Meal Timetable:**\n` +
+        `- **Breakfast:** 8:00 AM – 9:00 AM daily (Served immediately after Morning Dars)\n` +
+        `- **Lunch:** 3:00 PM (Friday) / 1:45 PM (Saturday)\n` +
+        `- **Dinner:** 7:30 PM (Friday & Saturday, immediately after Maghrib & Ishaa prayers)\n` +
+        `- **Sunday Departure Meal:** 7:40 AM – 9:00 AM\n\n` +
+        `**• Dining Marquees & Layout:**\n` +
+        `- **Men's Sector:** Main Dining Marquee & Auxiliary Dining Pavilion B\n` +
+        `- **Women's Sector:** Lajna Main Dining Hall & Annex Marquee (with mother-and-child facilities)\n\n` +
+        `⚠️ *Please observe queue discipline and keep the dining marquees clean and hygienic at all times.*`;
+      sources = ['Food & Hospitality Committee', '/programme-of-events-jalsa-salana-nigeria-2026'];
+    } else if (
+      q.includes('medical') ||
+      q.includes('clinic') ||
+      q.includes('doctor') ||
+      q.includes('ambulance') ||
+      q.includes('emergency') ||
+      q.includes('hospital') ||
+      q.includes('first aid')
+    ) {
+      answer = `Assalamu Alaikum! Delegate health and safety is fully prioritized at Jalsa Salana Nigeria.\n\n` +
+        `🚑 **Central Ahmadiyya Medical Clinic:**\n` +
+        `- **Location:** Central Sector near Main Administration & Gate 2\n` +
+        `- **Availability:** 24 Hours / 7 Days with volunteer doctors, nurses, and pharmacists\n` +
+        `- **Services:** Emergency first-aid, vital checks, prescription dispension, and dedicated ambulance transfer service\n` +
+        `- **Lajna Wing Clinic:** Dedicated female doctors and nurses in the Lajna enclosure\n\n` +
+        `📞 **Emergency Hotline:** **+234 803 525 7264 (+234-803-JALSA-NG)**\n` +
+        `For immediate on-ground assistance, contact any uniformed Khuddam security officer or visit the nearest Red Crescent / Medical desk.`;
+      sources = ['Central Medical & First Aid Board', 'Jamia Ilaro Emergency Desk'];
     } else if (q.includes('register') || q.includes('badge') || q.includes('tag') || q.includes('portal')) {
       answer = `Registration is open online at **[jalsa.ahmadiyyanigeria.net](https://jalsa.ahmadiyyanigeria.net)**. You can register your entire household, obtain your digital wallet tag, and bypass physical queues at Gate 2 (West Registration Hub).`;
       sources = ['Registration Portal Hub', '/registration'];
-    } else if (q.includes('dining') || q.includes('food') || q.includes('meal')) {
-      answer = `Delegates are provided breakfast, lunch, and dinner free of charge as traditional hospitality. Men's dining is located at Main Dining Hall and Auxiliary Marquee B. Ladies' dining is at Lajna Main Dining and Annex. For live queue updates, consult the Smart Crowd Map.`;
-      sources = ['Food & Hospitality Committee'];
     } else if (q.includes('where') || q.includes('venue') || q.includes('location') || q.includes('ilaro') || q.includes('maps') || q.includes('navigation')) {
       answer = `The convention grounds are at **Jamia Ahmadiyya Ilaro, Ogun State, Nigeria** (GPS Coordinates: 6.8872° N, 3.0142° E).\n\n📍 **Live Navigation:** You can open directions directly in [Google Maps](https://www.google.com/maps/dir/?api=1&destination=6.8872,3.0142).\n\nDedicated buses and convoys arrive through Gate 1 (North Expressway Gate) and Gate 2 (West Registration Hub).`;
       sources = ['Travel & Venue Advisory', 'Google Maps Live Link', '/contact'];

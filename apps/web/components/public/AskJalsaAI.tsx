@@ -1,6 +1,6 @@
 'use client';
 
-import React, { useState, useRef, useEffect, useContext } from 'react';
+import React, { useState, useRef, useEffect, useContext, useMemo } from 'react';
 import Link from 'next/link';
 import {
   Sparkles,
@@ -31,12 +31,184 @@ interface Message {
   timestamp: Date;
 }
 
-const SUGGESTED_QUESTIONS = [
-  'Play the Yoruba or Hausa Jalsa jingle',
-  'What is the theme of 72nd Jalsa 2026?',
-  'What is the Friday 18 Dec schedule & Opening time?',
-  'What are the recommended travel routes to Ilaro?',
-  'How much is a stall at Jalsa Market 2026?',
+interface QuickPrompt {
+  id: string;
+  icon: string;
+  label: string;
+  desc: string;
+  query: string;
+  lang?: 'en' | 'yo' | 'ha' | 'pcm';
+}
+
+function getTimeAwarePrompts(): { period: string; timeLabel: string; prompts: QuickPrompt[] } {
+  // Current hour in WAT (UTC+1)
+  const now = new Date();
+  const watHour = (now.getUTCHours() + 1) % 24;
+
+  if (watHour >= 4 && watHour < 10) {
+    return {
+      period: 'morning',
+      timeLabel: 'Morning Worship & Hospitality (04:00 – 10:00 WAT)',
+      prompts: [
+        {
+          id: 'breakfast',
+          icon: '☕',
+          label: 'When is Breakfast?',
+          desc: '8:00 AM daily after Dars at Main Dining & Lajna Annex',
+          query: 'When and where is breakfast served at Jalsa 2026?',
+          lang: 'en',
+        },
+        {
+          id: 'dars',
+          icon: '🌅',
+          label: 'Today’s Morning Dars Topic',
+          desc: 'Spiritual discourse topics & assigned facilitators',
+          query: 'What is the morning Dars topic and facilitator today?',
+          lang: 'en',
+        },
+        {
+          id: 'travel-lagos',
+          icon: '🚗',
+          label: 'Lagos to Ilaro Route',
+          desc: 'Meran/Kola → Ota → Atan-Owode to avoid Papalanto',
+          query: 'Which recommended route should I take from Lagos to Ilaro?',
+          lang: 'en',
+        },
+        {
+          id: 'yo-ounje',
+          icon: '🇳🇬',
+          label: 'Nígbà wo ni Oúnjẹ Àárọ̀? (Yorùbá)',
+          desc: 'Àkókò oúnjẹ àárọ̀ àti àwọn ibi ìjẹun ní Ilaro',
+          query: 'Nigba wo ni ounjẹ aarọ ma wa lẹhin dars ni Jalsa?',
+          lang: 'yo',
+        },
+      ],
+    };
+  } else if (watHour >= 10 && watHour < 16) {
+    return {
+      period: 'afternoon',
+      timeLabel: 'Midday Sessions & Congregational Prayers',
+      prompts: [
+        {
+          id: 'prayers',
+          icon: '🕌',
+          label: 'When is Jumu’ah / Zuhr Prayer?',
+          desc: 'Adhan & prayer timings across convention marquees',
+          query: 'When is Jumu’ah or Zuhr and Asr prayer today?',
+          lang: 'en',
+        },
+        {
+          id: 'lunch',
+          icon: '🍱',
+          label: 'When is Lunch served?',
+          desc: 'Traditional free communal meal schedule',
+          query: 'When and where is lunch served at Jalsa 2026?',
+          lang: 'en',
+        },
+        {
+          id: 'market',
+          icon: '🛍️',
+          label: 'How to Book a Market Stall?',
+          desc: 'Standard stall ₦16k, open space ₦11k, liaison desk',
+          query: 'How much is a stall at Jalsa Market and who is the liaison officer?',
+          lang: 'en',
+        },
+        {
+          id: 'jingle-play',
+          icon: '🎧',
+          label: 'Play Yoruba / Hausa Jingle',
+          desc: 'Official 4-language theme anthems & radio pack',
+          query: 'Play the Yoruba or Hausa Jalsa jingle audio',
+          lang: 'en',
+        },
+      ],
+    };
+  } else if (watHour >= 16 && watHour < 21) {
+    return {
+      period: 'evening',
+      timeLabel: 'Evening Keynote & Communal Dinner',
+      prompts: [
+        {
+          id: 'flag-opening',
+          icon: '🚩',
+          label: 'Flag Hoisting & Opening Time',
+          desc: 'Friday 5:00 PM Liwa-i-Ahmadiyya hoisting & Inaugural',
+          query: 'What time is Flag Hoisting and the Opening Session on Friday?',
+          lang: 'en',
+        },
+        {
+          id: 'dinner',
+          icon: '🍲',
+          label: 'When is Dinner served?',
+          desc: '7:30 PM after Maghrib & Ishaa prayers',
+          query: 'When and where is dinner served at Jalsa 2026?',
+          lang: 'en',
+        },
+        {
+          id: 'keynote',
+          icon: '🎙️',
+          label: 'Who is tonight’s Keynote Speaker?',
+          desc: 'Observing Justice & Human Rights theme lecture',
+          query: 'Who is the speaker for the keynote lecture and what is the topic?',
+          lang: 'en',
+        },
+        {
+          id: 'ha-hanya',
+          icon: '🇳🇬',
+          label: 'Hanyar Ilaro daga Ibadan (Hausa)',
+          desc: 'Hanyar Itori da Ita-Oshin domin kauce wa cunkoso',
+          query: 'Wace hanya ce mafi kyau daga Ibadan zuwa Ilaro domin kauce wa cunkoso?',
+          lang: 'ha',
+        },
+      ],
+    };
+  } else {
+    return {
+      period: 'night',
+      timeLabel: 'Night Deliberations & Overnight Care',
+      prompts: [
+        {
+          id: 'qa-panel',
+          icon: '❓',
+          label: 'Who is on tonight’s Q&A panel?',
+          desc: 'Saturday night Faith & Science general symposium',
+          query: 'Who is on the Saturday night Q&A panel and Faith Symposium?',
+          lang: 'en',
+        },
+        {
+          id: 'abeokuta-night',
+          icon: '🛏️',
+          label: 'Overnight Stay in Abeokuta',
+          desc: 'If reaching Abeokuta by 7:00 PM, sleep until morning',
+          query: 'What should I do if I reach Abeokuta after 7:00 PM?',
+          lang: 'en',
+        },
+        {
+          id: 'medical-desk',
+          icon: '🚑',
+          label: 'Emergency & Medical Clinic Desk',
+          desc: '24/7 volunteer doctors, pharmacy & ambulance desk',
+          query: 'Where is the Central Medical Clinic and emergency contact number?',
+          lang: 'en',
+        },
+        {
+          id: 'theme-2026',
+          icon: '📖',
+          label: 'Official 2026 Theme',
+          desc: 'Observing Justice and Human Rights for Global Peace',
+          query: 'What is the official theme of the 72nd Jalsa Salana Nigeria 2026?',
+          lang: 'en',
+        },
+      ],
+    };
+  }
+}
+
+const MULTILINGUAL_PRESETS: { code: string; label: string; query: string }[] = [
+  { code: 'yo', label: '🇳🇬 Yorùbá: Oúnjẹ & Ọ̀nà', query: 'Nigba wo ni ounjẹ aarọ ati bawo ni mo ṣe le de Ilaro lati Eko?' },
+  { code: 'ha', label: '🇳🇬 Hausa: Karin Kumallo', query: 'Yaushe za a fara karin kumallo kuma wace hanya ce daga Ibadan?' },
+  { code: 'pcm', label: '🇳🇬 Pidgin: Food & Route', query: 'How I fit reach Ilaro safely and which time food dey ready?' },
+  { code: 'market', label: '🛍️ Market Booking', query: 'How much is a stall at Jalsa Market 2026 and who do I contact?' },
 ];
 
 export default function AskJalsaAI() {
@@ -48,6 +220,7 @@ export default function AskJalsaAI() {
   const [loading, setLoading] = useState(false);
   const [listening, setListening] = useState(false);
   const [copiedId, setCopiedId] = useState<string | null>(null);
+  const timePrompts = useMemo(() => getTimeAwarePrompts(), []);
   const [messages, setMessages] = useState<Message[]>([
     {
       id: 'welcome',
@@ -510,23 +683,98 @@ export default function AskJalsaAI() {
                   </motion.div>
                 )}
 
+                {/* Time-Aware Quick Guidance Cards (Kills blank chat box on start) */}
+                {messages.length <= 1 && (
+                  <motion.div
+                    initial={{ opacity: 0, y: 8 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    transition={{ delay: 0.15 }}
+                    className="mt-2 rounded-2xl bg-[#f4f7f5] border border-[#d9e5e0] p-3.5 sm:p-4"
+                  >
+                    <div className="flex flex-wrap items-center justify-between gap-1.5 mb-3">
+                      <div className="flex items-center gap-1.5 text-xs font-bold text-[#003333]">
+                        <Sparkles className="w-3.5 h-3.5 text-[#027c68]" />
+                        <span>Instant Jalsa Assistance</span>
+                      </div>
+                      <span className="text-[10px] font-semibold text-[#027c68] bg-[#e3ece7] px-2.5 py-0.5 rounded-full">
+                        {timePrompts.timeLabel.split('(')[0].trim()}
+                      </span>
+                    </div>
+
+                    <div className="grid grid-cols-1 sm:grid-cols-2 gap-2">
+                      {timePrompts.prompts.map((p) => (
+                        <button
+                          key={p.id}
+                          type="button"
+                          onClick={() => handleSend(p.query)}
+                          disabled={loading}
+                          className="text-left p-2.5 rounded-xl bg-white hover:bg-[#eef5f1] border border-[#d2dfd8] hover:border-[#027c68] shadow-xs transition-all group flex items-start gap-2"
+                        >
+                          <span className="text-base shrink-0 group-hover:scale-110 transition-transform">
+                            {p.icon}
+                          </span>
+                          <div className="min-w-0">
+                            <div className="text-xs font-bold text-[#003333] group-hover:text-[#027c68] leading-tight">
+                              {p.label}
+                            </div>
+                            <div className="text-[11px] text-[#556e66] line-clamp-1 mt-0.5">
+                              {p.desc}
+                            </div>
+                          </div>
+                        </button>
+                      ))}
+                    </div>
+
+                    {/* Multilingual Switcher Pills */}
+                    <div className="mt-3 pt-2.5 border-t border-[#dce6e1] flex flex-wrap items-center gap-1.5">
+                      <span className="text-[10px] font-bold uppercase tracking-wider text-[#637d75] mr-1">
+                        Multilingual:
+                      </span>
+                      {MULTILINGUAL_PRESETS.map((item) => (
+                        <button
+                          key={item.code}
+                          type="button"
+                          onClick={() => handleSend(item.query)}
+                          disabled={loading}
+                          className="text-[11px] font-medium px-2.5 py-1 rounded-full bg-white hover:bg-[#003333] hover:text-white text-[#1f3b34] transition border border-[#d2dfd8] shadow-xs"
+                        >
+                          {item.label}
+                        </button>
+                      ))}
+                    </div>
+                  </motion.div>
+                )}
+
                 <div ref={messagesEndRef} />
               </div>
 
-              {/* Suggested Questions Pills */}
-              <div className="flex-shrink-0 px-4 py-3 bg-[#f8faf8] border-t border-surface-border overflow-x-auto no-scrollbar">
-                <div className="flex items-center gap-2 whitespace-nowrap min-h-[34px]">
-                  <span className="text-[10px] font-bold text-forest uppercase tracking-wider flex-shrink-0 bg-lime/40 text-forest-950 px-2 py-0.5 rounded">
-                    Suggested
+              {/* Dynamic Time-Aware & Multilingual Pills Above Input */}
+              <div className="flex-shrink-0 px-3 sm:px-4 py-2.5 bg-[#f8faf8] border-t border-surface-border overflow-x-auto no-scrollbar">
+                <div className="flex items-center gap-1.5 whitespace-nowrap min-h-[32px]">
+                  <span className="text-[10px] font-bold uppercase tracking-wider flex-shrink-0 bg-[#b0e892]/40 text-[#003333] px-2 py-1 rounded-md">
+                    Quick Prompts
                   </span>
-                  {SUGGESTED_QUESTIONS.map((q, idx) => (
+                  {timePrompts.prompts.map((p) => (
                     <button
-                      key={idx}
-                      onClick={() => handleSend(q)}
+                      key={p.id}
+                      type="button"
+                      onClick={() => handleSend(p.query)}
                       disabled={loading}
-                      className="text-xs px-3.5 py-1.5 bg-white hover:bg-forest hover:text-white text-ink-body font-medium rounded-full border border-surface-border shadow-xs transition-all flex-shrink-0 disabled:opacity-50 active:scale-95"
+                      className="text-xs px-3 py-1 bg-white hover:bg-[#003333] hover:text-white text-[#152e27] font-medium rounded-full border border-[#cfdcd6] shadow-xs transition-all flex-shrink-0 disabled:opacity-50 active:scale-95 flex items-center gap-1"
                     >
-                      {q}
+                      <span>{p.icon}</span>
+                      <span>{p.label}</span>
+                    </button>
+                  ))}
+                  {MULTILINGUAL_PRESETS.map((item) => (
+                    <button
+                      key={item.code}
+                      type="button"
+                      onClick={() => handleSend(item.query)}
+                      disabled={loading}
+                      className="text-xs px-2.5 py-1 bg-[#f0f5f3] hover:bg-[#003333] hover:text-white text-[#152e27] font-medium rounded-full border border-[#cfdcd6] shadow-xs transition-all flex-shrink-0 disabled:opacity-50 active:scale-95"
+                    >
+                      {item.label}
                     </button>
                   ))}
                 </div>

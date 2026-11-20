@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useMemo, useState } from "react";
+import React, { useMemo, useState, useEffect } from "react";
 import Link from "next/link";
 import {
   Calendar,
@@ -16,14 +16,26 @@ import {
   Share2,
   Check,
   Music,
+  Star,
+  CalendarPlus,
+  Quote,
+  Award,
 } from "lucide-react";
 import SoundOfJalsaCard from "@/components/public/audio/SoundOfJalsaCard";
+import LiveProgrammeStrip from "@/components/public/programme/LiveProgrammeStrip";
+import JalsaLectureVault from "@/components/public/programme/JalsaLectureVault";
+import CircuitPhotoFinder from "@/components/public/gallery/CircuitPhotoFinder";
 import {
   JALSA_2026_META,
   PROGRAMME_DAYS,
   type Category,
   type ProgrammeItem,
 } from "@/lib/programme-2026";
+import {
+  generateICalendar,
+  downloadICalendarFile,
+  getGoogleCalendarUrl,
+} from "@/lib/programme-calendar";
 
 const CATEGORIES: Category[] = [
   "All",
@@ -51,6 +63,54 @@ export default function ProgrammeOfEvents2026Page() {
   const [activeCategory, setActiveCategory] = useState<Category>("All");
   const [query, setQuery] = useState<string>("");
   const [copiedLink, setCopiedLink] = useState(false);
+  const [starredIds, setStarredIds] = useState<string[]>([]);
+  const [showOnlyStarred, setShowOnlyStarred] = useState(false);
+
+  // Load starred items from localStorage
+  useEffect(() => {
+    if (typeof window !== "undefined") {
+      try {
+        const saved = localStorage.getItem("jalsa_2026_starred_ids");
+        if (saved) setStarredIds(JSON.parse(saved));
+      } catch {}
+    }
+  }, []);
+
+  const toggleStar = (id: string) => {
+    setStarredIds((prev) => {
+      const next = prev.includes(id)
+        ? prev.filter((item) => item !== id)
+        : [...prev, id];
+      try {
+        localStorage.setItem("jalsa_2026_starred_ids", JSON.stringify(next));
+      } catch {}
+      return next;
+    });
+  };
+
+  const handleExportCalendar = () => {
+    const starredItemsWithDates: { item: ProgrammeItem; dateISO: string }[] = [];
+    for (const day of PROGRAMME_DAYS) {
+      for (const item of day.items) {
+        if (starredIds.includes(item.id)) {
+          starredItemsWithDates.push({ item, dateISO: day.dateISO });
+        }
+      }
+    }
+
+    // If no items starred, export all keynote lectures by default
+    const itemsToExport =
+      starredItemsWithDates.length > 0
+        ? starredItemsWithDates
+        : PROGRAMME_DAYS.flatMap((day) =>
+            day.items
+              .filter((it) => it.highlight || it.category === "Lecture")
+              .map((it) => ({ item: it, dateISO: day.dateISO }))
+          );
+
+    const icsContent = generateICalendar(itemsToExport);
+    downloadICalendarFile("My-Jalsa-2026-Schedule.ics", icsContent);
+  };
 
   const currentDay = useMemo(
     () => PROGRAMME_DAYS.find((d) => d.id === activeDay) ?? PROGRAMME_DAYS[0],
@@ -59,10 +119,20 @@ export default function ProgrammeOfEvents2026Page() {
 
   const filteredItems = useMemo(() => {
     const q = query.trim().toLowerCase();
-    return currentDay.items.filter((item) => {
-      const catMatch =
-        activeCategory === "All" || item.category === activeCategory;
-      if (!catMatch) return false;
+    let baseItems = showOnlyStarred
+      ? PROGRAMME_DAYS.flatMap((d) => d.items).filter((it) =>
+          starredIds.includes(it.id)
+        )
+      : currentDay.items;
+
+    return baseItems.filter((item) => {
+      if (
+        !showOnlyStarred &&
+        activeCategory !== "All" &&
+        item.category !== activeCategory
+      ) {
+        return false;
+      }
       if (!q) return true;
       const haystack = [
         item.title,
@@ -78,7 +148,7 @@ export default function ProgrammeOfEvents2026Page() {
         .toLowerCase();
       return haystack.includes(q);
     });
-  }, [currentDay, activeCategory, query]);
+  }, [currentDay, activeCategory, query, showOnlyStarred, starredIds]);
 
   const groupedBySession = useMemo(() => {
     const groups: { session: string; items: ProgrammeItem[] }[] = [];
@@ -221,9 +291,27 @@ export default function ProgrammeOfEvents2026Page() {
               </span>
             </button>
 
+            <button
+              type="button"
+              onClick={handleExportCalendar}
+              className="inline-flex items-center gap-2 rounded-full border-2 border-[#b0e892]/80 bg-[#003838] hover:bg-[#024d4a] text-white px-5 py-3 text-sm font-semibold transition shadow-sm"
+              title="Download standard .ics calendar for iPhone, Android, and Outlook"
+            >
+              <CalendarPlus className="w-4 h-4 text-[#b0e892]" />
+              <span>Export Calendar (.ics)</span>
+            </button>
+
+            <a
+              href="#lecture-vault"
+              className="inline-flex items-center gap-2 rounded-full border border-white/25 hover:bg-white/10 text-white px-4 py-3 text-sm font-medium transition"
+            >
+              <Quote className="w-4 h-4 text-[#c5a049]" />
+              Lecture Vault
+            </a>
+
             <a
               href="#sound-of-jalsa"
-              className="inline-flex items-center gap-2 rounded-full border border-white/25 hover:bg-white/10 text-white px-5 py-3 text-sm font-medium transition"
+              className="inline-flex items-center gap-2 rounded-full border border-white/25 hover:bg-white/10 text-white px-4 py-3 text-sm font-medium transition"
             >
               <Music className="w-4 h-4 text-[#b0e892]" />
               Sound of Jalsa
@@ -232,7 +320,7 @@ export default function ProgrammeOfEvents2026Page() {
             <button
               type="button"
               onClick={() => typeof window !== "undefined" && window.print()}
-              className="inline-flex items-center gap-2 rounded-full border border-white/25 hover:bg-white/10 text-white px-5 py-3 text-sm font-medium transition"
+              className="inline-flex items-center gap-2 rounded-full border border-white/25 hover:bg-white/10 text-white px-4 py-3 text-sm font-medium transition"
             >
               <Printer className="w-4 h-4" />
               Print Schedule
@@ -241,18 +329,29 @@ export default function ProgrammeOfEvents2026Page() {
         </div>
       </section>
 
+      {/* Live "Happening Now & Up Next" Sticky Bar */}
+      <LiveProgrammeStrip
+        onSelectDay={(dayId) => {
+          setActiveDay(dayId);
+          setShowOnlyStarred(false);
+        }}
+      />
+
       {/* Sticky Day Tabs, Search & Category Filter */}
       <section className="sticky top-0 z-30 bg-white/95 backdrop-blur border-b border-[#dde5e1] shadow-xs">
         <div className="max-w-6xl mx-auto px-5 py-4 space-y-3">
           <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-3">
-            <div className="flex flex-wrap gap-2">
+            <div className="flex flex-wrap items-center gap-2">
               {PROGRAMME_DAYS.map((day) => {
-                const selected = day.id === activeDay;
+                const selected = !showOnlyStarred && day.id === activeDay;
                 return (
                   <button
                     key={day.id}
                     type="button"
-                    onClick={() => setActiveDay(day.id)}
+                    onClick={() => {
+                      setActiveDay(day.id);
+                      setShowOnlyStarred(false);
+                    }}
                     className={`rounded-xl px-4 py-2.5 text-sm font-bold transition ${
                       selected
                         ? "bg-[#003333] text-white border border-[#c5a049] shadow-xs"
@@ -263,6 +362,29 @@ export default function ProgrammeOfEvents2026Page() {
                   </button>
                 );
               })}
+
+              {/* One-Tap "My Jalsa" Personal Schedule Tab */}
+              <button
+                type="button"
+                onClick={() => setShowOnlyStarred(!showOnlyStarred)}
+                className={`rounded-xl px-4 py-2.5 text-sm font-bold transition flex items-center gap-1.5 ${
+                  showOnlyStarred
+                    ? "bg-[#c5a049] text-[#002626] shadow-sm font-extrabold"
+                    : starredIds.length > 0
+                    ? "bg-[#fff7e6] text-[#8a5d00] border border-[#f0c36d] hover:bg-[#ffeec2]"
+                    : "bg-[#f1f5f3] text-[#1f3b34] hover:bg-[#e3ece8]"
+                }`}
+                title="Filter to your starred programme sessions"
+              >
+                <Star
+                  className={`w-4 h-4 ${
+                    showOnlyStarred || starredIds.length > 0
+                      ? "fill-[#c5a049] text-[#c5a049]"
+                      : "text-[#526c65]"
+                  }`}
+                />
+                <span>My Jalsa ({starredIds.length})</span>
+              </button>
             </div>
 
             <div className="relative w-full md:w-80">
@@ -298,18 +420,61 @@ export default function ProgrammeOfEvents2026Page() {
 
       {/* Main Timetable Body */}
       <section className="max-w-6xl mx-auto px-5 py-10">
+        {/* Personal Checklist Banner (when "My Jalsa" is filtered) */}
+        {showOnlyStarred && (
+          <div className="mb-8 rounded-2xl bg-[#003333] border-2 border-[#c5a049] p-5 sm:p-6 text-white flex flex-col md:flex-row md:items-center md:justify-between gap-4 shadow-xl">
+            <div>
+              <div className="flex items-center gap-2 text-xs font-bold uppercase tracking-wider text-[#b0e892]">
+                <Star className="w-4 h-4 fill-[#c5a049] text-[#c5a049]" />
+                My Jalsa Personal Schedule Checklist
+              </div>
+              <h3 className="font-display font-extrabold text-xl text-white mt-1">
+                {starredIds.length} Starred Convention Session{starredIds.length === 1 ? "" : "s"}
+              </h3>
+              <p className="text-xs sm:text-sm text-[#d4e7e0] mt-1 max-w-2xl leading-relaxed">
+                Your personal itinerary is stored safely on your device. Export these sessions to your iPhone, Android, or Outlook calendar to receive automatic 15-minute alerts before each session.
+              </p>
+            </div>
+
+            <div className="flex flex-wrap items-center gap-2.5 shrink-0">
+              <button
+                type="button"
+                onClick={handleExportCalendar}
+                disabled={starredIds.length === 0}
+                className="inline-flex items-center gap-2 rounded-xl bg-[#c5a049] hover:bg-[#d6b25b] text-[#002626] font-bold px-4 py-2.5 text-xs transition shadow-md disabled:opacity-50"
+              >
+                <CalendarPlus className="w-4 h-4 text-[#002626]" />
+                <span>Export to Phone (.ics)</span>
+              </button>
+              <button
+                type="button"
+                onClick={() => setShowOnlyStarred(false)}
+                className="rounded-xl border border-white/30 hover:bg-white/10 px-3.5 py-2.5 text-xs font-semibold text-white transition"
+              >
+                Show All Days
+              </button>
+            </div>
+          </div>
+        )}
+
         <div className="mb-8 flex flex-col sm:flex-row sm:items-end sm:justify-between gap-2 border-b border-[#d9e3de] pb-4">
           <div>
             <p className="text-xs font-bold uppercase tracking-[0.16em] text-[#027c68]">
-              Official Daily Schedule
+              {showOnlyStarred ? "Personal Itinerary" : "Official Daily Schedule"}
             </p>
             <h2 className="font-display text-2xl md:text-3xl font-extrabold text-[#003333]">
-              {currentDay.fullLabel}
+              {showOnlyStarred
+                ? "My Starred Jalsa 2026 Sessions"
+                : currentDay.fullLabel}
             </h2>
-            <p className="text-sm text-[#4a625b] mt-1">{currentDay.subtitle}</p>
+            <p className="text-sm text-[#4a625b] mt-1">
+              {showOnlyStarred
+                ? "All events you have bookmarked across Friday, Saturday, and Sunday."
+                : currentDay.subtitle}
+            </p>
           </div>
           <span className="text-xs font-semibold text-[#5a7069]">
-            Showing {filteredItems.length} of {currentDay.items.length} items
+            Showing {filteredItems.length} {showOnlyStarred ? "starred" : `of ${currentDay.items.length}`} items
           </span>
         </div>
 
@@ -317,13 +482,16 @@ export default function ProgrammeOfEvents2026Page() {
           <div className="rounded-2xl border border-[#d9e3de] bg-white p-10 text-center">
             <BookOpen className="w-10 h-10 text-[#027c68] mx-auto mb-3 opacity-60" />
             <p className="font-semibold text-[#003333]">
-              No matching programme items found on {currentDay.fullLabel}.
+              {showOnlyStarred
+                ? "You haven’t starred any sessions yet. Click the Star (★) icon next to any event to build your personal Jalsa schedule!"
+                : `No matching programme items found on ${currentDay.fullLabel}.`}
             </p>
             <button
               type="button"
               onClick={() => {
                 setQuery("");
                 setActiveCategory("All");
+                setShowOnlyStarred(false);
               }}
               className="mt-4 rounded-full bg-[#003333] text-white px-5 py-2 text-xs font-bold transition hover:bg-[#024542]"
             >
@@ -343,103 +511,153 @@ export default function ProgrammeOfEvents2026Page() {
                 </div>
 
                 <div className="divide-y divide-[#e5ece8] rounded-2xl border border-[#d9e3de] bg-white overflow-hidden shadow-xs">
-                  {group.items.map((item) => (
-                    <article
-                      key={item.id}
-                      className={`p-5 md:p-6 flex flex-col md:flex-row md:items-start gap-4 transition ${
-                        item.highlight
-                          ? "bg-[#fbfaf5] border-l-4 border-l-[#c5a049]"
-                          : "hover:bg-[#fafcfb]"
-                      }`}
-                    >
-                      <div className="md:w-48 shrink-0">
-                        <div className="inline-flex items-center gap-1.5 text-sm font-bold text-[#003333]">
-                          <Clock className="w-4 h-4 text-[#027c68]" />
-                          <span>{item.time}</span>
-                        </div>
-                        <span className="mt-1.5 inline-block rounded-md bg-[#eef4f1] px-2.5 py-0.5 text-[11px] font-semibold text-[#027c68]">
-                          {item.category}
-                        </span>
-                      </div>
-
-                      <div className="flex-1 min-w-0">
-                        <h4 className="font-display text-base md:text-lg font-bold text-[#0e241e]">
-                          {item.title}
-                          {item.inlineArabicSup && (
-                            <sup
-                              dir="rtl"
-                              className="ml-1 font-serif text-[0.72em] font-semibold text-[#003333] align-super leading-none"
-                            >
-                              {item.inlineArabicSup}
-                            </sup>
-                          )}
-                          {item.titleSuffix}
-                        </h4>
-
-                        {item.arabic && (
-                          <p
-                            dir="rtl"
-                            className="mt-1.5 text-lg font-serif text-[#003333]"
-                          >
-                            {item.arabic}
-                          </p>
-                        )}
-
-                        {item.topic && (
-                          <p className="mt-1 text-sm md:text-base italic text-[#234138]">
-                            {item.topic}
-                          </p>
-                        )}
-
-                        {item.facilitator && (
-                          <p className="mt-2 text-sm text-[#4a625b]">
-                            <span className="font-semibold text-[#027c68]">
-                              Facilitator:{" "}
-                            </span>
-                            {item.facilitator}
-                          </p>
-                        )}
-
-                        {item.panel && (
-                          <div className="mt-3 rounded-xl bg-[#f4f7f5] border border-[#e0e8e4] p-3.5">
-                            <p className="text-xs font-bold uppercase tracking-wider text-[#003333] mb-2">
-                              Q&amp;A Panel Team
-                            </p>
-                            <ul className="space-y-1 text-sm text-[#2d463e] list-disc pl-5">
-                              {item.panel.map((member) => (
-                                <li key={member}>{member}</li>
-                              ))}
-                            </ul>
+                  {group.items.map((item) => {
+                    const isStarred = starredIds.includes(item.id);
+                    return (
+                      <article
+                        key={item.id}
+                        className={`p-5 md:p-6 flex flex-col md:flex-row md:items-start gap-4 transition ${
+                          isStarred
+                            ? "bg-[#fbfaf5] border-l-4 border-l-[#c5a049]"
+                            : item.highlight
+                            ? "bg-[#fafcfb] border-l-4 border-l-[#027c68]"
+                            : "hover:bg-[#fafcfb]"
+                        }`}
+                      >
+                        <div className="md:w-48 shrink-0">
+                          <div className="inline-flex items-center gap-1.5 text-sm font-bold text-[#003333]">
+                            <Clock className="w-4 h-4 text-[#027c68]" />
+                            <span>{item.time}</span>
                           </div>
-                        )}
-                      </div>
+                          <span className="mt-1.5 inline-block rounded-md bg-[#eef4f1] px-2.5 py-0.5 text-[11px] font-semibold text-[#027c68]">
+                            {item.category}
+                          </span>
+                        </div>
 
-                      <div className="shrink-0">
-                        <button
-                          type="button"
-                          onClick={() =>
-                            openJalsaAI(
-                              `Tell me about "${item.title}${item.titleSuffix ?? ""}" on ${currentDay.fullLabel} at ${item.time}.`
-                            )
-                          }
-                          className="inline-flex items-center gap-1.5 rounded-full border border-[#003333]/20 hover:border-[#027c68] hover:bg-[#eef6f3] px-3.5 py-1.5 text-xs font-semibold text-[#003333] transition"
-                        >
-                          <Sparkles className="w-3.5 h-3.5 text-[#027c68]" />
-                          Ask AI
-                          <ChevronRight className="w-3.5 h-3.5" />
-                        </button>
-                      </div>
-                    </article>
-                  ))}
+                        <div className="flex-1 min-w-0">
+                          <h4 className="font-display text-base md:text-lg font-bold text-[#0e241e]">
+                            {item.title}
+                            {item.inlineArabicSup && (
+                              <sup
+                                dir="rtl"
+                                className="ml-1 font-serif text-[0.72em] font-semibold text-[#003333] align-super leading-none"
+                              >
+                                {item.inlineArabicSup}
+                              </sup>
+                            )}
+                            {item.titleSuffix}
+                          </h4>
+
+                          {item.arabic && (
+                            <p
+                              dir="rtl"
+                              className="mt-1.5 text-lg font-serif text-[#003333]"
+                            >
+                              {item.arabic}
+                            </p>
+                          )}
+
+                          {item.topic && (
+                            <p className="mt-1 text-sm md:text-base italic text-[#234138]">
+                              {item.topic}
+                            </p>
+                          )}
+
+                          {item.facilitator && (
+                            <p className="mt-2 text-sm text-[#4a625b]">
+                              <span className="font-semibold text-[#027c68]">
+                                Facilitator:{" "}
+                              </span>
+                              {item.facilitator}
+                            </p>
+                          )}
+
+                          {item.panel && (
+                            <div className="mt-3 rounded-xl bg-[#f4f7f5] border border-[#e0e8e4] p-3.5">
+                              <p className="text-xs font-bold uppercase tracking-wider text-[#003333] mb-2">
+                                Q&amp;A Panel Team
+                              </p>
+                              <ul className="space-y-1 text-sm text-[#2d463e] list-disc pl-5">
+                                {item.panel.map((member) => (
+                                  <li key={member}>{member}</li>
+                                ))}
+                              </ul>
+                            </div>
+                          )}
+                        </div>
+
+                        {/* Interactive Item Action Suite: Star, G-Cal, Ask AI */}
+                        <div className="shrink-0 flex flex-row md:flex-col items-center md:items-end gap-2 pt-2 md:pt-0 border-t md:border-t-0 border-[#eef2f0]">
+                          <button
+                            type="button"
+                            onClick={() => toggleStar(item.id)}
+                            className={`inline-flex items-center gap-1.5 rounded-full px-3 py-1.5 text-xs font-semibold transition ${
+                              isStarred
+                                ? "bg-[#c5a049] text-[#002828] font-bold shadow-xs"
+                                : "border border-[#003333]/20 hover:border-[#c5a049] hover:bg-[#fff9ed] text-[#24423a]"
+                            }`}
+                            title={
+                              isStarred
+                                ? "Remove from My Jalsa starred schedule"
+                                : "Star & bookmark in My Jalsa checklist"
+                            }
+                          >
+                            <Star
+                              className={`w-3.5 h-3.5 ${
+                                isStarred
+                                  ? "fill-[#002828] text-[#002828]"
+                                  : "text-[#c5a049]"
+                              }`}
+                            />
+                            <span>{isStarred ? "Starred" : "Star"}</span>
+                          </button>
+
+                          <a
+                            href={getGoogleCalendarUrl(item, currentDay.dateISO)}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="inline-flex items-center gap-1 rounded-full border border-gray-200 hover:border-[#027c68] hover:bg-[#f0f7f4] px-3 py-1 text-[11px] font-medium text-[#2d4740] transition"
+                            title="Add 15m alert to Google Calendar"
+                          >
+                            <CalendarPlus className="w-3 h-3 text-[#027c68]" />
+                            <span>G-Cal</span>
+                          </a>
+
+                          <button
+                            type="button"
+                            onClick={() =>
+                              openJalsaAI(
+                                `Tell me about "${item.title}${item.titleSuffix ?? ""}" on ${currentDay.fullLabel} at ${item.time}.`
+                              )
+                            }
+                            className="inline-flex items-center gap-1 rounded-full border border-[#003333]/20 hover:border-[#027c68] hover:bg-[#eef6f3] px-3 py-1 text-[11px] font-semibold text-[#003333] transition"
+                          >
+                            <Sparkles className="w-3 h-3 text-[#027c68]" />
+                            <span>Ask AI</span>
+                          </button>
+                        </div>
+                      </article>
+                    );
+                  })}
                 </div>
               </div>
             ))}
           </div>
         )}
 
+        {/* Searchable Jalsa Q&A & Lecture Vault */}
+        <div id="lecture-vault" className="mt-14">
+          <JalsaLectureVault />
+        </div>
+
         {/* Sound of Jalsa 2026 — 4-Language Audio Experience */}
-        <div className="mt-14 -mx-4 sm:mx-0">
+        <div id="sound-of-jalsa" className="mt-14 -mx-4 sm:mx-0">
           <SoundOfJalsaCard />
+        </div>
+
+        {/* Circuit Photo & Awardee Finder */}
+        <div id="circuit-finder" className="mt-14">
+          <CircuitPhotoFinder />
         </div>
 
         {/* Closing Benediction Banner */}
@@ -456,6 +674,14 @@ export default function ProgrammeOfEvents2026Page() {
               <Download className="w-4 h-4" />
               Download Full Programme PDF
             </a>
+            <button
+              type="button"
+              onClick={handleExportCalendar}
+              className="inline-flex items-center gap-2 rounded-full bg-[#c5a049] hover:bg-[#d6b25b] text-[#002626] font-bold px-5 py-2.5 text-xs transition"
+            >
+              <CalendarPlus className="w-4 h-4 text-[#002626]" />
+              Export My Jalsa Calendar (.ics)
+            </button>
             <Link
               href="/dashboard"
               className="inline-flex items-center gap-2 rounded-full border border-white/30 hover:bg-white/10 text-white font-semibold px-5 py-2.5 text-xs transition"

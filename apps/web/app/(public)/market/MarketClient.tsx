@@ -229,9 +229,9 @@ export default function JalsaMarketPage() {
       </section>
 
       {/* Critical Notice & Timeline Banner */}
-      <section className="relative z-20 max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 -mt-8 sm:-mt-10">
+      <section className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 pt-8 sm:pt-10 pb-4">
         <div className="grid grid-cols-1 md:grid-cols-3 gap-5">
-          <div className="bg-white rounded-2xl p-6 border-2 border-[#c5a049] shadow-xl">
+          <div className="bg-white rounded-2xl p-6 border-2 border-[#c5a049] shadow-md hover:shadow-lg transition">
             <div className="flex items-center gap-2.5 text-xs font-bold uppercase tracking-wider text-[#027c68] mb-1">
               <Calendar className="w-4 h-4 text-[#c5a049]" />
               Deadline for Form Submission

@@ -1,6 +1,7 @@
 import React from 'react';
 import { getArticles, getEditions, getCurrentEdition, getSpeeches, getGalleries } from '@/lib/api';
 import HeroSection from '@/components/public/HeroSection';
+import LiveProgrammeStrip from '@/components/public/programme/LiveProgrammeStrip';
 import CountdownSection from '@/components/public/CountdownSection';
 import RegistrationShowcase from '@/components/public/RegistrationShowcase';
 import SoundOfJalsaCard from '@/components/public/audio/SoundOfJalsaCard';
@@ -53,6 +54,9 @@ export default async function HomePage() {
     <div>
       {/* 1. Large Featured Story & Secondary Featured Section */}
       <HeroSection heroArticle={heroArticle} secondaryArticles={secondaryArticles} />
+
+      {/* Live "Happening Now & Up Next" Session Strip */}
+      <LiveProgrammeStrip />
 
       {/* 2. Jalsa Salana 2026 Special Coverage Hub & Live Countdown */}
       <CountdownSection />
